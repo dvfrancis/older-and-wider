@@ -1,3 +1,88 @@
+/* CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;  
+}
+
+/* General styles */
+
 body {
-    background-color: teal;
+    background-color: #008b84;
+    font-family: "Manrope", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFF;
+}
+
+h1 {
+    color: #FFF;
+    text-align: center;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2.5em;
+    padding-bottom: 1.5%;
+
+}
+
+/* Sitewide logo */
+
+.logo {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 150px;
+}
+
+/* Navigation and social links */
+
+.navbar, .socials {
+    padding-top: 1%;
+    text-align: center;
+}
+
+.navbar li  {
+    padding-left: 5%;   
+    font-size: 1.5em;
+    display: inline;
+}
+
+.socials li {
+    display: inline;
+    padding: 0.5%;
+}
+
+.socials i {
+    color:#FFF;
+    font-size: 2.5em;
+    border: 1px solid #008b84;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #003744;
+}
+
+.navbar a, .socials a {
+    text-decoration: none;
+}
+
+/* Footer */
+
+.copyright {
+    padding-top: 1%;
+    text-align: center;
+}
+
+/* Temporary styles - to delete or change later */
+
+header {
+    padding: 1.5%;
+    background-color: #ec3527;
+}
+
+footer {
+    padding: 1.5%;
+    background-color: #d0b89e;
 }
