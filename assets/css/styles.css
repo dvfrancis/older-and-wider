@@ -8,15 +8,15 @@
 /* General styles */
 
 body {
-    background-color: #00a6a6;
+    background-color: #00a6a6; /* Temporary colour */
     font-family: "Manrope", serif;
     font-weight: 400;
     font-style: normal;
-    color: #FFF;
+    color: #FFF; /* Temporary colour */
 }
 
 h1 {
-    color: #FFF;
+    color: #FFF; /* Temporary colour */
     text-align: center;
     font-weight: 900;
     font-size: 2.5em;
@@ -40,7 +40,7 @@ h1 {
 
 .navbar a {
     text-decoration: none;
-    color: #FFF;
+    color: #FFF; /* Temporary colour */
 }
 
 .navbar a:link {
@@ -67,7 +67,7 @@ h1 {
     padding-left: 1%;
     font-size: 1.25em;
     display: inline;
-    color: #FFF;
+    color: #FFF; /* Temporary colour */
 }
 
 .active {
@@ -80,26 +80,22 @@ h1 {
 /* Footer */
 
 .socials {
-    padding-top: 0.1%;
+    padding-top: 0.1em;
     text-align: center;
 }
 
 .socials li {
-    padding: 0.4%;
-}
-
-.socials div {
+    padding: 0.5em;
+    margin: 0.5em;
     display: inline;
-    width: 50px;
-    height: 50px;
+    background-color: #003744; /* Temporary colour */
     border-radius: 50%;
-    background-color: #003744;
-    margin: 0 auto;
 }
 
 .socials i {
-    color:#FFF;
-    font-size: 30px;    
+    color:#FFF; /* Temporary colour */
+    width: 1em;
+    height: 1em;
 }
 
 .copyright {
@@ -111,10 +107,10 @@ h1 {
 
 header {
     padding: 1.5%;
-    background-color: #ec3527;
+    background-color: #ec3527; /* Temporary colour */
 }
 
 footer {
     padding: 1.5%;
-    background-color: #d0b89e;
+    background-color: #d0b89e; /* Temporary colour */
 }
