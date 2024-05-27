@@ -27,9 +27,21 @@
             </nav>
             </ul>
         </header>
-        <section>
-            <h2>Contact Page</h2>
-        </section>
+        <form method="GET" action="contact-completion.html" class="contact-form">
+            <h2>Get in touch!</h2>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" class="first-name" name="first_name" placeholder="Jenny" required>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" class="last-name" name="last_name" placeholder="Eclair" required>
+            <label for="age">Age</label>
+            <input type="text" id="age" class="age" name="age" placeholder="64 and a half" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" class="email" name="email_address" placeholder="olderwiderpod@gmail.com" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="10" cols="100" maxlength="1000" placeholder="Please enter your message for Jenny and Judith here"></textarea>
+            <input type="submit" class="send" value="Send">
+            <input type="reset" class="reset" value="Reset">
+        </form>
         <footer>
             <ul class="socials">
                 <li>
