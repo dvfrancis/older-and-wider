@@ -8,7 +8,7 @@ The purpose of this website is to give interested parties insights and informati
 
 TBA - a preview of the site on different devices will be provided here.
 
-## Live Link
+## Site Link
  
 TBA - a link to the live site will be provided here.
 
