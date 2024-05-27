@@ -6,11 +6,11 @@ The purpose of this website is to give interested parties insights and informati
 
 ## Preview
 
-A preview of the site on different devices will be provided here.
+TBA - a preview of the site on different devices will be provided here.
 
 ## Live Link
  
-A link to the live site will be provided here.
+TBA - a link to the live site will be provided here.
 
 ## UXD
 
