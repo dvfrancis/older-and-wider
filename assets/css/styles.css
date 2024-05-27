@@ -8,7 +8,7 @@
 /* General styles */
 
 body {
-    background-color: #008b84;
+    background-color: #00a6a6;
     font-family: "Manrope", serif;
     font-weight: 400;
     font-style: normal;
@@ -19,63 +19,95 @@ h1 {
     color: #FFF;
     text-align: center;
     font-weight: 900;
-    font-style: normal;
     font-size: 2.5em;
-    padding-bottom: 1.5%;
-
 }
 
-/* Sitewide logo */
+/* Header */
 
 .logo {
-    width: 150px;
+    width: 100px;
     margin: 0 auto;
 }
 
 .logo img {
-    width: 150px;
+    width: 100px;
+    padding: 1em 0 1.5em 0;
 }
 
-/* Navigation and social links */
-
-.navbar, .socials {
-    padding-top: 1%;
+.navbar {
     text-align: center;
 }
 
+.navbar a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.navbar a:link {
+    padding: 0.5em;
+    border-radius: 5%;
+    color: #FFF; /* Temporary colour */
+}
+
+.navbar a:hover {
+    padding: 0.5em;
+    border-radius: 5%;
+    color: #FFF;  /* Temporary colour */
+    background-color: green; /* Temporary colour */
+}
+
+.navbar a:active {
+    padding: 0.5em;
+    border-radius: 5%;
+    color: #FFF;  /* Temporary colour */
+    background-color: blue; /* Temporary colour */
+}
+
 .navbar li  {
-    padding-left: 5%;   
-    font-size: 1.5em;
+    padding-left: 1%;
+    font-size: 1.25em;
     display: inline;
+    color: #FFF;
+}
+
+.active {
+    padding: 0.5em;
+    border-radius: 5%;
+    color: #FFF;  /* Temporary colour */
+    background-color: blue; /* Temporary colour */
+}
+
+/* Footer */
+
+.socials {
+    padding-top: 0.1%;
+    text-align: center;
 }
 
 .socials li {
-    display: inline;
-    padding: 0.5%;
+    padding: 0.4%;
 }
 
-.socials i {
-    color:#FFF;
-    font-size: 2.5em;
-    border: 1px solid #008b84;
+.socials div {
+    display: inline;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: #003744;
+    margin: 0 auto;
 }
 
-.navbar a, .socials a {
-    text-decoration: none;
+.socials i {
+    color:#FFF;
+    font-size: 30px;    
 }
-
-/* Footer */
 
 .copyright {
     padding-top: 1%;
     text-align: center;
 }
 
-/* Temporary styles - to delete or change later */
+/* Temporary styles - to delete, change, or update later */
 
 header {
     padding: 1.5%;
