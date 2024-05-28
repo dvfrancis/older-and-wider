@@ -17,46 +17,49 @@
     <body>
         <header>
             <h1>The Older and Wider Podcast</h1>
-            <div class="logo"><a href="index.html"><img src="assets/images/header-logo.webp" alt="The Older and Wider Podcast logo shows a mug of tea with Jenny Eclair, Judith Holder, and Older and Wider printed on the side, a tea bag tag dangles down the side with the word podcast on it"></a></div>            
+            <div class="logo"><a href="index.html"><img src="assets/images/header-logo.webp" alt="The Older and Wider Podcast logo shows a mug of tea with Jenny Eclair, Judith Holder, and Older and Wider printed on the side, a tea bag tag dangles down the side with the word podcast written on it"></a></div>            
             <nav>
                 <ul class="navbar">
-                <li><a href="index.html" class="active" rel="start">Home</a></li>
+                <li><a href="index.html" rel="start">Home</a></li>
                 <li><a href="about.html" rel="related">About</a></li>
                 <li><a href="message-board.html" rel="related">Message Board</a></li>
-                <li><a href="contact.html" rel="related">Contact</a></li>
+                <li><a href="contact.html" class="active" rel="related">Contact</a></li>
             </nav>
             </ul>
         </header>
-        <form method="GET" action="contact-completion.html" class="contact-form">
-            <h2>Get in touch!</h2>
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" class="first-name" name="first_name" placeholder="Jenny" required>
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" class="last-name" name="last_name" placeholder="Eclair" required>
-            <label for="age">Age</label>
-            <input type="text" id="age" class="age" name="age" placeholder="64 and a half" required>
-            <label for="email">Email</label>
-            <input type="email" id="email" class="email" name="email_address" placeholder="olderwiderpod@gmail.com" required>
-            <label for="message">Message</label>
-            <textarea id="message" name="message"  maxlength="1000" placeholder="Please enter your message for Jenny and Judith here" cols="50" rows="5"></textarea>
-            <input type="submit" class="send" value="Send">
-            <input type="reset" class="reset" value="Reset">
+        <form method="GET" action="contact-completion.html" class="contact-form" aria-label="Contact Form">
+            <h2>Contact Us</h2>
+            <fieldset>
+                <legend>Get in touch!</legend>
+                <label for="first-name" id="first-name">First Name</label>
+                <input type="text" id="f-name" class="first-name" name="first_name" placeholder="Jenny" aria-labelledby="first-name" required>
+                <label for="last-name" id="last-name">Last Name</label>
+                <input type="text" id="l-name" class="last-name" name="last_name" placeholder="Eclair" aria-labelledby="last-name" required>
+                <label for="age" id="age">Age</label>
+                <input type="text" id="owl-age" class="age" name="age" placeholder="64 and a half" aria-labelledby="age" required>
+                <label for="email" id="email">Email</label>
+                <input type="email" id="owl-email" class="email" name="email_address" placeholder="olderwiderpod@gmail.com" aria-labelledby="email" required>
+                <label for="message" id="message">Message</label>
+                <textarea id="owl-message" name="message"  maxlength="1000" placeholder="Please enter your message for Jenny and Judith here" cols="50" rows="5" aria-labelledby="message"></textarea>
+                <input type="submit" class="send" value="Send" aria-label="Submit">
+                <input type="reset" class="reset" value="Reset" aria-label="Reset">
+            </fieldset>
         </form>
         <footer>
             <ul class="socials">
                 <li>
-                    <a href="https://www.instagram.com/olderandwiderpodcast/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/olderandwiderpodcast/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=61555198800248" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.facebook.com/profile.php?id=61555198800248" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
                 </li>
             </ul>
             <small>
-                <p class="copyright">&#169; 2024 Dominic Francis </p>
+                <p class="copyright" aria-label="Copyright">&#169; 2024 Dominic Francis </p>
             </small>
         </footer>        
     </body>
