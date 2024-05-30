@@ -39,10 +39,6 @@ h1 {
     font-size: 2.5em;
 }
 
-textarea {
-    overflow: auto;
-}
-
 /* Header */
 
 .logo {
@@ -212,6 +208,22 @@ textarea {
 
 /* Contact page */
 
+fieldset {
+    color: #000; /* Temporary colour */
+    background-color: bisque; /* Temporary colour */
+}
+
+legend {
+    color: #000; /* Temporary colour */
+    background-color: bisque; /* Temporary colour */
+}
+
+textarea {
+    overflow: auto;
+    color: #000; /* Temporary colour */ 
+    background-color: bisque; /* Temporary colour */
+}
+
 .contact-form {
     color: #000; /* Temporary colour */
     background-color: #FFF; /* Temporary colour */
@@ -219,20 +231,40 @@ textarea {
 
 .first-name {
     color: #000; /* Temporary colour */
+    background-color: bisque; /* Temporary colour */
+}
+
+.f-name {
+    color: #000; /* Temporary colour */
     background-color: #FFF; /* Temporary colour */
 }
 
 .last-name {
+    color: #000; /* Temporary colour */
+    background-color: bisque; /* Temporary colour */
+}
+
+.l-name {
     color: #000; /* Temporary colour */
     background-color: #FFF; /* Temporary colour */
 }
 
 .age {
     color: #000; /* Temporary colour */
+    background-color: bisque; /* Temporary colour */
+}
+
+.owl-age {
+    color: #000; /* Temporary colour */
     background-color: #FFF; /* Temporary colour */
 }
 
 .email {
+    color: #000; /* Temporary colour */
+    background-color: bisque; /* Temporary colour */
+}
+
+.owl-email {
     color: #000; /* Temporary colour */
     background-color: #FFF; /* Temporary colour */
 }
@@ -242,14 +274,18 @@ textarea {
     background-color: #FFF; /* Temporary colour */
 }
 
+#owl-message {
+    color: #000; /* Temporary colour */
+}
+
 .send {
     color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    background-color: pink; /* Temporary colour */
 }
 
 .reset {
     color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    background-color: pink; /* Temporary colour */
 }
 
 /* Contact Completion page */
