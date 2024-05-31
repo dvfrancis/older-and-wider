@@ -48,52 +48,52 @@ h1 {
 
 .logo img {
     width: 100px;
-    /* padding: 1em 0 1.5em 0; */
+    /*padding: 1em 0 1.5em 0; */
 }
 
-.navbar {
-    /* text-align: center; */
+ /* .navbar {
+    text-align: center;
     max-width: 35%;
     margin: 0 auto;
-}
+} 
 
 .navbar a {
     text-decoration: none;
-    color: #FFF; /* Temporary colour */
+    color: #FFF;
 }
 
 .navbar a:link {
     padding: 0.5em;
     border-radius: 5%;
-    color: #FFF; /* Temporary colour */
+    color: #FFF;
 }
 
 .navbar a:hover {
     padding: 0.5em;
     border-radius: 5%;
-    color: #FFF;  /* Temporary colour */
-    background-color: green; /* Temporary colour */
+    color: #FFF;
+    background-color: green;
 }
 
 .navbar a:active {
     padding: 0.5em;
     border-radius: 5%;
-    color: #FFF;  /* Temporary colour */
-    background-color: blue; /* Temporary colour */
+    color: #FFF;
+    background-color: blue;
 }
 
 .navbar li  {
     padding-left: 1%;
     font-size: 1.25em;
     display: inline;
-    color: #FFF; /* Temporary colour */
-}
+    color: #FFF;
+} */
 
 .active {
     padding: 0.5em;
     border-radius: 5%;
-    color: #FFF;  /* Temporary colour */
-    background-color: blue; /* Temporary colour */
+    color: #FFF;
+    background-color: blue;
 }
 
 /* Footer */
