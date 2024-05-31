@@ -1,42 +1,42 @@
 /* CSS reset */
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 /* Temporary styles - to delete, change, or update later */
 
 header {
-    padding: 1.5%;
-    background-color: #ec3527; /* Temporary colour */
+    /* padding: 1.5%;
+    background-color: #ec3527; Temporary colour */
 }
 
 footer {
-    padding: 1.5%;
-    background-color: #d0b89e; /* Temporary colour */
+    /* padding: 1.5%;
+    background-color: #d0b89e; Temporary colour */
 }
 
 section{
-    border: 10px solid black; /* Temporary border */
+    /* border: 10px solid black; Temporary border */
 }
 
 /* General styles */
 
 body {
     background-color: #00a6a6; /* Temporary colour */
-    font-family: "Manrope", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #FFF; /* Temporary colour */
+    /* font-family: "Manrope", serif; */
+    /* font-weight: 400; */
+    /* font-style: normal; */
+    color: #FFF;
 }
 
 h1 {
     color: #FFF; /* Temporary colour */
     text-align: center;
-    font-weight: 900;
-    font-size: 2.5em;
+    /* font-weight: 900;
+    font-size: 2.5em; */
 }
 
 /* Header */
@@ -48,11 +48,13 @@ h1 {
 
 .logo img {
     width: 100px;
-    padding: 1em 0 1.5em 0;
+    /* padding: 1em 0 1.5em 0; */
 }
 
 .navbar {
-    text-align: center;
+    /* text-align: center; */
+    max-width: 35%;
+    margin: 0 auto;
 }
 
 .navbar a {
@@ -116,7 +118,7 @@ h1 {
 }
 
 .copyright {
-    padding-top: 1%;
+    /* padding-top: 1%; */
     text-align: center;
 }
 
