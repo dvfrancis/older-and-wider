@@ -1,10 +1,10 @@
 /* CSS reset */
 
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+}
 
 /* Temporary styles - to delete, change, or update later */
 
@@ -18,14 +18,15 @@ footer {
     background-color: #d0b89e; Temporary colour */
 }
 
-section{
+section {
     /* border: 10px solid black; Temporary border */
 }
 
 /* General styles */
 
 body {
-    background-color: #00a6a6; /* Temporary colour */
+    background-color: #00a6a6;
+    /* Temporary colour */
     /* font-family: "Manrope", serif; */
     /* font-weight: 400; */
     /* font-style: normal; */
@@ -33,7 +34,8 @@ body {
 }
 
 h1 {
-    color: #FFF; /* Temporary colour */
+    color: #FFF;
+    /* Temporary colour */
     text-align: center;
     /* font-weight: 900;
     font-size: 2.5em; */
@@ -51,7 +53,7 @@ h1 {
     /*padding: 1em 0 1.5em 0; */
 }
 
- /* .navbar {
+/* .navbar {
     text-align: center;
     max-width: 35%;
     margin: 0 auto;
@@ -96,10 +98,6 @@ h1 {
     background-color: blue;
 }
 
-.live-logo {
-    width: 500px;
-}
-
 /* Footer */
 
 .socials {
@@ -111,12 +109,14 @@ h1 {
     padding: 0.5em;
     margin: 0.5em;
     display: inline;
-    background-color: #003744; /* Temporary colour */
-    border-radius: 50%;
+    background-color: #003744;
+    /* Temporary colour */
+    /* border-radius: 50%; */
 }
 
 .socials i {
-    color:#FFF; /* Temporary colour */
+    color: #FFF;
+    /* Temporary colour */
     width: 1em;
     height: 1em;
 }
@@ -129,211 +129,295 @@ h1 {
 /* Home (index) page */
 
 .merchandise {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .hero-image {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    width: 100%;
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .podcast-player {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .home-page-summary {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
+}
+
+.live-show-img {
+    width: 50%;
 }
 
 .live-show-details {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .mailing-list {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 /* About page */
 
 .podcast-overview {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .podcast-logo {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .judith-bio {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .judith-image {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .jenny-bio {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .jenny-image {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 /* Message Board page */
 
 .instagram-profile {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .note-1 {
-    color: #000; /* Temporary colour */
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 .note-2 {
-    color: #000; /* Temporary colour */
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 .note-3 {
-    color: #000; /* Temporary colour */
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 /* Contact page */
 
 fieldset {
-    color: #000; /* Temporary colour */
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 legend {
-    color: #000; /* Temporary colour */
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 textarea {
     overflow: auto;
-    color: #000; /* Temporary colour */ 
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 .contact-form {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .first-name {
-    color: #000; /* Temporary colour */
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 .f-name {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .last-name {
-    color: #000; /* Temporary colour */
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 .l-name {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .age {
-    color: #000; /* Temporary colour */
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 .owl-age {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .email {
-    color: #000; /* Temporary colour */
-    background-color: bisque; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: bisque;
+    /* Temporary colour */
 }
 
 .owl-email {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 #message {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 #owl-message {
-    color: #000; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
 }
 
 .send {
-    color: #000; /* Temporary colour */
-    background-color: pink; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: pink;
+    /* Temporary colour */
 }
 
 .reset {
-    color: #000; /* Temporary colour */
-    background-color: pink; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: pink;
+    /* Temporary colour */
 }
 
 /* Contact Completion page */
 
 .form-completion {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .form-message {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .form-section {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .form-links {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 /* Custom 404 page */
 
 .custom-error {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .error-message {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .error-section {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
 
 .error-links {
-    color: #000; /* Temporary colour */
-    background-color: #FFF; /* Temporary colour */
+    color: #000;
+    /* Temporary colour */
+    background-color: #FFF;
+    /* Temporary colour */
 }
