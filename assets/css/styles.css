@@ -3,7 +3,40 @@
 body {
     background-color: #00a6a6;
     color: #FFF;
+    font-family: "Manrope", serif;
+    font-weight: 400;
+    font-style: normal;
 }
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+a:link {
+    padding: 0.5em;
+    border-radius: 5%;
+}
+
+a:hover {
+    padding: 0.5em;
+    border-radius: 5%;
+    color: #FFF;
+    background-color: green;
+}
+
+a:active {
+    padding: 0.5em;
+    border-radius: 5%;
+    color: #FFF;
+    background-color: blue;
+}
+
+/* a:visited {
+    padding: 0.5em;
+    border-radius: 5%;
+    background-color: darksalmon;
+} */
 
 /* Header */
 
@@ -15,6 +48,7 @@ body {
 
 .logo img {
     width: 200px;
+    padding: 1em 0 1.5em 0;
 }
 
 .active {  
@@ -29,6 +63,24 @@ body {
 
 .live-show-img {
     width: 50%;
+}
+
+/* Footer */
+
+footer {
+    padding: 2%;
+}
+
+ul {
+    padding-top: 5%;
+}
+
+ul li {
+    list-style: none;
+}
+
+.copyright {
+    padding-top: 1%;
 }
 
 /* About page */
