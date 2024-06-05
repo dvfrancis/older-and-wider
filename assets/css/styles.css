@@ -1,5 +1,4 @@
 /* General */
-/* General */
 
 body {
     background-color: #00a6a6;
@@ -17,8 +16,6 @@ body {
 .logo img {
     width: 200px;
 }
-    width: 200px;
-}
 
 .active {  
     background-color: #00a6a6;
@@ -27,9 +24,15 @@ body {
 /* Home (index) page */
 
 .hero-image {
-    width: 100%;
+    width: 50%;
 }
 
 .live-show-img {
+    width: 50%;
+}
+
+/* About page */
+
+.podcast-overview img {
     width: 50%;
 }
