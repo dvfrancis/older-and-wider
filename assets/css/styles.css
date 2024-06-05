@@ -17,6 +17,8 @@ body {
 .logo img {
     width: 200px;
 }
+    width: 200px;
+}
 
 .active {  
     background-color: #00a6a6;
