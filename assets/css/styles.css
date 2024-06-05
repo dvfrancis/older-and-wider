@@ -1,4 +1,5 @@
 /* General */
+/* General */
 
 body {
     background-color: #00a6a6;
@@ -9,10 +10,13 @@ body {
 
 .logo {
     width: 200px;
+    width: 200px;
     margin: 0 auto;
 }
 
 .logo img {
+    width: 200px;
+}
     width: 200px;
 }
 
