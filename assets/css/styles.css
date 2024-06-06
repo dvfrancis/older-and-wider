@@ -1,3 +1,12 @@
+/* CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+
 /* General */
 
 body {
@@ -32,43 +41,50 @@ a:active {
     background-color: blue;
 }
 
-/* a:visited {
-    padding: 0.5em;
-    border-radius: 5%;
-    background-color: darksalmon;
-} */
+iframe {
+    display: block;
+    margin: 0 auto;
+}
 
 /* Header */
 
 .logo {
-    width: 200px;
-    width: 200px;
+    width: 150px;
+    width: 150px;
     margin: 0 auto;
 }
 
 .logo img {
-    width: 200px;
+    width: 150px;
     padding: 1em 0 1.5em 0;
 }
 
-.active {  
+.active {
     background-color: #00a6a6;
 }
 
 /* Home (index) page */
 
 .hero-image {
-    width: 50%;
+    width: 100%;
+}
+
+.feature {
+    border: 2px solid red;
+    background-color: black;
+    max-width: 95%;
 }
 
 .live-show-img {
     width: 50%;
 }
 
+.hero-image {}
+
 /* Footer */
 
 footer {
-    padding: 2%;
+    padding: 1%;
 }
 
 ul {
