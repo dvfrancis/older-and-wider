@@ -55,7 +55,7 @@
 
         <div class="row">
 
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 rounded-4 text-center feature mx-auto">
 
                 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top justify-content-center">
 
@@ -117,49 +117,75 @@
 
     </header>
 
-    <!-- Contact form, to be replaced with a Bootstrap form -->
+    <!-- Contact form -->
 
-    <form method="GET" action="contact-completion.html" class="contact-form" aria-label="Contact Form">
+    <section class="container-fluid">
 
-        <h2>Contact Us</h2>
+        <section class="row rounded-4 text-center feature mx-auto">
 
-        <fieldset>
+            <h2 class="text-center mb-4 mt-4">Contact Us</h2>
 
-            <legend>Get in touch!</legend>
+                <form method="GET" action="contact-completion.html" class="row mg-3 contact-form" aria-label="Contact Form">
 
-            <label for="first-name" id="first-name">First Name</label>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 text-center">
 
-            <input type="text" id="f-name" class="first-name" name="first_name" placeholder="Jenny"
-                aria-labelledby="first-name" required>
+                        <label for="first-name" id="first-name" class="form-label">First Name</label>
 
-            <label for="last-name" id="last-name">Last Name</label>
+                        <input type="text" id="f-name" class="form-control first-name" name="first_name" placeholder="Jenny" aria-labelledby="first-name" required>
 
-            <input type="text" id="l-name" class="last-name" name="last_name" placeholder="Eclair"
-                aria-labelledby="last-name" required>
+                    </div>
 
-            <label for="age" id="age">Age</label>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 text-center">
 
-            <input type="text" id="owl-age" class="age" name="age" placeholder="64 and a half" aria-labelledby="age"
-                required>
+                        <label for="last-name" id="last-name" class="form-label">Last Name</label>
 
-            <label for="email" id="email">Email</label>
+                        <input type="text" id="l-name" class="form-control last-name" name="last_name" placeholder="Eclair" aria-labelledby="last-name" required>
 
-            <input type="email" id="owl-email" class="email" name="email_address" placeholder="olderwiderpod@gmail.com"
-                aria-labelledby="email" required>
+                    </div>
 
-            <label for="message" id="message">Message</label>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 text-center">
 
-            <textarea id="owl-message" name="message" maxlength="1000"
-                placeholder="Please enter your message for Jenny and Judith here" cols="50" rows="5"
-                aria-labelledby="message"></textarea>
+                        <label for="age" id="age" class="form-label">Age</label>
 
-            <input type="submit" class="send" value="Send" aria-label="Submit">
+                        <input type="text" id="owl-age" class="form-control age" name="age" placeholder="64 and a half" aria-labelledby="age" required>
 
-            <input type="reset" class="reset" value="Reset" aria-label="Reset">
+                    </div>
 
-        </fieldset>
-        
-    </form>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 text-center">
+
+                        <label for="email" id="email" class="form-label">Email</label>
+
+                        <input type="email" id="owl-email" class="form-control email" name="email_address" placeholder="olderwiderpod@gmail.com" aria-labelledby="email" required>
+
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-4 text-center">
+
+                        <label for="message" id="message" class="form-label">Message</label>
+
+                        <textarea id="owl-message" name="message" maxlength="1000"
+                            placeholder="Please enter your message for Jenny and Judith here" cols="50" rows="5"
+                            aria-labelledby="message" class="form-control" required></textarea>
+
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 mb-4 text-center">
+
+                        <input type="submit" class="btn btn-primary send" value="Send" aria-label="Send">
+
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 mb-4 text-center">
+
+                        <input type="reset" class="btn btn-primary reset" value="Reset" aria-label="Reset">
+
+                    </div>
+
+                </form>
+
+        </section>
+
+    </section>
 
     <!-- Footer -->
 

@@ -103,6 +103,15 @@ ul li {
     width: 50%;
 }
 
+/* Contact page*/
+
+.contact-form {
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+
 /* Media queries for Bootstrap breakpoints */
 
 @media (min-width: 1400px) and (max-width: 1000000px) {
