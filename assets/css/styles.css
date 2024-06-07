@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
 
@@ -79,8 +79,6 @@ iframe {
     width: 50%;
 }
 
-.hero-image {}
-
 /* Footer */
 
 footer {
@@ -104,3 +102,49 @@ ul li {
 .podcast-overview img {
     width: 50%;
 }
+
+/* Media queries for Bootstrap breakpoints */
+
+@media (min-width: 1400px) and (max-width: 1000000px) {
+    body {
+        padding-top: 100px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    body {
+        padding-top: 90px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+        padding-top: 85px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        padding-top: 35px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    body {
+        padding-top: 25px;
+    }
+}
+
+
+@media (min-width: 0px) and (max-width: 575px) {
+    body {
+        padding-top: 25px;
+    }
+}
+
+
+
+
+
+
+
