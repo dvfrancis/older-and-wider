@@ -55,10 +55,6 @@ mark {
     vertical-align: middle;
 }
 
-section {
-    min-height: 50vh;
-}
-
 ul li {
     list-style: none;
 }
@@ -107,10 +103,6 @@ footer {
     padding: 1%;
 }
 
-footer ul {
-    padding-top: 5%;
-}
-
 footer ul li {
     list-style: none;
 }
@@ -131,8 +123,6 @@ footer ul li {
     width: 75%;
     margin: 0 auto;
 }
-
-
 
 /* Media queries for Bootstrap breakpoints */
 
@@ -156,20 +146,20 @@ footer ul li {
 
 @media (min-width: 768px) and (max-width: 991px) {
     body {
-        padding-top: 35px;
+        padding-top: 55px;
     }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
     body {
-        padding-top: 25px;
+        padding-top: 50px;
     }
 }
 
 
 @media (min-width: 0px) and (max-width: 575px) {
     body {
-        padding-top: 25px;
+        padding-top: 45px;
     }
 }
 
