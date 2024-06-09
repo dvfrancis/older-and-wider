@@ -6,7 +6,6 @@
     box-sizing: border-box;
 }
 
-
 /* General */
 
 body {
@@ -23,19 +22,19 @@ a {
 }
 
 a:link {
-    padding: 0.5em;
+    /* padding: 0.5em; */
     border-radius: 5%;
 }
 
 a:hover {
-    padding: 0.5em;
+    /* padding: 0.5em; */
     border-radius: 5%;
     color: #FFF;
     background-color: green;
 }
 
 a:active {
-    padding: 0.5em;
+    /* padding: 0.5em; */
     border-radius: 5%;
     color: #FFF;
     background-color: blue;
@@ -44,6 +43,16 @@ a:active {
 iframe {
     display: block;
     margin: 0 auto;
+}
+
+mark {
+    padding: 0;
+    background-color: #FFF;
+}
+
+::placeholder {
+    text-align: center;
+    vertical-align: middle;
 }
 
 /* Header */
@@ -66,17 +75,22 @@ iframe {
 /* Home (index) page */
 
 .hero-image {
-    width: 100%;
+    width: 75%;
 }
 
 .feature {
     border: 2px solid red;
     background-color: black;
-    max-width: 95%;
 }
 
 .live-show-img {
-    width: 50%;
+    width: 75%;
+}
+
+#live-dates li {
+    list-style-position: inside;
+    list-style-type: square;
+    text-align: left;
 }
 
 /* Footer */
@@ -85,11 +99,11 @@ footer {
     padding: 1%;
 }
 
-ul {
+footer ul {
     padding-top: 5%;
 }
 
-ul li {
+footer ul li {
     list-style: none;
 }
 
