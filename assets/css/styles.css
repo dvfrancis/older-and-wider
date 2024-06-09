@@ -55,6 +55,14 @@ mark {
     vertical-align: middle;
 }
 
+section {
+    min-height: 50vh;
+}
+
+ul li {
+    list-style: none;
+}
+
 /* Header */
 
 .logo {
