@@ -21,21 +21,12 @@ a {
     color: #FFF;
 }
 
-a:link {
-    /* padding: 0.5em; */
-    border-radius: 5%;
-}
-
 a:hover {
-    /* padding: 0.5em; */
-    border-radius: 5%;
     color: #FFF;
     background-color: green;
 }
 
 a:active {
-    /* padding: 0.5em; */
-    border-radius: 5%;
     color: #FFF;
     background-color: blue;
 }
@@ -76,6 +67,10 @@ ul li {
     background-color: #00a6a6;
 }
 
+.navbar div > a:hover {
+    background-color: transparent;
+}
+
 /* Home (index) page */
 
 .hero-image {
@@ -109,6 +104,16 @@ footer ul li {
 
 .copyright {
     padding-top: 1%;
+}
+
+footer li a:hover {
+    color: blue;
+    background-color: transparent;
+}
+
+footer small p > a:hover {
+    text-decoration: underline;
+    background-color: transparent;
 }
 
 /* About page */
