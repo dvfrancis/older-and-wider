@@ -106,8 +106,13 @@ footer ul li {
     padding-top: 1%;
 }
 
-footer li a:hover {
+li.facebook a:hover {
     color: blue;
+    background-color: transparent;
+}
+
+li.instagram a:hover {
+    color: fuchsia;
     background-color: transparent;
 }
 
