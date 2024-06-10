@@ -43,8 +43,8 @@ mark {
 
 ::placeholder {
     text-align: center;
-    vertical-align: middle;
-}
+    vertical-align: middle; 
+} /* align placeholder text on forms */
 
 ul li {
     list-style: none;
@@ -52,7 +52,7 @@ ul li {
 
 /* Header */
 
-.logo {
+/* .logo {
     width: 150px;
     width: 150px;
     margin: 0 auto;
@@ -61,15 +61,15 @@ ul li {
 .logo img {
     width: 150px;
     padding: 1em 0 1.5em 0;
-}
+} */
 
 .active {
     background-color: #00a6a6;
 }
 
 .navbar div > a:hover {
-    background-color: transparent;
-}
+    background-color: transparent; 
+} /* prevent hover colour on page title */
 
 /* Home (index) page */
 
