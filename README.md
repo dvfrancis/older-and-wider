@@ -2,15 +2,16 @@
 
 Older and Wider is a humorous (and [real](https://podcasts.apple.com/gb/podcast/older-and-wider-podcast/id1446310659)) podcast, where two friends chat and share their day-to-day experiences as “women of a certain age”. It is hosted by retired television producer, Judith Holder, and award-winning comedian, Jenny Eclair.
 
-The purpose of this website is to give interested parties insights and information about the podcast. Information provided will include an embedded podcst player, details on live events, and access to their popular Instagram page. It also provides a way to contact the podcast directly, share stories, and make suggestions for the show.
+The purpose of this website is to give interested parties insights and information about the podcast and will include an embedded podcast player, details on live events, and access to the popular Instagram page; it also provides a way to contact the podcast directly, share stories, and make suggestions for the show.
 
 ## Preview
 
 TBA - a preview of the site on different devices will be provided here.
 
 ## Site Link
- 
-TBA - a link to the live site will be provided here.
+
+[here]: https://dvfrancis.github.io/older-and-wider
+The live site can be accessed [here].
 
 ## UXD
 
@@ -22,8 +23,8 @@ TBA - a link to the live site will be provided here.
 
     - Women over 60 (but anyone welcome).
     - Mature individuals, with much life experience.
-    - May be grandparents.
-    - Might be working or retired.
+    - May have children and grandchildren.
+    - Might still be working or retired.
     - Anyone looking for information about the podcast.
 
 #### User Stories
@@ -55,7 +56,7 @@ TBA - a link to the live site will be provided here.
 
 - Browser Tab:
 
-    - A custom HTML favicon will be shown to aid users' identification of the site.
+    - A custom HTML favicon will be shown to aid users' identification of the site. It will also be shown whenever someone adds the site as a bookmark\favourite.
 
 - Header:
 
@@ -73,21 +74,20 @@ TBA - a link to the live site will be provided here.
 
 - Footer:
 
-    - Fixed at the bottom of each page - contains logo, social media, and copyright information.
+    - Fixed at the bottom of each page - contains logo, social media, and legal\copyright information.
     - The footer allows the user to jump to the social media properties of the podcast.
     - Plain background colour.
     - Logo in centre.
     - Social media icons in centre.
-    - Copyright information in the centre.
-    - On mouseover, each link will change colour.
+    - Legal information spread across the page.
+    - On mouseover, each social media icon will change to colour.
     - The footer is responsive to different device sizes.
 
 - Home (index):
 
     - The first page a user sees when they enter the site. Contains all pertinent information regarding the podcast, with links to other pages where required.
     - The 'Home' page allows the user to get a good overview of the purpose of the podcast and gives them glimpses of associated activities.
-    - Clickable banner appears beneath the header advertising the merchandise site (at the bottom of the page on mobile). When clicked it takes the user to the merchandise website (in a separate tab).
-    - Subtly-animated hero image area with picture of the hosts contains embedded podcast player (with highlight that it was nominated for The Listeners' Choice at the British Podcast Awards 2022).
+    - The page will feature a welcome area (with highlight that it was nominated for The Listeners' Choice at the British Podcast Awards 2022), podcast player, details about the live shows, link to an external merchandise website, and a mailing list signup form .
     - Overview section has three sections - one for the podcast, one for Jenny Eclair, and one for Judith Holder - containing brief summary, with links to more in-depth sections on the 'About' page. Each card flips from the picture to the written content on mouseover.
     - Background picture of the 'Older and Wider' logo features in the podcast section
     - Background pictures of Jenny and Judith feature in their individual sections.
@@ -120,6 +120,7 @@ TBA - a link to the live site will be provided here.
         - Age field (that allows fractions – also a running joke on the podcast).
         - Message field - for users to enter their message.
         - Send button - users click this button to send their message.
+        - Reset button - users click this button to clear any information already entered on the form.
     - Text input fields all have placeholder text.
     - All inputs are required.
     - Custom completion page appears once 'Submit' is clicked, with a link to return to the 'Home' page.
@@ -127,14 +128,20 @@ TBA - a link to the live site will be provided here.
 
 - Contact Completion:
 
-    - Custom completion page appears once 'Submit' is clicked on the Contact page, with a link to return to the 'Home' page.
+    - Custom completion page appears once 'Send' is clicked on the Contact page, with a link to return to the 'Home' page.
+    - After 30 seconds, the page will redirect automatically to the home page.
+    - The 'Contact Completion' page is responsive to different device sizes, and changes layout accordingly.
+ 
+- Mailing List Completion:
+
+    - Custom completion page appears once 'Send' is clicked on the mailing list sign up form on the home page, with suggested links to other pages on the site.
+    - After 30 seconds, the page will redirect automatically to the home page.
     - The 'Contact Completion' page is responsive to different device sizes, and changes layout accordingly.
 
 - Custom 404:
     - A custom 404 error page which appears when a user attempts to navigate to a non-existent page.
-    - The custom 404 error page will add humour to the site while also guiding the user back to the home page.
-    - It will say "That page does not exist - how boring! Snnnnnnnore Law has been invoked. Why not try one of these pages?" with suggested links.
-    - Themed around "Snore Law", a running joke on the podcast where the hosts make snoring noises at each other when something is considered too boring. 
+    - The custom 404 error page will add humour to the site while offering suggested links to other pages on the site.
+    - After 30 seconds, the page will redirect automatically to the home page.
     - The 'Custom 404 page' page is responsive to different device sizes, and changes layout accordingly.
 
 #### Future Features
