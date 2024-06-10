@@ -10,8 +10,7 @@ TBA - a preview of the site on different devices will be provided here.
 
 ## Site Link
 
-[here]: https://dvfrancis.github.io/older-and-wider
-The live site can be accessed [here]{:target="_blank"}.
+The live site can be accessed [here]([url_link](https://dvfrancis.github.io/older-and-wider)){:target="_blank"}.
 
 ## UXD
 
