@@ -2,7 +2,7 @@
 
 Older and Wider is a humorous (and [real](https://podcasts.apple.com/gb/podcast/older-and-wider-podcast/id1446310659)) podcast, where two friends chat and share their day-to-day experiences as “women of a certain age”. It is hosted by retired television producer, Judith Holder, and award-winning comedian, Jenny Eclair.
 
-The purpose of this website is to give interested parties insights and information about the podcast. Information provided will include download links, details on upcoming live events, and access to the popular Instagram page. It also provides a way to contact the podcast directly, to share stories, and make suggestions for the show.
+The purpose of this website is to give interested parties insights and information about the podcast. Information provided will include an embedded podcst player, details on live events, and access to their popular Instagram page. It also provides a way to contact the podcast directly, share stories, and make suggestions for the show.
 
 ## Preview
 
