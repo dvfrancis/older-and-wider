@@ -198,6 +198,8 @@ The live site can be accessed [here].
 
 #### Colours
 
+The following colours will be used to add interesting backgrounds to site sections, while white (#FFF) will be used for all contrasting text:
+
 ![colours](https://github.com/dvfrancis/older-and-wider/assets/30801098/2085c8f6-269d-427b-bb4a-20d0ed51ab30)
 
 #### Typography
