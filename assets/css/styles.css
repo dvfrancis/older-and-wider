@@ -11,9 +11,13 @@
 body {
     background-color: #00a6a6;
     color: #FFF;
-    font-family: "Manrope", serif;
+    font-family: "Pontano Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+h1 {
+    font-family: "Marcellus", sans-serif;
 }
 
 a {
@@ -53,7 +57,7 @@ ul li {
 /* Header */
 
 .navbar-brand img + span {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Gentium Book Plus", sans-serif;
 } /* target the navbar brand header text only, by using the adjacent sibling combinator */
 
 .active {
@@ -84,6 +88,8 @@ ul li {
     list-style-type: square;
     text-align: left;
 }
+
+
 
 /* Footer */
 
