@@ -198,7 +198,7 @@ The live site can be accessed [here].
 
 #### Colours
 
-- TBA
+![colours](https://github.com/dvfrancis/older-and-wider/assets/30801098/df92dc2b-7fa9-4fe4-858b-7776952b7186)
 
 #### Typography
 
