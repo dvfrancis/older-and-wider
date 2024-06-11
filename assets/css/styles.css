@@ -52,16 +52,9 @@ ul li {
 
 /* Header */
 
-/* .logo {
-    width: 150px;
-    width: 150px;
-    margin: 0 auto;
-}
-
-.logo img {
-    width: 150px;
-    padding: 1em 0 1.5em 0;
-} */
+.navbar-brand img + span {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} /* target the navbar brand header text only, by using the adjacent sibling combinator */
 
 .active {
     background-color: #00a6a6;
@@ -69,7 +62,7 @@ ul li {
 
 .navbar div > a:hover {
     background-color: transparent; 
-} /* prevent hover colour on page title */
+} /* prevent hover colour on page title using the child combinator */
 
 /* Home (index) page */
 
@@ -109,23 +102,23 @@ footer ul li {
 li.facebook a:hover {
     color: blue;
     background-color: transparent;
-}
+} /* set colour of facebook icon using the descendant combinator */
 
 li.instagram a:hover {
     color: fuchsia;
     background-color: transparent;
-}
+} /* set colour of instagram icon using the descendant combinator */
 
 footer small p > a:hover {
     text-decoration: underline;
     background-color: transparent;
-}
+} /* style legal text using the child combinator */
 
 /* About page */
 
 .podcast-overview img {
     width: 50%;
-}
+} /* set image size within the podcast overview section using the descendant combinator */
 
 /* Contact page*/
 
