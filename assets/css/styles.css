@@ -9,7 +9,7 @@
 /* General */
 
 body {
-    background-color: #00a6a6;
+    background-color: #007696;
     color: #FFF;
     font-family: "Pontano Sans", sans-serif;
     font-weight: 400;
@@ -25,24 +25,10 @@ a {
     color: #FFF;
 }
 
-a:hover {
-    color: #FFF;
-    background-color: green;
-}
-
-a:active {
-    color: #FFF;
-    background-color: blue;
-}
-
-iframe {
-    display: block;
-    margin: 0 auto;
-}
-
 mark {
     padding: 0;
-    background-color: #FFF;
+    background-color: #cf9d00;
+    color: #FFF;
 }
 
 ::placeholder {
@@ -50,32 +36,93 @@ mark {
     vertical-align: middle; 
 } /* align placeholder text on forms */
 
-ul li {
-    list-style: none;
+/* Utility classes */
+
+.emerald {
+    background-color: rgba(1, 108, 98, 1);
 }
+
+.teal {
+    background-color: rgba(0, 118, 150, 1);
+}
+
+.raspberry {
+    background-color: rgba(163, 0, 65, 1);
+}
+
+.orange {
+    background-color: rgba(229, 61, 0, 1);
+}
+
+.mustard {
+    background-color: rgba(207, 157, 0, 1);
+}
+
+.btn-info, .btn-primary {
+    --bs-btn-bg: #cf9d00;
+    --bs-btn-color: #FFF;
+    --bs-btn-border-color: #cf9d00;
+    --bs-btn-hover-color: #FFF;
+    --bs-btn-hover-bg: #e53d00;
+    --bs-btn-hover-border-color: #e53d00;
+    --bs-btn-focus-shadow-rgb: 11, 172, 204;
+    --bs-btn-active-color: #FFF;
+    --bs-btn-active-bg: #a30041;
+    --bs-btn-active-border-color: #a30041;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #016c62;
+    --bs-btn-disabled-border-color: #016c62;
+} /* customised Bootstrap buttons */
 
 /* Header */
 
-.navbar-brand img + span {
-    font-family: "Gentium Book Plus", sans-serif;
-} /* target the navbar brand header text only, by using the adjacent sibling combinator */
+a.nav-link:hover {
+    background-color: #e53d00;
+    color:#FFF;
+} /* hover over navbar menu item*/
+
+a.nav-link:active {
+    background-color: #a30041;
+    color: #FFF;
+} /* clicked navbar menu item*/
 
 .active {
-    background-color: #00a6a6;
-}
+    background-color: #cf9d00;
+    color: #FFF !important;
+} /* currently active page indicator*/
+
+.bg-body-tertiary {
+    background-color: rgba(1, 108, 98, 1) !important;
+} /* navbar background */
+
+.navbar-toggler {
+    --bs-navbar-toggler-border-color: #FFF;
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    color: #FFF;
+} /* hamburger menu colours*/
+
+.navbar-brand img + span {
+    font-family: "Gentium Book Plus", sans-serif;
+    color: #FFF;
+} /* target the navbar brand header text only, by using the adjacent sibling combinator */
 
 .navbar div > a:hover {
     background-color: transparent; 
 } /* prevent hover colour on page title using the child combinator */
 
+li.nav-item a {
+    color: #FFF;
+} /* set colour for navbar list items */
+
 /* Home (index) page */
 
 .hero-image {
-    width: 75%;
+    width: 60%;
 }
 
 .live-show-img {
-    width: 75%;
+  width: 35%
 }
 
 #live-dates li {
@@ -84,20 +131,17 @@ ul li {
     text-align: left;
 }
 
-
-
 /* Footer */
 
 footer {
-    padding: 1%;
+    position: fixed;
+    height: 100px;
+    left: 0;
+    bottom: 0; 
 }
 
 footer ul li {
     list-style: none;
-}
-
-.legal {
-    padding-top: 1%;
 }
 
 li.facebook a:hover {
@@ -133,30 +177,35 @@ footer small p > a:hover {
 @media (min-width: 1400px) and (max-width: 1000000px) {
     body {
         padding-top: 100px;
+        margin-bottom: 75px;
     }
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
     body {
         padding-top: 90px;
+        margin-bottom: 75px;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
         padding-top: 85px;
+        margin-bottom: 75px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     body {
         padding-top: 55px;
+        margin-bottom: 75px;
     }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
     body {
         padding-top: 50px;
+        margin-bottom: 75px;
     }
 }
 
@@ -164,6 +213,7 @@ footer small p > a:hover {
 @media (min-width: 0px) and (max-width: 575px) {
     body {
         padding-top: 45px;
+        margin-bottom: 75px;
     }
 }
 
