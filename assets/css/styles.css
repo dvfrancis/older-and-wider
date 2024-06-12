@@ -9,7 +9,7 @@
 /* General */
 
 body {
-    background-color: #007696;
+    background-color: #FFF;
     color: #FFF;
     font-family: "Pontano Sans", sans-serif;
     font-weight: 400;
@@ -33,7 +33,23 @@ mark {
 
 ::placeholder {
     text-align: center;
-} /* align placeholder text on forms */
+}
+
+/* align placeholder text on forms */
+
+ul li>a:hover {
+    background-color: #016c62;
+    color: #FFF;
+}
+
+/* hover over link item colour */
+
+ul li>a:active {
+    background-color: #007696;
+    color: #FFF;
+}
+
+/* clicked link item colour */
 
 /* Utility classes */
 
@@ -57,7 +73,19 @@ mark {
     background-color: rgba(207, 157, 0, 1);
 }
 
-.btn-info, .btn-primary {
+.note {
+    background-color: rgb(255, 255, 136);
+    color: #000;
+    text-wrap: wrap;
+    text-align: center;
+    height: 250px;
+    width: 250px;
+}
+
+/* Post-It note */
+
+.btn-info,
+.btn-primary {
     --bs-btn-bg: #cf9d00;
     --bs-btn-color: #FFF;
     --bs-btn-border-color: #cf9d00;
@@ -72,47 +100,66 @@ mark {
     --bs-btn-disabled-color: #000;
     --bs-btn-disabled-bg: #016c62;
     --bs-btn-disabled-border-color: #016c62;
-} /* customised Bootstrap buttons */
+}
+
+/* customised Bootstrap buttons */
 
 /* Header */
 
 a.nav-link:hover {
     background-color: #e53d00;
-    color:#FFF;
-} /* hover over navbar menu item*/
+    color: #FFF;
+}
+
+/* hover over navbar menu item colour */
 
 a.nav-link:active {
     background-color: #a30041;
     color: #FFF;
-} /* clicked navbar menu item*/
+}
+
+/* clicked navbar menu item colour */
 
 .active {
     background-color: #cf9d00;
     color: #FFF !important;
-} /* currently active page indicator*/
+}
+
+/* currently active page indicator colour */
 
 .bg-body-tertiary {
-    background-color: rgba(1, 108, 98, 1) !important;
-} /* navbar background */
+    background-color: #007696 !important;
+}
+
+/* navbar background colour */
 
 .navbar-toggler {
     --bs-navbar-toggler-border-color: #FFF;
     --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     color: #FFF;
-} /* hamburger menu colours*/
+}
 
-.navbar-brand img + span {
+/* hamburger menu colours*/
+
+div a span {
     font-family: "Gentium Book Plus", sans-serif;
     color: #FFF;
-} /* target the navbar brand header text only, by using the adjacent sibling combinator */
+    font-size: 1.5em;
+}
 
-.navbar div > a:hover {
-    background-color: transparent; 
-} /* prevent hover colour on page title using the child combinator */
+/* target the navbar brand header text only, by using the adjacent sibling combinator */
+
+.navbar div>a:hover {
+    background-color: transparent;
+}
+
+/* prevent hover colour on page title using the child combinator */
 
 li.nav-item a {
     color: #FFF;
-} /* set colour for navbar list items */
+}
+
+/* set colour for navbar list items */
 
 /* Home (index) page */
 
@@ -121,7 +168,7 @@ li.nav-item a {
 }
 
 .live-show-img {
-  width: 35%
+    width: 35%
 }
 
 #live-dates li {
@@ -136,7 +183,7 @@ footer {
     position: fixed;
     height: 100px;
     left: 0;
-    bottom: 0; 
+    bottom: 0;
 }
 
 footer ul li {
@@ -144,25 +191,33 @@ footer ul li {
 }
 
 li.facebook a:hover {
-    color: blue;
+    color: #1877F2;
     background-color: transparent;
-} /* set colour of facebook icon using the descendant combinator */
+}
+
+/* set colour of facebook icon using the descendant combinator */
 
 li.instagram a:hover {
-    color: fuchsia;
+    color: #c13584;
     background-color: transparent;
-} /* set colour of instagram icon using the descendant combinator */
+}
 
-footer small p > a:hover {
+/* set colour of instagram icon using the descendant combinator */
+
+footer small p>a:hover {
     text-decoration: underline;
     background-color: transparent;
-} /* style legal text using the child combinator */
+}
+
+/* style legal text using the child combinator */
 
 /* About page */
 
 .podcast-overview img {
     width: 50%;
-} /* set image size within the podcast overview section using the descendant combinator */
+}
+
+/* set image size within the podcast overview section using the descendant combinator */
 
 /* Contact page*/
 
@@ -175,50 +230,43 @@ footer small p > a:hover {
 
 @media (min-width: 1400px) and (max-width: 1000000px) {
     body {
-        padding-top: 100px;
-        margin-bottom: 75px;
+        padding-top: 120px;
+        margin-bottom: 145px;
     }
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
     body {
-        padding-top: 90px;
-        margin-bottom: 75px;
+        padding-top: 120px;
+        margin-bottom: 145px;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
-        padding-top: 85px;
-        margin-bottom: 75px;
+        padding-top: 120px;
+        margin-bottom: 145px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     body {
-        padding-top: 55px;
-        margin-bottom: 75px;
+        padding-top: 100px;
+        margin-bottom: 145px;
     }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
     body {
-        padding-top: 50px;
-        margin-bottom: 75px;
+        padding-top: 100px;
+        margin-bottom: 145px;
     }
 }
 
 
 @media (min-width: 0px) and (max-width: 575px) {
     body {
-        padding-top: 45px;
-        margin-bottom: 75px;
+        padding-top: 100px;
+        margin-bottom: 145px;
     }
 }
-
-
-
-
-
-
-
