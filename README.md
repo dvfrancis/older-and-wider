@@ -202,7 +202,10 @@ The following colours will be used to add interesting backgrounds to site sectio
 
 ![colours](https://github.com/dvfrancis/older-and-wider/assets/30801098/2085c8f6-269d-427b-bb4a-20d0ed51ab30)
 
-For the social media icons I used ![Facebook Dark Blue](https://brandpalettes.com/facebook-colors/) (#1877F2) and ![Instagram Rose](https://brandpalettes.com/instagram-color-codes) (#c13584).
+[Facebook Dark Blue]:https://brandpalettes.com/facebook-colors
+[Instagram Rose]: https://brandpalettes.com/instagram-color-codes
+
+For the social media icons I used [Facebook Dark Blue] (#1877F2) and [Instagram Rose] (#c13584).
 
 #### Typography
 
