@@ -205,7 +205,7 @@ The following colours will be used to add interesting backgrounds to site sectio
 [Facebook Dark Blue]:https://brandpalettes.com/facebook-colors
 [Instagram Rose]: https://brandpalettes.com/instagram-color-codes
 
-For the social media icons I used [Facebook Dark Blue] (#1877F2) and [Instagram Rose] (#c13584).
+For the social media icons I used [Facebook Dark Blue] (#0165E1) and [Instagram Rose] (#E1306C).
 
 #### Typography
 
