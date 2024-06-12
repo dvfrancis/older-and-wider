@@ -191,14 +191,14 @@ footer ul li {
 }
 
 li.facebook a:hover {
-    color: #1877F2;
+    color: #0165E1;
     background-color: transparent;
 }
 
 /* set colour of facebook icon using the descendant combinator */
 
 li.instagram a:hover {
-    color: #c13584;
+    color: #E1306C;
     background-color: transparent;
 }
 
