@@ -33,7 +33,6 @@ mark {
 
 ::placeholder {
     text-align: center;
-    vertical-align: middle; 
 } /* align placeholder text on forms */
 
 /* Utility classes */
