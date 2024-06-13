@@ -31,25 +31,23 @@ mark {
     color: #FFF;
 }
 
+/* Align placeholder text on forms */
+
 ::placeholder {
     text-align: center;
 }
 
-/* align placeholder text on forms */
+/* Hover over link item colour */
 
 ul li>a:hover {
     background-color: #016c62;
     color: #FFF;
 }
 
-/* hover over link item colour */
-
 ul li>a:active {
     background-color: #007696;
     color: #FFF;
 }
-
-/* clicked link item colour */
 
 /* Utility classes */
 
@@ -73,6 +71,8 @@ ul li>a:active {
     background-color: rgba(207, 157, 0, 1);
 }
 
+/* Post-It note */
+
 .note {
     background-color: rgb(255, 255, 136);
     color: #000;
@@ -82,7 +82,7 @@ ul li>a:active {
     width: 250px;
 }
 
-/* Post-It note */
+/* Customised Bootstrap buttons */
 
 .btn-info,
 .btn-primary {
@@ -102,36 +102,36 @@ ul li>a:active {
     --bs-btn-disabled-border-color: #016c62;
 }
 
-/* customised Bootstrap buttons */
-
 /* Header */
+
+/* Hover over navbar menu item colour */
 
 a.nav-link:hover {
     background-color: #e53d00;
     color: #FFF;
 }
 
-/* hover over navbar menu item colour */
+/* Clicked navbar menu item colour */
 
 a.nav-link:active {
     background-color: #a30041;
     color: #FFF;
 }
 
-/* clicked navbar menu item colour */
+/* Currently active page indicator colour */
 
 .active {
     background-color: #cf9d00;
     color: #FFF !important;
 }
 
-/* currently active page indicator colour */
+/* Navbar background colour */
 
 .bg-body-tertiary {
     background-color: #007696 !important;
 }
 
-/* navbar background colour */
+/* Hamburger menu colours*/
 
 .navbar-toggler {
     --bs-navbar-toggler-border-color: #FFF;
@@ -139,7 +139,7 @@ a.nav-link:active {
     color: #FFF;
 }
 
-/* hamburger menu colours*/
+/* Target the navbar brand header text only, by using the adjacent sibling combinator */
 
 div a span {
     font-family: "Gentium Book Plus", sans-serif;
@@ -147,19 +147,17 @@ div a span {
     font-size: 1.5em;
 }
 
-/* target the navbar brand header text only, by using the adjacent sibling combinator */
+/* Remove hover colour on page title using the child combinator */
 
 .navbar div>a:hover {
     background-color: transparent;
 }
 
-/* prevent hover colour on page title using the child combinator */
+/* Set colour for navbar list items */
 
 li.nav-item a {
     color: #FFF;
 }
-
-/* set colour for navbar list items */
 
 /* Home (index) page */
 
@@ -190,34 +188,34 @@ footer ul li {
     list-style: none;
 }
 
+/* Set colour of Facebook icon using the descendant combinator */
+
 li.facebook a:hover {
     color: #0165E1;
     background-color: transparent;
 }
 
-/* set colour of facebook icon using the descendant combinator */
+/* Set colour of Instagram icon using the descendant combinator */
 
 li.instagram a:hover {
     color: #E1306C;
     background-color: transparent;
 }
 
-/* set colour of instagram icon using the descendant combinator */
+/* Style legal text in footer, using the child combinator */
 
-footer small p>a:hover {
+footer small p>a {
     text-decoration: underline;
     background-color: transparent;
 }
 
-/* style legal text using the child combinator */
-
 /* About page */
+
+/* Set image size within the podcast overview section using the descendant combinator */
 
 .podcast-overview img {
     width: 50%;
 }
-
-/* set image size within the podcast overview section using the descendant combinator */
 
 /* Contact page*/
 
