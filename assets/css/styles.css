@@ -255,14 +255,14 @@ footer small p>a {
 
 @media (min-width: 768px) and (max-width: 991px) {
     body {
-        padding-top: 220px;
+        padding-top: 190px;
         margin-bottom: 145px;
     }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
     body {
-        padding-top: 220px;
+        padding-top: 190px;
         margin-bottom: 145px;
     }
 }
