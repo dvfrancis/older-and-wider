@@ -1,4 +1,4 @@
-/* CSS Reset */
+/* CSS RESET */
 
 * {
     margin: 0;
@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-/* General */
+/* GENERAL */
 
 body {
     background-color: #FFF;
@@ -234,35 +234,35 @@ footer small p>a {
 
 @media (min-width: 1400px) and (max-width: 1000000px) {
     body {
-        padding-top: 120px;
+        padding-top: 190px;
         margin-bottom: 145px;
     }
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
     body {
-        padding-top: 120px;
+        padding-top: 180px;
         margin-bottom: 145px;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
-        padding-top: 120px;
+        padding-top: 180px;
         margin-bottom: 145px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     body {
-        padding-top: 100px;
+        padding-top: 220px;
         margin-bottom: 145px;
     }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
     body {
-        padding-top: 100px;
+        padding-top: 220px;
         margin-bottom: 145px;
     }
 }
@@ -270,7 +270,7 @@ footer small p>a {
 
 @media (min-width: 0px) and (max-width: 575px) {
     body {
-        padding-top: 100px;
+        padding-top: 210px;
         margin-bottom: 145px;
     }
 }
