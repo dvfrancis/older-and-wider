@@ -16,7 +16,7 @@ body {
     font-style: normal;
 }
 
-h1 {
+h1, h2 {
     font-family: "Marcellus", sans-serif;
 }
 
@@ -102,7 +102,7 @@ ul li>a:active {
     --bs-btn-disabled-border-color: #016c62;
 }
 
-/* Header */
+/* HEADER */
 
 /* Hover over navbar menu item colour */
 
@@ -141,10 +141,11 @@ a.nav-link:active {
 
 /* Target the navbar brand header text only, by using the adjacent sibling combinator */
 
-div a span {
+div div h1 {
     font-family: "Gentium Book Plus", sans-serif;
     color: #FFF;
     font-size: 1.5em;
+    text-align: center;
 }
 
 /* Remove hover colour on page title using the child combinator */
@@ -159,7 +160,12 @@ li.nav-item a {
     color: #FFF;
 }
 
-/* Home (index) page */
+.row>* {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* HOME (INDEX) PAGE */
 
 .hero-image {
     width: 60%;
@@ -175,7 +181,7 @@ li.nav-item a {
     text-align: left;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer {
     position: fixed;
