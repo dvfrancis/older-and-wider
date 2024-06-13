@@ -270,7 +270,7 @@ footer small p>a {
 
 @media (min-width: 0px) and (max-width: 575px) {
     body {
-        padding-top: 210px;
+        padding-top: 180px;
         margin-bottom: 145px;
     }
 }
