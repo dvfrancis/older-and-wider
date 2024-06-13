@@ -190,23 +190,34 @@ footer {
     bottom: 0;
 }
 
-footer ul li {
-    list-style: none;
-}
+/* Social media icons */
 
-/* Set colour of Facebook icon using the descendant combinator */
+.fa {
+    padding: 5px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+  }
 
-li.facebook a:hover {
-    color: #0165E1;
-    background-color: transparent;
-}
+  .fa-facebook {
+    background: #0165E1;
+    color: white;
+  }  
+  
+  .fa-instagram {
+    background: #E1306C;
+    color: white;
+  }
+  
+  .fa:hover {
+      background-color: #e53d00;
+  } 
 
-/* Set colour of Instagram icon using the descendant combinator */
-
-li.instagram a:hover {
-    color: #E1306C;
-    background-color: transparent;
-}
+  .fa:active {
+    background-color: #a30041;
+} 
 
 /* Style legal text in footer, using the child combinator */
 
@@ -215,7 +226,7 @@ footer small p>a {
     background-color: transparent;
 }
 
-/* About page */
+/* ABOUT PAGE */
 
 /* Set image size within the podcast overview section using the descendant combinator */
 
@@ -223,14 +234,16 @@ footer small p>a {
     width: 50%;
 }
 
-/* Contact page*/
+/* CONTACT PAGE */
 
 .contact-form {
     width: 75%;
     margin: 0 auto;
 }
 
-/* Media queries for Bootstrap breakpoints */
+/* MEDIA QUERIES
+
+/* For Bootstrap breakpoint extra extra large (xxl) */
 
 @media (min-width: 1400px) and (max-width: 1000000px) {
     body {
@@ -239,12 +252,16 @@ footer small p>a {
     }
 }
 
+/* For Bootstrap breakpoint extra large (xl) */
+
 @media (min-width: 1200px) and (max-width: 1399px) {
     body {
         padding-top: 180px;
         margin-bottom: 145px;
     }
 }
+
+/* For Bootstrap breakpoint large (lg) */
 
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
@@ -253,6 +270,8 @@ footer small p>a {
     }
 }
 
+/* For Bootstrap breakpoint medium (md) */
+
 @media (min-width: 768px) and (max-width: 991px) {
     body {
         padding-top: 190px;
@@ -260,12 +279,16 @@ footer small p>a {
     }
 }
 
+/* For Bootstrap breakpoint small (sm) */
+
 @media (min-width: 576px) and (max-width: 767px) {
     body {
         padding-top: 190px;
         margin-bottom: 145px;
     }
 }
+
+/* For Bootstrap breakpoint extra small (none) */
 
 
 @media (min-width: 0px) and (max-width: 575px) {
