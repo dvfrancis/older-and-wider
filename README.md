@@ -211,8 +211,7 @@ For the social media icons I used [Facebook Dark Blue] (#0165E1) and [Instagram 
 
 - Fonts were obtained from Google Fonts, and are applied as follows:
   
-    - For the navbar text it is [Gentium Book Plus](https://fonts.google.com/specimen/Gentium+Book+Plus).
-    - For H1 tags it is [Marcellus](https://fonts.google.com/specimen/Marcellus).
+    - For H1 and H2 tags it is [Marcellus](https://fonts.google.com/specimen/Marcellus).
     - For all other body text it is [Pontano Sans](https://fonts.google.com/specimen/Pontano+Sans).
 
 #### Imagery
