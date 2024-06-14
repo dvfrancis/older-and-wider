@@ -202,22 +202,37 @@ footer {
   }
 
   .fa-facebook {
-    background: #0165E1;
-    color: white;
+    background: #FFF;
+    color: #007696;
   }  
   
   .fa-instagram {
-    background: #E1306C;
-    color: white;
+    background: #FFF;
+    color: #007696;
   }
   
-  .fa:hover {
-      background-color: #e53d00;
+  .fa-instagram:hover {
+      background-color: #C13584;
+      border: none;
+      color: #FFF;
   } 
 
-  .fa:active {
-    background-color: #a30041;
+  .fa-instagram:active {
+    background-color: #E1306C;
+    color: #FFF;
 } 
+
+  .fa-facebook:hover {
+    background-color: #0165E1;
+    border: none;
+    color: #FFF;
+} 
+
+  .fa-facebook:active {
+    background-color: #17A9FD;
+    color: #FFF;
+}
+
 
 /* Style legal text in footer, using the child combinator */
 
