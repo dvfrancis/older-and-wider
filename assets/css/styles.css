@@ -278,6 +278,27 @@ footer small p>a {
 
 /* ABOUT PAGE */
 
+.podcast-info-card {
+    background-color: #a30041;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+.judith-info-card {
+    background-color: #016c62;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+.jenny-info-card {
+    background-color: #e53d00;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
 /* Set image size within the podcast overview section using the descendant combinator */
 
 .podcast-overview img {
