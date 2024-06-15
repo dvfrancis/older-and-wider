@@ -1,0 +1,24 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [{
+            "label": "git",
+            "type": "shell",
+            "command": "git config --global user.email 30801098+dvfrancis@users.noreply.github.com"
+        },
+
+        {
+            "label": "git",
+            "type": "shell",
+            "command": "git commit --amend --reset-author"
+        },
+
+        {
+            "label": "git",
+            "type": "shell",
+            "command": "python3 -m http.server"
+        }
+
+    ]
+}
