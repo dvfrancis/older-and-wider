@@ -3,22 +3,32 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [{
-            "label": "SetUserEmail",
+            "label": "Set Git Email",
             "type": "shell",
-            "command": "git config --global user.email 30801098+dvfrancis@users.noreply.github.com"
+            "command": "git config --global user.email '30801098+dvfrancis@users.noreply.github.com'",
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
         },
-
         {
-            "label": "SetAuthor",
+            "label": "Git Amend Author",
             "type": "shell",
-            "command": "git commit --amend --reset-author"
+            "command": "git commit --amend --reset-author",
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
         },
-
         {
-            "label": "RunWebServer",
+            "label": "Start HTTP Server",
             "type": "shell",
-            "command": "python3 -m http.server"
+            "command": "python3 -m http.server",
+            "isBackground": true,
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
         }
-
     ]
 }
