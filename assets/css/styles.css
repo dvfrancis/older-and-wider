@@ -16,7 +16,8 @@ body {
     font-style: normal;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: "Marcellus", sans-serif;
 }
 
@@ -181,6 +182,41 @@ li.nav-item a {
     width: 35%
 }
 
+.intro-card {
+    background-color: #cf9d00;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+.podcast-card {
+    background-color: #007696;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+.live-card {
+    background-color: #016c62;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+.merch-card {
+    background-color: #a30041;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+.list-card {
+    background-color: #e53d00;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
 /* FOOTER */
 
 footer {
@@ -199,36 +235,36 @@ footer {
     height: 30px;
     border-radius: 50%;
     text-align: center;
-  }
+}
 
-  .fa-facebook {
+.fa-facebook {
     background: #FFF;
     color: #007696;
-  }  
-  
-  .fa-instagram {
+}
+
+.fa-instagram {
     background: #FFF;
     color: #007696;
-  }
-  
-  .fa-instagram:hover {
-      background-color: #C13584;
-      border: none;
-      color: #FFF;
-  } 
+}
 
-  .fa-instagram:active {
+.fa-instagram:hover {
+    background-color: #C13584;
+    border: none;
+    color: #FFF;
+}
+
+.fa-instagram:active {
     background-color: #E1306C;
     color: #FFF;
-} 
+}
 
-  .fa-facebook:hover {
+.fa-facebook:hover {
     background-color: #0165E1;
     border: none;
     color: #FFF;
-} 
+}
 
-  .fa-facebook:active {
+.fa-facebook:active {
     background-color: #17A9FD;
     color: #FFF;
 }
