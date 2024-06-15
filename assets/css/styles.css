@@ -233,7 +233,6 @@ footer {
     color: #FFF;
 }
 
-
 /* Style legal text in footer, using the child combinator */
 
 footer small p>a {
