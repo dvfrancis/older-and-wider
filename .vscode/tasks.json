@@ -3,19 +3,19 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [{
-            "label": "git",
+            "label": "Set User Email",
             "type": "shell",
             "command": "git config --global user.email 30801098+dvfrancis@users.noreply.github.com"
         },
 
         {
-            "label": "git",
+            "label": "Set Author",
             "type": "shell",
             "command": "git commit --amend --reset-author"
         },
 
         {
-            "label": "git",
+            "label": "Run Web Server",
             "type": "shell",
             "command": "python3 -m http.server"
         }
