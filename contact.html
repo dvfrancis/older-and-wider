@@ -26,7 +26,9 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Marcellus&family=Pontano+Sans:wght@300..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Marcellus&family=Pontano+Sans:wght@300..700&display=swap"
+        rel="stylesheet">
 
     <!--Link to Fontawesome-->
 
@@ -49,14 +51,14 @@
 
     <!-- Header and navigation -->
 
-    <header class="container-fluid mb-5 fixed-top">
+    <header class="container-fluid fixed-top">
 
         <div class="row teal">
 
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-3">
 
                 <h1 class="fs-2 fw-bold"><a href="index.html" rel="bookmark">The Older and Wider Podcast</a></h1>
-                
+
             </div>
 
         </div>
@@ -123,115 +125,137 @@
 
     <section class="container-fluid">
 
-        <section class="row text-center emerald">
+        <section class="row text-center px-5">
 
-            <h2 class="display-6 text-center fw-bold mb-4 mt-5">Get In Touch</h2>
+            <div class="contact-card mx-auto">
 
-                <form method="GET" action="contact-completion.html" class="row mg-3 contact-form" aria-label="Contact Form">
+                <div class="card-body">
 
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 p-2 mb-4 text-center">
+                    <h2 class="display-6 text-center fw-bold p-5">Get In Touch</h2>
 
-                        <label for="f-name" id="first-name" class="fs-5 form-label mb-4">First Name</label>
+                    <form method="GET" action="contact-completion.html" class="row contact-form"
+                        aria-label="Contact Form">
 
-                        <input type="text" id="f-name" class="form-control first-name fs-5" name="first_name" placeholder="Enter your first name" aria-labelledby="first-name" autocomplete="given-name" required>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 p-2 mb-4 text-center">
 
-                    </div>
+                            <label for="f-name" id="first-name" class="fs-5 form-label mb-4">First Name</label>
 
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 p-2 mb-4 text-center">
+                            <input type="text" id="f-name" class="form-control first-name fs-5" name="first_name"
+                                placeholder="Enter your first name" aria-labelledby="first-name"
+                                autocomplete="given-name" required>
 
-                        <label for="l-name" id="last-name" class="form-label fs-5 mb-4">Last Name</label>
+                        </div>
 
-                        <input type="text" id="l-name" class="form-control fs-5" name="last_name" placeholder="Enter your last name" aria-labelledby="last-name" autocomplete="family-name" required>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 p-2 mb-4 text-center">
 
-                    </div>
+                            <label for="l-name" id="last-name" class="form-label fs-5 mb-4">Last Name</label>
 
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 p-2 mb-4 text-center">
+                            <input type="text" id="l-name" class="form-control fs-5" name="last_name"
+                                placeholder="Enter your last name" aria-labelledby="last-name"
+                                autocomplete="family-name" required>
 
-                        <label for="owl-age" id="age" class="form-label mb-4 fs-5">Age</label>
+                        </div>
 
-                        <input type="text" id="owl-age" class="form-control fs-5" name="age" placeholder="Enter your age (with fractions)" aria-labelledby="age" required>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 p-2 mb-4 text-center">
 
-                    </div>
+                            <label for="owl-age" id="age" class="form-label mb-4 fs-5">Age</label>
 
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 p-2 mb-4 text-center">
+                            <input type="text" id="owl-age" class="form-control fs-5" name="age"
+                                placeholder="Enter your age (with fractions)" aria-labelledby="age" required>
 
-                        <label for="owl-email" id="email" class="form-label fs-5 mb-4">Email</label>
+                        </div>
 
-                        <input type="email" id="owl-email" class="form-control fs-5" name="email_address" placeholder="Enter your email address" aria-labelledby="email" autocomplete="email" required>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 p-2 mb-4 text-center">
 
-                    </div>
+                            <label for="owl-email" id="email" class="form-label fs-5 mb-4">Email</label>
 
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-2 mb-4 text-center">
+                            <input type="email" id="owl-email" class="form-control fs-5" name="email_address"
+                                placeholder="Enter your email address" aria-labelledby="email" autocomplete="email"
+                                required>
 
-                        <label for="owl-message" id="message" class="form-label fs-5 mb-4">Message</label>
+                        </div>
 
-                        <textarea id="owl-message" name="message" maxlength="1000"
-                            placeholder="Enter your message for Jenny and Judith" cols="50" rows="5"
-                            aria-labelledby="message" class="form-control fs-5" required></textarea>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-2 mb-4 text-center">
 
-                    </div>
+                            <label for="owl-message" id="message" class="form-label fs-5 mb-4">Message</label>
 
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 p-2 mb-2 text-center">
+                            <textarea id="owl-message" name="message" maxlength="1000"
+                                placeholder="Enter your message for Jenny and Judith" cols="50" rows="5"
+                                aria-labelledby="message" class="form-control fs-5" required></textarea>
 
-                        <input type="submit" class="fs-5 btn btn-primary btn-sm send pt-2 pb-2" value="Send" aria-label="Send">
+                        </div>
 
-                    </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center mb-4">
 
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 p-2 mb-4 text-center">
+                            <input type="submit" class="fs-5 btn btn-primary btn-sm send" value="Send"
+                                aria-label="Send">
 
-                        <input type="reset" class="fs-5 btn btn-primary btn-sm reset pt-2 pb-2 mb-3" value="Reset" aria-label="Reset">
+                        </div>
 
-                    </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
 
-                </form>
+                            <input type="reset" class="fs-5 btn btn-primary btn-sm reset" value="Reset"
+                                aria-label="Reset">
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
 
         </section>
 
     </section>
 
-        <!-- Footer -->
+    <!-- Footer -->
 
-        <footer class="container-fluid teal">
+    <footer class="container-fluid teal">
 
-            <!-- Social media links -->
-    
-            <div class="row">
-        
-                <div class="col text-end mt-3 my-3 mx-2">
-    
-                    <a href="https://www.instagram.com/olderandwiderpodcast/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="fa fa-instagram"></a>
-    
-                </div>
-    
-                <div class="col text-start mt-3 my-3 mx-2">
-    
-                    <a href="https://www.facebook.com/profile.php?id=61555198800248" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="fa fa-facebook"></a>
-    
-                </div>
-    
+        <!-- Social media links -->
+
+        <div class="row">
+
+            <div class="col text-end my-3 mx-2">
+
+                <a href="https://www.instagram.com/olderandwiderpodcast/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram" class="fa fa-instagram"></a>
+
             </div>
-            
-            <div class="row mb-5">
-    
-                <!-- Legal and copyright information -->
-    
-                <small class="col text-center">
-    
-                    <p aria-label="Legal and copyright"> &#169; 2024, <a href="https://www.dominicfrancis.co.uk/"
-                        target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">Dominic Francis</a> (<a href="https://shows.acast.com/older-and-wider-podcast" rel="external"
-                            target="_blank">Older & Wider</a> is hosted by <a href="https://www.acast.com"
-                            rel="external" target="_blank">Acast</a>)</p>
-    
-                    </p>
-    
-                </small>
-    
-        </footer>
+
+            <div class="col text-start mt-3 my-3 mx-2">
+
+                <a href="https://www.facebook.com/profile.php?id=61555198800248" target="_blank"
+                    rel="noopener noreferrer" aria-label="Facebook" class="fa fa-facebook"></a>
+
+            </div>
+
+        </div>
+
+        <div class="row mb-5">
+
+            <!-- Legal and copyright information -->
+
+            <small class="col text-center">
+
+                <p aria-label="Legal and copyright"> &#169; 2024, <a href="https://www.dominicfrancis.co.uk/"
+                        target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">Dominic Francis</a> (<a
+                        href="https://shows.acast.com/older-and-wider-podcast" rel="external" target="_blank">Older &
+                        Wider</a> is hosted by <a href="https://www.acast.com" rel="external" target="_blank">Acast</a>)
+                </p>
+
+                </p>
+
+            </small>
+
+    </footer>
 
     <!--Link to Bootstrap JavaScript-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
 </body>
 
