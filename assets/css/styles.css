@@ -285,7 +285,21 @@ footer small p>a {
     color: #FFF;
 }
 
+.podcast-carousel-card {
+    background-color: #a30041;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
 .judith-info-card {
+    background-color: #016c62;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+.judith-carousel-card {
     background-color: #016c62;
     border: solid 1px #FFF;
     border-radius: 20px;
@@ -299,10 +313,26 @@ footer small p>a {
     color: #FFF;
 }
 
+.jenny-carousel-card {
+    background-color: #e53d00;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
 /* Set image size within the podcast overview section using the descendant combinator */
 
 .podcast-overview img {
     width: 50%;
+}
+
+/* MESSAGE BOARD PAGE */
+
+.mb-card {
+    background-color: #cf9d00;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
 }
 
 /* CONTACT PAGE */
@@ -310,6 +340,22 @@ footer small p>a {
 .contact-form {
     width: 75%;
     margin: 0 auto;
+}
+
+.contact-card {
+    background-color: #016c62;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+/* 404 PAGE */
+
+.error-card {
+    background-color: #a30041;
+    border: solid 1px #FFF;
+    border-radius: 20px;
+    color: #FFF;
 }
 
 /* MEDIA QUERIES
