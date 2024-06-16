@@ -1,13 +1,4 @@
-/* CSS RESET */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* GENERAL */
-
+/* General */
 body {
     background-color: #FFF;
     color: #FFF;
@@ -26,70 +17,22 @@ a {
     color: #FFF;
 }
 
-mark {
-    padding: 0;
-    background-color: #cf9d00;
-    color: #FFF;
-}
-
 ul li {
     list-style-position: inside;
     text-align: center;
 }
 
 /* Align placeholder text on forms */
-
 ::placeholder {
     text-align: center;
 }
 
-/* Hover over link item colour */
-
-ul li>a:hover {
-    background-color: #016c62;
-    color: #FFF;
-}
-
-ul li>a:active {
-    background-color: #007696;
-    color: #FFF;
-}
-
 /* Utility classes */
-
-.emerald {
-    background-color: rgba(1, 108, 98, 1);
-}
-
 .teal {
     background-color: rgba(0, 118, 150, 1);
 }
 
-.raspberry {
-    background-color: rgba(163, 0, 65, 1);
-}
-
-.orange {
-    background-color: rgba(229, 61, 0, 1);
-}
-
-.mustard {
-    background-color: rgba(207, 157, 0, 1);
-}
-
-/* Post-It note */
-
-.note {
-    background-color: rgb(255, 255, 136);
-    color: #000;
-    text-wrap: wrap;
-    text-align: center;
-    height: 250px;
-    width: 250px;
-}
-
 /* Customised Bootstrap buttons */
-
 .btn-info,
 .btn-primary {
     --bs-btn-bg: #cf9d00;
@@ -109,79 +52,73 @@ ul li>a:active {
     border-width: 2px;
     padding: 0.5%;
     width: 200px;
-    height: 50px;
+    /* height: 50px; */
 }
 
 /* HEADER */
 
-/* Hover over navbar menu item colour */
+/* Default navbar menu item style*/
+a.nav-link {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+    color: #FFF;
+}
 
+/* Visited navbar menu item colour*/
+a.nav-link:visited {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+    color: #FFF;
+}
+
+/* Hover over navbar menu item colour */
 a.nav-link:hover {
     background-color: #e53d00;
     color: #FFF;
+    border-radius: 10px;
 }
 
 /* Clicked navbar menu item colour */
-
 a.nav-link:active {
     background-color: #a30041;
     color: #FFF;
+    border-radius: 10px;
 }
 
 /* Currently active page indicator colour */
-
 .active {
     background-color: #cf9d00;
     color: #FFF !important;
+    border-radius: 10px;
 }
 
 /* Navbar background colour */
-
 .bg-body-tertiary {
     background-color: #007696 !important;
 }
 
 /* Hamburger menu colours*/
-
 .navbar-toggler {
     --bs-navbar-toggler-border-color: #FFF;
     --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     color: #FFF;
 }
 
-/* Target the navbar brand header text only, by using the adjacent sibling combinator */
-
-div div h1 {
+/* Target the header title */
+header h1 {
     text-align: center;
 }
 
-/* Remove hover colour on page title using the child combinator */
-
-.navbar div>a:hover {
-    background-color: transparent;
-}
-
 /* Set colour for navbar list items */
-
 li.nav-item a {
     color: #FFF;
 }
 
-.row>* {
-    padding-left: 0;
-    padding-right: 0;
-}
-
 /* HOME (INDEX) PAGE */
 
-.hero-image {
-    width: 60%;
-}
-
-.live-show-img {
-    width: 35%
-}
-
+/* Page sections */
 .intro-card {
     background-color: #cf9d00;
     border: solid 1px #FFF;
@@ -217,67 +154,9 @@ li.nav-item a {
     color: #FFF;
 }
 
-/* FOOTER */
-
-footer {
-    position: fixed;
-    height: 100px;
-    left: 0;
-    bottom: 0;
-}
-
-/* Social media icons */
-
-.fa {
-    padding: 5px;
-    font-size: 20px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    text-align: center;
-}
-
-.fa-facebook {
-    background: #FFF;
-    color: #007696;
-}
-
-.fa-instagram {
-    background: #FFF;
-    color: #007696;
-}
-
-.fa-instagram:hover {
-    background-color: #C13584;
-    border: none;
-    color: #FFF;
-}
-
-.fa-instagram:active {
-    background-color: #E1306C;
-    color: #FFF;
-}
-
-.fa-facebook:hover {
-    background-color: #0165E1;
-    border: none;
-    color: #FFF;
-}
-
-.fa-facebook:active {
-    background-color: #17A9FD;
-    color: #FFF;
-}
-
-/* Style legal text in footer, using the child combinator */
-
-footer small p>a {
-    text-decoration: underline;
-    background-color: transparent;
-}
-
 /* ABOUT PAGE */
 
+/* Page sections*/
 .podcast-info-card {
     background-color: #a30041;
     border: solid 1px #FFF;
@@ -320,14 +199,9 @@ footer small p>a {
     color: #FFF;
 }
 
-/* Set image size within the podcast overview section using the descendant combinator */
-
-.podcast-overview img {
-    width: 50%;
-}
-
 /* MESSAGE BOARD PAGE */
 
+/* Page sections */
 .mb-card {
     background-color: #cf9d00;
     border: solid 1px #FFF;
@@ -337,11 +211,7 @@ footer small p>a {
 
 /* CONTACT PAGE */
 
-.contact-form {
-    width: 75%;
-    margin: 0 auto;
-}
-
+/* Page sections */
 .contact-card {
     background-color: #016c62;
     border: solid 1px #FFF;
@@ -349,8 +219,14 @@ footer small p>a {
     color: #FFF;
 }
 
+.contact-form {
+    width: 75%;
+    margin: 0 auto;
+}
+
 /* 404 PAGE */
 
+/* Page sections */
 .error-card {
     background-color: #a30041;
     border: solid 1px #FFF;
@@ -358,59 +234,105 @@ footer small p>a {
     color: #FFF;
 }
 
+/* FOOTER */
+
+/* Social media icons */
+.fa {
+    padding: 5px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* Instagram icon*/
+.fa-instagram {
+    background: #FFF;
+    color: #007696;
+}
+
+.fa-instagram:hover {
+    background-color: #C13584;
+    border: none;
+    color: #FFF;
+}
+
+.fa-instagram:active {
+    background-color: #E1306C;
+    color: #FFF;
+}
+
+/* Facebook icon */
+.fa-facebook {
+    background: #FFF;
+    color: #007696;
+}
+
+.fa-facebook:hover {
+    background-color: #0165E1;
+    border: none;
+    color: #FFF;
+}
+
+.fa-facebook:active {
+    background-color: #17A9FD;
+    color: #FFF;
+}
+
+/* Style legal text in footer */
+
+.smallprint {
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.smallprint:hover {
+    color: #cf9d00;
+    text-decoration: none;
+}
+
 /* MEDIA QUERIES
 
-/* For Bootstrap breakpoint extra extra large (xxl) */
-
-@media (min-width: 1400px) and (max-width: 1000000px) {
-    body {
-        padding-top: 190px;
-        margin-bottom: 145px;
-    }
-}
-
-/* For Bootstrap breakpoint extra large (xl) */
-
-@media (min-width: 1200px) and (max-width: 1399px) {
+/* For Bootstrap breakpoint extra small (none) */
+@media (max-width: 575px) {
     body {
         padding-top: 180px;
-        margin-bottom: 145px;
-    }
-}
-
-/* For Bootstrap breakpoint large (lg) */
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    body {
-        padding-top: 180px;
-        margin-bottom: 145px;
-    }
-}
-
-/* For Bootstrap breakpoint medium (md) */
-
-@media (min-width: 768px) and (max-width: 991px) {
-    body {
-        padding-top: 190px;
-        margin-bottom: 145px;
     }
 }
 
 /* For Bootstrap breakpoint small (sm) */
-
 @media (min-width: 576px) and (max-width: 767px) {
     body {
         padding-top: 190px;
-        margin-bottom: 145px;
     }
 }
 
-/* For Bootstrap breakpoint extra small (none) */
+/* For Bootstrap breakpoint medium (md) */
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        padding-top: 190px;
+    }
+}
 
-
-@media (min-width: 0px) and (max-width: 575px) {
+/* For Bootstrap breakpoint large (lg) */
+@media (min-width: 992px) and (max-width: 1199px) {
     body {
         padding-top: 180px;
-        margin-bottom: 145px;
+    }
+}
+
+
+/* For Bootstrap breakpoint extra large (xl) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    body {
+        padding-top: 180px;
+    }
+}
+
+/* For Bootstrap breakpoint extra extra large (xxl) */
+@media (min-width: 1400px) {
+    body {
+        padding-top: 190px;
     }
 }
