@@ -89,15 +89,15 @@ a.nav-link:hover {
 /* Clicked navbar menu item colour */
 a.nav-link:active {
     background-color: #FFF;
-    color:#000 !important;
+    color:#000;
     border-radius: 10px;
     border: 2px solid #000;
 }
 
 /* Currently active page indicator colour */
-.selected {
+a.selected {
     background-color: #007696;
-    color: #FFF !important;
+    color: #FFF;
     border-radius: 10px;
     border: 2px solid #FFF;
 }
