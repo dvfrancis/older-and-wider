@@ -66,7 +66,7 @@ a.nav-link {
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 10px;
-    border: 2px solid #007696;
+    border: 2px solid transparent;
     color: #FFF;
 }
 
@@ -95,7 +95,7 @@ a.nav-link:active {
 }
 
 /* Currently active page indicator colour */
-.active-link {
+.selected {
     background-color: #007696;
     color: #FFF !important;
     border-radius: 10px;
