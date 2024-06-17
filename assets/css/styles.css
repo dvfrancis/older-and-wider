@@ -22,6 +22,10 @@ ul li {
     text-align: center;
 }
 
+iframe {
+
+}
+
 /* Align placeholder text on forms */
 ::placeholder {
     text-align: center;
