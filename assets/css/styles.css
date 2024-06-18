@@ -4,12 +4,16 @@ body {
     color: #FFF;
     font-family: "Pontano Sans", sans-serif;
     font-weight: 400;
-    font-style: normal;
 }
 
 h1,
 h2 {
     font-family: "Marcellus", sans-serif;
+}
+
+main > h2 {
+    color:#007696;
+    font-weight: bolder;
 }
 
 a {
@@ -33,7 +37,7 @@ iframe {
 
 /* Utility classes */
 .teal {
-    background-color: rgba(0, 118, 150, 1);
+    background-color: #007696;
 }
 
 /* Customised Bootstrap buttons */
