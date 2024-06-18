@@ -43,6 +43,14 @@ ul li {
     background-color: #007696;
 }
 
+.raspberry {
+    background-color: #a30041;
+}
+
+.emerald {
+    background-color: #016c62;
+}
+
 /* Customised Bootstrap buttons */
 .btn-info,
 .btn-primary {
@@ -110,7 +118,7 @@ a.selected {
 
 /* Navbar background colour */
 .bg-body-tertiary {
-    background-color: #007696 !important;
+    background-color: rgb(0, 118, 150) !important;
 }
 
 /* Hamburger menu colours*/
@@ -172,11 +180,16 @@ li.nav-item a {
     width: 100px;
 }
 
+/* MAILING LIST COMPLETION PAGE */
+
+.custom-img {
+    border-radius: 20px;
+}
+
 /* ABOUT PAGE */
 
 /* Page sections*/
-.podcast-info-card {
-    background-color: #016c62;
+.podcast-info-card, .judith-info-card, .jenny-info-card {
     border: solid 1px #FFF;
     border-radius: 20px;
     color: #FFF;
@@ -184,23 +197,19 @@ li.nav-item a {
 
 .judith-info-card {
     background-color: #a30041;
-    border: solid 1px #FFF;
-    border-radius: 20px;
-    color: #FFF;
 }
 
-.jenny-info-card {
-    background-color: #016c62;
-    border: solid 1px #FFF;
-    border-radius: 20px;
-    color: #FFF;
+.podcast-info-card, .jenny-info-card {
+    background-color: rgb(1, 108, 98);
 }
 
-.jenny-carousel-card {
-    background-color: #016c62;
-    border: solid 1px #FFF;
+.carousel-inner {
     border-radius: 20px;
+}
+
+.carousel-caption > p {
     color: #FFF;
+    border-radius: 20px;
 }
 
 /* MESSAGE BOARD PAGE */
