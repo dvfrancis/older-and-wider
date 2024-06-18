@@ -7,7 +7,6 @@
 
 /* General */
 body {
-    /* background-color: #FFF; */
     color: #FFF;
     font-family: "Pontano Sans", sans-serif;
     font-weight: 400;
@@ -16,11 +15,6 @@ body {
 h1,
 h2 {
     font-family: "Marcellus", sans-serif;
-}
-
-main>h2 {
-    color: #007696;
-    font-weight: bolder;
 }
 
 a {
@@ -36,6 +30,11 @@ ul li {
 /* Align placeholder text on forms */
 ::placeholder {
     text-align: center;
+}
+
+/* Round corners of images on custom pages */
+.custom-img {
+    border-radius: 20px;
 }
 
 /* Utility classes */
@@ -118,7 +117,7 @@ a.selected {
 
 /* Navbar background colour */
 .bg-body-tertiary {
-    background-color: rgb(0, 118, 150) !important;
+    background-color: #007696 !important;
 }
 
 /* Hamburger menu colours*/
@@ -180,12 +179,6 @@ li.nav-item a {
     width: 100px;
 }
 
-/* MAILING LIST COMPLETION PAGE */
-
-.custom-img {
-    border-radius: 20px;
-}
-
 /* ABOUT PAGE */
 
 /* Page sections*/
@@ -203,10 +196,12 @@ li.nav-item a {
     background-color: rgb(1, 108, 98);
 }
 
+/* Round the corners of all carousels */
 .carousel-inner {
     border-radius: 20px;
 }
 
+/* Round the corners of all carousel captions */
 .carousel-caption > p {
     color: #FFF;
     border-radius: 20px;
