@@ -220,6 +220,10 @@ For the Instagram social media icon I used [Instagram Rose (#E1306C) and Instagr
 
 - TBA
 
+## Caveats
+
+- A list of useful points regarding the podcast will be added here, to explain the references on the live site.
+
 ## Testing
 
 
