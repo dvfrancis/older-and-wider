@@ -274,7 +274,7 @@ li.nav-item a {
 /* Facebook icon */
 .fa-facebook {
     background: #FFF;
-    color: #007696;
+    color: rgb(0, 118, 150);
 }
 
 .fa-facebook:hover {
