@@ -181,7 +181,9 @@ li.nav-item a {
 /* ABOUT PAGE */
 
 /* Page sections*/
-.podcast-info-card, .judith-info-card, .jenny-info-card {
+.podcast-info-card,
+.judith-info-card,
+.jenny-info-card {
     border: solid 1px #FFF;
     border-radius: 20px;
     color: #FFF;
@@ -191,7 +193,8 @@ li.nav-item a {
     background-color: #a30041;
 }
 
-.podcast-info-card, .jenny-info-card {
+.podcast-info-card,
+.jenny-info-card {
     background-color: rgb(1, 108, 98);
 }
 
@@ -201,7 +204,7 @@ li.nav-item a {
 }
 
 /* Round the corners of all carousel captions */
-.carousel-caption > p {
+.carousel-caption>p {
     color: #FFF;
     border-radius: 20px;
 }
