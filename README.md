@@ -1,17 +1,17 @@
 # The Older and Wider Podcast
 
-Older and Wider is a humorous (and [real](https://podcasts.apple.com/gb/podcast/older-and-wider-podcast/id1446310659)) podcast, where two friends chat and share their day-to-day experiences as “women of a certain age”. It is hosted by retired television producer, Judith Holder, and award-winning comedian, Jenny Eclair.
+Older and Wider is a humorous (and [real](https://shows.acast.com/older-and-wider-podcast)) podcast, where two friends chat and share their day-to-day experiences as “women of a certain age”. It is hosted by retired television producer/writer, Judith Holder, and award-winning comedian, Jenny Eclair.
 
-The purpose of this website is to give interested parties insights and information about the podcast and will include an embedded podcast player, details on live events, and access to the popular Instagram page; it also provides a way to contact the podcast directly, share stories, and make suggestions for the show.
+The purpose of the website is to give interested parties insights and information about the podcast, and will include an embedded podcast player, details on live events, and access to the popular Instagram page; it also provides a way to contact the podcast directly, share stories, and make suggestions for the show.
 
-## Preview
+## Site Preview
 
-TBA - a preview of the site on different devices will be provided here.
+![Preview of the Older & Wider website at different screen sizes](assets/images/site-preview.webp)
 
 ## Site Link
 
 [here]: https://dvfrancis.github.io/older-and-wider
-The live site can be accessed [here].
+The Github Pages live site can be accessed [here].
 
 ## UXD
 
@@ -22,10 +22,19 @@ The live site can be accessed [here].
 - Target audience
 
     - Women over 60 (but anyone welcome).
-    - Mature individuals, with much life experience.
+    - Are mature individuals, with lots of life experience.
     - May have children and grandchildren.
     - Might still be working or retired.
-    - Anyone looking for information about the podcast.
+    - Could be anyone looking for information about the podcast.
+ 
+### User Expectations
+
+- An accessible and responsive website.
+- Easy access to relevant information.
+- A standardised navigation system on each page.
+- A way to get in touch with the podcast, to share experiences.
+- An experience that matches existing expectations of what to expect from a website; for example, links are easy to identify and function as expected.
+- An appealing visual design that is kind to the eyes.
 
 #### User Stories
 
@@ -54,99 +63,95 @@ The live site can be accessed [here].
 
 #### Existing Features
 
-- Browser Tab:
+- Browser Tab Icon:
 
-    - A custom HTML favicon will be shown to aid users' identification of the site. It will also be shown whenever someone adds the site as a bookmark\favourite.
+    - A custom HTML favicon will be shown to aid users' identification of the site. It will also appear whenever someone adds the site as a bookmark or favourite.
 
 - Header:
 
     - Fixed at the top of each page - contains logo and navigation.
     - The header allows the user to identify where they are on the site.
     - Plain background colour.
-    - Logo in centre - links back to the home page when clicked.
-    - Nav bar in centre:
+    - Site name will be centred in the first row, and link back to the home page when clicked.
+    - Navigation bar will be centred in the second row, beneath the site name:
         - Home - takes the user back to the home page when clicked.
         - About - takes the user to a page with information about the podcast and both hosts.
-        - Message Board - takes the user to a page with the podcast Instagram profile embedded in the page.
-        - Contact - takes the user to a contact form that can be completed and sent to the podcast hosts.
-    - Clicked links are highlighted to show the current active page.
-    - The header is responsive to different device sizes.
+        - Message Board - takes the user to a page with the podcast's embedded Instagram profile.
+        - Contact - takes the user to a contact form that can be completed to send a message to the podcast hosts.
+    - The currently active page is indicated on the navigation bar.
+    - The header is responsive to different device sizes, and changes layout accordingly.
 
 - Footer:
 
-    - Fixed at the bottom of each page - contains logo, social media, and legal\copyright information.
-    - The footer allows the user to jump to the social media properties of the podcast.
+    - Fixed at the bottom of each page - contains the social media icons, and legal\copyright information.
+    - The footer allows the user to jump to the social media properties of the podcast (on a new page).
     - Plain background colour.
-    - Logo in centre.
-    - Social media icons in centre.
-    - Legal information spread across the page.
-    - On mouseover, each social media icon will change to colour.
-    - The footer is responsive to different device sizes.
+    - Social media icons are centred in the first row.
+    - Legal information is centred in the second row.
+    - On mouseover, each social media icon will change to colour, and also when clicked.
+    - The footer is responsive to different device sizes, and changes layout accordingly.
 
 - Home (index):
 
-    - The first page a user sees when they enter the site. Contains all pertinent information regarding the podcast, with links to other pages where required.
+    - This is the first page a user sees when they enter the site. It contains all pertinent information regarding the podcast, with links to other pages where required.
     - The 'Home' page allows the user to get a good overview of the purpose of the podcast and gives them glimpses of associated activities.
-    - The page will feature a welcome area (with highlight that it was nominated for The Listeners' Choice at the British Podcast Awards 2022), podcast player, details about the live shows, link to an external merchandise website, and a mailing list signup form .
-    - Overview section has three sections - one for the podcast, one for Jenny Eclair, and one for Judith Holder - containing brief summary, with links to more in-depth sections on the 'About' page. Each card flips from the picture to the written content on mouseover.
-    - Background picture of the 'Older and Wider' logo features in the podcast section
-    - Background pictures of Jenny and Judith feature in their individual sections.
-    - Live shows section has details about upcoming live shows, using the 'Older and Wider Live' logo.
-    - Mailing list section give the user the opportunity to sign-up for the website newsletter.
+    - The page will feature an introduction to the podcast featuring a carousel of images, podcast player, details about the live shows, link to an external merchandise website, and a mailing list signup form.
+    - The live shows section has details about upcoming live shows, with a link to buy available tickets.
+    - The merchandise section has a link that takes the user to the merchandise website (in a new tab).
+    - In the mailing list section, the user has the opportunity to sign-up for a regularly released newsletter.
     - The 'Home' page is responsive to different device sizes, and changes layout accordingly.
+
+- Mailing List Completion:
+
+    - A custom completion page appears once 'Send' is clicked on the mailing list signup form on the home page, with suggested links to other parts of the site.
+    - After 30 seconds, the page will redirect automatically to the home page.
+    - The mailing list completion page is responsive to different device sizes, and changes layout accordingly.
 
 - About:
 
-    - This section contains more detailed information (as listed below).
-    - The 'About' page allows the user a deeper dive into the podcast purpose and the people behind it. It helps the user to understand the motivations behind the creation and continuation of the podcast.
+    - This section contains more detailed information, with a "deeper dive" into the podcast's purpose and the people behind it. It helps the user to understand the motivations behind the creation and continuation of the podcast.
     - Sections:
-        - Detailed information about the podcast.
-        - Extended biography of Jenny Eclair.
-        - Extended biography of Judith Holder.
+        - Information about the podcast.
+        - Biography of Jenny Eclair.
+        - Biography of Judith Holder.
     - The 'About' page is responsive to different device sizes, and changes layout accordingly.
 
 - Message Board:
 
-    - Funny sticky notes, including a note explaining why it's called the message Board (this is a running joke on the podcast - they will look like Post-It Notes sent from podcast producer, Daisy, to Jenny and Judith).
-    - The 'Message Board' page allows the user to read posts on the Instagram page without having to navigate away from the site, so keeping them on the site for longer.
+    - The "Message Board" page allows the user to read posts on the Instagram page without having to navigate away from the site, so keeping them on the site for longer.
     - The podcast's Instagram profile is embedded on this page.
-    - The 'Message Board' page is responsive to different device sizes, and changes layout accordingly.
+    - The "Message Board" page is responsive to different device sizes, and changes layout accordingly.
 
 - Contact:
 
-    - The 'Contact' page allows the user to send a message to the podcast hosts, helping them to feel involved in the podcast, containing:
+    - The 'Contact' page allows the user to send a message to the podcast hosts, helping them to feel involved in the podcast, it contains:
         - First Name field - for user's first name.
         - Last Name field - for user's last name.
-        - Age field (that allows fractions – also a running joke on the podcast).
+        - Age field (that allows fractions – which is a running joke on the podcast).
         - Message field - for users to enter their message.
-        - Send button - users click this button to send their message.
-        - Reset button - users click this button to clear any information already entered on the form.
+        - Send button - users can click this button to send their message.
+        - Reset button - users can click this button to clear any information already entered on the form.
+    - All fields have validation where appropriate.
     - Text input fields all have placeholder text.
     - All inputs are required.
-    - Custom completion page appears once 'Submit' is clicked, with a link to return to the 'Home' page.
+    - A custom completion page appears once 'Send' is clicked, with links to other parts of the site. It will also redirect the user to the home page automatically after 30 seconds.
     - The 'Contact' page is responsive to different device sizes, and changes layout accordingly.
 
 - Contact Completion:
 
-    - Custom completion page appears once 'Send' is clicked on the Contact page, with a link to return to the 'Home' page.
+    - Custom completion page appears once 'Send' is clicked on the Contact page, with suggested links to other parts of the site.
     - After 30 seconds, the page will redirect automatically to the home page.
-    - The 'Contact Completion' page is responsive to different device sizes, and changes layout accordingly.
- 
-- Mailing List Completion:
-
-    - Custom completion page appears once 'Send' is clicked on the mailing list sign up form on the home page, with suggested links to other pages on the site.
-    - After 30 seconds, the page will redirect automatically to the home page.
-    - The 'Contact Completion' page is responsive to different device sizes, and changes layout accordingly.
+    - The contact completion page is responsive to different device sizes, and changes layout accordingly.
 
 - Custom 404:
-    - A custom 404 error page which appears when a user attempts to navigate to a non-existent page.
+    - A custom 404 error page appears whenever a user attempts to navigate to a non-existent page.
     - The custom 404 error page will add humour to the site while offering suggested links to other pages on the site.
     - After 30 seconds, the page will redirect automatically to the home page.
-    - The 'Custom 404 page' page is responsive to different device sizes, and changes layout accordingly.
+    - The custom 404 page page is responsive to different device sizes, and changes layout accordingly.
 
 #### Future Features
 
-- Website forum to allow fans of the show to discuss the show, and their life experiences.
+- The addition of a website forum would allow fans of the podcast to interact, discuss the show, and share their life experiences.
 
 ### Structure
 
