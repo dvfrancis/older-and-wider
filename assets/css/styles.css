@@ -247,6 +247,11 @@ li.nav-item a {
 
 /* FOOTER */
 
+/* Hide social media link text */
+.socials {
+    display: none;
+}
+
 /* Social media icons */
 .fa {
     padding: 5px;
