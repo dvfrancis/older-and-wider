@@ -27,6 +27,18 @@ ul li {
     text-align: center;
 }
 
+/* Style links in text */
+
+p>a {
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+p>a:hover {
+    color: #cf9d00;
+    text-decoration: none;
+}
+
 /* Align placeholder text on forms */
 ::placeholder {
     text-align: center;
@@ -294,18 +306,6 @@ li.nav-item a {
 .fa-facebook:active {
     background-color: #17A9FD;
     color: #FFF;
-}
-
-/* Style legal text in footer */
-
-.smallprint {
-    text-decoration: underline;
-    background-color: transparent;
-}
-
-.smallprint:hover {
-    color: #cf9d00;
-    text-decoration: none;
 }
 
 /* MEDIA QUERIES
