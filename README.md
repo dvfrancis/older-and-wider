@@ -13,7 +13,7 @@ The purpose of the website is to give interested parties insights and informatio
 [here]: https://dvfrancis.github.io/older-and-wider
 The Github Pages live site can be accessed [here].
 
-## UXD
+## User Experience Design
 
 ### Strategy
 
@@ -157,7 +157,7 @@ The Github Pages live site can be accessed [here].
 
 #### User Flow diagram
 
-- TBA
+![User flow diagram](assets/images/user-flow-diagram.webp)
 
 ### Skeleton
 
@@ -205,7 +205,7 @@ The Github Pages live site can be accessed [here].
 
 The following colours will be used to add interesting backgrounds to site sections, while white (#FFF) will be used for all contrasting text:
 
-![colours](https://github.com/dvfrancis/older-and-wider/assets/30801098/2085c8f6-269d-427b-bb4a-20d0ed51ab30)
+![Website colour scheme](https://github.com/dvfrancis/older-and-wider/assets/30801098/2085c8f6-269d-427b-bb4a-20d0ed51ab30)
 
 [Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)]:https://brandpalettes.com/facebook-colors
 [Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)]: https://brandpalettes.com/instagram-color-codes
