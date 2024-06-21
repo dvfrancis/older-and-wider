@@ -159,49 +159,83 @@ The Github Pages live site can be accessed [here].
 
 #### Wireframes
 
+After I created the wireframes from my initial ideas, I decided that on mobile devices the hamburger menu should be centred on the screen (rather than over to the right of the screen). However, the wireframes still show this menu appearing to the right.
+
 ##### Mobile
 
-- [Home (index)](documentation/wireframes/mobile/index.png)
-- [About](documentation/wireframes/mobile/about.png)
-- [Message Board](documentation/wireframes/mobile/message-board.png)
-- [Contact](documentation/wireframes/mobile/contact.png)
-- [Contact Completion](documentation/wireframes/mobile/contact-completion.png)
-- [Custom 404](documentation/wireframes/mobile/custom-404.png)
+###### Home
+![Home (index)](documentation/wireframes/mobile/home.webp)
+###### Mailing List Completion
+![Mailing List Completion](documentation/wireframes/mobile/mailing-list-completion.webp)
+###### About
+![About](documentation/wireframes/mobile/about.webp)
+###### Message Board
+![Message Board](documentation/wireframes/mobile/message-board.webp)
+###### Contact
+![Contact](documentation/wireframes/mobile/contact.webp)
+###### Contact Completion
+![Contact Completion](documentation/wireframes/mobile/contact-completion.webp)
+###### Custom 404
+![Custom 404](documentation/wireframes/mobile/404.webp)
 
-##### Mobile (with menu)
+##### Mobile (with expanded menu)
 
-- [Home (index)](documentation/wireframes/mobile/index-menu.png)
-- [About](documentation/wireframes/mobile/about-menu.png)
-- [Message Board](documentation/wireframes/mobile/message-board-menu.png)
-- [Contact](documentation/wireframes/mobile/contact-menu.png)
-- [Contact Completion](documentation/wireframes/mobile/contact-completion-menu.png)
-- [Custom 404](documentation/wireframes/mobile/custom-404-menu.png)
+###### Home
+![Home (index)](documentation/wireframes/mobile/home-menu.webp)
+###### Mailing List Completion
+![Mailing List Completion](documentation/wireframes/mobile/mailing-list-completion-menu.webp)
+###### About
+![About](documentation/wireframes/mobile/about-menu.webp)
+###### Message Board
+![Message Board](documentation/wireframes/mobile/message-board-menu.webp)
+###### Contact
+![Contact](documentation/wireframes/mobile/contact-menu.webp)
+###### Contact Completion
+![Contact Completion](documentation/wireframes/mobile/contact-completion-menu.webp)
+###### Custom 404
+![Custom 404](documentation/wireframes/mobile/404-menu.webp)
 
 ##### Tablet
 
-- [Home (index)](documentation/wireframes/tablet/index.png)
-- [About](documentation/wireframes/tablet/about.png)
-- [Message Board](documentation/wireframes/tablet/message-board.png)
-- [Contact](documentation/wireframes/tablet/contact.png)
-- [Contact Completion](documentation/wireframes/tablet/contact-completion.png)
-- [Custom 404](documentation/wireframes/tablet/custom-404.png)
+###### Home
+![Home (index)](documentation/wireframes/tablet/home.webp)
+###### Mailing List Completion
+![Mailing List Completion](documentation/wireframes/tablet/mailing-list-completion.webp)
+###### About
+![About](documentation/wireframes/tablet/about.webp)
+###### Message Board
+![Message Board](documentation/wireframes/tablet/message-board.webp)
+###### Contact
+![Contact](documentation/wireframes/tablet/contact.webp)
+###### Contact Completion
+![Contact Completion](documentation/wireframes/tablet/contact-completion.webp)
+###### Custom 404
+![Custom 404](documentation/wireframes/tablet/custom-404.webp)
 
 ##### Desktop
 
-- [Home (index)](documentation/wireframes/desktop/index.png)
-- [About](documentation/wireframes/desktop/about.png)
-- [Message Board](documentation/wireframes/desktop/message-board.png)
-- [Contact](documentation/wireframes/desktop/contact.png)
-- [Contact Completion](documentation/wireframes/desktop/contact-completion.png)
-- [Custom 404](documentation/wireframes/desktop/custom-404.png)
+###### Home
+![Home (index)](documentation/wireframes/desktop/home.webp)
+###### Mailing List Completion
+![Mailing List Completion](documentation/wireframes/desktop/mailing-list-completion.webp)
+###### About
+![About](documentation/wireframes/desktop/about.webp)
+###### Message Board
+![Message Board](documentation/wireframes/desktop/message-board.webp)
+###### Contact
+![Contact](documentation/wireframes/desktop/contact.webp)
+###### Contact Completion
+![Contact Completion](documentation/wireframes/desktop/contact-completion.webp)
+###### Custom 404
+![Custom 404](documentation/wireframes/desktop/custom-404.webp)
 
 ### Surface
 
 #### Colours
 
-The following colours will be used to add interesting backgrounds to site sections, while white (#FFF) will be used for all contrasting text:
+The following colours have been used to add interesting backgrounds to site sections, with white (#FFF) as a contrasting colour, which is also used for all text:
 
-![Website colour scheme](https://github.com/dvfrancis/older-and-wider/assets/30801098/2085c8f6-269d-427b-bb4a-20d0ed51ab30)
+![Website colour scheme](assets/images/website-colours.webp)
 
 [Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)]:https://brandpalettes.com/facebook-colors
 [Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)]: https://brandpalettes.com/instagram-color-codes
@@ -210,20 +244,36 @@ For the Facebook social media icon I used [Facebook Light Blue (#17A9FD) and Fac
 
 For the Instagram social media icon I used [Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)] for the hover and active link states.
 
+Colours used are palette 389 of the [Sarah Renae Clarke Colour Catalogue, Volume 2](https://sarahrenaeclark.com/shop/the-color-catalog-volume-2/).
+
 #### Typography
 
-- Fonts were obtained from Google Fonts, and are applied as follows:
+Fonts were chosen from Google Fonts:
   
-    - For H1 and H2 tags it is [Marcellus](https://fonts.google.com/specimen/Marcellus).
-    - For all other body text it is [Pontano Sans](https://fonts.google.com/specimen/Pontano+Sans).
+- [Marcellus](https://fonts.google.com/specimen/Marcellus) has been used for H1 and H2 tags.
+- [Pontano Sans](https://fonts.google.com/specimen/Pontano+Sans) has been used for all other body text.
 
-#### Imagery
+#### Media
 
-- TBA
+All images used on the site have been taken from the Older & Wider podcast [Instagram](https://www.instagram.com/olderandwiderpodcast) page and [merchandise website](https://olderandwidershop.com).
 
-## Caveats
+#### Content
 
-- A list of useful points regarding the podcast will be added here, to explain the references on the live site.
+All page content was initially written by myself, inspired by the sources listed in the credits, and then polished using Copilot in Microsoft Edge.
+
+## Background Information
+
+There are several references scattered across the site which refer back to items that are regularly mentioned or discussed on the podcast itself:
+
+- Older and Wider Listeners are called OWLs.
+- Snore Law is invoked by either of the podcast hosts when they feel the conversation has got too boring. This is usally accompanied by a loud snoring noise.
+- Both hosts love coleslaw, and it is mentioned often.
+- Anyone listening to the podcast is also regarded as "part of the gang", or a "gang member".
+- When people contact the podcast, the hosts insist that people include their age with fractions; for example, "This email is from Sarah who is 59 and three quarters" (this is why the age field on the contact form is a text input).
+- Breton tops.
+- Regular podcast features:
+    - Culture corner - Jenny and Judith discuss any books they are reading, television they've enjoyed, visits to art galleries, etc.
+    - Taste sensations - Jenny and Judith discuss any amazing meals they may have had in the previous week.
 
 ## Testing
 
@@ -232,24 +282,138 @@ For the Instagram social media icon I used [Instagram Rose (#E1306C) and Instagr
 
 ## Deployment
 
-- TBA
+### GitHub Pages
 
-## Credits
+The site was deployed using GitHub Pages, as follows:
 
-- TBA
+- Navigate to the GitHub repository.
+- Click 'Settings'.
+- Under 'Code and automation', select 'Pages'.
+- On the 'GitHub Pages' section, under 'Build and deployment > Source' select 'Deploy from a branch'.
+- Ensure that the 'main' branch has been selected, and then click 'Save'.
+
+![GitHub Pages deployment](assets/images/github-pages-deployment.webp)
+
+### Forks
+
+To copy the repository to your own GitHub account, so you can make changes without affecting the original version, you can fork it:
+
+- Navigate to the GitHub repository.
+- Just above the 'About' section, on the right of the page, click the 'Fork' button.
+
+![Fork deployment](assets/images/fork-deployment.webp)
+
+### Local Clones
+
+To deploy the project on your own computer you can clone it:
+
+- Navigate to the GitHub repository.
+- Click the green '<> Code' button above the list of project files.
+- From the 'Local' tab, select either HTTPS, SSH, or GitHub CLI as the method of cloning, and copy the associated link.
+- Open the terminal or Bash prompt.
+- Navigate to the directory where you want to store the cloned copy or fork.
+- At the prompt, type `git clone` and add the string copied earlier.
+- Press 'Enter' to create the copy.
+
+![Clone deployment](assets/images/local-clone-deployment.webp)
+
+### Gitpod Workspaces
+
+When using Gitpod, you can click the button below to create a workspace from this repository, which also requires that you [install the Gitpod browser extension](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/dvfrancis/older-and-wider)
+
+## Credits and References
+
+### Coding
+
+- Book - Duckett, J. (2011) HTML & CSS - Design and Build Websites. Indianapolis: John Wiley & Sons, Inc.
+- Microsoft Edge Copilot for coding advice, particularly on CSS rules and ingeritance.
+- [Brandpalettes.com for Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)](https://brandpalettes.com/facebook-colors)
+- [Brandpalettes.com for Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)](https://brandpalettes.com/instagram-color-codes)
+- [Older and Wider logo](https://tunein.com/podcasts/Comedy/Older-and-Wider-Podcast-p1838330/)
+- [Creating a copyright symbol](https://blog.hubspot.com/website/html-code-copyright)
+- [Google Fonts - Marcellus](https://fonts.google.com/specimen/Marcellus)
+- [Google Fonts - Pontano Sans](https://fonts.google.com/specimen/Pontano+Sans)
+- [Setting a favicon in GitHub Pages]( https://stackoverflow.com/questions/35037482/favicon-with-github-pages)
+- [CSS :visited](https://www.w3schools.com/cssref/sel_visited.php)
+- [CSS : visited](https://css-tricks.com/almanac/selectors/v/visited/)
+- [Sarah Renae Clarke's Colour Catalogue V2, palette 389](https://sarahrenaeclark.com/color-palettes/)
+- [Semantic HTML5 elements](https://www.freecodecamp.org/news/semantic-html5-elements/)
+- [Redirect to custom form completion page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections?ref=library.linkbot.com)
+- [ARIA tags](https://dev.to/sarveshh/how-to-implement-aria-tags-for-better-accessibility-a-comprehensive-guide-for-web-developers-h3k)
+- [Border vs Content Box](https://stackoverflow.com/questions/44453391/what-is-the-difference-between-border-box-and-content-box-in-css)
+- [Centre aligned Navbar](https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-or-right-aligned-items/)
+- [Elfsight Instagram widget](https://dash.elfsight.com/apps/instagram-feed)
+- [Code for showing\hiding items at certain Bootstrap breakpoints](https://www.gunnard.org/bootstrap-breakpoint-show-hide-cheatsheet/)
+- [Bootstrap documentation and code](https://getbootstrap.com/docs/5.3/examples/jumbotron/)
+- [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
+- [Custom 404 page on GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site)
+- [Inspiration for font pairings](https://fontjoy.com/)
+- [Change navbar toggler burger menu colour](https://www.youtube.com/watch?v=45QSuJaHEss)
+- [How to use img srcset for serving responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images)
+- [Using RespImageLint to ensure images are responsive](https://ausi.github.io/respimagelint/)
+- [Markdown Cheatsheet](https://github.com/im-luka/markdown-cheatsheet)
+
+### Jenny Eclair
+
+- [Personal website](https://jennyeclair.com)
+- [Wikipedia](https://en.wikipedia.org/wiki/Jenny_Eclair)
+- [Article in The Guardian](https://www.theguardian.com/stage/2020/jun/28/jenny-eclair-menopause-gave-me-incandescent-rage-it-was-like-a-superpower)
+- [Amazon author profile](https://www.amazon.co.uk/stores/author/B001KDFYU2/allbooks)
+
+### Judith Holder
+
+- [Personal webaite](http://www.judithholder.com/)
+- [Article in The Guardian](https://www.theguardian.com/lifeandstyle/2023/aug/14/a-new-start-after-60-i-came-out-of-my-shell-when-i-retired-now-im-a-podcast-star-at-67)
+- [Article in Readers Digest](https://www.readersdigest.co.uk/inspire/life/under-the-grandfluence-judith-holder)
+- [Amazon author profile](https://www.amazon.co.uk/stores/author/B001KJ46JG?ingress=0&visitId=2980f5c1-ed6a-45d2-ab5b-16abd95eaa16&ref_=sr_ntt_srch_lnk_1)
+
+### Grumpy Old Women
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Grumpy_Old_Women)
+
+### Older and Wider Merchandise
+
+- Images and graphics taken from [Merchandise website](https://olderandwidershop.com/)
+
+### Older and Wider Socials
+
+- Images taken from [Instagram](https://www.instagram.com/olderandwiderpodcast/)
+- [Facebook](https://www.facebook.com/profile.php?id=61555198800248)
+
+### Older and Wider Live
+
+- [Avalon Press Release #1](https://avalonuk.com/2023/03/23/jenny-eclair-and-judith-holder-co-writers-of-internationally-successful-grumpy-old-women-live-stage-shows-bring-their-podcast-series-older-and-wider-to-the-london-stage-this-summer/)
+- [Avalon Press Release #2](https://avalonuk.com/2023/03/29/extra-london-date-at-leicester-square-theatre-announced-for-jenny-eclair-and-judith-holders-older-and-wider-live-podcast-show/)
+- [Theatre at The Tabard](https://tabard.org.uk/whats-on/olderandwider/)
+- [What's On Stage](https://www.whatsonstage.com/shows/outer-london-theatre/older-and-wider-live_300423/)
+- [UKTW](https://www.uktw.co.uk/archive/Tour/Talk/Older-and-Wider-live/T833145318/)
+- [The Lowry](https://thelowry.com/whats-on/older-and-wider-live-jenny-eclair-and-judith-holder/)
+- [See Tickets](https://www.seetickets.com/tour/older-and-wider-live)
+
+### Podcast Links
+
+- [Acast](https://shows.acast.com/older-and-wider-podcast)
+- [Apple Podcasts](https://podcasts.apple.com/gb/podcast/older-and-wider-podcast/id1446310659)
+- [Acast](https://shows.acast.com/older-and-wider-podcast)
+- [Spotify](https://open.spotify.com/show/3ScVA6cJZpMifpJJDmmodP)
+- [Soundcloud](https://soundcloud.com/user-575974822)
     
-## Content
-
-- TBA
-
-## Media
-
-- TBA
-
 ## Technologies Used
 
-- TBA
+- The website was built using [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), and [Bootstrap.](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was not specifically used except where it was required for Bootstrap, particularly in making responsive menus work on mobile devices.
+- [GitHub](https://github.com/) was used for version control.
+- [Gitpod](https://gitpod.io/) was used as an online IDE.
+- [Markdown](https://en.wikipedia.org/wiki/Markdown) was used to create the README.md and TESTING.md documentation.
 
 ## Acknowledgements
 
-- TBA
+- Julia Konn, for her mentorship.
+
+- Cohort facilitator, Lewis Dillon, for all of his help and advice.
+
+- Fellow student cohorts, and particularly Luke McCall, for their support and advice.
+
+- Andrew Parton, for always being there.
