@@ -257,6 +257,8 @@ Fonts were chosen from Google Fonts:
 
 All images used on the site have been taken from the Older & Wider podcast [Instagram](https://www.instagram.com/olderandwiderpodcast) page and [merchandise website](https://olderandwidershop.com).
 
+For the image carousels that appear on index.html and about.html, I used [RespImageLint](https://ausi.github.io/respimagelint/) to advise about creating alternates of all images that would be appropriate for different screens sizes. This was then implemented using the HTML `img` `srcset` attribute for each image used.
+
 #### Content
 
 All page content was initially written by myself, inspired by the sources listed in the credits, and then polished using Copilot in Microsoft Edge.
