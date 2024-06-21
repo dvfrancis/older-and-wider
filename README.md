@@ -1,14 +1,62 @@
 # The Older and Wider Podcast
 
+## Overview
+
 Older and Wider is a humorous (and [real](https://shows.acast.com/older-and-wider-podcast)) podcast, where two friends chat and share their day-to-day experiences as older women. It is hosted by retired television producer/writer, Judith Holder, and award-winning comedian, Jenny Eclair.
 
 The purpose of the website is to give interested parties insights and information about the podcast, and will include an embedded podcast player, details on live events, and access to the popular Instagram page; it also provides a way to contact the podcast directly, share stories, and make suggestions for the show.
 
-## Site Preview
+### Site Preview
 
 ![Preview of the Older & Wider website at different screen sizes](assets/images/site-preview.webp)
 
-## Site Link
+## Index
+
+1. [Overview](#the-older-and-wider-podcast)
+    1. [Site Preview](#site-preview)
+    2. [Site Link](#site-link)
+2. [User Experience Design](#user-experience-design)
+    1. [Strategy](#strategy)
+        1. [User Experience](#user-experience)
+        2. [User Expectations](#user-expectations)
+        3. [User Stories](#user-stories)
+    2. [Scope](#scope)
+        1. [Existing Features](#existing-features)
+        2. [Future Features](#future-features)
+    3. [Structure](#structure)
+        1. [User Flow Diagram](#user-flow-diagram)
+    4. [Skeleton](#skeleton)
+        1. [Wireframes](#wireframes)
+            1. [Mobile](#mobile)
+            2. [Mobile with Expanded Menu](#mobile-with-expanded-menu)
+            3. [Tablet](#tablet)
+            4. [Desktop](#desktop)
+    5. [Surface](#surface)
+        1. [Colours](#colours)
+        2. [Typography](#typography)
+        3. [Media](#media)
+        4. [Content](#content)
+3. [Background Information](#background-information)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
+    1. [GitHub Pages](#github-pages)
+    2. [Forks](#forks)
+    3. [Local Clones](#local-clones)
+    4. [Gitpod Workspaces](#gitpod-workspaces)
+6. [Credits and References](#credits-and-references)
+    1. [General](#general)
+    2. [Coding](#coding)
+    3. [Jenny Eclair](#jenny-eclair)
+    4. [Judith Holder](#judith-holder)
+    5. [Grumpy Old Women](#grumpy-old-women)
+    6. [Older and Wider Merchandise](#older-and-wider-merchandise)
+    7. [Older and Wider Socials](#older-and-wider-socials)
+    8. [Older and Wider Live](#older-and-wider-live)
+    9. [Podcast Links](#podcast-links)
+7. [Technologies Used](#technologies-used)
+8. [Acknowledgements](#acknowledgements)
+
+### Site Link
 
 [here]: https://dvfrancis.github.io/older-and-wider
 The Github Pages live site can be accessed [here].
@@ -285,15 +333,16 @@ All page content was initially written by myself, inspired by the sources listed
 
 ## Background Information
 
-There are several references scattered across the site which refer back to items that are regularly mentioned or discussed on the podcast itself:
+There are several references scattered across the site which refer back to items that are regularly mentioned, or discussed, on the podcast:
 
 - Older and Wider Listeners are called OWLs.
-- Snore Law is invoked by either of the podcast hosts when they feel the conversation has got too boring. This is usally accompanied by a loud snoring noise.
-- Both hosts love coleslaw, and it is mentioned often.
-- Anyone listening to the podcast is also regarded as "part of the gang", or a "gang member".
-- When people contact the podcast, the hosts insist that people include their age with fractions; for example, "This email is from Sarah who is 59 and three quarters" (this is why the age field on the contact form is a text input).
-- Breton tops.
-- Regular podcast features:
+- Snore Law is invoked by either Jenny or Judith when they feel the conversation has got too boring; this is usually accompanied by a loud snoring noise.
+- Jenny and Judith both love coleslaw, and it is mentioned frequently.
+- Anyone listening to the podcast is regarded as "part of the gang", or a "gang member".
+- When people contact the podcast, the Jenny and Judith insist that people include their age with fractions; for example, "This email is from Sarah who is 59 and three quarters" (this is why the age field on the contact form is a text input).
+- Jenny and Judith have stated that a Breton top is the de facto uniform of an OWL.
+- Jenny and Judith regularly refer to the podcast Instagram page as the "message board".
+- There are a couple of regular podcast features:
     - Culture corner - Jenny and Judith discuss any books they are reading, television they've enjoyed, visits to art galleries, etc.
     - Taste sensations - Jenny and Judith discuss any amazing meals they may have had in the previous week.
 
@@ -346,20 +395,14 @@ When using Gitpod, you can click the button below to create a workspace from thi
 
 ## Credits and References
 
+### General
+
+- All images on this site are taken from either the podcast Instagram page or the merchandise website. Live links are also used for social media icons, and in the footer. This is done to help promote the podcast, and as a mark of respect for all the work that has gone into it. My intention is to contact the podcast, after this project has been assessed, to let them know it exists.
+
 ### Coding
 
 - Book - Duckett, J. (2011) HTML & CSS - Design and Build Websites. Indianapolis: John Wiley & Sons, Inc.
 - Microsoft Edge Copilot for coding advice, particularly on CSS rules and ingeritance.
-- [Social media icons from FontAwesome](https://fontawesome.com/)
-- [Social media icons from FontAwesome](https://fontawesome.com/)
-- [Brandpalettes.com for Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)](https://brandpalettes.com/facebook-colors)
-- [Brandpalettes.com for Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)](https://brandpalettes.com/instagram-color-codes)
-- [Elfsight Instagram widget](https://dash.elfsight.com/apps/instagram-feed)
-- [Sarah Renae Clarke's Colour Catalogue V2, palette 389](https://sarahrenaeclark.com/color-palettes/)
-- [Elfsight Instagram widget](https://dash.elfsight.com/apps/instagram-feed)
-- [Sarah Renae Clarke's Colour Catalogue V2, palette 389](https://sarahrenaeclark.com/color-palettes/)
-- [Google Fonts - Marcellus](https://fonts.google.com/specimen/Marcellus)
-- [Google Fonts - Pontano Sans](https://fonts.google.com/specimen/Pontano+Sans)
 - [How to create a copyright symbol](https://blog.hubspot.com/website/html-code-copyright)
 - [How to set a favicon in GitHub Pages]( https://stackoverflow.com/questions/35037482/favicon-with-github-pages)
 - [Information on CSS :visited](https://www.w3schools.com/cssref/sel_visited.php)
@@ -370,14 +413,10 @@ When using Gitpod, you can click the button below to create a workspace from thi
 - [Border vs Content Box](https://stackoverflow.com/questions/44453391/what-is-the-difference-between-border-box-and-content-box-in-css)
 - [Centre aligned Navbar](https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-or-right-aligned-items/)
 - [Code for showing\hiding items at certain Bootstrap breakpoints](https://www.gunnard.org/bootstrap-breakpoint-show-hide-cheatsheet/)
-- [Bootstrap documentation and code](https://getbootstrap.com/docs/5.3/examples/jumbotron/)
 - [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
 - [Custom 404 page on GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site)
-- [Inspiration for font pairings](https://fontjoy.com/)
 - [Change navbar toggler burger menu colour](https://www.youtube.com/watch?v=45QSuJaHEss)
 - [How to use img srcset for serving responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images)
-- [Ensured images are responsive by using RespImageLint](https://ausi.github.io/respimagelint/)
-- [Ensured images are responsive by using RespImageLint](https://ausi.github.io/respimagelint/)
 - [Markdown Cheatsheet](https://github.com/im-luka/markdown-cheatsheet)
 
 ### Jenny Eclair
@@ -429,13 +468,23 @@ When using Gitpod, you can click the button below to create a workspace from thi
 
 - The website was built using [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), and [Bootstrap.](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was not specifically used except where it was required for Bootstrap, particularly in making responsive menus work on mobile devices.
+- [Elfsight](https://elfsight.com/) was used to create the Instagram embed code on message-board.html.
+- [Sarah Renae Clarke's Colour Catalogue V2, palette 389](https://sarahrenaeclark.com/color-palettes/) was used for the website colur scheme.
+- [Font Joy](https://fontjoy.com/) used to inspire font pairings.
+- [Google Fonts](https://fonts.google.com/) was used for the Marcellus and Pontano Sans fonts.
+- [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook colours.
+- The Windows 10 Photos app was used to edit all images.
+- [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.
+- [To WebP](https://towebp.io/) was used to compress images into webp format.
+- [FontAwesome](https://fontawesome.com/) was used for social media icons.
 - [GitHub](https://github.com/) was used for version control.
+- [GitHub Pages](https://pages.github.com/) was used to host the website.
 - [Gitpod](https://gitpod.io/) was used as an online IDE.
 - [Markdown](https://en.wikipedia.org/wiki/Markdown) was used to create the README.md and TESTING.md documentation.
 
 ## Acknowledgements
 
-- Julia Konn, for her mentorship.
+- Juliia Konovalova, for her mentorship.
 
 - Cohort facilitator, Lewis Dillon, for all of his help and advice.
 
