@@ -331,8 +331,11 @@ When using Gitpod, you can click the button below to create a workspace from thi
 - Book - Duckett, J. (2011) HTML & CSS - Design and Build Websites. Indianapolis: John Wiley & Sons, Inc.
 - Microsoft Edge Copilot for coding advice, particularly on CSS rules and ingeritance.
 - [Social media icons from FontAwesome](https://fontawesome.com/)
+- [Social media icons from FontAwesome](https://fontawesome.com/)
 - [Brandpalettes.com for Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)](https://brandpalettes.com/facebook-colors)
 - [Brandpalettes.com for Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)](https://brandpalettes.com/instagram-color-codes)
+- [Elfsight Instagram widget](https://dash.elfsight.com/apps/instagram-feed)
+- [Sarah Renae Clarke's Colour Catalogue V2, palette 389](https://sarahrenaeclark.com/color-palettes/)
 - [Elfsight Instagram widget](https://dash.elfsight.com/apps/instagram-feed)
 - [Sarah Renae Clarke's Colour Catalogue V2, palette 389](https://sarahrenaeclark.com/color-palettes/)
 - [Google Fonts - Marcellus](https://fonts.google.com/specimen/Marcellus)
@@ -353,6 +356,7 @@ When using Gitpod, you can click the button below to create a workspace from thi
 - [Inspiration for font pairings](https://fontjoy.com/)
 - [Change navbar toggler burger menu colour](https://www.youtube.com/watch?v=45QSuJaHEss)
 - [How to use img srcset for serving responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images)
+- [Ensured images are responsive by using RespImageLint](https://ausi.github.io/respimagelint/)
 - [Ensured images are responsive by using RespImageLint](https://ausi.github.io/respimagelint/)
 - [Markdown Cheatsheet](https://github.com/im-luka/markdown-cheatsheet)
 
