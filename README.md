@@ -71,6 +71,8 @@ The Github Pages live site can be accessed [here].
 
     - A custom HTML favicon will be shown to aid users' identification of the site. It will also appear whenever someone adds the site as a bookmark or favourite.
 
+        ![Website custom favicon](assets/images/website-favicon.webp)
+
 - Header:
 
     - Fixed at the top of each page - contains site name and navigation.
@@ -84,6 +86,8 @@ The Github Pages live site can be accessed [here].
         - Contact - that takes the user to a contact form that can be completed to send a message to the podcast hosts.
     - The currently active page is indicated on the navigation bar.
 
+        ![Website header](assets/images/website-header.webp)
+
 - Footer:
 
     - Fixed at the bottom of each page - it contains the social media icons, and legal\copyright information.
@@ -92,6 +96,8 @@ The Github Pages live site can be accessed [here].
     - Social media icons are centred in the first row.
     - Legal information is centred in the second row.
     - On mouseover, each social media icon will change colour, and also when clicked.
+
+        ![Website footer](assets/images/website-footer.webp)
 
 - Home (index):
 
@@ -102,11 +108,15 @@ The Github Pages live site can be accessed [here].
     - The merchandise section has a link that takes the user to the merchandise website (in a new tab).
     - In the mailing list section, the user has the opportunity to sign-up for a regularly released newsletter.
 
+        ![Website home page](assets/images/website-index-feature.webp)
+
 - Mailing List Completion:
 
     - A custom completion page appears once 'Send' is clicked on the mailing list signup form on the home page, with suggested links to other parts of the site.
     - The page will add humour to the site while offering suggested links to other pages on the site.
     - After 30 seconds, the page will redirect automatically to the home page.
+
+        ![Website mailing list completion page](assets/images/website-mailing-list-completion-feature.webp)
 
 - About:
 
@@ -116,10 +126,14 @@ The Github Pages live site can be accessed [here].
         - Biography of Jenny Eclair.
         - Biography of Judith Holder.
 
+        ![Website about page](assets/images/website-about-feature.webp)
+
 - Message Board:
 
     - The "Message Board" page allows the user to read posts on the Instagram page without having to navigate away from the site, so keeping them on the site for longer.
     - The podcast's Instagram profile is embedded on this page.
+
+        ![Website message board page](assets/images/website-message-board-feature.webp)
 
 - Contact:
 
@@ -133,6 +147,8 @@ The Github Pages live site can be accessed [here].
     - All fields have validation where appropriate.
     - Text input fields all have placeholder text.
     - All inputs are required.
+
+        ![Website contact page](assets/images/website-contact-feature.webp)
     
 - Contact Completion:
 
@@ -140,10 +156,14 @@ The Github Pages live site can be accessed [here].
     - The page will add humour to the site while offering suggested links to other pages on the site.
     - After 30 seconds, the page will redirect automatically to the home page.
 
+        ![Website contact completion page](assets/images/website-contact-completion-feature.webp)
+
 - Custom 404:
     - A custom 404 error page appears whenever a user attempts to navigate to a non-existent page.
     - The page will add humour to the site while offering suggested links to other pages on the site.
     - After 30 seconds, the page will redirect automatically to the home page.
+
+        ![Website custom 404 error page](assets/images/website-404-feature.webp)
 
 #### Future Features
 
