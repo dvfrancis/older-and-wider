@@ -164,70 +164,70 @@ After I created the wireframes from my initial ideas, I decided that on mobile d
 ##### Mobile
 
 ###### Home
-![Home (index)](documentation/wireframes/mobile/home.webp)
+![Home (index)](assets/documentation/wireframes/mobile/home.webp)
 ###### Mailing List Completion
-![Mailing List Completion](documentation/wireframes/mobile/mailing-list-completion.webp)
+![Mailing List Completion](assets/documentation/wireframes/mobile/mailing-list-completion.webp)
 ###### About
-![About](documentation/wireframes/mobile/about.webp)
+![About](assets/documentation/wireframes/mobile/about.webp)
 ###### Message Board
-![Message Board](documentation/wireframes/mobile/message-board.webp)
+![Message Board](assets/documentation/wireframes/mobile/message-board.webp)
 ###### Contact
-![Contact](documentation/wireframes/mobile/contact.webp)
+![Contact](assets/documentation/wireframes/mobile/contact.webp)
 ###### Contact Completion
-![Contact Completion](documentation/wireframes/mobile/contact-completion.webp)
+![Contact Completion](assets/documentation/wireframes/mobile/contact-completion.webp)
 ###### Custom 404
-![Custom 404](documentation/wireframes/mobile/404.webp)
+![Custom 404](assets/documentation/wireframes/mobile/404.webp)
 
 ##### Mobile (with expanded menu)
 
 ###### Home
-![Home (index)](documentation/wireframes/mobile/home-menu.webp)
+![Home (index)](assets/documentation/wireframes/mobile/home-menu.webp)
 ###### Mailing List Completion
-![Mailing List Completion](documentation/wireframes/mobile/mailing-list-completion-menu.webp)
+![Mailing List Completion](assets/documentation/wireframes/mobile/mailing-list-completion-menu.webp)
 ###### About
-![About](documentation/wireframes/mobile/about-menu.webp)
+![About](assets/documentation/wireframes/mobile/about-menu.webp)
 ###### Message Board
-![Message Board](documentation/wireframes/mobile/message-board-menu.webp)
+![Message Board](assets/documentation/wireframes/mobile/message-board-menu.webp)
 ###### Contact
-![Contact](documentation/wireframes/mobile/contact-menu.webp)
+![Contact](assets/documentation/wireframes/mobile/contact-menu.webp)
 ###### Contact Completion
-![Contact Completion](documentation/wireframes/mobile/contact-completion-menu.webp)
+![Contact Completion](assets/documentation/wireframes/mobile/contact-completion-menu.webp)
 ###### Custom 404
-![Custom 404](documentation/wireframes/mobile/404-menu.webp)
+![Custom 404](assets/documentation/wireframes/mobile/404-menu.webp)
 
 ##### Tablet
 
 ###### Home
-![Home (index)](documentation/wireframes/tablet/home.webp)
+![Home (index)](assets/documentation/wireframes/tablet/home.webp)
 ###### Mailing List Completion
-![Mailing List Completion](documentation/wireframes/tablet/mailing-list-completion.webp)
+![Mailing List Completion](assets/documentation/wireframes/tablet/mailing-list-completion.webp)
 ###### About
-![About](documentation/wireframes/tablet/about.webp)
+![About](assets/documentation/wireframes/tablet/about.webp)
 ###### Message Board
-![Message Board](documentation/wireframes/tablet/message-board.webp)
+![Message Board](assets/documentation/wireframes/tablet/message-board.webp)
 ###### Contact
-![Contact](documentation/wireframes/tablet/contact.webp)
+![Contact](assets/documentation/wireframes/tablet/contact.webp)
 ###### Contact Completion
-![Contact Completion](documentation/wireframes/tablet/contact-completion.webp)
+![Contact Completion](assets/documentation/wireframes/tablet/contact-completion.webp)
 ###### Custom 404
-![Custom 404](documentation/wireframes/tablet/custom-404.webp)
+![Custom 404](assets/documentation/wireframes/tablet/custom-404.webp)
 
 ##### Desktop
 
 ###### Home
-![Home (index)](documentation/wireframes/desktop/home.webp)
+![Home (index)](assets/documentation/wireframes/desktop/home.webp)
 ###### Mailing List Completion
-![Mailing List Completion](documentation/wireframes/desktop/mailing-list-completion.webp)
+![Mailing List Completion](assets/documentation/wireframes/desktop/mailing-list-completion.webp)
 ###### About
-![About](documentation/wireframes/desktop/about.webp)
+![About](assets/documentation/wireframes/desktop/about.webp)
 ###### Message Board
-![Message Board](documentation/wireframes/desktop/message-board.webp)
+![Message Board](assets/documentation/wireframes/desktop/message-board.webp)
 ###### Contact
-![Contact](documentation/wireframes/desktop/contact.webp)
+![Contact](assets/documentation/wireframes/desktop/contact.webp)
 ###### Contact Completion
-![Contact Completion](documentation/wireframes/desktop/contact-completion.webp)
+![Contact Completion](assets/documentation/wireframes/desktop/contact-completion.webp)
 ###### Custom 404
-![Custom 404](documentation/wireframes/desktop/custom-404.webp)
+![Custom 404](assets/documentation/wireframes/desktop/custom-404.webp)
 
 ### Surface
 

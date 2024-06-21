@@ -1,10 +1,47 @@
-Code Validation
+[Return to Older & Wider README.md](https://github.com/dvfrancis/older-and-wider/blob/main/README.md)
 
-Validate HTML for each html file, using HTML W3C Validator.
-Validate CSS for each style file, using CSS Jigsaw Validator.
-Google Lighthouse (from Google Developer Tools)
+# Testing
 
-Manual Validation
+## Code Validation
+
+HTML and CSS validation for each page:
+
+### index.html
+
+![HTML validation of index.html](assets/documentation/validation/html-index.webp)
+![CSS validation of index.html](assets/documentation/validation/css-index.webp)
+
+### mailing-list-completion.html
+
+![HTML validation of index.html](assets/documentation/validation/html-mailing-list-completion.webp)
+![CSS validation of index.html](assets/documentation/validation/css-mailing-list-completion.webp)
+
+### about.html
+
+![HTML validation of index.html](assets/documentation/validation/html-about.webp)
+![CSS validation of index.html](assets/documentation/validation/css-about.webp)
+
+### message-board.html
+
+![HTML validation of index.html](assets/documentation/validation/html-message-board.webp)
+![CSS validation of index.html](assets/documentation/validation/css-message-board.webp)
+
+### contact.html
+
+![HTML validation of index.html](assets/documentation/validation/html-contact.webp)
+![CSS validation of index.html](assets/documentation/validation/css-contact.webp)
+
+### contact-completion.html
+
+![HTML validation of index.html](assets/documentation/validation/html-contact-completion.webp)
+![CSS validation of index.html](assets/documentation/validation/css-contact-completion.webp)
+
+### 404.html
+
+![HTML validation of index.html](assets/documentation/validation/html-404.webp)
+![CSS validation of index.html](assets/documentation/validation/css-404.webp)
+
+## Manual Validation
 
 Test all links and form fields manually.
 
@@ -35,36 +72,36 @@ Test all links and form fields manually.
 | Response page | | | | | |
 | Response message | The user will be automatically redirected to the home page after 10 seconds | The user is redirected to the home page | Yes | Yes | - |
 
-User Story Validation
+## User Story Validation
 
 Illustrate how the user story is fulfilled.
 Present in tabular format as per https://github.com/4n4ru/CI_MS1_BodelschwingherHof.
 
-Browser Compatibility
+## Browser Compatibility
 
 Test deployed site in various browsers.
 Could use animated GIFs to show results.
 
-Accessibility
+## Accessibility
 
 Test deployed site using https://wave.webaim.org
 
-Responsiveness
+## Responsiveness
 
 Test deployed site for various device sizes using the Responsive Website Design Tester.
 
-Performance
+## Performance
 
 Audit each page in Google Lighthouse.
 
-Bugs
+## Bugs
 
 List all bugs encountered while coding.
 Could use GitHub Issues to keep track of any issues (see Lewis Dillon's README for more information).
 List any known, but unfixed bugs - and why they couldn’t be fixed or recreated - or confirm there are none.
 Could also list any mistakes made during project, such as using the wrong tense on commit messages.
 
-Unfixed Bugs
+## Unfixed Bugs
 
 Mention unfixed bugs and why they were not fixed.
 Include shortcomings of the frameworks or technologies used.
