@@ -4,7 +4,7 @@
 
 ## Code Validation
 
-HTML and CSS validation for each page:
+HTML and CSS validation for each page using the [W3C Markup Validation Service](https://validator.w3.org) and the [W3C CSS Validation Service](ahttps://jigsaw.w3.org/css-validator):
 
 ### index.html
 

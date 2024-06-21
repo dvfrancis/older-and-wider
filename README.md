@@ -330,22 +330,22 @@ When using Gitpod, you can click the button below to create a workspace from thi
 
 - Book - Duckett, J. (2011) HTML & CSS - Design and Build Websites. Indianapolis: John Wiley & Sons, Inc.
 - Microsoft Edge Copilot for coding advice, particularly on CSS rules and ingeritance.
+- [Social media icons from FontAwesome](https://fontawesome.com/)
 - [Brandpalettes.com for Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)](https://brandpalettes.com/facebook-colors)
 - [Brandpalettes.com for Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)](https://brandpalettes.com/instagram-color-codes)
-- [Older and Wider logo](https://tunein.com/podcasts/Comedy/Older-and-Wider-Podcast-p1838330/)
-- [Creating a copyright symbol](https://blog.hubspot.com/website/html-code-copyright)
+- [Elfsight Instagram widget](https://dash.elfsight.com/apps/instagram-feed)
+- [Sarah Renae Clarke's Colour Catalogue V2, palette 389](https://sarahrenaeclark.com/color-palettes/)
 - [Google Fonts - Marcellus](https://fonts.google.com/specimen/Marcellus)
 - [Google Fonts - Pontano Sans](https://fonts.google.com/specimen/Pontano+Sans)
+- [Creating a copyright symbol](https://blog.hubspot.com/website/html-code-copyright)
 - [Setting a favicon in GitHub Pages]( https://stackoverflow.com/questions/35037482/favicon-with-github-pages)
 - [CSS :visited](https://www.w3schools.com/cssref/sel_visited.php)
 - [CSS : visited](https://css-tricks.com/almanac/selectors/v/visited/)
-- [Sarah Renae Clarke's Colour Catalogue V2, palette 389](https://sarahrenaeclark.com/color-palettes/)
 - [Semantic HTML5 elements](https://www.freecodecamp.org/news/semantic-html5-elements/)
 - [Redirect to custom form completion page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections?ref=library.linkbot.com)
 - [ARIA tags](https://dev.to/sarveshh/how-to-implement-aria-tags-for-better-accessibility-a-comprehensive-guide-for-web-developers-h3k)
 - [Border vs Content Box](https://stackoverflow.com/questions/44453391/what-is-the-difference-between-border-box-and-content-box-in-css)
 - [Centre aligned Navbar](https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-or-right-aligned-items/)
-- [Elfsight Instagram widget](https://dash.elfsight.com/apps/instagram-feed)
 - [Code for showing\hiding items at certain Bootstrap breakpoints](https://www.gunnard.org/bootstrap-breakpoint-show-hide-cheatsheet/)
 - [Bootstrap documentation and code](https://getbootstrap.com/docs/5.3/examples/jumbotron/)
 - [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
@@ -353,7 +353,7 @@ When using Gitpod, you can click the button below to create a workspace from thi
 - [Inspiration for font pairings](https://fontjoy.com/)
 - [Change navbar toggler burger menu colour](https://www.youtube.com/watch?v=45QSuJaHEss)
 - [How to use img srcset for serving responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images)
-- [Using RespImageLint to ensure images are responsive](https://ausi.github.io/respimagelint/)
+- [Ensured images are responsive by using RespImageLint](https://ausi.github.io/respimagelint/)
 - [Markdown Cheatsheet](https://github.com/im-luka/markdown-cheatsheet)
 
 ### Jenny Eclair
