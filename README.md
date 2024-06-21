@@ -279,7 +279,6 @@ There are several references scattered across the site which refer back to items
 
 ## Testing
 
-
 - Please refer to [TESTING.md](TESTING.md) for details.
 
 ## Deployment
