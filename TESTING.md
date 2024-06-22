@@ -39,8 +39,29 @@
     3. [Firefox](#firefox)
     4. [Opera](#opera)
 5. [Accessibility](#accessibility)
+    1. [index.html](#404html-3)
+    2. [mailing-list-completion.html](#mailing-list-completionhtml-3)
+    3. [about.html](#abouthtml-3)
+    4. [message-board.html](#message-boardhtml-3)
+    5. [contact.html](#contact-completionhtml-3)
+    6. [contact-completion.html](#contact-completionhtml-3)
+    7. [404.html](#404html-3)
 6. [Responsiveness](#responsiveness)
+    1. [index.html](#indexhtml-4)
+    2. [mailing-list-completion.html](#mailing-list-completionhtml-4)
+    3. [about.html](#abouthtml-4)
+    4. [message-board.html](#message-boardhtml-4)
+    5. [contact.html](#contacthtml-4)
+    6. [contact-completion.html](#contact-completionhtml-4)
+    7. [404.html](#404html-4)
 7. [Performance](#performance)
+    1. [index.html](#indexhtml-5)
+    2. [mailing-list-completion.html](#mailing-list-completionhtml-5)
+    3. [about.html](#abouthtml-5)
+    4. [message-board.html](#message-boardhtml-5)
+    5. [contact.html](#contacthtml-5)
+    6. [contact-completion.html](#contact-completionhtml-5)
+    7. [404.html](#404html-5)
 8. [Bugs](#bugs)
 9. [Unfixed Bugs](#unfixed-bugs)
 
@@ -387,15 +408,39 @@ The website has been successfully tested in the following browsers:
 
 ## Accessibility
 
-Test deployed site using https://wave.webaim.org
+The results of testing accessibility using the [Wave Accessibility Evaluation Tool](https://wave.webaim.org) are shown below:
+
+### index.html
+### mailing-list-completion.html
+### about.html
+### message-board.html
+### contact.html
+### contact-completion.html
+### 404.html
 
 ## Responsiveness
 
 Test deployed site for various device sizes using the Responsive Website Design Tester.
 
+### index.html
+### mailing-list-completion.html
+### about.html
+### message-board.html
+### contact.html
+### contact-completion.html
+### 404.html
+
 ## Performance
 
 Audit each page in Google Lighthouse.
+
+### index.html
+### mailing-list-completion.html
+### about.html
+### message-board.html
+### contact.html
+### contact-completion.html
+### 404.html
 
 ## Bugs
 
