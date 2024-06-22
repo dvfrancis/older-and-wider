@@ -549,35 +549,85 @@ For some reason, the Instagram widget does not load for this preview, and the so
 
 ## Performance
 
-Each page was audited using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/):
+Each page was audited using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/), for both mobile and desktop:
 
 ### index.html
 
-![Performance report for index.html](documentation/validation)
+#### Mobile
+
+![Mobile performance report for index.html](documentation/validation/performance-index-mobile.webp)
+
+#### Desktop
+
+![Desktop performance report for index.html](documentation/validation/performance-index-desktop.webp)
 
 ### mailing-list-completion.html
 
-![Performance report for mailing-list-completion.html](documentation/validation)
+The lower score for accessibility here is caused by two things - the presence of the redirect (which is part of the site design), and because FontAwesome automatically adds the ``aria-hidden="true"`` class to all of its icons. This cannot be stopped and is conflicting with my own ARIA label on each social media icon. 
+
+#### Mobile
+
+![Mobile performance report for mailing-list-completion.html](documentation/validation/performance-mailing-list-completion-mobile.webp)
+
+#### Desktop
+
+![Desktop performance report for mailing-list-completion.html](documentation/validation/performance-mailing-list-completion-desktop.webp)
 
 ### about.html
 
-![Performance report for about.html](documentation/validation)
+#### Mobile
+
+![Mobile performance report for about.html](documentation/validation/performance-about-mobile.webp)
+
+#### Desktop
+
+![Desktop performance report for about.html](documentation/validation/performance-about-desktop.webp)
 
 ### message-board.html
 
-![Performance report for message-board.html](documentation/validation)
+The lower score for performance here is because, among other things, the images being loaded by the Instagram embed are quite large. Unfortunately, I have no control over this, hence the lower score. 
+
+#### Mobile
+
+![Mobile performance report for message-board.html](documentation/validation/performance-message-board-mobile.webp)
+
+#### Desktop
+
+![Desktop performance report for message-board.html](documentation/validation/performance-message-board-desktop.webp)
 
 ### contact.html
 
-![Performance report for contact.html](documentation/validation)
+#### Mobile
+
+![Mobile performance report for contact.html](documentation/validation/performance-contact-mobile.webp)
+
+#### Desktop
+
+![Desktop performance report for contact.html](documentation/validation/performance-contact-desktop.webp)
 
 ### contact-completion.html
 
-![Performance report for contact-completion.html](documentation/validation)
+The lower score for accessibility here is caused by two things - the presence of the redirect (which is part of the site design), and because FontAwesome automatically adds the ``aria-hidden="true"`` class to all of its icons. This cannot be stopped and is conflicting with my own ARIA label on each social media icon. 
+
+#### Mobile
+
+![Mobile performance report for contact-completion.html](documentation/validation/performance-contact-completion-mobile.webp)
+
+#### Desktop
+
+![Desktop performance report for contact-completion.html](documentation/validation/performance-contact-completion-desktop.webp)
 
 ### 404.html
 
-![Performance report for 404.html](documentation/validation)
+The lower score for accessibility here is caused by two things - the presence of the redirect (which is part of the site design), and because FontAwesome automatically adds the ``aria-hidden="true"`` class to all of its icons. This cannot be stopped and is conflicting with my own ARIA label on each social media icon. 
+
+#### Mobile
+
+![Mobile performance report for 404.html](documentation/validation/performance-404-mobile.webp)
+
+#### Desktop
+
+![Desktop performance report for 404.html](documentation/validation/performance-404-desktop.webp)
 
 ## Bugs
 
