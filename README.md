@@ -49,15 +49,6 @@ The Github Pages live site can be accessed [here].
     3. [Local Clones](#local-clones)
     4. [Gitpod Workspaces](#gitpod-workspaces)
 6. [Credits and References](#credits-and-references)
-    1. [General](#general)
-    2. [Coding](#coding)
-    3. [Jenny Eclair](#jenny-eclair)
-    4. [Judith Holder](#judith-holder)
-    5. [Grumpy Old Women](#grumpy-old-women)
-    6. [Older and Wider Merchandise](#older-and-wider-merchandise)
-    7. [Older and Wider Socials](#older-and-wider-socials)
-    8. [Older and Wider Live](#older-and-wider-live)
-    9. [Podcast Links](#podcast-links)
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
 
@@ -469,10 +460,6 @@ Links to the podcast, on various platforms:
 
 ## Acknowledgements
 
-- Juliia Konovalova, for her mentorship.
+Thanks to my mentor, Juliia Konovalova, my cohort facilitator, Lewis Dillon, and fellow student cohorts, in particular Luke McCall, for their support and advice.
 
-- Cohort facilitator, Lewis Dillon, for all of his help and advice.
-
-- Fellow student cohorts, and particularly Luke McCall, for their support and advice.
-
-- Andrew Parton, for always being there.
+Extra special thanks to Andrew Parton, for always being there.
