@@ -2,44 +2,107 @@
 
 # Testing
 
+## Index
+
+1. [Code Validation](#code-validation)
+    1. [HTML](#html)
+        1. [index.html](#indexhtml)
+        2. [mailing-list-completion.html](#mailing-list-completionhtml)
+        3. [about.html](#abouthtml)
+        4. [message-board.html](#message-boardhtml)
+        5. [contact.html](#contacthtml)
+        6. [contact-completion.html](#contact-completionhtml)
+        7. [404.html](#404html)
+    2. [CSS](#css)
+        1. [index.html](#indexhtml-1)
+        2. [mailing-list-completion.html](#mailing-list-completionhtml-1)
+        3. [about.html](#abouthtml-1)
+        4. [message-board.html](#message-boardhtml-1)
+        5. [contact.html](#contacthtml-1)
+        6. [contact-completion.html](#contact-completionhtml-1)
+        7. [404.html](#404html-1)
+2. [Manual Validation](#manual-validation)
+    1. [index.html](#indexhtml-2)
+    2. [mailing-list-completion.html](#mailing-list-completionhtml-2)
+    3. [about.html](#abouthtml-2)
+    4. [message-board.html](#message-boardhtml-2)
+    5. [contact.html](#contacthtml-2)
+    6. [contact-completion.html](#contact-completionhtml-2)
+    7. [404.html](#404html-2)
+3. [User Story Validation](#user-story-validation)
+4. [Browser Compatibility](#browser-compatibility)
+5. [Accessibility](#accessibility)
+6. [Responsiveness](#responsiveness)
+7. [Performance](#performance)
+8. [Bugs](#bugs)
+9. [Unfixed Bugs](#unfixed-bugs)
+
 ## Code Validation
 
-HTML and CSS validation for each page using the [W3C Markup Validation Service](https://validator.w3.org) and the [W3C CSS Validation Service](ahttps://jigsaw.w3.org/css-validator):
+### HTML
 
-### index.html
+HTML validation for each page using the [W3C Markup Validation Service](https://validator.w3.org):
+
+#### index.html
 
 ![HTML validation of index.html](assets/documentation/validation/html-index.webp)
-![CSS validation of index.html](assets/documentation/validation/css-index.webp)
 
-### mailing-list-completion.html
+#### mailing-list-completion.html
 
 ![HTML validation of index.html](assets/documentation/validation/html-mailing-list-completion.webp)
-![CSS validation of index.html](assets/documentation/validation/css-mailing-list-completion.webp)
 
-### about.html
+#### about.html
 
 ![HTML validation of index.html](assets/documentation/validation/html-about.webp)
-![CSS validation of index.html](assets/documentation/validation/css-about.webp)
 
-### message-board.html
+#### message-board.html
 
 ![HTML validation of index.html](assets/documentation/validation/html-message-board.webp)
-![CSS validation of index.html](assets/documentation/validation/css-message-board.webp)
 
-### contact.html
+#### contact.html
 
 ![HTML validation of index.html](assets/documentation/validation/html-contact.webp)
-![CSS validation of index.html](assets/documentation/validation/css-contact.webp)
 
-### contact-completion.html
+#### contact-completion.html
 
 ![HTML validation of index.html](assets/documentation/validation/html-contact-completion.webp)
-![CSS validation of index.html](assets/documentation/validation/css-contact-completion.webp)
 
-### 404.html
+#### 404.html
 
 ![HTML validation of index.html](assets/documentation/validation/html-404.webp)
+
+### CSS
+
+CSS validation for each page using the [W3C CSS Validation Service](ahttps://jigsaw.w3.org/css-validator):
+
+#### index.html
+
+![CSS validation of index.html](assets/documentation/validation/css-index.webp)
+
+#### mailing-list-completion.html
+
+![CSS validation of index.html](assets/documentation/validation/css-mailing-list-completion.webp)
+
+#### about.html
+
+![CSS validation of index.html](assets/documentation/validation/css-about.webp)
+
+#### message-board.html
+
+![CSS validation of index.html](assets/documentation/validation/css-message-board.webp)
+
+#### contact.html
+
+![CSS validation of index.html](assets/documentation/validation/css-contact.webp)
+
+#### contact-completion.html
+
+![CSS validation of index.html](assets/documentation/validation/css-contact-completion.webp)
+
+#### 404.html
+
 ![CSS validation of index.html](assets/documentation/validation/css-404.webp)
+
 
 ## Manual Validation
 
