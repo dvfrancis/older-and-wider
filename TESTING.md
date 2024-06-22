@@ -416,6 +416,8 @@ Pages were tested for accessibility using the [Wave Accessibility Evaluation Too
 
 ### mailing-list-completion.html
 
+The error being shown here is because of the auto-redirect setup on the page, which is part of the design:
+
 ![WAVE report for mailing-list-completion.html](documentation/validation/wave-report-mailing-list-completion.webp)
 
 ### about.html
@@ -432,35 +434,150 @@ Pages were tested for accessibility using the [Wave Accessibility Evaluation Too
 
 ### contact-completion.html
 
+The error being shown here is because of the auto-redirect setup on the page, which is part of the design:
+
 ![WAVE report for contact-completion.html](documentation/validation/wave-report-contact-completion.webp)
 
 ### 404.html
+
+The error being shown here is because of the auto-redirect setup on the page, which is part of the design:
 
 ![WAVE report for 404.html](documentation/validation/wave-report-404.webp)
 
 ## Responsiveness
 
-Pages were tested for responsiveness using the [Responsive Web Design Checker](https://responsivedesignchecker.com/):
+Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 360px x 640px), tablet size (Apple iPad Retina - 768px 1024px), and desktop size (1400px x 700px), using the [Responsive Web Design Checker](https://responsivedesignchecker.com/):
 
 ### index.html
+
+#### Mobile
+
+![Responsiveness report for index.html](documentation/validation/responsive-index-mobile.webp)
+
+#### Tablet
+
+![Responsiveness report for index.html](documentation/validation/responsive-index-tablet.webp)
+
+#### Desktop
+
+![Responsiveness report for index.html](documentation/validation/responsive-index-desktop.webp)
+
 ### mailing-list-completion.html
+
+#### Mobile
+
+![Responsiveness report for mailing-list-completion.html](documentation/validation/responsive-mailing-list-completion-mobile.webp)
+
+#### Tablet
+
+![Responsiveness report for mailing-list-completion.html](documentation/validation/responsive-mailing-list-completion-tablet.webp)
+
+#### Desktop
+
+![Responsiveness report for mailing-list-completion.html](documentation/validation/responsive-mailing-list-completion-desktop.webp)
+
 ### about.html
+
+#### Mobile
+
+![Responsiveness report for about.html](documentation/validation/responsive-about-mobile.webp)
+
+#### Tablet
+
+![Responsiveness report for about.html](documentation/validation/responsive-about-tablet.webp)
+#### Desktop
+
+![Responsiveness report for about.html](documentation/validation/responsive-about-desktop.webp)
+
 ### message-board.html
+
+For some reason, the Instagram widget does not load for this preview, and the social media icons are squashed. This behaviour is not evident when viewing the site on an actual mobile, tablet, or desktop device so I think it is caused by something this website does during testing.
+
+#### Mobile
+
+![Responsiveness report for message-board.html](documentation/validation/responsive-message-board-mobile.webp)
+
+#### Tablet
+
+![Responsiveness report for message-board.html](documentation/validation/responsive-message-board-tablet.webp)
+
+#### Desktop
+
+![Responsiveness report for message-board.html](documentation/validation/responsive-message-board-desktop.webp)
+
 ### contact.html
+
+#### Mobile
+
+![Responsiveness report for contact.html](documentation/validation/responsive-contact-completion-mobile.webp)
+
+#### Tablet
+
+![Responsiveness report for contact.html](documentation/validation/responsive-contact-tablet.webp)
+
+#### Desktop
+
+![Responsiveness report for contact.html](documentation/validation/responsive-contact-desktop.webp)
+
 ### contact-completion.html
+
+#### Mobile
+
+![Responsiveness report for contact-completion.html](documentation/validation/responsive-contact-completion-mobile.webp)
+
+#### Tablet
+
+![Responsiveness report for contact-completion.html](documentation/validation/responsive-contact-completion-tablet.webp)
+
+#### Desktop
+
+![Responsiveness report for contact-completion.html](documentation/validation/responsive-contact-completion-desktop.webp)
+
 ### 404.html
+
+#### Mobile
+
+![Responsiveness report for 404.html](documentation/validation/responsive-404-mobile.webp)
+
+#### Tablet
+
+![Responsiveness report for 404.html](documentation/validation/responsive-404-tablet.webp)
+
+#### Desktop
+
+![Responsiveness report for 404.html](documentation/validation/responsive-404-desktop.webp)
 
 ## Performance
 
 Each page was audited using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/):
 
 ### index.html
+
+![Performance report for index.html](documentation/validation)
+
 ### mailing-list-completion.html
+
+![Performance report for mailing-list-completion.html](documentation/validation)
+
 ### about.html
+
+![Performance report for about.html](documentation/validation)
+
 ### message-board.html
+
+![Performance report for message-board.html](documentation/validation)
+
 ### contact.html
+
+![Performance report for contact.html](documentation/validation)
+
 ### contact-completion.html
+
+![Performance report for contact-completion.html](documentation/validation)
+
 ### 404.html
+
+![Performance report for 404.html](documentation/validation)
 
 ## Bugs
 
