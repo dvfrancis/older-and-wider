@@ -258,84 +258,108 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### First Time Visitor Goals
 
-"What is the Older and Wider podcast about?"
+1. "What is the Older and Wider podcast about?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS | 
+| About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS |
 
-"Who is Jenny Eclair?"
+![First time visitor goal 1](documentation/validation/first-time-visitor-goal-1.webp)
+
+2. "Who is Jenny Eclair?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "Who is Jenny Eclair?" | View information about Jenny Eclair | View information about Jenny Eclair | PASS | 
 
-"Who is Judith Holder?"
+![First time visitor goal 2](documentation/validation/first-time-visitor-goal-2.webp)
+
+3. "Who is Judith Holder?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "Who is Judith Holder?" | View information about Judith Holder | View information about Judith Holder | PASS | 
 
-"Where can I listen to the Older and Wider Podcast"
+![First time visitor goal 3](documentation/validation/first-time-visitor-goal-3.webp)
+
+4. "Where can I listen to the Older and Wider Podcast"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Home page | Navigate to the home page, , scroll down to the section called "Join the Older & Wider Podcast Gang", and find the links to podcast platforms | Find the info and choose a provider where you can download and listen to the podcast | Find the info and choose a provider where you can download and listen to the podcast | PASS | 
 | Home page | Navigate to the home page, scroll down to the section called "Listen to the Podcast", and play the latest episode from the embedded podcast player | Find the podcast player and listen to the latest episode | Find the podcast player and listen to the latest episode | PASS | 
 
-"When are episodes of the Older and Wider podcast released?"
+![First time visitor goal 4](documentation/validation/first-time-visitor-goal-4.webp)
+
+5. "When are episodes of the Older and Wider podcast released?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Home page | Navigate to the home page, scroll down to the section called "Join the Older & Wider Podcast Gang", and read about the podcast release date | Find the release date of the podcast | Find the release date of the podcast | PASS | 
 
+![First time visitor goal 5](documentation/validation/first-time-visitor-goal-5.webp)
+
 ### Returning Visitor Goals:
 
-"I want to find out more background information about the Older and Wider podcast"
+1. "I want to find out more background information about the Older and Wider podcast"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS |
 | Home page | Navigate to the home page, scroll down to the section called "Mailing List", enter a valid email address, and click the button titled 'Send' to be included on the podcast's mailing list | User is added to the mailing list, and will receive further information via email | User is added to the mailing list, and will receive further information via email | PASS | 
 
+![Returning visitor goal 1](documentation/validation/returning-visitor-goal-1a.webp)
+![Returning visitor goal 1](documentation/validation/returning-visitor-goal-1b.webp)
 
-"What was mentioned during the 'Culture Corner' segment of this week's show?"
+2. "What was mentioned during the 'Culture Corner' segment of this week's show?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Message board page | Navigate to the message board page, using the navigation bar at the top of each page, and scroll through the posts on Instagram to find the latest Culture Corner update | Find the latest Culture Corner post and read it | Find the latest Culture Corner post and read it | PASS | 
 
-"Has the podcast won any awards?"
+![Returning visitor goal 2](documentation/validation/returning-visitor-goal-2.webp)
+
+3. "Has the podcast won any awards?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Home page | Navigate to the home page, scroll down to the section called "Join the Older & Wider Podcast Gang", and read about awards for which the podcast has been nominated | Find information about awards | Find information about awards | PASS | 
+| Home page | Navigate to the home page, scroll down to the section called "Join the Older & Wider Podcast Gang", and read about awards for which the podcast has been nominated | Find information about awards | Find information about awards | PASS |
 
-"What is the 'Message Board' - it was mentioned by Jenny and Judith in this week's episode, but where can I access it?"
+![Returning visitor goal 3](documentation/validation/returning-visitor-goal-3.webp)
+
+4. "What is the 'Message Board' - it was mentioned by Jenny and Judith in this week's episode, but where can I access it?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Message board page | Navigate to the message board page, and read the text under the Instagram embed | Find information about the message board | Find information about the message board | PASS | 
 
+![Returning visitor goal 4](documentation/validation/returning-visitor-goal-4.webp)
+
 ### Frequent Visitor Goals:
 
-"How can I contact Jenny and Judith to share my experiences, or comment on an item that was mentioned in the show?"
+1. "How can I contact Jenny and Judith to share my experiences, or comment on an item that was mentioned in the show?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Contact page | Navigate to the contact page, and complete the contact form to send a message to the podcast | A message is sent, and the user is redirected to the contact completion page | A message is sent, and the user is redirected to the contact completion page | PASS | 
 
-"Is there any podcast merchandise available?"
+![Frequent visitor goal 1](documentation/validation/frequent-visitor-goals-1.webp)
+
+2. "Is there any podcast merchandise available?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Home page | Navigate to the home page, scroll down to the section called "Merch", and click the button titled 'See the Merch' to be taken to the merchandise website (in a new tab) | User can purchase merchandise from an external website | User can purchase merchandise from an external website | PASS | 
 
-"Can I watch the podcast being performed live?"
+![Frequent visitor goal 2](documentation/validation/frequent-visitor-goals-2.webp)
+
+3. "Can I watch the podcast being performed live?"
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Home page | Navigate to the home page, scroll down to the section called "Older & Wider - Live!", and click the button titled 'Buy Tickets' to be taken to an external ticketing website (in a new tab) | User can purchase available tickets to a live show, from an external website | User can purchase available tickets to a live show, from an external website | PASS | 
+
+![Frequent visitor goal 3](documentation/validation/frequent-visitor-goals-3.webp)
 
 ## Browser Compatibility
 
