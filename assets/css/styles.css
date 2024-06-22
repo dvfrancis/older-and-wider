@@ -83,6 +83,15 @@ p>a:hover {
     border-radius: 10px;
 }
 
+/* Customised Bootstrap carousel controls*/
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background-color: #cf9d00;
+    border: solid white 1px;
+    border-radius: 5px;
+}
+
 /* HEADER */
 
 /* Default navbar menu item style*/
@@ -316,6 +325,14 @@ li.nav-item a {
         padding-top: 185px;
     }
 
+    /* Resized Bootstrap carousel controls*/
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        border-radius: 2px;
+        width: 15px;
+        height: 15px;
+    }
 }
 
 /* For Bootstrap breakpoint small (sm) */
