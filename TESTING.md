@@ -408,19 +408,39 @@ The website has been successfully tested in the following browsers:
 
 ## Accessibility
 
-The results of testing accessibility using the [Wave Accessibility Evaluation Tool](https://wave.webaim.org) are shown below:
+Pages were tested for accessibility using the [Wave Accessibility Evaluation Tool](https://wave.webaim.org):
 
 ### index.html
+
+![WAVE report for index.html](documentation/validation/wave-report-index.webp)
+
 ### mailing-list-completion.html
+
+![WAVE report for mailing-list-completion.html](documentation/validation/wave-report-mailing-list-completion.webp)
+
 ### about.html
+
+![WAVE report for index.html](documentation/validation/wave-report-about.webp)
+
 ### message-board.html
+
+![WAVE report for about.html](documentation/validation/wave-report-message-board.webp)
+
 ### contact.html
+
+![WAVE report for contact.html](documentation/validation/wave-report-contact.webp)
+
 ### contact-completion.html
+
+![WAVE report for contact-completion.html](documentation/validation/wave-report-contact-completion.webp)
+
 ### 404.html
+
+![WAVE report for 404.html](documentation/validation/wave-report-404.webp)
 
 ## Responsiveness
 
-Test deployed site for various device sizes using the Responsive Website Design Tester.
+Pages were tested for responsiveness using the [Responsive Web Design Checker](https://responsivedesignchecker.com/):
 
 ### index.html
 ### mailing-list-completion.html
@@ -432,7 +452,7 @@ Test deployed site for various device sizes using the Responsive Website Design 
 
 ## Performance
 
-Audit each page in Google Lighthouse.
+Each page was audited using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/):
 
 ### index.html
 ### mailing-list-completion.html
@@ -444,12 +464,17 @@ Audit each page in Google Lighthouse.
 
 ## Bugs
 
+Here is a list of bugs encountered while building this website:
+
+
 List all bugs encountered while coding.
 Could use GitHub Issues to keep track of any issues (see Lewis Dillon's README for more information).
 List any known, but unfixed bugs - and why they couldn’t be fixed or recreated - or confirm there are none.
 Could also list any mistakes made during project, such as using the wrong tense on commit messages.
 
 ## Unfixed Bugs
+
+Here is a list of bugs I was unable to fix due to circumstances beyond my control:
 
 Mention unfixed bugs and why they were not fixed.
 Include shortcomings of the frameworks or technologies used.
