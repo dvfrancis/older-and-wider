@@ -212,6 +212,8 @@ The Github Pages live site can be accessed [here].
 
 #### User Flow diagram
 
+This diagram shows how the user may interact and navigate through the website; dashed lines indicate optional routes.
+
 ![User flow diagram](assets/images/user-flow-diagram.webp)
 
 ### Skeleton
