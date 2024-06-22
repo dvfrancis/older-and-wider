@@ -313,7 +313,7 @@ li.nav-item a {
 /* For Bootstrap breakpoint extra small (none) */
 @media (max-width: 575px) {
     body {
-        padding-top: 250px;
+        padding-top: 185px;
     }
 
 }
