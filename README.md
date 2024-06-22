@@ -105,6 +105,7 @@ The Github Pages live site can be accessed [here].
 - General
 
     - All pages will be responsive at different screen sizes, and change layout accordingly and appropriately.
+    - All images shown in this section are taken from the desktop site, to give the clearest examples possible (apart from the Header section which also shows the header as seen on mobile devices, with hamburger menu). 
 
 - Browser Tab Icon:
 
@@ -124,8 +125,17 @@ The Github Pages live site can be accessed [here].
         - Message Board - that takes the user to a page with the podcast's embedded Instagram profile.
         - Contact - that takes the user to a contact form that can be completed to send a message to the podcast hosts.
     - The currently active page is indicated on the navigation bar.
+    - THe header as it appears on desktops:
 
         ![Website header](assets/images/website-header.webp)
+
+    - The header as it appears on mobile:
+
+        ![Website mobile menu](assets/images/website-mobile-menu.webp)
+
+    - and with expanded hamburger menu:
+
+        ![Website mobile menu expanded](assets/images/website-mobile-menu-expanded.webp)
 
 - Footer:
 
