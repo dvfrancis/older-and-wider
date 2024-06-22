@@ -45,63 +45,63 @@ HTML validation for each page using the [W3C Markup Validation Service](https://
 
 #### index.html
 
-![HTML validation of index.html](assets/documentation/validation/html-index.webp)
+![HTML validation of index.html](documentation/validation/html-index.webp)
 
 #### mailing-list-completion.html
 
-![HTML validation of index.html](assets/documentation/validation/html-mailing-list-completion.webp)
+![HTML validation of index.html](documentation/validation/html-mailing-list-completion.webp)
 
 #### about.html
 
-![HTML validation of index.html](assets/documentation/validation/html-about.webp)
+![HTML validation of index.html](documentation/validation/html-about.webp)
 
 #### message-board.html
 
-![HTML validation of index.html](assets/documentation/validation/html-message-board.webp)
+![HTML validation of index.html](documentation/validation/html-message-board.webp)
 
 #### contact.html
 
-![HTML validation of index.html](assets/documentation/validation/html-contact.webp)
+![HTML validation of index.html](documentation/validation/html-contact.webp)
 
 #### contact-completion.html
 
-![HTML validation of index.html](assets/documentation/validation/html-contact-completion.webp)
+![HTML validation of index.html](documentation/validation/html-contact-completion.webp)
 
 #### 404.html
 
-![HTML validation of index.html](assets/documentation/validation/html-404.webp)
+![HTML validation of index.html](documentation/validation/html-404.webp)
 
 ### CSS
 
-CSS validation for each page using the [W3C CSS Validation Service](ahttps://jigsaw.w3.org/css-validator):
+CSS validation for each page using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator):
 
 #### index.html
 
-![CSS validation of index.html](assets/documentation/validation/css-index.webp)
+![CSS validation of index.html](documentation/validation/css-index.webp)
 
 #### mailing-list-completion.html
 
-![CSS validation of index.html](assets/documentation/validation/css-mailing-list-completion.webp)
+![CSS validation of index.html](documentation/validation/css-mailing-list-completion.webp)
 
 #### about.html
 
-![CSS validation of index.html](assets/documentation/validation/css-about.webp)
+![CSS validation of index.html](documentation/validation/css-about.webp)
 
 #### message-board.html
 
-![CSS validation of index.html](assets/documentation/validation/css-message-board.webp)
+![CSS validation of index.html](documentation/validation/css-message-board.webp)
 
 #### contact.html
 
-![CSS validation of index.html](assets/documentation/validation/css-contact.webp)
+![CSS validation of index.html](documentation/validation/css-contact.webp)
 
 #### contact-completion.html
 
-![CSS validation of index.html](assets/documentation/validation/css-contact-completion.webp)
+![CSS validation of index.html](documentation/validation/css-contact-completion.webp)
 
 #### 404.html
 
-![CSS validation of index.html](assets/documentation/validation/css-404.webp)
+![CSS validation of index.html](documentation/validation/css-404.webp)
 
 
 ## Manual Validation
