@@ -110,7 +110,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### index.html
 
-| Item | Process | Expected Result | Actual Result | Status |
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
 | Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
@@ -132,7 +132,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### mailing-list-completion.html
 
-| Item | Process | Expected Result | Actual Result | Status |
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
 | Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
@@ -152,7 +152,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### about.html
 
-| Item | Process | Expected Result | Actual Result | Status |
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
 | Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
@@ -170,7 +170,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### message-board.html
 
-| Item | Process | Expected Result | Actual Result | Status |
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
 | Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
@@ -191,7 +191,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### contact.html
 
-| Item | Process | Expected Result | Actual Result | Status |
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
 | Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
@@ -214,7 +214,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### contact-completion.html
 
-| Item | Process | Expected Result | Actual Result | Status |
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
 | Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
@@ -233,7 +233,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### 404.html
 
-| Item | Process | Expected Result | Actual Result | Status |
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
 | Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
