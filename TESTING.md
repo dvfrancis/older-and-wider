@@ -34,6 +34,10 @@
     2. [Returning Visitor Goals](#returning-visitor-goals)
     3. [Frequent Visitor Goals](#frequent-visitor-goals)
 4. [Browser Compatibility](#browser-compatibility)
+    1. [Google Chrome](#google-chrome)
+    2. [Microsoft Edge](#microsoft-edge)
+    3. [Firefox](#firefox)
+    4. [Opera](#opera)
 5. [Accessibility](#accessibility)
 6. [Responsiveness](#responsiveness)
 7. [Performance](#performance)
@@ -363,8 +367,23 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ## Browser Compatibility
 
-Test deployed site in various browsers.
-Could use animated GIFs to show results.
+The website has been successfully tested in the following browsers:
+
+### Google Chrome
+
+![Website in Google Chrome](documentation/validation/google-chrome-compatibility.webp)
+
+### Microsoft Edge
+
+![Website in Microsoft Edge](documentation/validation/microsoft-edge-compatibility.webp)
+
+### Firefox
+
+![Website in Firefox](documentation/validation/firefox-compatibility.webp)
+
+### Opera
+
+![Website in opera](documentation/validation/opera-compatibility.webp)
 
 ## Accessibility
 
