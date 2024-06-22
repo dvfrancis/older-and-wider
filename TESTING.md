@@ -631,18 +631,89 @@ The lower score for accessibility here is caused by two things - the presence of
 
 ## Bugs
 
-Here is a list of bugs encountered while building this website:
+Here is a list of bugs encountered while building this website. Images shown illustrate the original problem:
 
+| Bug | Fix |
+| --- | --- |
+| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
 
-List all bugs encountered while coding.
-Could use GitHub Issues to keep track of any issues (see Lewis Dillon's README for more information).
-List any known, but unfixed bugs - and why they couldn’t be fixed or recreated - or confirm there are none.
-Could also list any mistakes made during project, such as using the wrong tense on commit messages.
+![Bug 1](documentation/bugs/bug-01-fontawesome-icons.webp)
+
+| Bug | Fix |
+| --- | --- |
+| The link to the currently loaded page is not highlighted in the navigation bar | Style the pseudo elements - :link, :hover, and :active - to change the navigation links upon use. Add a class called "active" (with the same CSS declarations as :hover) and add to the menu item for the currently active page.
+
+![Bug 2](documentation/bugs/bug-02-highlight-menu-item.webp)
+
+| Bug | Fix |
+| --- | --- |
+| Navigation bar is not centred or responsive | Centred the menu items using the mx-auto Bootstrap class on the internal navbar container
+
+![Bug 3](documentation/bugs/bug-03-navbar-position.webp)
+
+| Bug | Fix |
+| --- | --- |
+| Page content is hidden behind fixed header | Created media queries to add padding to the top of the ``body`` element, at different screen resolutions
+
+![Bug 4](documentation/bugs/bug-04-page-content-hidden.webp)
+
+| Bug | Fix |
+| --- | --- |
+| Images are too wide at larger resolution | Adjusted the size using a percentage value against ``max-width`` property of the img tag |
+
+![Bug 5](documentation/bugs/bug-05-images-too-wide.webp)
+
+| Bug | Fix |
+| --- | --- |
+| Text is too small at larger screen resolutions | Added Bootstrap classes to manage the text elements at different screen resolutions; for example, fs-4. |
+
+![Bug 6](documentation/bugs/bug-06-text-size.webp)
+
+| Bug | Fix |
+| --- | --- |
+| Contact form is to wide on larger screen resolutions | Needed some adjustment with regards to font size and font weight, using Bootstrap font classes |
+
+![Bug 7](documentation/bugs/bug-07-contact-form-width.webp)
+
+| Bug | Fix |
+| --- | --- |
+| A red line appears underneath the header on the contact.html page, at higher screen resolutions | Accidentally added the ``.feature`` class to the header, which added the red line |
+
+![Bug 8](documentation/bugs/bug-08-header-red-line.webp)
+
+| Bug | Fix |
+| --- | --- |
+| If you select a navigation link but then drag away from it, it turns black | The pseudo element ``:visited`` had not been formatted for the links. Once it was they remained white as expected. |
+
+![Bug 9](documentation/bugs/bug-09-short-click-release.webp)
+
+| Bug | Fix |
+| --- | --- |
+| When the site width increases, the padding on buttons seems to increase too, leading to misaligned button text | Removed the height property that had been added to the buttons |
+
+![Bug 10](documentation/bugs/bug-10-button-padding.webp)
+
+| Bug | Fix |
+| --- | --- |
+| The Instagram widget used for message-board.html overlaps the fixed footer | The footer is no longer fixed and this solved the issue. If it had remained fixed I believe adjusting the z-index of the widget would also have solved the issue. |
+
+![Bug 11](documentation/bugs/bug-11-widget-overlap.webp)
+
+| Bug | Fix |
+| --- | --- |
+| When I hover over, or click, a navbar link, the other navbar links move ever so slightly (I have exaggerated it for the screenshots so it is easier to see) | Added a default border size to the item when it wasn't being hovered over or clicked. |
+
+![Bug 12](documentation/bugs/bug-12-navbar-links-move%20(1).webp)
+![Bug 12](documentation/bugs/bug-12-navbar-links-move%20(2).webp)
+![Bug 12](documentation/bugs/bug-12-navbar-links-move%20(3).webp)
+![Bug 12](documentation/bugs/bug-12-navbar-links-move%20(4).webp)
 
 ## Unfixed Bugs
 
 Here is a list of bugs I was unable to fix due to circumstances beyond my control:
 
-Mention unfixed bugs and why they were not fixed.
-Include shortcomings of the frameworks or technologies used.
-Lack of time, and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
+| Bug | Fix |
+| --- | --- |
+| There is a white line beneath the footer | This only occurs in Chromium-based browsers such as Google Chrome and Microsoft Edge; the line does not appear in other browers tested. After discussing this with Code Institute's tutor support we came to the conclusion it was either a problem with that type of browser, or a strange quirk of the computer I am using |
+
+![Bug 13](documentation/bugs/bug-13-chromium-whitespace.webp)
