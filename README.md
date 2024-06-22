@@ -10,6 +10,11 @@ The purpose of the website is to give interested parties insights and informatio
 
 ![Preview of the Older & Wider website at different screen sizes](assets/images/site-preview.webp)
 
+### Site Link
+
+[here]: https://dvfrancis.github.io/older-and-wider
+The Github Pages live site can be accessed [here].
+
 ## Index
 
 1. [Overview](#the-older-and-wider-podcast)
@@ -55,11 +60,6 @@ The purpose of the website is to give interested parties insights and informatio
     9. [Podcast Links](#podcast-links)
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
-
-### Site Link
-
-[here]: https://dvfrancis.github.io/older-and-wider
-The Github Pages live site can be accessed [here].
 
 ## User Experience Design
 
@@ -395,72 +395,48 @@ When using Gitpod, you can click the button below to create a workspace from thi
 
 ## Credits and References
 
-### General
+All images on this site are taken from either the podcast's [Instagram](https://www.instagram.com/olderandwiderpodcast/) page or [merchandise website](https://olderandwidershop.com/). Links to live sites are also used for the social media icons, and in the footer. This is done to help promote the podcast, and as a mark of respect for all the work that has gone into it. Once this project has been assessed, my intention is to get in touch with the podcast to let Jenny and Judith know about it.
 
-- All images on this site are taken from either the podcast Instagram page or the merchandise website. Live links are also used for social media icons, and in the footer. This is done to help promote the podcast, and as a mark of respect for all the work that has gone into it. My intention is to contact the podcast, after this project has been assessed, to let them know it exists.
+The following references were used for general advice and help in implementing specific functionality on the website:
+- [Duckett, J. (2011) HTML & CSS - Design and Build Websites. Indianapolis: John Wiley & Sons, Inc.](https://htmlandcssbook.com/) - general coding advice.
+- [Microsoft Edge Copilot](https://www.microsoft.com/en-us/edge/features/copilot) - coding advice, particularly around CSS rules of ingeritance.
+- [How to create a copyright symbol](https://blog.hubspot.com/website/html-code-copyright) - creating the copyright symbol in the footer.
+- [How to set a favicon in GitHub Pages]( https://stackoverflow.com/questions/35037482/favicon-with-github-pages) - setting a favicon on GitGub Pages.
+- [W3 Schools CSS :visited Selector](https://www.w3schools.com/cssref/sel_visited.php) and 
+ [CSS-Tricks :visited](https://css-tricks.com/almanac/selectors/v/visited/) - styling the navigation links after they had been visited.
+- [Background on semantic HTML5 elements](https://www.freecodecamp.org/news/semantic-html5-elements/) - ordering semantic HTMl elements.
+- [Redirect to custom form completion page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections?ref=library.linkbot.com) - creating a redirect from the website's custom completion pages.
+- [How to Implement ARIA Tags for Better Accessibility](https://dev.to/sarveshh/how-to-implement-aria-tags-for-better-accessibility-a-comprehensive-guide-for-web-developers-h3k) - how and where to use ARIA tags.
+- [Using Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) - creating media queries to control ``body`` padding at different screen sizes.
+- [Creating a custom 404 page for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) - implementing a GutHub Pages custom 404 page.
+- [How To Change the Color of the Bootstrap 5 Mobile Menu Icon](https://www.youtube.com/watch?v=45QSuJaHEss) - altering the colour of the hamburger menu on mobile devices.
+- [How to use srcset and sizes for responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images) - making the website's image carousels more responsive.
+- [The Only Markdown Cheatsheet You Need](https://github.com/im-luka/markdown-cheatsheet) - creating the README.md and TESTING.md documentation.
 
-### Coding
+References used to gain a general understanding about the podcast, and for creating website content:
 
-- Book - Duckett, J. (2011) HTML & CSS - Design and Build Websites. Indianapolis: John Wiley & Sons, Inc.
-- Microsoft Edge Copilot for coding advice, particularly on CSS rules and ingeritance.
-- [How to create a copyright symbol](https://blog.hubspot.com/website/html-code-copyright)
-- [How to set a favicon in GitHub Pages]( https://stackoverflow.com/questions/35037482/favicon-with-github-pages)
-- [Information on CSS :visited](https://www.w3schools.com/cssref/sel_visited.php)
-- [Information on CSS : visited](https://css-tricks.com/almanac/selectors/v/visited/)
-- [Background on semantic HTML5 elements](https://www.freecodecamp.org/news/semantic-html5-elements/)
-- [Redirect to custom form completion page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections?ref=library.linkbot.com)
-- [ARIA tags](https://dev.to/sarveshh/how-to-implement-aria-tags-for-better-accessibility-a-comprehensive-guide-for-web-developers-h3k)
-- [Border vs Content Box](https://stackoverflow.com/questions/44453391/what-is-the-difference-between-border-box-and-content-box-in-css)
-- [Centre aligned Navbar](https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-or-right-aligned-items/)
-- [Code for showing\hiding items at certain Bootstrap breakpoints](https://www.gunnard.org/bootstrap-breakpoint-show-hide-cheatsheet/)
-- [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
-- [Custom 404 page on GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site)
-- [Change navbar toggler burger menu colour](https://www.youtube.com/watch?v=45QSuJaHEss)
-- [How to use img srcset for serving responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images)
-- [Markdown Cheatsheet](https://github.com/im-luka/markdown-cheatsheet)
+- [Jenny Eclair's website](https://jennyeclair.com)
+- [Jenny Eclair's Wikipedia page](https://en.wikipedia.org/wiki/Jenny_Eclair)
+- [Interview in The Guardian with Jenny Eclair](https://www.theguardian.com/stage/2020/jun/28/jenny-eclair-menopause-gave-me-incandescent-rage-it-was-like-a-superpower)
+- [Jenny Eclair's Amazon author profile](https://www.amazon.co.uk/stores/author/B001KDFYU2/allbooks)
+- [Judith Holder's website](http://www.judithholder.com/)
+- [Interview in The Guardian with Judith Holder](https://www.theguardian.com/lifeandstyle/2023/aug/14/a-new-start-after-60-i-came-out-of-my-shell-when-i-retired-now-im-a-podcast-star-at-67)
+- [Interview in Readers Digest with Judith Holder](https://www.readersdigest.co.uk/inspire/life/under-the-grandfluence-judith-holder)
+- [Judith Holder's Amazon author profile](https://www.amazon.co.uk/stores/author/B001KJ46JG?ingress=0&visitId=2980f5c1-ed6a-45d2-ab5b-16abd95eaa16&ref_=sr_ntt_srch_lnk_1)
+- [Wikipedia entry about 'Grumpy Old Women'](https://en.wikipedia.org/wiki/Grumpy_Old_Women)
+- [The Older & Wider Facebook](https://www.facebook.com/profile.php?id=61555198800248)
+- [Older & Wider Live! Avalon Press Release #1](https://avalonuk.com/2023/03/23/jenny-eclair-and-judith-holder-co-writers-of-internationally-successful-grumpy-old-women-live-stage-shows-bring-their-podcast-series-older-and-wider-to-the-london-stage-this-summer/)
+- [Older & Wider Live! Avalon Press Release #2](https://avalonuk.com/2023/03/29/extra-london-date-at-leicester-square-theatre-announced-for-jenny-eclair-and-judith-holders-older-and-wider-live-podcast-show/)
+- [Older & Wider Live! Theatre at The Tabard](https://tabard.org.uk/whats-on/olderandwider/)
+- [What's On Stage - Older & Wider Live!](https://www.whatsonstage.com/shows/outer-london-theatre/older-and-wider-live_300423/)
+- [UKTW - Older & Wider Live!](https://www.uktw.co.uk/archive/Tour/Talk/Older-and-Wider-live/T833145318/)
+- [The Lowry - Older & Wider Live!](https://thelowry.com/whats-on/older-and-wider-live-jenny-eclair-and-judith-holder/)
+- [See Tickets - Older & Wider Live!](https://www.seetickets.com/tour/older-and-wider-live)
 
-### Jenny Eclair
-
-- [Personal website](https://jennyeclair.com)
-- [Wikipedia](https://en.wikipedia.org/wiki/Jenny_Eclair)
-- [Article in The Guardian](https://www.theguardian.com/stage/2020/jun/28/jenny-eclair-menopause-gave-me-incandescent-rage-it-was-like-a-superpower)
-- [Amazon author profile](https://www.amazon.co.uk/stores/author/B001KDFYU2/allbooks)
-
-### Judith Holder
-
-- [Personal webaite](http://www.judithholder.com/)
-- [Article in The Guardian](https://www.theguardian.com/lifeandstyle/2023/aug/14/a-new-start-after-60-i-came-out-of-my-shell-when-i-retired-now-im-a-podcast-star-at-67)
-- [Article in Readers Digest](https://www.readersdigest.co.uk/inspire/life/under-the-grandfluence-judith-holder)
-- [Amazon author profile](https://www.amazon.co.uk/stores/author/B001KJ46JG?ingress=0&visitId=2980f5c1-ed6a-45d2-ab5b-16abd95eaa16&ref_=sr_ntt_srch_lnk_1)
-
-### Grumpy Old Women
-
-- [Wikipedia](https://en.wikipedia.org/wiki/Grumpy_Old_Women)
-
-### Older and Wider Merchandise
-
-- Images and graphics taken from [Merchandise website](https://olderandwidershop.com/)
-
-### Older and Wider Socials
-
-- Images taken from [Instagram](https://www.instagram.com/olderandwiderpodcast/)
-- [Facebook](https://www.facebook.com/profile.php?id=61555198800248)
-
-### Older and Wider Live
-
-- [Avalon Press Release #1](https://avalonuk.com/2023/03/23/jenny-eclair-and-judith-holder-co-writers-of-internationally-successful-grumpy-old-women-live-stage-shows-bring-their-podcast-series-older-and-wider-to-the-london-stage-this-summer/)
-- [Avalon Press Release #2](https://avalonuk.com/2023/03/29/extra-london-date-at-leicester-square-theatre-announced-for-jenny-eclair-and-judith-holders-older-and-wider-live-podcast-show/)
-- [Theatre at The Tabard](https://tabard.org.uk/whats-on/olderandwider/)
-- [What's On Stage](https://www.whatsonstage.com/shows/outer-london-theatre/older-and-wider-live_300423/)
-- [UKTW](https://www.uktw.co.uk/archive/Tour/Talk/Older-and-Wider-live/T833145318/)
-- [The Lowry](https://thelowry.com/whats-on/older-and-wider-live-jenny-eclair-and-judith-holder/)
-- [See Tickets](https://www.seetickets.com/tour/older-and-wider-live)
-
-### Podcast Links
+Links to the podcast, on various platforms:
 
 - [Acast](https://shows.acast.com/older-and-wider-podcast)
 - [Apple Podcasts](https://podcasts.apple.com/gb/podcast/older-and-wider-podcast/id1446310659)
-- [Acast](https://shows.acast.com/older-and-wider-podcast)
 - [Spotify](https://open.spotify.com/show/3ScVA6cJZpMifpJJDmmodP)
 - [Soundcloud](https://soundcloud.com/user-575974822)
     
@@ -468,12 +444,21 @@ When using Gitpod, you can click the button below to create a workspace from thi
 
 - The website was built using [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), and [Bootstrap.](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was not specifically used except where it was required for Bootstrap, particularly in making responsive menus work on mobile devices.
+- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
+- [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
+- The [Responsive Viewer](https://responsiveviewer.org/) extension was used in all browsers (except Firefox, which does not seem to support it) to create images of the website's pages on a variety of devices.
+- The [GoFullPage](https://gofullpage.com/) extension was used in all browser (except Firefox, which does not seem to support it) to capture full-sized images of the website's pages.
+- [Microsoft Edge](https://www.microsoft.com/en-gb/edge/) was used for website testing.
+- [Firefox](https://www.mozilla.org/en-GB/firefox/new/) was used for website testing.
+- [Opera](https://www.opera.com/) was used for website testing.
+- [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots on an iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).
+- [Figma](https://www.figma.com/) was used to create the wireframes and the user flow diagram.
 - [Elfsight](https://elfsight.com/) was used to create the Instagram embed code on message-board.html.
-- [Sarah Renae Clarke's Colour Catalogue V2, palette 389](https://sarahrenaeclark.com/color-palettes/) was used for the website colur scheme.
-- [Font Joy](https://fontjoy.com/) used to inspire font pairings.
+- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used to determine the website colur scheme.
+- [Font Joy](https://fontjoy.com/) was used to determine font pairings.
 - [Google Fonts](https://fonts.google.com/) was used for the Marcellus and Pontano Sans fonts.
 - [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook colours.
-- The Windows 10 Photos app was used to edit all images.
+- [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) was used to edit all images.
 - [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.
 - [To WebP](https://towebp.io/) was used to compress images into webp format.
 - [FontAwesome](https://fontawesome.com/) was used for social media icons.
