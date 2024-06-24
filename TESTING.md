@@ -148,6 +148,9 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
 | Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
 | Image carousel | Use arrow and indicator controls to move between all image slides | Slides transition succesfully | Slides transition succesfully | PASS |
+| Link - "Acast" | Click to open external website in new tab | The link opens in a new tab | The link opens in a new tab | PASS |
+| Link - "Apple Podcasts" | Click to open external website in new tab | The link opens in a new tab | The link opens in a new tab | PASS |
+| Link - "Spotify" | Click to open external website in new tab | The link opens in a new tab | The link opens in a new tab | PASS |
 | Button - "About the Podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
 | Podcast player | Click play to play the podcast, and then click pause to pause playback | Playback begins or ends | Playback begins or ends | PASS |
 | Button - "Buy Tickets" | Click to open external website in new tab | The link opens in a new tab | The link opens in a new tab | PASS |
