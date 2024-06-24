@@ -11,10 +11,10 @@ The purpose of the website is to give interested parties insights and informatio
 There are several references scattered across the site which refer back to items that are regularly mentioned, or discussed, on the podcast:
 
 - Older and Wider Listeners are called OWLs.
+- Anyone listening to the podcast is regarded as "part of the gang", or a "gang member".
 - Snore Law is invoked by either Jenny or Judith when they feel the conversation has got too boring; this is usually accompanied by a loud snoring noise.
 - Jenny and Judith both love coleslaw, and it is mentioned frequently.
-- Anyone listening to the podcast is regarded as "part of the gang", or a "gang member".
-- When people contact the podcast, the Jenny and Judith insist that people include their age with fractions; for example, "This email is from Sarah who is 59 and three quarters" (this is why the age field on the contact form is a text input).
+- When people contact the podcast, Jenny and Judith insist that people include their age with fractions; for example, "This email is from Sarah who is 59 and three quarters" (this is why the age field on the contact form is a text input).
 - Jenny and Judith have stated that a Breton top is the de facto uniform of an OWL.
 - Jenny and Judith regularly refer to the podcast Instagram page as the "message board".
 - There are a couple of regular podcast features:
@@ -120,7 +120,7 @@ The Github Pages live site can be accessed [here].
 - General
 
     - All pages will be responsive at different screen sizes, and change layout accordingly and appropriately.
-    - All images shown in this section are taken from the desktop site, to give the clearest examples possible (apart from the Header section which also shows the header as seen on mobile devices, with hamburger menu). 
+    - All screenshots shown in this section were taken from the desktop site, to give the clearest examples possible (apart from the Header section which also shows the header as seen on mobile devices, with a hamburger menu). 
 
 - Browser Tab Icon:
 
@@ -130,17 +130,17 @@ The Github Pages live site can be accessed [here].
 
 - Header:
 
-    - Fixed at the top of each page - contains site name and navigation.
+    - Fixed at the top of each page - contains the site name and navigation.
     - The header allows the user to identify where they are on the site.
-    - Plain background colour.
+    - Plain background colour with contrasting text.
     - Site name will be centred in the first row, and link back to the home page when clicked.
     - Navigation bar will be centred in the second row, beneath the site name, and contain links to:
-        - Home - that takes the user back to the home page when clicked.
-        - About - that takes the user to a page with information about the podcast and both hosts.
-        - Message Board - that takes the user to a page with the podcast's embedded Instagram profile.
-        - Contact - that takes the user to a contact form that can be completed to send a message to the podcast hosts.
+        - Home - this takes the user back to the home page when clicked.
+        - About - this takes the user to a page with information about the podcast and both hosts.
+        - Message Board - this takes the user to a page with the podcast's embedded Instagram profile.
+        - Contact - this takes the user to a contact form that can be completed to send a message to the podcast hosts.
     - The currently active page is indicated on the navigation bar.
-    - THe header as it appears on desktops:
+    - The header as it appears on desktops:
 
         ![Website header](assets/images/website-header.webp)
 
@@ -154,22 +154,22 @@ The Github Pages live site can be accessed [here].
 
 - Footer:
 
-    - Fixed at the bottom of each page - it contains the social media icons, and legal\copyright information.
-    - The footer allows the user to jump to the social media properties of the podcast (on a new page).
-    - Plain background colour.
+    - Fixed at the bottom of each page - it contains the social media icons, and legal information.
+    - The footer allows the user to jump to the social media properties of the podcast.
+    - Plain background colour with contrasting text.
     - Social media icons are centred in the first row.
     - Legal information is centred in the second row.
-    - On mouseover, each social media icon will change colour, and also when clicked.
+    - On hover, each social media icon will change colour, and also when clicked. The legal links only change colour on hover:
 
-        ![Website footer](assets/images/website-footer.webp)
+        ![Website footer](assets/images/website-footer.webp)        
 
 - Home (index):
 
     - This is the first page a user sees when they enter the site. It contains all pertinent information regarding the podcast, with links to other pages where required.
-    - The 'Home' page allows the user to get a good overview of the purpose of the podcast and gives them glimpses of associated activities.
-    - The page will feature an introduction to the podcast featuring a carousel of images, podcast player, details about the live shows, link to an external merchandise website, and a mailing list signup form.
-    - The live shows section has details about upcoming live shows, with a link to buy available tickets (in a new tab).
-    - The merchandise section has a link that takes the user to the merchandise website (in a new tab).
+    - The home page allows the user to get a good overview of the purpose of the podcast and gives them glimpses of associated activities.
+    - The page has an introduction to the podcast, a carousel of images, a podcast player, information about the live shows, a link to an external merchandise website, and a mailing list signup form.
+    - The live shows section has an explanation of the live shows, and a button that, when clicked, will open a new tab to the ticket site.
+    - The merchandise section has a button that, when clicked, takes the user to the merchandise website via a new tab.
     - In the mailing list section, the user has the opportunity to sign-up for a regularly released newsletter.
 
         ![Website home page](assets/images/website-index-feature.webp)
@@ -185,7 +185,7 @@ The Github Pages live site can be accessed [here].
 - About:
 
     - This section contains more detailed information about the podcast's purpose and the people behind it. It helps the user to understand the motivations behind the creation and continuation of the podcast.
-    - Sections:
+    - Sections are:
         - Information about the podcast.
         - Biography of Jenny Eclair.
         - Biography of Judith Holder.
@@ -194,7 +194,7 @@ The Github Pages live site can be accessed [here].
 
 - Message Board:
 
-    - The "Message Board" page allows the user to read posts on the Instagram page without having to navigate away from the site, so keeping them on the site for longer.
+    - The "message board" page allows the user to read posts on the Instagram page without having to navigate away from the site, so keeping them on the site for longer.
     - The podcast's Instagram profile is embedded on this page.
 
         ![Website message board page](assets/images/website-message-board-feature.webp)
@@ -245,7 +245,11 @@ This diagram shows how the user may interact and navigate through the website; d
 
 #### Wireframes
 
-After I created the wireframes from my initial ideas, I decided that on mobile devices the hamburger menu should be centred on the screen (rather than over to the right of the screen). However, the wireframes still show this menu appearing to the right.
+After I created the wireframes, and was bulding the site, I altered the layout of the header and footer so that the logo was replaced by a centred site title in the header but removed from the footer.
+
+The hamburger menu (shown in the header on smaller mobile devices) was also centred on the screen.
+
+The wireframes presented here show my initial ideas:
 
 ##### Mobile
 
@@ -326,24 +330,25 @@ The following colours have been used to add interesting backgrounds to site sect
 [Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)]:https://brandpalettes.com/facebook-colors
 [Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)]: https://brandpalettes.com/instagram-color-codes
 
-For the Facebook social media icon I used [Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)] for the hover and active link states.
+For the the hover and active link states of each social media icon I used:
 
-For the Instagram social media icon I used [Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)] for the hover and active link states.
+- [Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)].
+- [Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)].
 
-Colours used are palette 389 of the [Sarah Renae Clarke Colour Catalogue, Volume 2](https://sarahrenaeclark.com/shop/the-color-catalog-volume-2/).
+The colours used are taken from palette 389 of the [Sarah Renae Clarke Colour Catalogue, Volume 2](https://sarahrenaeclark.com/shop/the-color-catalog-volume-2/).
 
 #### Typography
 
 Fonts were chosen from Google Fonts:
   
-- [Marcellus](https://fonts.google.com/specimen/Marcellus) has been used for H1 and H2 tags.
-- [Pontano Sans](https://fonts.google.com/specimen/Pontano+Sans) has been used for all other body text.
+- [Marcellus](https://fonts.google.com/specimen/Marcellus) was used for H1 and H2 tags.
+- [Pontano Sans](https://fonts.google.com/specimen/Pontano+Sans) was used for all other body text.
 
 #### Media
 
 All images used on the site have been taken from the Older & Wider podcast [Instagram](https://www.instagram.com/olderandwiderpodcast) page and [merchandise website](https://olderandwidershop.com).
 
-For the image carousels that appear on index.html and about.html, I used [RespImageLint](https://ausi.github.io/respimagelint/) to advise about creating alternates of all images that would be appropriate for different screens sizes. This was then implemented using the HTML `img` `srcset` attribute for each image used.
+For the image carousels that appear on index.html and about.html, I used [RespImageLint](https://ausi.github.io/respimagelint/) to advise about creating alternates for all images, that would be appropriate at different screens sizes. This was then implemented using the HTML `img` `srcset` attribute for each image used.
 
 #### Content
 
@@ -384,7 +389,7 @@ To deploy the project on your own computer you can clone it:
 - Click the green '<> Code' button above the list of project files.
 - From the 'Local' tab, select either HTTPS, SSH, or GitHub CLI as the method of cloning, and copy the associated link.
 - Open the terminal or Bash prompt.
-- Navigate to the directory where you want to store the cloned copy or fork.
+- Navigate to the directory where you want to store the cloned copy.
 - At the prompt, type `git clone` and add the string copied earlier.
 - Press 'Enter' to create the copy.
 
