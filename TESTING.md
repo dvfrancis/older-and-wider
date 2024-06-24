@@ -101,7 +101,9 @@ Below are the results of HTML validation for each page, using the [W3C Markup Va
 
 ### CSS
 
-Below are the results of CSS validation for each page, using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator):
+Below are the results of CSS validation for each page, using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator). There were no warnings for the local CSS file, but warnings were generated for Bootstrap's CSS file, over which I have no control:
+
+![Bootstrap CSS errors](documentation/validation/css-bootstrap-warnings.webp)
 
 #### index.html
 
