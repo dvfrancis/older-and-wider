@@ -1,4 +1,4 @@
-# The Older and Wider Podcast
+# The Older & Wider Podcast
 
 ## Overview
 
