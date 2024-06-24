@@ -455,16 +455,16 @@ Links to the podcast, on various platforms:
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
 - [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
 - The [Responsive Viewer](https://responsiveviewer.org/) extension was used in all browsers (except Firefox, which does not seem to support it) to create images of the website's pages on a variety of devices.
-- The [GoFullPage](https://gofullpage.com/) extension was used in all browser (except Firefox, which does not seem to support it) to capture full-sized images of the website's pages.
+- The [GoFullPage](https://gofullpage.com/) extension was used in all browsers (except Firefox, which does not seem to support it) to capture full-sized images of the website's pages.
 - [Microsoft Edge](https://www.microsoft.com/en-gb/edge/) was used for website testing.
 - [Firefox](https://www.mozilla.org/en-GB/firefox/new/) was used for website testing.
 - [Opera](https://www.opera.com/) was used for website testing.
-- [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots on an iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).
+- [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots ofan iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).
 - [Figma](https://www.figma.com/) was used to create the wireframes and the user flow diagram.
-- [Elfsight](https://elfsight.com/) was used to create the Instagram embed code on message-board.html.
-- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used to determine the website colur scheme.
+- [Elfsight](https://elfsight.com/) was used to create the Instagram embed code for message-board.html.
+- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used to determine the website's colur scheme.
 - [Font Joy](https://fontjoy.com/) was used to determine font pairings.
-- [Google Fonts](https://fonts.google.com/) was used for the Marcellus and Pontano Sans fonts.
+- [Google Fonts](https://fonts.google.com/) was used to source the Marcellus and Pontano Sans fonts.
 - [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook colours.
 - [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) was used to edit all images.
 - [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.
