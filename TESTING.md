@@ -390,23 +390,31 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ## Browser Compatibility
 
-The website has been successfully tested in the following browsers:
+The website has been successfully tested in the following browsers (desktop screenshots used to allow for a larger preview, except for Safari as there is no Windows version of that browser):
 
 ### Google Chrome
 
-![Website in Google Chrome](documentation/validation/google-chrome-compatibility.webp)
+![Website in Google Chrome](documentation/validation/compatibility-google-chrome.webp)
 
 ### Microsoft Edge
 
-![Website in Microsoft Edge](documentation/validation/microsoft-edge-compatibility.webp)
+![Website in Microsoft Edge](documentation/validation/compatibility-microsoft-edge.webp)
 
 ### Firefox
 
-![Website in Firefox](documentation/validation/firefox-compatibility.webp)
+![Website in Firefox](documentation/validation/compatibility-firefox.webp)
 
 ### Opera
 
-![Website in opera](documentation/validation/opera-compatibility.webp)
+![Website in Opera](documentation/validation/compatibility-opera.webp)
+
+### Safari (on an iPad)
+
+![Website in Safari (iPad)](documentation/validation/compatibility-safari-ipad.webp)
+
+### Safari (on an iPhone)
+
+![Website in Safari (iPhone)](documentation/validation/compatibility-safari-iphone.webp)
 
 ## Accessibility
 
