@@ -317,7 +317,8 @@ li.nav-item a {
     color: #FFF;
 }
 
-/* MEDIA QUERIES
+/* MEDIA QUERIES */
+/* Info used from https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries */
 
 /* For Bootstrap breakpoint extra small (none) */
 @media (max-width: 575px) {
