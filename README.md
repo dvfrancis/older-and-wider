@@ -2,7 +2,7 @@
 
 ## Overview
 
-Older and Wider is a humorous (and [real](https://shows.acast.com/older-and-wider-podcast)) podcast, where two friends chat and share their day-to-day experiences as older women. It is hosted by retired television producer/writer, Judith Holder, and award-winning comedian, Jenny Eclair.
+Older & Wider is a humorous (and [real](https://shows.acast.com/older-and-wider-podcast)) podcast, where two friends chat and share their day-to-day experiences as older women. It is hosted by retired television producer/writer, Judith Holder, and award-winning comedian, Jenny Eclair.
 
 The purpose of the website is to give interested parties insights and information about the podcast, and will include an embedded podcast player, details on live events, and access to the popular Instagram page; it also provides a way to contact the podcast directly, share stories, and make suggestions for the show.
 
@@ -10,7 +10,7 @@ The purpose of the website is to give interested parties insights and informatio
 
 There are several references scattered across the site which refer back to items that are regularly mentioned, or discussed, on the podcast:
 
-- Older and Wider Listeners are called OWLs.
+- Older & Wider Listeners are called OWLs.
 - Anyone listening to the podcast is regarded as "part of the gang", or a "gang member".
 - Snore Law is invoked by either Jenny or Judith when they feel the conversation has got too boring; this is usually accompanied by a loud snoring noise.
 - Jenny and Judith both love coleslaw, and it is mentioned frequently.
@@ -94,15 +94,15 @@ The Github Pages live site can be accessed [here].
 
 - First time visitor goals:
 
-    - "What is the Older and Wider podcast about?"
+    - "What is the Older & Wider podcast about?"
     - "Who is Jenny Eclair?"
     - "Who is Judith Holder?"
-    - "Where can I listen to the Older and Wider Podcast"
-    - "When are episodes of the Older and Wider podcast released?"
+    - "Where can I listen to the Older & Wider Podcast"
+    - "When are episodes of the Older & Wider podcast released?"
 
 - Returning visitor goals:
 
-    - "I want to find out more background information about the Older and Wider podcast"
+    - "I want to find out more background information about the Older & Wider podcast"
     - "What was mentioned during the 'Culture Corner' segment of this week's show?"
     - "Has the podcast won any awards?"
     - "What is the 'Message Board' - it was mentioned by Jenny and Judith in this week's episode, but where can I access it?"
