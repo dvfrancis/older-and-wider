@@ -5,6 +5,8 @@ env.py
 __pycache__/
 *.py[cod]
 node_modules/
-.github/
 cloudinary_python.txt
 thumbs.db
+
+# Build output of build.sh (the script itself is committed; GitHub Actions runs it)
+deploy/
