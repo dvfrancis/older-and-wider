@@ -8,5 +8,9 @@ node_modules/
 cloudinary_python.txt
 thumbs.db
 
+# macOS metadata (build.sh already strips these from deploy/, keep them out of git too)
+.DS_Store
+._*
+
 # Build output of build.sh (the script itself is committed; GitHub Actions runs it)
 deploy/
