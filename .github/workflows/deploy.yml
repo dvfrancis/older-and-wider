@@ -28,9 +28,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: aws-actions/configure-aws-credentials@v4
+      # Keep this on v6 or later. v5 of configure-aws-credentials is still on
+      # node20, so bumping to it looks like a fix but leaves the deprecation
+      # warning in place. v6 is the first major to move to node24. Check the
+      # action.yml of whichever major you are moving to before bumping.
+      - uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::115019371912:role/github-actions-deploy-older-and-wider
           aws-region: eu-west-2
