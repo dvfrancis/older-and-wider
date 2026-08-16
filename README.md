@@ -27,8 +27,8 @@ There are several references scattered across the site which refer back to items
 
 ### Site Link
 
-[here]: https://dvfrancis.github.io/older-and-wider
-The Github Pages live site can be accessed [here].
+[here]: https://older-and-wider.dominicfrancis.co.uk
+The live site can be accessed [here].
 
 ## Index
 
@@ -59,7 +59,7 @@ The Github Pages live site can be accessed [here].
         4. [Content](#content)
 3. [Testing](#testing)
 4. [Deployment](#deployment)
-    1. [GitHub Pages](#github-pages)
+    1. [Amazon S3 and CloudFront](#amazon-s3-and-cloudfront)
     2. [Forks](#forks)
     3. [Local Clones](#local-clones)
     4. [Gitpod Workspaces](#gitpod-workspaces)
@@ -360,17 +360,24 @@ All page content was initially written by myself, inspired by the sources listed
 
 ## Deployment
 
-### GitHub Pages
+### Amazon S3 and CloudFront
 
-The site was deployed using GitHub Pages, as follows:
+The site is stored in an Amazon S3 bucket, and served through Amazon CloudFront, in the `eu-west-2` region. Deployment is automatic. Each push to the `main` branch that changes a page, an asset, or the build script publishes the site again.
 
-- Navigate to the GitHub repository.
-- Click 'Settings'.
-- Under 'Code and automation', select 'Pages'.
-- On the 'GitHub Pages' section, under 'Build and deployment > Source' select 'Deploy from a branch'.
-- Ensure that the 'main' branch has been selected, and then click 'Save'.
+Three files do this work, and are easier to understand together:
 
-![GitHub Pages deployment](assets/images/github-pages-deployment.webp)
+- `build.sh` assembles the site into a `deploy/` directory, and then copies it to the bucket. It copies only the pages and directories in its list. Thus an unwanted file in the repository root cannot go live by accident. Git does not track `deploy/`, and the script makes it again on each run.
+- `.github/workflows/deploy.yml` runs the command `./build.sh --deploy --yes` on each push to the `main` branch that changes `*.html`, `assets/**`, `build.sh`, or the workflow file. GitHub Actions runs the same script that you run on your own computer. Thus the two cannot become different.
+- `infra/deploy-role.yaml` is the CloudFormation template for the role that the workflow uses. The role trusts only the `main` branch of this repository. Its permissions apply only to the one bucket and the one distribution. No Amazon Web Services keys are kept in the repository, or in GitHub.
+
+To assemble the site on your own computer, but not deploy it, run the command `./build.sh` in the repository root.
+
+Two details are important before you change any of this:
+
+- The cache headers remove the necessity for a cache invalidation step. The script uploads the assets with a one year `max-age`, and the mark `immutable`. It uploads the pages with `no-cache`. CloudFront obeys these headers. Thus a new deployment becomes visible immediately.
+- The script uploads the pages last, after the assets. Thus a live page cannot refer to an asset that is not yet in the bucket.
+
+To add a new page, you must do two steps. It is not sufficient to make the file in the repository root. You must also add the name of the file to the `PAGES` list in `build.sh`. If you do not, the site will never include that page.
 
 ### Forks
 
@@ -471,7 +478,10 @@ Links to the podcast, on various platforms:
 - [To WebP](https://towebp.io/) was used to compress images into webp format.
 - [FontAwesome](https://fontawesome.com/) was used for social media icons.
 - [GitHub](https://github.com/) was used for version control.
-- [GitHub Pages](https://pages.github.com/) was used to host the website.
+- [Amazon S3](https://aws.amazon.com/s3/) was used to store the website files.
+- [Amazon CloudFront](https://aws.amazon.com/cloudfront/) was used to serve the website.
+- [AWS CloudFormation](https://aws.amazon.com/cloudformation/) was used to create the deployment role.
+- [GitHub Actions](https://github.com/features/actions) was used to deploy the website automatically.
 - [Gitpod](https://gitpod.io/) was used as an online IDE.
 - [Markdown](https://en.wikipedia.org/wiki/Markdown) was used to create the README.md and TESTING.md documentation.
 
