@@ -362,13 +362,13 @@ All page content was initially written by myself, inspired by the sources listed
 
 ### Amazon S3 and CloudFront
 
-The site is stored in an Amazon S3 bucket, and served through Amazon CloudFront, in the `eu-west-2` region. Deployment is automatic. Each push to the `main` branch that changes a page, an asset, or the build script publishes the site again.
+The site is stored in an Amazon S3 bucket, and served through Amazon CloudFront, in the `eu-west-2` region. The bucket is `portfolio-dominicfrancis`. It holds more than one site. Each site has its own folder, and this site uses the folder `older-and-wider`. CloudFront reads that folder through an origin path. Thus the address of each page stays the same. Deployment is automatic. Each push to the `main` branch that changes a page, an asset, or the build script publishes the site again.
 
 Three files do this work, and are easier to understand together:
 
-- `build.sh` assembles the site into a `deploy/` directory, and then copies it to the bucket. It copies only the pages and directories in its list. Thus an unwanted file in the repository root cannot go live by accident. Git does not track `deploy/`, and the script makes it again on each run.
+- `build.sh` assembles the site into a `deploy/` directory, and then copies it to the site folder in the bucket. It copies only the pages and directories in its list. Thus an unwanted file in the repository root cannot go live by accident. Git does not track `deploy/`, and the script makes it again on each run.
 - `.github/workflows/deploy.yml` runs the command `./build.sh --deploy --yes` on each push to the `main` branch that changes `*.html`, `assets/**`, `build.sh`, or the workflow file. GitHub Actions runs the same script that you run on your own computer. Thus the two cannot become different.
-- `infra/deploy-role.yaml` is the CloudFormation template for the role that the workflow uses. The role trusts only the `main` branch of this repository. Its permissions apply only to the one bucket and the one distribution. No Amazon Web Services keys are kept in the repository, or in GitHub.
+- `infra/deploy-role.yaml` is the CloudFormation template for the role that the workflow uses. The role trusts only the `main` branch of this repository. Its permissions apply only to this site's folder, and to the one distribution. The role cannot read or delete the folder of another site. No Amazon Web Services keys are kept in the repository, or in GitHub.
 
 To assemble the site on your own computer, but not deploy it, run the command `./build.sh` in the repository root.
 
