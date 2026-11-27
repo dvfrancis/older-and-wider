@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://older-and-wider.dominicfrancis.co.uk/sitemap.xml

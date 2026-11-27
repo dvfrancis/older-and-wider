@@ -66,9 +66,10 @@ The live site can be accessed [here].
 4. [Testing](#testing)
 5. [Deployment](#deployment)
     1. [Amazon S3 and CloudFront](#amazon-s3-and-cloudfront)
-    2. [Forks](#forks)
-    3. [Local Clones](#local-clones)
-    4. [Gitpod Workspaces](#gitpod-workspaces)
+    2. [Sitemap and robots.txt](#sitemap-and-robotstxt)
+    3. [Forks](#forks)
+    4. [Local Clones](#local-clones)
+    5. [Gitpod Workspaces](#gitpod-workspaces)
 6. [Credits and References](#credits-and-references)
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
@@ -253,7 +254,6 @@ The forms had no backend. They did not send data to the hosts. Issue #30 covers 
 
 - The addition of a website forum would allow fans of the podcast to interact, discuss the show, and share their life experiences.
 - A mailing list with a real backend (issue #30).
-- A sitemap (issue #19) and a robots.txt file (issue #20).
 - Analytics, with cookie consent before any analytics loads (issues #21 and #22).
 
 ### Structure
@@ -403,14 +403,34 @@ Two details are important before you change any of this:
 
 To add a new page, you must do two steps. It is not sufficient to make the file in the repository root. You must also add the name of the file to the `PAGES` list in `build.sh`. If you do not, the site will never include that page.
 
-The `PAGES` list contains these four pages:
+The `PAGES` list contains these files:
 
 - `index.html`
 - `about.html`
 - `message-board.html`
 - `404.html`
+- `sitemap.xml`
+- `robots.txt`
 
 The `DIRS` list contains only `assets`. Thus the script does not deploy `design-options/` or `documentation/`. The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html` from the list.
+
+### Sitemap and robots.txt
+
+The repository root contains a `sitemap.xml` file and a `robots.txt` file. Both files are in the `PAGES` list. Thus they deploy to the root of the site, with `no-cache`.
+
+- `sitemap.xml` lists the pages for search engines. It lists the home page, `about.html`, `message-board.html` and `privacy.html`. It does not list `404.html`, because that page has a `noindex` tag.
+- `robots.txt` lets all crawlers read all pages. It gives the address of the sitemap.
+
+When you add or remove a page, update `sitemap.xml`. Change the `lastmod` date of each page that you change.
+
+The deploy workflow does not start for a change to only `sitemap.xml` or `robots.txt`. After such a change, run the workflow manually from the Actions tab in GitHub.
+
+After the deploy, submit the sitemap in Google Search Console:
+
+1. Open Google Search Console for `https://older-and-wider.dominicfrancis.co.uk`.
+2. Open the Sitemaps page.
+3. Enter `sitemap.xml` and select Submit.
+4. Make sure that the status shows no errors.
 
 ### Forks
 

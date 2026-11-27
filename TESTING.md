@@ -13,6 +13,7 @@
         1. [main.css](#maincss)
         2. [Validator Limits](#validator-limits)
         3. [Earlier CSS Results](#earlier-css-results)
+    3. [Sitemap and robots.txt](#sitemap-and-robotstxt)
 3. [Manual Validation](#manual-validation)
     1. [index.html](#indexhtml)
     2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-1)
@@ -209,6 +210,31 @@ These results are for the earlier design. They check `styles.css` and Bootstrap.
 ##### 404.html (earlier CSS)
 
 ![CSS validation of 404.html](documentation/validation/css-404.webp)
+
+### Sitemap and robots.txt
+
+These checks apply to `sitemap.xml` and `robots.txt` in the repository root.
+
+| CHECK | RESULT |
+| --- | --- |
+| `sitemap.xml` is well-formed XML | Pass |
+| `sitemap.xml` lists the home page, `about.html`, `message-board.html` and `privacy.html` | Pass |
+| `sitemap.xml` does not list `404.html` | Pass |
+| `robots.txt` contains the `Sitemap` line with the full address | Pass |
+| `./build.sh` copies both files into `deploy/` | Pass |
+| The live `sitemap.xml` loads as XML | To be tested after the deploy |
+| The live `robots.txt` returns 200 as `text/plain` | To be tested after the deploy |
+| Google Search Console reads the sitemap with no errors | To be tested after the deploy |
+
+To repeat the local checks, run these commands in the repository root:
+
+```bash
+python3 -c "import xml.dom.minidom; xml.dom.minidom.parse('sitemap.xml')"
+./build.sh
+ls deploy/sitemap.xml deploy/robots.txt
+```
+
+The first command shows no output if the XML is well-formed.
 
 ## Manual Validation
 
