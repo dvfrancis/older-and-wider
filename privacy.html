@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Older and Wider | Privacy and cookies</title>
+    <meta name="description"
+        content="How the Older and Wider podcast site handles your privacy. The site has no forms, and analytics cookies load only if you say yes.">
+    <meta name="author" content="Dominic Francis">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600&family=Barlow:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/consent.js" defer></script>
+    <script src="assets/js/analytics.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="strip" aria-label="Main">
+            <ul class="strip-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="message-board.html">Message Board</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="privacy-intro" aria-labelledby="privacy-title">
+            <div class="privacy-inner">
+                <h1 class="privacy-title" id="privacy-title">Privacy and cookies</h1>
+                <p class="issue-line">
+                    <span>Last updated <time datetime="2026-11-27">27 November 2026</time></span>
+                    <span class="issue-hosts">Plain words, no small print</span>
+                </p>
+                <p class="privacy-lead">This site is a home for the podcast and nothing more. It has no forms, no
+                    sign-ups and no log-ins, so we never ask for your name, your email address or anything else
+                    about you.</p>
+                <p class="privacy-lead">A few other companies help the site work. This page tells you what each one
+                    stores on your device, and when.</p>
+            </div>
+        </section>
+
+        <section class="privacy-band" aria-labelledby="who-title">
+            <div class="privacy-inner">
+                <h2 class="privacy-heading" id="who-title">What gets stored, and when</h2>
+                <table class="privacy-table">
+                    <caption class="visually-hidden">The services this site uses, what each one stores and when
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Service</th>
+                            <th scope="col">What it is for</th>
+                            <th scope="col">What it stores</th>
+                            <th scope="col">When</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" data-label="Service">Acast player</th>
+                            <td data-label="What it is for">Plays the episodes on the home page.</td>
+                            <td data-label="What it stores">Two items in your browser storage: <code>AcastLang</code>, a
+                                language setting, and <code>token</code>, a player session.</td>
+                            <td data-label="When">Only after you press <strong>Play here</strong>. We ask again on
+                                every visit.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-label="Service">Instagram</th>
+                            <td data-label="What it is for">Shows our latest posts on the message board.</td>
+                            <td data-label="What it stores">Instagram cookies.</td>
+                            <td data-label="When">Only after you press <strong>Show the posts here</strong>.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-label="Service">Google Analytics</th>
+                            <td data-label="What it is for">Counts visits, so we know which pages people read.</td>
+                            <td data-label="What it stores">Two cookies: <code>_ga</code>, and one whose name starts
+                                with <code>_ga_</code>. They last up to two years.</td>
+                            <td data-label="When">Only if you press <strong>Accept</strong>. Nothing loads if you
+                                press Reject or ignore the question.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-label="Service">Google Fonts</th>
+                            <td data-label="What it is for">Sends the lettering you see on every page.</td>
+                            <td data-label="What it stores">Nothing. Google sees your IP address when your browser
+                                fetches the fonts.</td>
+                            <td data-label="When">On every page.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-label="Service">Font Awesome, from cdnjs</th>
+                            <td data-label="What it is for">Sends the small icons, such as the play button.</td>
+                            <td data-label="What it stores">Nothing. Cloudflare, which runs cdnjs, sees your IP
+                                address when your browser fetches the icons.</td>
+                            <td data-label="When">On every page.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-label="Service">This site</th>
+                            <td data-label="What it is for">Remembers your answer about analytics, so we do not ask
+                                on every page.</td>
+                            <td data-label="What it stores">One item in your browser storage, <code>oaw-consent</code>,
+                                with your answer and the date. It never leaves your device.</td>
+                            <td data-label="When">When you press Accept or Reject.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="privacy-band privacy-band-pink" aria-labelledby="change-title">
+            <div class="privacy-inner privacy-columns">
+                <div class="privacy-block">
+                    <h2 class="privacy-heading" id="change-title">Changing your mind</h2>
+                    <p>Press <strong>Cookie settings</strong> at the bottom of any page and pick again. If you
+                        press Reject, we delete the Google Analytics cookies straight away.</p>
+                    <div class="privacy-action">
+                        <button class="board-load" type="button" data-consent-open hidden><i
+                                class="fa-solid fa-cookie-bite" aria-hidden="true"></i>Cookie settings</button>
+                    </div>
+                    <p>You can also clear cookies and site data in your browser settings at any time.</p>
+                    <p>With JavaScript turned off, the question does not appear and nothing on the list above loads,
+                        apart from the fonts and the icons.</p>
+                </div>
+                <div class="privacy-block">
+                    <h2 class="privacy-heading" id="contact-title">Who looks after this site</h2>
+                    <p>Dominic Francis builds and runs this site for the podcast, and he is responsible for your
+                        data here. If you have a question about this page, get in touch through <a
+                            href="https://www.dominicfrancis.co.uk/" rel="external">his website</a>.</p>
+                    <p>If you are not happy with the answer, you can complain to the Information
+                        Commissioner's Office at <a href="https://ico.org.uk/" rel="external">ico.org.uk</a>.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-mark">Older <span class="footer-and">and</span> Wider</p>
+            <ul class="footer-links">
+                <li><a href="https://www.instagram.com/olderandwiderpodcast/" rel="external"><i
+                            class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61555198800248" rel="external"><i
+                            class="fa-brands fa-facebook" aria-hidden="true"></i>Facebook</a></li>
+                <li><a href="https://olderandwider.shop" rel="external"><i class="fa-solid fa-bag-shopping"
+                            aria-hidden="true"></i>Shop</a></li>
+            </ul>
+            <div class="footer-meta">
+                <ul class="footer-legal">
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><button class="footer-settings" type="button" data-consent-open hidden>Cookie
+                            settings</button></li>
+                </ul>
+                <p class="credit">Website by <a href="https://www.dominicfrancis.co.uk/" rel="external">Dominic
+                        Francis</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

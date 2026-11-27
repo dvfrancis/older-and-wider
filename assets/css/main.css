@@ -2006,3 +2006,426 @@ a {
         max-width: 7rem;
     }
 }
+
+
+/* ==========================================================================
+   Shared: footer privacy links
+   ========================================================================== */
+
+/* The Privacy link and the Cookie settings button sit above the credit.
+   consent.js shows the button. It stays hidden without JavaScript. */
+
+.footer-meta {
+    display: grid;
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+}
+
+.footer-legal a,
+.footer-settings {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+}
+
+.footer-settings {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 0.08em;
+    cursor: pointer;
+}
+
+.footer-settings[hidden] {
+    display: none;
+}
+
+
+/* ==========================================================================
+   Page: index.html, the click-to-load player
+   ========================================================================== */
+
+/* Nothing loads from Acast until the visitor presses Play here.
+   player.js shows the button and the note, and hides the plain link. */
+
+.player-consent {
+    display: grid;
+    justify-items: start;
+    align-content: center;
+    gap: 0.75rem;
+    min-height: 14rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--pink-soft);
+}
+
+.player-load {
+    text-decoration: none;
+}
+
+.board-load[hidden] {
+    display: none;
+}
+
+.player-note {
+    max-width: 30rem;
+}
+
+@media (min-width: 64rem) {
+    .player-consent {
+        min-height: 28rem;
+        padding: 2.5rem;
+    }
+}
+
+
+/* ==========================================================================
+   Shared: cookie consent banner
+   ========================================================================== */
+
+/* consent.js adds the banner at the end of the page. It sticks to the
+   bottom of the window, and sits after the footer at the end of the page,
+   so it never hides the footer. Accept and Reject are the same size. */
+
+.consent {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background: var(--white);
+    color: var(--ink);
+    border-top: 3px solid var(--ink);
+    box-shadow: 0 -0.5rem 1.5rem -0.5rem rgba(26, 26, 26, 0.3);
+    animation: consent-rise 0.45s var(--ease-out);
+}
+
+.consent[hidden] {
+    display: none;
+}
+
+.consent-inner {
+    display: grid;
+    gap: 0.75rem;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0.75rem var(--gutter) 0.875rem;
+}
+
+.consent-title {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.consent-title:focus {
+    outline: none;
+}
+
+.consent-title:focus-visible {
+    outline: 3px solid var(--ink);
+}
+
+.consent-body {
+    max-width: 52ch;
+    margin-top: 0.125rem;
+    line-height: 1.45;
+}
+
+.consent-status {
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+.consent-status[hidden] {
+    display: none;
+}
+
+.consent-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.consent-button {
+    min-height: 3.25rem;
+    padding: 0.75rem 1.25rem;
+    border: 0;
+    border-radius: 0;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--rest-shadow);
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+
+.consent-button:hover,
+.consent-button:focus-visible {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--lift-shadow);
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+}
+
+@keyframes consent-rise {
+    from {
+        transform: translateY(100%);
+    }
+}
+
+@media (min-width: 48rem) {
+    .consent-inner {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .consent-actions {
+        grid-template-columns: repeat(2, 10rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .consent,
+    .consent-button {
+        animation: none;
+        transition: none;
+    }
+
+    .consent-button:hover,
+    .consent-button:focus-visible {
+        transform: none;
+    }
+}
+
+
+/* ==========================================================================
+   Page: privacy.html
+   ========================================================================== */
+
+/* Privacy page: a plain notice printed inside the issue.
+   It uses the tokens and the shared classes above. */
+
+.privacy-intro {
+    background: var(--pink);
+}
+
+.privacy-band {
+    background: var(--white);
+}
+
+.privacy-band-pink {
+    background: var(--pink);
+}
+
+.privacy-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 3rem var(--gutter) 3.5rem;
+}
+
+.privacy-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.privacy-inner .issue-line {
+    margin-top: 1rem;
+}
+
+.privacy-lead {
+    max-width: 36rem;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.privacy-heading {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--ink);
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 2.75rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.privacy-block p {
+    max-width: 36rem;
+}
+
+.privacy-block p + p {
+    margin-top: 1rem;
+}
+
+.privacy-action {
+    margin: 1.25rem 0;
+}
+
+.privacy-action:has(> [hidden]) {
+    display: none;
+}
+
+.privacy-columns {
+    display: grid;
+    gap: 3rem;
+}
+
+/* The table: one block per service on phones, a full table from 48rem */
+.privacy-table {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.privacy-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.privacy-table tbody,
+.privacy-table tr,
+.privacy-table th,
+.privacy-table td {
+    display: block;
+}
+
+.privacy-table tr {
+    padding: 1rem 0 1.25rem;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+}
+
+.privacy-table tbody th {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.05;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.privacy-table td {
+    margin-top: 0.625rem;
+}
+
+.privacy-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.privacy-table code {
+    padding: 0 0.25em;
+    background: var(--pink-soft);
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+@media (min-width: 48rem) {
+    .privacy-title {
+        font-size: 5rem;
+    }
+
+    .privacy-heading {
+        font-size: 3.5rem;
+    }
+
+    .privacy-table {
+        display: table;
+    }
+
+    .privacy-table thead {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip-path: none;
+        white-space: normal;
+    }
+
+    .privacy-table tbody {
+        display: table-row-group;
+    }
+
+    .privacy-table thead {
+        display: table-header-group;
+    }
+
+    .privacy-table tr {
+        display: table-row;
+    }
+
+    .privacy-table th,
+    .privacy-table td {
+        display: table-cell;
+        margin: 0;
+        padding: 1rem 1.25rem 1.125rem 0;
+        border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .privacy-table thead th {
+        padding-top: 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid var(--ink);
+        font-family: var(--font-label);
+        font-weight: 600;
+        font-size: 1.0625rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .privacy-table tbody th {
+        width: 22%;
+    }
+
+    .privacy-table td::before {
+        content: none;
+    }
+}
+
+@media (min-width: 64rem) {
+    .privacy-title {
+        font-size: 6rem;
+    }
+
+    .privacy-columns {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}

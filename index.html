@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/consent.js" defer></script>
+    <script src="assets/js/analytics.js" defer></script>
+    <script src="assets/js/player.js" defer></script>
 </head>
 
 <body>
@@ -96,11 +99,18 @@
                 <div class="contents-inner">
                     <h2 class="contents-title" id="listen-title">This week</h2>
                     <div class="listen-grid">
-                        <div class="listen-player">
-                            <iframe src="https://embed.acast.com/63b6b30a19c20a0011527ce4"
-                                title="Older and Wider podcast player"
-                                allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-                                loading="lazy"></iframe>
+                        <div class="listen-player" id="player">
+                            <div class="player-consent">
+                                <button class="board-load player-load" type="button" id="player-load" hidden>
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>Play here
+                                </button>
+                                <a class="board-load player-load" id="player-fallback"
+                                    href="https://shows.acast.com/older-and-wider-podcast" rel="external">
+                                    <i class="fa-solid fa-podcast" aria-hidden="true"></i>Listen on Acast
+                                </a>
+                                <p class="player-note" id="player-note" hidden>The player stores a language setting
+                                    and a session item in your browser.</p>
+                            </div>
                         </div>
                         <div class="listen-side">
                             <p class="listen-ep">
@@ -298,8 +308,15 @@
                 <li><a href="https://olderandwider.shop" rel="external"><i class="fa-solid fa-bag-shopping"
                             aria-hidden="true"></i>Shop</a></li>
             </ul>
-            <p class="credit">Website by <a href="https://www.dominicfrancis.co.uk/" rel="external">Dominic
-                    Francis</a></p>
+            <div class="footer-meta">
+                <ul class="footer-legal">
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><button class="footer-settings" type="button" data-consent-open hidden>Cookie
+                            settings</button></li>
+                </ul>
+                <p class="credit">Website by <a href="https://www.dominicfrancis.co.uk/" rel="external">Dominic
+                        Francis</a></p>
+            </div>
         </div>
     </footer>
 
