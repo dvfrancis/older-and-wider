@@ -4,9 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static marketing site for the Older & Wider podcast (a Code Institute project). Hand-written HTML and one CSS file — no framework, no package manager, no JavaScript of its own, no test suite. Bootstrap 5.3.3, Font Awesome, and Google Fonts all load from CDNs.
+A static marketing site for the Older and Wider podcast (first a Code Institute project). The site has hand-written HTML, one CSS file and one small script. It has no framework, no package manager and no test suite. Font Awesome loads from a CDN. The four font files are in `assets/fonts/`. The pages do not use Bootstrap.
 
-Source pages live at the repo root: `index.html`, `about.html`, `contact.html`, `contact-completion.html`, `mailing-list-completion.html`, `message-board.html`, `404.html`.
+Source pages live at the repo root: `index.html`, `about.html`, `message-board.html`, `404.html`, `privacy.html`. The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html`.
+
+**Design.** `DESIGN.md` holds the design system: colours, fonts, components and rules. `PRODUCT.md` holds the product record. Read both before you change the look or the copy. The show name is "Older and Wider". Do not use an ampersand in new text. `design-options/` holds five earlier design concepts for reference. `build.sh` does not deploy it.
 
 ## Commands
 
@@ -34,23 +36,31 @@ Three deliberate details in `build.sh` that are easy to break:
 
 - **Every S3 path goes through `DEST`.** `DEST` is `s3://$BUCKET/$PREFIX`. The deploy syncs with `--delete`. A sync that points at the bucket root erases the other sites. Do not write `s3://$BUCKET/` in the script. Do not change `PREFIX` unless you also change the origin path and the `Prefix` parameter of the role stack.
 - **Cache-Control does the invalidation work.** Assets sync with `max-age=31536000, immutable`; HTML syncs with `no-cache`. That is why a deploy lands without a CloudFront invalidation. Changing these headers reintroduces the 24h default TTL.
+- **CSS and JS file names get a hash.** `build.sh` renames each file in `assets/css/` and `assets/js/` in `deploy/`, for example `main.bea7c67fec.css`. It then changes the links in each page. A changed file gets a new name, so the one-year cache cannot serve an old copy. The source files keep their plain names. Images do not get a hash. Give a replaced image a new file name.
 - **HTML syncs last**, after assets, so a live page never references an asset that has not uploaded yet.
 
 Routine deploys should go through CI — push to `main` and let the workflow run. If you do deploy by hand, note that this machine's default AWS profile is a read-only user. `build.sh`'s safety check only reads (`aws s3 ls`), so it passes, and the run then fails partway through the first `aws s3 sync`. A local `--deploy` needs a write-capable profile (`admin` or `poweruser` are configured), e.g. `AWS_PROFILE=admin ./build.sh --deploy`.
 
-**Gotcha: adding a new page is two steps.** Creating `foo.html` at the root is not enough — it must also be added to the `PAGES` array in `build.sh` or it will never reach the bucket. The allowlist is intentional: it stops stray root files silently going live.
+**Gotcha: adding a new page is two steps.** Creating `foo.html` at the root is not enough — it must also be added to the `PAGES` array in `build.sh` or it will never reach the bucket. The allowlist is intentional: it stops stray root files silently going live. `PAGES` is now `(index.html about.html message-board.html 404.html privacy.html)`. `DIRS` is `(assets)`, so `design-options/` and `documentation/` do not deploy.
 
 ## Structure and conventions
 
-**No templating.** The header, nav and footer are duplicated in every page — the footer is byte-identical across all seven, and the nav differs only in which link carries `class="nav-link selected"` and `aria-current="page"`. A nav or footer change means editing all seven files by hand.
+**No templating.** Each of the five pages has its own copy of the header, nav and footer. The footer is byte-identical in `index.html`, `about.html`, `message-board.html` and `privacy.html`. The footer in `404.html` differs only in its root-relative paths. The footer has a "Privacy" link and a "Cookie settings" button (`data-consent-open`, `hidden` until `consent.js` runs). The nav has three links: Home, About and Message Board. The privacy page has no nav item. The link to the current page carries `aria-current="page"`. `404.html` uses root-relative paths (`/index.html`, `/assets/...`), so it works at any missing address. A nav or footer change means you must edit all five files by hand.
 
-**The three dead-end pages self-redirect.** `contact-completion.html`, `mailing-list-completion.html` and `404.html` each carry `<meta http-equiv="refresh" content="30; url=index.html">`. This is intentional site design; `TESTING.md` notes it as the known cause of their lower Lighthouse accessibility scores.
+**No page redirects.** No page has a `<meta http-equiv="refresh">`. The earlier `404.html` and the two completion pages redirected after 30 seconds. The redesign removed this behaviour.
 
-**Responsive images.** Every photo has pre-generated fixed-width variants alongside the original (`home-page-carousel-1_256.webp`, `_800.webp`, `_1190.webp`, …) wired up via `srcset` with a `sizes` expression. Two `sizes` recipes are in use — one for the index carousel, one for the about-page cards. Adding an image means generating its width variants too, not just dropping in a single file.
+**Responsive images.** Every photo has pre-generated fixed-width variants next to the original (for example `home-cover-merch_256.webp`, `_480.webp`, `_800.webp`, `_960.webp`). Each `img` uses `srcset` with a `sizes` expression that matches its layout slot. If you add an image, also make its width variants.
 
-**Forms have no backend.** The contact and mailing-list forms are `method="GET"` pointing at a static `*-completion.html` page. Do not assume a server or add server-side handling without discussing it first.
+**No forms.** The redesign removed the contact form and the mailing-list form. Issue #30 covers a future mailing-list backend. Do not add a server or server-side handling without a discussion first.
 
-**CSS** is a single 373-line `assets/css/styles.css`: a small reset, element defaults, then colour utility classes (`.teal` `#007696`, `.raspberry` `#a30041`), then six `@media` blocks matching Bootstrap's breakpoints. Colours are literal hex values, not custom properties.
+**CSS** is one stylesheet, `assets/css/main.css` (about 2,000 lines). `styles.css` was deleted. `:root` defines custom properties for the colours, fonts, gutter and shadows. Use these properties for colour. The rules use literal `#000` and `#fff` only in mask and halftone gradients. The main colours are pink `--pink` `#F492BF`, red `--red` `#A60201` and magenta `--magenta` `#E8046C`. The fonts are Anton, Barlow Condensed and Barlow. The breakpoints are `48rem` and `64rem`. The file also has `prefers-reduced-motion` and `prefers-contrast` blocks. The masthead uses a container query unit (`cqi`).
+
+**JavaScript.** Every page works without JavaScript. Do not add inline scripts or inline styles (issue #24). All scripts load with `defer`. The site has four scripts:
+
+- `assets/js/consent.js` runs on every page. It shows the cookie banner on the first visit. The banner asks about analytics cookies only. The script stores the choice in `localStorage` under `oaw-consent`, as `{choice, date}`. It sends the event `oaw:consentchange` and exposes `window.oawConsent`. "Reject" deletes the `_ga` and `_ga_*` cookies.
+- `assets/js/analytics.js` runs on every page, after `consent.js`. It loads Google Analytics only when the choice is "accepted". `GA_MEASUREMENT_ID` is `G-KQEX5744PM`, the same ID as dominicfrancis.co.uk. Filter GA4 reports by hostname to see this site alone.
+- `assets/js/player.js` runs on `index.html` only. It inserts the Acast iframe after the visitor presses "Play here". It does not remember the choice. Without JavaScript, the page shows a "Listen on Acast" link.
+- `assets/js/message-board.js` runs on `message-board.html` only. It adds Instagram's `embed.js` after the visitor presses "Show the posts here", because `embed.js` sets cookies.
 
 ## Documentation is part of the deliverable
 

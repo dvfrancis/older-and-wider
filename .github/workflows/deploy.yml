@@ -13,6 +13,8 @@ on:
       - "*.html"
       - "assets/**"
       - "build.sh"
+      - "sitemap.xml"
+      - "robots.txt"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
 

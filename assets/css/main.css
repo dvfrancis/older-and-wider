@@ -1,0 +1,2466 @@
+/* Older and Wider: home page stylesheet */
+
+/* Fonts are hosted on this site, not loaded from Google Fonts.
+   Each page preloads Anton, Barlow 400 and Barlow Condensed 600, to reduce layout shift.
+   All four fonts use the SIL Open Font License. */
+@font-face {
+    font-family: "Anton";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/anton-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/barlow-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/barlow-600.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Barlow Condensed";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/barlow-condensed-600.woff2") format("woff2");
+}
+
+:root {
+    --pink: #F492BF;
+    --red: #A60201;
+    --magenta: #E8046C;
+    --white: #FFFFFF;
+    --ink: #1A1A1A;
+    --blue: #6771DD;
+    --yellow: #FFD23F;
+    --pink-soft: #FCE4EF;
+    /* Studio grey, matched to the backdrop of the cover photo.
+       The owner approved it for the cover panel only.
+       Do not use it anywhere else. */
+    --studio: #5E5D60;
+
+    --font-display: "Anton", "Barlow Condensed", sans-serif;
+    --font-label: "Barlow Condensed", "Barlow", sans-serif;
+    --font-body: "Barlow", sans-serif;
+
+    --gutter: 1rem;
+    --max: 80rem;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --lift-shadow: 0 1rem 1.75rem -0.5rem rgba(26, 26, 26, 0.38);
+    --rest-shadow: 0 0.125rem 0.375rem rgba(26, 26, 26, 0.18);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+iframe {
+    display: block;
+    max-width: 100%;
+}
+
+html {
+    scrollbar-color: var(--red) var(--pink-soft);
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--pink);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: var(--ink);
+    color: var(--yellow);
+}
+
+a {
+    color: inherit;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 0.08em;
+}
+
+:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Nav strip above the masthead */
+.strip {
+    background: var(--red);
+    color: var(--white);
+}
+
+.strip-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 0.25rem;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.strip-list a {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 0.625rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.strip-list a:hover {
+    text-decoration: underline;
+}
+
+.strip-list a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-color: var(--yellow);
+    text-decoration-thickness: 0.15em;
+}
+
+.strip :focus-visible,
+.tour :focus-visible,
+.site-footer :focus-visible {
+    outline-color: var(--yellow);
+}
+
+/* The cover */
+.cover-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0.5rem var(--gutter) 2.5rem;
+    container-type: inline-size;
+}
+
+.masthead {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: calc(100cqi / 6.45);
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Logotype: AND in magenta, as on the tour flyer */
+.masthead-and {
+    color: var(--magenta);
+}
+
+.issue-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 1rem;
+    margin-top: 0.375rem;
+    padding: 0.25rem 0;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.issue-hosts {
+    display: none;
+}
+
+.cover-body {
+    position: relative;
+    margin-top: 0.875rem;
+}
+
+.cover-photo {
+    margin: 0 calc(var(--gutter) * -1);
+}
+
+.cover-photo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Tonal halftone: dots grow in the darker areas of the photo.
+   A copy of the photo is multiplied with a soft dot pattern, then
+   thresholded with contrast(), then laid over the colour photo. */
+.screen {
+    position: relative;
+    overflow: hidden;
+}
+
+.screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle, #000, #fff) 0 0 / var(--dot) var(--dot),
+        var(--screen-photo) var(--screen-pos) / cover no-repeat;
+    background-blend-mode: multiply;
+    filter: grayscale(1) brightness(var(--screen-lift)) contrast(24);
+    mix-blend-mode: multiply;
+    opacity: var(--screen-ink);
+}
+
+.cover-body {
+    --dot: 5px;
+    --screen-lift: 2.45;
+    --screen-ink: 0.26;
+    --screen-pos: 50% 50%;
+    --screen-photo: url("../images/home-cover-merch_960.webp");
+}
+
+@media (prefers-contrast: more) {
+    .screen::after,
+    .cover-body::after {
+        display: none;
+    }
+}
+
+/* Coverlines */
+.lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lines-left {
+    margin-top: 0.75rem;
+    position: relative;
+}
+
+.lines-right {
+    margin-top: 0.75rem;
+}
+
+.slab {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--font-label);
+    font-weight: 600;
+    line-height: 1.05;
+    text-wrap: balance;
+    box-shadow: var(--rest-shadow);
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+
+/* Signature interaction: the coverline lifts like a page picked up */
+.slab:hover,
+.slab:focus-visible,
+.flash:hover,
+.flash:focus-visible {
+    transform: translateY(-0.375rem) rotate(-0.6deg);
+    box-shadow: var(--lift-shadow);
+}
+
+.slab:hover .lead-title,
+.slab:hover .line-big {
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+}
+
+.line-big {
+    display: block;
+    font-size: 1.625rem;
+    text-wrap: balance;
+}
+
+.line-small {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 1.25rem;
+    text-wrap: balance;
+    letter-spacing: 0.02em;
+}
+
+.line-red {
+    color: var(--red);
+}
+
+.slab-lead {
+    background: var(--red);
+    color: var(--white);
+    padding: 1rem 1.125rem 1.125rem;
+}
+
+.lead-title {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 1.08;
+    letter-spacing: 0.005em;
+    text-wrap: balance;
+}
+
+.lead-action {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.875rem;
+    font-size: 1.375rem;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+}
+
+.play-disc {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--ink);
+    font-size: 1.125rem;
+}
+
+.play-disc i {
+    margin-left: 0.15em;
+}
+
+.lead-time {
+    margin-left: auto;
+    font-variant-numeric: tabular-nums;
+}
+
+.slab-white {
+    background: var(--white);
+    color: var(--ink);
+}
+
+.slab-magenta {
+    background: var(--magenta);
+    color: var(--white);
+}
+
+.slab-blue {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.slab-magenta .line-big,
+.slab-blue .line-big {
+    font-size: 1.75rem;
+}
+
+/* Flash roundel */
+.flash {
+    display: grid;
+    place-content: center;
+    align-self: flex-end;
+    width: 7.75rem;
+    height: 7.75rem;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--ink);
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: var(--rest-shadow);
+    transform: rotate(-8deg);
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+
+.flash:hover,
+.flash:focus-visible {
+    transform: translateY(-0.375rem) rotate(-10deg);
+}
+
+.flash-top {
+    font-family: var(--font-display);
+    font-size: 1.875rem;
+    line-height: 1;
+}
+
+.flash-bottom {
+    display: block;
+    max-width: 6rem;
+    margin: 0.25rem auto 0;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.05;
+}
+
+/* On phones the roundel hangs off the top corner of the photo, over the grey */
+.lines-right .flash {
+    position: absolute;
+    top: -3.75rem;
+    right: -0.5rem;
+    width: 6rem;
+    height: 6rem;
+}
+
+.lines-right .flash .flash-top {
+    font-size: 1.375rem;
+}
+
+.lines-right .flash .flash-bottom {
+    font-size: 1rem;
+    max-width: 5rem;
+}
+
+/* Contents pages */
+.contents-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 3rem var(--gutter);
+}
+
+.listen {
+    background: var(--white);
+}
+
+.contents-title,
+.tour-title,
+.letter-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 0.95;
+    text-wrap: balance;
+}
+
+.contents-title {
+    font-size: 3.5rem;
+    color: var(--red);
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--ink);
+    margin-bottom: 1.5rem;
+}
+
+.listen-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.listen-player iframe {
+    width: 100%;
+    height: 28rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: var(--pink-soft);
+}
+
+.listen-ep {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.ep-no {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    line-height: 0.9;
+    color: var(--red);
+}
+
+.ep-title {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.625rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.ep-meta {
+    font-variant-numeric: tabular-nums;
+}
+
+.platforms-label {
+    margin-top: 1.5rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin-top: 0.25rem;
+}
+
+.platforms a,
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    font-weight: 600;
+}
+
+/* Back issues: a UK bingo ticket printed on the page */
+.back-title {
+    margin-top: 3.5rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 0.375rem;
+}
+
+.back-lead {
+    margin: 0.75rem 0 1.25rem;
+    max-width: 52ch;
+}
+
+/* Full bleed on phones so nine columns keep their width */
+.ticket-wrap {
+    margin-inline: calc(var(--gutter) * -1);
+    filter: drop-shadow(0 0.625rem 0.875rem rgba(120, 0, 40, 0.24));
+}
+
+/* The paper: scalloped tear-off edges top and bottom */
+.ticket {
+    --bite: 0.375rem;
+    padding: 0.875rem 0 1.125rem;
+    background: var(--pink-soft);
+    -webkit-mask:
+        radial-gradient(circle at 50% 0, transparent var(--bite), #000 calc(var(--bite) + 0.5px)) 50% 0 / 1rem 51% repeat-x,
+        radial-gradient(circle at 50% 100%, transparent var(--bite), #000 calc(var(--bite) + 0.5px)) 50% 100% / 1rem 51% repeat-x;
+    mask:
+        radial-gradient(circle at 50% 0, transparent var(--bite), #000 calc(var(--bite) + 0.5px)) 50% 0 / 1rem 51% repeat-x,
+        radial-gradient(circle at 50% 100%, transparent var(--bite), #000 calc(var(--bite) + 0.5px)) 50% 100% / 1rem 51% repeat-x;
+}
+
+/* Printed serial line above a dotted perforation */
+.ticket-serial {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 0.75rem 0.625rem;
+    padding: 0.25rem 0 0.75rem;
+    background: radial-gradient(circle, var(--red) 1.5px, transparent 2px) 0 100% / 8px 4px repeat-x;
+    color: var(--red);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+}
+
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(3.5rem, auto));
+    gap: 2px;
+    padding: 2px;
+    background: var(--red);
+}
+
+.ticket-numbers,
+.ticket-blanks {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+
+.r1 { grid-row: 1; }
+.r2 { grid-row: 2; }
+.r3 { grid-row: 3; }
+.c1 { grid-column: 1; }
+.c2 { grid-column: 2; }
+.c3 { grid-column: 3; }
+.c4 { grid-column: 4; }
+.c5 { grid-column: 5; }
+.c6 { grid-column: 6; }
+.c7 { grid-column: 7; }
+.c8 { grid-column: 8; }
+.c9 { grid-column: 9; }
+
+/* Blanks: solid squares printed inside their cells */
+.blank {
+    background: var(--red);
+    border: 3px solid var(--white);
+}
+
+.tk a {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    background: var(--white);
+    color: var(--red);
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 5vw, 3.25rem);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    text-decoration: none;
+    transition: color 0.2s var(--ease-out);
+}
+
+.tk a:focus-visible {
+    outline: 4px solid var(--ink);
+    outline-offset: -4px;
+}
+
+/* The dab: a solid magenta blot on the number */
+.tk a::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    width: min(94%, 5.75rem);
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    background: var(--magenta);
+    opacity: 0;
+    border-radius: 47% 53% 44% 56% / 55% 46% 54% 45%;
+    transform: scale(0.35) rotate(-20deg);
+    transition: transform 0.45s var(--ease-out), opacity 0.2s var(--ease-out);
+}
+
+.tk:nth-child(2n) a::before {
+    border-radius: 55% 45% 52% 48% / 44% 56% 47% 53%;
+}
+
+.tk.called a,
+.tk a:hover,
+.tk a:focus-visible,
+.tk a:active {
+    color: var(--white);
+}
+
+.tk.called a::before,
+.tk a:hover::before,
+.tk a:focus-visible::before,
+.tk a:active::before {
+    opacity: 1;
+    transform: scale(1) rotate(4deg);
+}
+
+.tk.called a:hover::before {
+    transform: scale(1.06) rotate(-6deg);
+}
+
+/* Last called: the four most recent episodes in full */
+.called-title {
+    margin-top: 2.5rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.called-list li {
+    border-bottom: 1px solid rgba(26, 26, 26, 0.25);
+}
+
+.called-list a {
+    display: grid;
+    grid-template-columns: 4.25rem 1fr;
+    gap: 0.125rem 1rem;
+    padding: 1rem 0;
+    text-decoration: none;
+}
+
+.lc-no {
+    grid-row: span 2;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--red);
+}
+
+.lc-title {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.called-list a:hover .lc-title {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.lc-meta {
+    font-variant-numeric: tabular-nums;
+}
+
+.all-episodes {
+    margin-top: 1.25rem;
+}
+
+.all-episodes a {
+    gap: 0.5rem;
+}
+
+.all-episodes a,
+.letter-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-weight: 600;
+}
+
+/* Tour feature spread */
+.tour {
+    background: var(--red);
+    color: var(--white);
+}
+
+.tour-grid {
+    display: grid;
+    gap: 2rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.tour-title {
+    font-size: 4rem;
+}
+
+.tour-sub {
+    margin: 0.75rem 0 1rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.tour-intro p {
+    max-width: 34rem;
+}
+
+.book {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+    min-height: 3.75rem;
+    padding: 0 1.75rem;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 0.5rem 1rem -0.25rem rgba(26, 26, 26, 0.4);
+}
+
+.book:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+}
+
+.dates {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+}
+
+.dates th {
+    text-align: left;
+    font-family: var(--font-label);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0 0.5rem 0.5rem 0;
+    border-bottom: 3px solid var(--white);
+}
+
+.dates td {
+    padding: 0.75rem 0.5rem 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    vertical-align: top;
+}
+
+.dates td:first-child {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Editor's letter */
+.letter {
+    background: var(--pink);
+}
+
+.letter-inner {
+    display: grid;
+    gap: 1.5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.letter-title {
+    font-size: 4rem;
+    color: var(--red);
+}
+
+.letter-body {
+    max-width: 36rem;
+    display: grid;
+    gap: 1rem;
+    font-size: 1.25rem;
+}
+
+.sign-off {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.625rem;
+    text-transform: uppercase;
+}
+
+.award {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1rem 1.125rem;
+    background: var(--white);
+    font-weight: 600;
+}
+
+.award i {
+    margin-top: 0.2em;
+    color: var(--red);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 2.5rem var(--gutter);
+    display: grid;
+    gap: 1rem;
+}
+
+.footer-mark {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--pink);
+}
+
+.footer-and {
+    color: var(--magenta);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+}
+
+.credit a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+}
+
+/* Tablet */
+@media (min-width: 48rem) {
+    :root {
+        --gutter: 2rem;
+    }
+
+    .issue-hosts {
+        display: inline;
+    }
+
+    .lines-left {
+        max-width: 34rem;
+    }
+
+    .lines-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+
+    .contents-title {
+        font-size: 4.5rem;
+    }
+
+    .tour-title,
+    .letter-title {
+        font-size: 5rem;
+    }
+}
+
+/* Desktop: the photo stays at a sharp size in a studio-grey panel,
+   and the coverlines sit on the grey either side of it */
+@media (min-width: 64rem) {
+    .cover-inner {
+        padding-bottom: 3rem;
+    }
+
+    .cover-body {
+        display: grid;
+        grid-template-columns: 19rem 1fr 19rem;
+        margin-top: 1rem;
+        background: var(--studio);
+        isolation: isolate;
+    }
+
+    /* One halftone screen across the whole panel. The flat grey and the
+       photo pass through the same dots and threshold, so the photo edge
+       disappears. The fades match the mask on the photo itself. */
+    .cover-body::after {
+        --photo-box: 44rem calc(44rem * 641 / 960);
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background:
+            radial-gradient(circle, #000, #fff) 0 0 / var(--dot) var(--dot),
+            linear-gradient(90deg, var(--studio), transparent 6%, transparent 94%, var(--studio)) 50% 100% / var(--photo-box) no-repeat,
+            linear-gradient(180deg, var(--studio), transparent 10%) 50% 100% / var(--photo-box) no-repeat,
+            var(--screen-photo) 50% 100% / var(--photo-box) no-repeat,
+            var(--studio);
+        background-blend-mode: multiply, normal, normal, normal, normal;
+        filter: grayscale(1) brightness(var(--screen-lift)) contrast(24);
+        mix-blend-mode: multiply;
+        opacity: var(--screen-ink);
+    }
+
+    .cover-photo.screen::after {
+        display: none;
+    }
+
+    /* Slabs and roundel sit above the screen, so no dots fall on them */
+    .lines {
+        z-index: 2;
+    }
+
+    /* Never wider than 44rem, so the 960px photo stays sharp */
+    .cover-photo {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        justify-self: center;
+        align-self: end;
+        width: min(100%, 44rem);
+        margin: 0;
+        -webkit-mask:
+            linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent),
+            linear-gradient(180deg, transparent, #000 10%);
+        -webkit-mask-composite: source-in;
+        mask:
+            linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent),
+            linear-gradient(180deg, transparent, #000 10%);
+        mask-composite: intersect;
+    }
+
+    .lines {
+        grid-row: 1;
+        position: relative;
+        padding: 1.25rem;
+        margin: 0;
+        max-width: none;
+    }
+
+    .lines-left {
+        grid-column: 1;
+        justify-content: flex-start;
+    }
+
+    .lines-right {
+        grid-column: 3;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1.25rem;
+    }
+
+    .lines-right .flash {
+        position: static;
+        width: 10rem;
+        height: 10rem;
+        margin-bottom: auto;
+    }
+
+    .lines-right .flash .flash-top {
+        font-size: 2.25rem;
+    }
+
+    .lines-right .flash .flash-bottom {
+        font-size: 1.25rem;
+        max-width: 7rem;
+    }
+
+    .lead-title {
+        font-size: 2rem;
+    }
+
+    .lead-action {
+        font-size: 1.25rem;
+        gap: 0.625rem;
+    }
+
+    .listen-grid {
+        grid-template-columns: 1.4fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .ticket-wrap {
+        margin-inline: 0;
+    }
+
+    .ticket {
+        padding: 1rem 1rem 1.375rem;
+    }
+
+    .ticket-serial {
+        margin-inline: 0;
+        font-size: 1.25rem;
+    }
+
+    .ticket-grid {
+        grid-template-rows: repeat(3, minmax(6.5rem, auto));
+        gap: 3px;
+        padding: 3px;
+    }
+
+    .blank {
+        border-width: 0.5rem;
+    }
+
+    .called-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+    }
+
+    .tour-grid {
+        grid-template-columns: 1fr 1.25fr;
+        gap: 4rem;
+        align-items: start;
+    }
+
+    .tour-title {
+        font-size: 6rem;
+    }
+
+    .letter-inner {
+        grid-template-columns: 1fr 1.4fr;
+        gap: 4rem;
+    }
+
+    .letter-title {
+        font-size: 6rem;
+    }
+
+    .footer-inner {
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .slab,
+    .flash {
+        transition: none;
+    }
+
+    .slab:hover,
+    .slab:focus-visible {
+        transform: none;
+    }
+
+    .flash:hover,
+    .flash:focus-visible {
+        transform: rotate(-8deg);
+    }
+}
+
+
+/* ==========================================================================
+   Page: about.html
+   ========================================================================== */
+
+/* About page: the feature interview spread of the weekly.
+   It uses the tokens and the shared classes above. */
+
+.about-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 3rem var(--gutter) 3.5rem;
+}
+
+/* Band colours */
+.about-intro {
+    background: var(--pink);
+}
+
+.profile-judith {
+    background: var(--white);
+}
+
+.profile-jenny {
+    background: var(--pink);
+}
+
+/* Headlines */
+.about-title,
+.profile-title,
+.hear-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.about-title,
+.profile-title {
+    color: var(--red);
+    font-size: 3.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--ink);
+}
+
+/* The standfirst: the big opening line of a feature */
+.standfirst {
+    max-width: 32ch;
+    margin: 1.25rem 0 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    text-wrap: balance;
+}
+
+/* Photo and body column */
+.feature {
+    display: grid;
+    gap: 2rem;
+}
+
+.feature-photo figcaption,
+.second-photo figcaption {
+    margin-top: 0.5rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.feature-photo {
+    margin-inline: calc(var(--gutter) * -1);
+}
+
+.feature-photo figcaption {
+    padding-inline: var(--gutter);
+}
+
+.photo-frame {
+    display: block;
+    --dot: 5px;
+    --screen-lift: 2.45;
+    --screen-ink: 0.26;
+    --screen-pos: 50% 50%;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+/* Profile photos crop to a portrait page shape */
+.photo-judith img,
+.photo-jenny img {
+    aspect-ratio: 4 / 5;
+}
+
+.photo-team {
+    --screen-photo: url("../images/podcast-carousel-1.webp");
+}
+
+.photo-judith {
+    --screen-photo: url("../images/judith-holder-5_790.webp");
+}
+
+.photo-jenny {
+    --screen-photo: url("../images/jenny-eclair-5_790.webp");
+}
+
+.feature-body {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+    max-width: 70ch;
+}
+
+/* Drop cap on the first paragraph of each profile */
+.opener::first-letter {
+    float: left;
+    margin: 0.1em 0.12em 0 0;
+    font-family: var(--font-display);
+    font-size: 4.25em;
+    line-height: 0.8;
+    color: var(--red);
+}
+
+.feature-body .award {
+    margin-top: 0.5rem;
+}
+
+/* A second print, laid on the page */
+.second-photo {
+    justify-self: start;
+    width: min(100%, 20rem);
+    margin-top: 1rem;
+    padding: 0.625rem 0.625rem 0.75rem;
+    background: var(--white);
+    box-shadow: 0 0.625rem 1.25rem -0.375rem rgba(26, 26, 26, 0.35);
+    transform: rotate(-1.5deg);
+}
+
+.profile-judith .second-photo {
+    border: 1px solid rgba(26, 26, 26, 0.15);
+    transform: rotate(1.5deg);
+}
+
+.second-photo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Contact sheet: the rest of the shoot on a strip of ink */
+.contact-sheet {
+    margin-top: 3rem;
+    padding: 1.5rem 1rem 1.75rem;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0 0.625rem, transparent 0.625rem) 0.5rem 0.5rem / 1.5rem 0.375rem repeat-x,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0 0.625rem, transparent 0.625rem) 0.5rem calc(100% - 0.5rem) / 1.5rem 0.375rem repeat-x,
+        var(--ink);
+    color: var(--white);
+}
+
+.sheet-title {
+    margin-bottom: 0.75rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.sheet-frames {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 0.5rem;
+}
+
+.sheet-frames img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.sheet-frames figcaption {
+    margin-top: 0.375rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+/* Back to listening */
+.about-listen {
+    background: var(--red);
+    color: var(--white);
+}
+
+.about-listen :focus-visible {
+    outline-color: var(--yellow);
+}
+
+.about-listen-inner {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.hear-title {
+    font-size: 3.5rem;
+}
+
+.hear-links {
+    display: grid;
+    justify-items: start;
+    gap: 1rem;
+}
+
+.hear-links .lead-action {
+    margin-top: 0;
+}
+
+.hear-links .line-big {
+    font-size: 1.75rem;
+}
+
+.hear-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    font-weight: 600;
+}
+
+/* Tablet */
+@media (min-width: 48rem) {
+    .about-title,
+    .profile-title {
+        font-size: 4.5rem;
+    }
+
+    .standfirst {
+        font-size: 2rem;
+    }
+
+    .feature-photo {
+        margin-inline: 0;
+    }
+
+    .feature-photo figcaption {
+        padding-inline: 0;
+    }
+
+    .feature-body {
+        font-size: 1.1875rem;
+    }
+
+    .sheet-frames {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .hear-title {
+        font-size: 4.5rem;
+    }
+}
+
+/* Desktop: big photo beside a readable column, mirrored for Jenny */
+@media (min-width: 64rem) {
+    .about-inner {
+        padding-top: 3.5rem;
+        padding-bottom: 4rem;
+    }
+
+    .about-title,
+    .profile-title {
+        font-size: 6rem;
+    }
+
+    .standfirst {
+        font-size: 2.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .feature {
+        grid-template-columns: minmax(0, 36rem) minmax(0, 1fr);
+        gap: 3.5rem;
+        align-items: start;
+    }
+
+    .feature-flip .feature-photo {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        width: 100%;
+    }
+
+    .feature-flip {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 36rem);
+    }
+
+    .feature-flip .feature-body {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .contact-sheet {
+        padding: 1.75rem 1.5rem 2rem;
+    }
+
+    .about-listen-inner {
+        grid-template-columns: 1fr auto;
+        gap: 3rem;
+    }
+
+    .hear-title {
+        font-size: 5rem;
+    }
+}
+
+
+/* ==========================================================================
+   Page: message-board.html
+   ========================================================================== */
+
+/* Message board page: the readers' page of the weekly.
+   The intro links to Instagram and Facebook. A halftone print of the hosts sits beside it.
+   The posts show as a wall of pinned prints and letters until a visitor loads Instagram. */
+
+/* Readers' page intro on the pink cover ground */
+.board-intro {
+    background: var(--pink);
+}
+
+.board-intro-inner {
+    display: grid;
+    gap: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.board-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--ink);
+}
+
+.board-lead {
+    margin-top: 1.25rem;
+    max-width: 36rem;
+    font-size: 1.25rem;
+}
+
+.board-follow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+    max-width: 36rem;
+}
+
+/* The big Follow us on Instagram slab */
+.board-slab {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1.25rem 1.25rem 1.375rem;
+}
+
+.board-slab .lead-title {
+    font-size: 2.5rem;
+}
+
+.board-slab-icon {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--ink);
+    font-size: 1.75rem;
+}
+
+.board-handle {
+    font-size: 1.375rem;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    overflow-wrap: anywhere;
+}
+
+.board-slab-small .line-big {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+/* A halftone print of the hosts, laid on the page with a flash roundel */
+.board-print {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 34rem);
+    margin-top: 2.5rem;
+    padding: 0.625rem 0.625rem 0.75rem;
+    background: var(--white);
+    box-shadow: 0 0.625rem 1.25rem -0.375rem rgba(26, 26, 26, 0.35);
+    transform: rotate(1.5deg);
+}
+
+.board-print-photo {
+    --dot: 5px;
+    --screen-lift: 2.45;
+    --screen-ink: 0.26;
+    --screen-pos: 50% 50%;
+    --screen-photo: url("../images/home-cover-merch_800.webp");
+}
+
+.board-print img {
+    width: 100%;
+    height: auto;
+}
+
+.board-flash {
+    position: absolute;
+    top: -2.75rem;
+    left: -0.5rem;
+    width: 6.5rem;
+    height: 6.5rem;
+}
+
+.board-flash .flash-top {
+    font-size: 1.5rem;
+}
+
+.board-flash .flash-bottom {
+    font-size: 1rem;
+    max-width: 5rem;
+}
+
+.board-flash:hover {
+    transform: rotate(-8deg);
+    box-shadow: var(--rest-shadow);
+}
+
+/* Posts band */
+.board-posts {
+    background: var(--white);
+}
+
+.board-posts .contents-title:focus {
+    outline: none;
+}
+
+.board-posts .contents-title:focus-visible {
+    outline: 3px solid var(--ink);
+}
+
+.board-consent {
+    display: grid;
+    justify-items: start;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.board-consent[hidden] {
+    display: none;
+}
+
+.board-load {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3.25rem;
+    padding: 0.75rem 1.25rem;
+    border: 0;
+    border-radius: 0;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--rest-shadow);
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+
+.board-load:hover,
+.board-load:focus-visible {
+    transform: translateY(-0.375rem) rotate(-0.6deg);
+    box-shadow: var(--lift-shadow);
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+}
+
+.board-load:disabled {
+    cursor: progress;
+}
+
+.board-note {
+    max-width: 36rem;
+}
+
+/* The wall: each post is a pinned print or a letter, at its own width and angle */
+.board-list {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+}
+
+.board-list > li {
+    --tilt: 0deg;
+    justify-self: start;
+    width: 100%;
+    transform: rotate(var(--tilt));
+}
+
+.board-list > li:nth-child(1) { --tilt: -1deg; }
+.board-list > li:nth-child(2) { --tilt: 1.2deg; width: 88%; justify-self: end; }
+.board-list > li:nth-child(3) { --tilt: -0.6deg; width: 94%; }
+.board-list > li:nth-child(4) { --tilt: 1.4deg; width: 84%; justify-self: center; }
+.board-list > li:nth-child(5) { --tilt: -1.3deg; width: 92%; justify-self: end; }
+.board-list > li:nth-child(6) { --tilt: 0.5deg; width: 96%; }
+
+/* Fallback card: Instagram's blockquote before embed.js runs.
+   After it runs, Instagram swaps each one for an iframe. */
+.board-list blockquote.instagram-media {
+    position: relative;
+    margin: 0;
+    background: var(--pink-soft);
+    color: var(--red);
+    box-shadow: 0 0.625rem 1.25rem -0.375rem rgba(26, 26, 26, 0.3);
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+
+/* A yellow pin at the top of each print */
+.board-list blockquote.instagram-media::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-left: -0.5625rem;
+    border-radius: 50%;
+    background: var(--yellow);
+    box-shadow: 0 0.1875rem 0.25rem rgba(26, 26, 26, 0.35);
+}
+
+.board-list blockquote.instagram-media:hover,
+.board-list blockquote.instagram-media:focus-within {
+    transform: translateY(-0.375rem) rotate(-0.6deg);
+    box-shadow: var(--lift-shadow);
+}
+
+/* Three paper stocks: letter pink, red slab and white print */
+.board-list blockquote.post-red {
+    background: var(--red);
+    color: var(--white);
+}
+
+.board-list blockquote.post-white {
+    background: var(--white);
+    border: 1px solid rgba(26, 26, 26, 0.18);
+}
+
+.board-list blockquote.instagram-media a {
+    display: grid;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    padding: 1.5rem 1.25rem 1.25rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid currentColor;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+}
+
+.post-meta i {
+    font-size: 1.25rem;
+}
+
+.post-meta time {
+    margin-left: auto;
+}
+
+.post-text {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 1.08;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.post-text q {
+    quotes: "\201C" "\201D";
+}
+
+.post-white .post-text,
+.post-letter .post-text {
+    color: var(--ink);
+}
+
+.post-link {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.2em;
+}
+
+.board-list blockquote.instagram-media a:hover .post-link {
+    text-decoration-thickness: 0.15em;
+}
+
+/* Once Instagram has loaded, the posts sit straight in an even grid */
+.board-list:has(iframe) {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
+    gap: 1.5rem;
+}
+
+.board-list:has(iframe) > li:nth-child(n) {
+    justify-self: stretch;
+    width: 100%;
+    transform: none;
+}
+
+/* Instagram sets an inline min-width of 326px. Override it so a post fits a small phone. */
+.board-list iframe {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+@media (min-width: 48rem) {
+    .board-title {
+        font-size: 5rem;
+    }
+
+    .board-list {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2.5rem 2rem;
+    }
+
+    .board-list > li:nth-child(n) {
+        width: 100%;
+    }
+
+    .board-list > li:nth-child(1) { grid-column: span 4; }
+    .board-list > li:nth-child(2) { grid-column: span 2; margin-top: 1.5rem; }
+    .board-list > li:nth-child(3) { grid-column: span 3; }
+    .board-list > li:nth-child(4) { grid-column: span 3; margin-top: 2rem; }
+    .board-list > li:nth-child(5) { grid-column: span 2; }
+    .board-list > li:nth-child(6) { grid-column: span 4; margin-top: 1rem; }
+
+    .board-list > li:nth-child(1) .post-text {
+        font-size: 2.25rem;
+    }
+
+    .board-list:has(iframe) > li:nth-child(n) {
+        grid-column: auto;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 64rem) {
+    .board-intro-inner {
+        grid-template-columns: 1.3fr 1fr;
+        align-items: start;
+        gap: 3rem;
+    }
+
+    .board-title {
+        font-size: 6rem;
+    }
+
+    .board-print {
+        margin-top: 3rem;
+    }
+
+    .board-flash {
+        width: 8rem;
+        height: 8rem;
+        top: -3.25rem;
+        left: -2rem;
+    }
+
+    .board-flash .flash-top {
+        font-size: 1.875rem;
+    }
+
+    .board-flash .flash-bottom {
+        font-size: 1.0625rem;
+        max-width: 6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .board-load,
+    .board-list blockquote.instagram-media {
+        transition: none;
+    }
+
+    .board-load:hover,
+    .board-load:focus-visible,
+    .board-list blockquote.instagram-media:hover,
+    .board-list blockquote.instagram-media:focus-within {
+        transform: none;
+    }
+}
+
+
+/* ==========================================================================
+   Page: 404.html
+   ========================================================================== */
+
+/* 404 page: an error in print.
+   It uses the tokens and the shared classes above. */
+
+.err-inner {
+    display: grid;
+    gap: 2.5rem;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 2rem var(--gutter) 3.5rem;
+}
+
+.err-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.err-text .issue-line {
+    margin-top: 1rem;
+}
+
+.err-lead {
+    max-width: 34rem;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.err-actions {
+    display: grid;
+    justify-items: start;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.err-slab {
+    max-width: 30rem;
+}
+
+.err-home {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-weight: 600;
+}
+
+/* The photo: a print cut-out, pasted on a little crooked */
+.err-pic {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 22rem);
+    margin-top: 1.5rem;
+}
+
+.err-photo {
+    --dot: 5px;
+    --screen-lift: 2.45;
+    --screen-ink: 0.26;
+    --screen-pos: 50% 50%;
+    --screen-photo: url("../images/error-404.webp");
+    border: 0.625rem solid var(--white);
+    box-shadow: var(--lift-shadow);
+    transform: rotate(2deg);
+}
+
+.err-photo img {
+    width: 100%;
+    height: auto;
+}
+
+/* The flash roundel, as on the cover. It is not a link here. */
+.err-flash {
+    position: absolute;
+    top: -2.5rem;
+    left: -0.75rem;
+    z-index: 1;
+    display: grid;
+    place-content: center;
+    width: 7.75rem;
+    height: 7.75rem;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--ink);
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: var(--rest-shadow);
+    transform: rotate(-8deg);
+}
+
+.err-flash-top {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.err-flash-bottom {
+    display: block;
+    max-width: 6rem;
+    margin: 0.25rem auto 0;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.05;
+}
+
+@media (min-width: 48rem) {
+    .err-title {
+        font-size: 5rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .err-inner {
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+        gap: 4rem;
+        padding-top: 4rem;
+        padding-bottom: 5rem;
+    }
+
+    .err-title {
+        font-size: 6rem;
+    }
+
+    .err-pic {
+        width: min(100%, 26rem);
+        margin-top: 0;
+    }
+
+    .err-flash {
+        width: 10rem;
+        height: 10rem;
+        top: -3rem;
+        left: -3rem;
+    }
+
+    .err-flash-top {
+        font-size: 3.25rem;
+    }
+
+    .err-flash-bottom {
+        font-size: 1.25rem;
+        max-width: 7rem;
+    }
+}
+
+
+/* ==========================================================================
+   Shared: footer privacy links
+   ========================================================================== */
+
+/* The Privacy link and the Cookie settings button sit above the credit.
+   consent.js shows the button. It stays hidden without JavaScript. */
+
+.footer-meta {
+    display: grid;
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+}
+
+.footer-legal a,
+.footer-settings {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+}
+
+.footer-settings {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 0.08em;
+    cursor: pointer;
+}
+
+.footer-settings[hidden] {
+    display: none;
+}
+
+
+/* ==========================================================================
+   Page: index.html, the click-to-load player
+   ========================================================================== */
+
+/* Nothing loads from Acast until the visitor presses Play here.
+   player.js shows the button and the note, and hides the plain link. */
+
+.player-consent {
+    display: grid;
+    justify-items: start;
+    align-content: center;
+    gap: 0.75rem;
+    min-height: 14rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--pink-soft);
+}
+
+.player-load {
+    text-decoration: none;
+}
+
+.board-load[hidden] {
+    display: none;
+}
+
+.player-note {
+    max-width: 30rem;
+}
+
+@media (min-width: 64rem) {
+    .player-consent {
+        min-height: 28rem;
+        padding: 2.5rem;
+    }
+}
+
+
+/* ==========================================================================
+   Shared: cookie consent banner
+   ========================================================================== */
+
+/* consent.js adds the banner at the end of the page. It sticks to the
+   bottom of the window, and sits after the footer at the end of the page,
+   so it never hides the footer. Accept and Reject are the same size. */
+
+.consent {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background: var(--white);
+    color: var(--ink);
+    border-top: 3px solid var(--ink);
+    box-shadow: 0 -0.5rem 1.5rem -0.5rem rgba(26, 26, 26, 0.3);
+    animation: consent-rise 0.45s var(--ease-out);
+}
+
+.consent[hidden] {
+    display: none;
+}
+
+.consent-inner {
+    display: grid;
+    gap: 0.75rem;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0.75rem var(--gutter) 0.875rem;
+}
+
+.consent-title {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.consent-title:focus {
+    outline: none;
+}
+
+.consent-title:focus-visible {
+    outline: 3px solid var(--ink);
+}
+
+.consent-body {
+    max-width: 52ch;
+    margin-top: 0.125rem;
+    line-height: 1.45;
+}
+
+.consent-status {
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+.consent-status[hidden] {
+    display: none;
+}
+
+.consent-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.consent-button {
+    min-height: 3.25rem;
+    padding: 0.75rem 1.25rem;
+    border: 0;
+    border-radius: 0;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--rest-shadow);
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+
+.consent-button:hover,
+.consent-button:focus-visible {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--lift-shadow);
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+}
+
+@keyframes consent-rise {
+    from {
+        transform: translateY(100%);
+    }
+}
+
+@media (min-width: 48rem) {
+    .consent-inner {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .consent-actions {
+        grid-template-columns: repeat(2, 10rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .consent,
+    .consent-button {
+        animation: none;
+        transition: none;
+    }
+
+    .consent-button:hover,
+    .consent-button:focus-visible {
+        transform: none;
+    }
+}
+
+
+/* ==========================================================================
+   Page: privacy.html
+   ========================================================================== */
+
+/* Privacy page: a plain notice printed inside the issue.
+   It uses the tokens and the shared classes above. */
+
+.privacy-intro {
+    background: var(--pink);
+}
+
+.privacy-band {
+    background: var(--white);
+}
+
+.privacy-band-pink {
+    background: var(--pink);
+}
+
+.privacy-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 3rem var(--gutter) 3.5rem;
+}
+
+.privacy-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.privacy-inner .issue-line {
+    margin-top: 1rem;
+}
+
+.privacy-lead {
+    max-width: 36rem;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.privacy-heading {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--ink);
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 2.75rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.privacy-block p {
+    max-width: 36rem;
+}
+
+.privacy-block p + p {
+    margin-top: 1rem;
+}
+
+.privacy-action {
+    margin: 1.25rem 0;
+}
+
+.privacy-action:has(> [hidden]) {
+    display: none;
+}
+
+.privacy-columns {
+    display: grid;
+    gap: 3rem;
+}
+
+/* The table: one block per service on phones, a full table from 48rem */
+.privacy-table {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.privacy-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.privacy-table tbody,
+.privacy-table tr,
+.privacy-table th,
+.privacy-table td {
+    display: block;
+}
+
+.privacy-table tr {
+    padding: 1rem 0 1.25rem;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+}
+
+.privacy-table tbody th {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.05;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.privacy-table td {
+    margin-top: 0.625rem;
+}
+
+.privacy-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.privacy-table code {
+    padding: 0 0.25em;
+    background: var(--pink-soft);
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+@media (min-width: 48rem) {
+    .privacy-title {
+        font-size: 5rem;
+    }
+
+    .privacy-heading {
+        font-size: 3.5rem;
+    }
+
+    .privacy-table {
+        display: table;
+    }
+
+    .privacy-table thead {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip-path: none;
+        white-space: normal;
+    }
+
+    .privacy-table tbody {
+        display: table-row-group;
+    }
+
+    .privacy-table thead {
+        display: table-header-group;
+    }
+
+    .privacy-table tr {
+        display: table-row;
+    }
+
+    .privacy-table th,
+    .privacy-table td {
+        display: table-cell;
+        margin: 0;
+        padding: 1rem 1.25rem 1.125rem 0;
+        border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .privacy-table thead th {
+        padding-top: 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid var(--ink);
+        font-family: var(--font-label);
+        font-weight: 600;
+        font-size: 1.0625rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .privacy-table tbody th {
+        width: 22%;
+    }
+
+    .privacy-table td::before {
+        content: none;
+    }
+}
+
+@media (min-width: 64rem) {
+    .privacy-title {
+        font-size: 6rem;
+    }
+
+    .privacy-columns {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
