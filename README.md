@@ -160,7 +160,8 @@ The project keeps them for reference. The build script does not deploy them. The
 
     - Each page is responsive. The layout changes at 48rem (768px) and at 64rem (1024px).
     - Each page works without JavaScript.
-    - The site has four pages: Home, About, Message Board and a custom 404 page.
+    - The site has five pages: Home, About, Message Board, Privacy and a custom 404 page.
+    - No third-party embed loads until the visitor asks for it. Google Analytics loads only after the visitor accepts analytics cookies.
     - The screenshots in this section show the earlier design. New screenshots of the redesign are to be added.
 
 - Browser Tab Icon:
@@ -191,6 +192,8 @@ The project keeps them for reference. The build script does not deploy them. The
     - The footer is at the bottom of each page. It shows the logotype "Older and Wider".
     - It has links to Instagram, Facebook and the shop at [olderandwider.shop](https://olderandwider.shop).
     - It has a credit link to the author of the website.
+    - It has a "Privacy" link to `privacy.html`, and a "Cookie settings" button. The button opens the cookie banner again.
+    - The "Cookie settings" button is hidden without JavaScript, because it needs `assets/js/consent.js`.
     - The footer as it appeared in the earlier design:
 
         ![Website footer](assets/images/website-footer.webp)
@@ -199,7 +202,7 @@ The project keeps them for reference. The build script does not deploy them. The
 
     - The home page looks like the cover of a weekly magazine. It has these sections:
         - Cover: the masthead, an issue line with the episode number and the date, a halftone photo of the hosts, and cover lines. Each cover line links to a section of the page or to the shop.
-        - This week: the Acast player for the latest episode, and links to Apple Podcasts, Spotify and Acast.
+        - This week: a "Play here" button for the latest episode, and links to Apple Podcasts, Spotify and Acast. The Acast player loads only when the visitor presses the button. A note next to the button tells the visitor that the player stores a language setting and a session item in the browser. The site does not remember this choice, so the button shows on each visit. The script `assets/js/player.js` does this work. Without JavaScript, the button is replaced by a "Listen on Acast" link.
         - Back issues: a bingo ticket. Each number on the ticket links to the podcast on Acast. A "Last called" list shows the four previous episodes.
         - Tour: "Even Older and Wider", the 2027 live tour. A table shows the eight dates, towns and venues. The "Book tickets" link opens the ticket page.
         - Letter: "Dear OWLs", a letter from Jenny and Judith, with the award nomination.
@@ -223,10 +226,28 @@ The project keeps them for reference. The build script does not deploy them. The
     - The hosts call the podcast's Instagram page the "message board". This page links to it, and to the Facebook page.
     - The page shows six recent Instagram posts as short text quotes or summaries, with their dates and links. No content loads from Instagram when the page opens.
     - The button "Show the posts here" loads the full Instagram posts. The note next to the button tells the visitor that Instagram then sets cookies.
-    - The script `assets/js/message-board.js` does this work. It is the only script on the site. Without JavaScript, the text and the links still work.
+    - The script `assets/js/message-board.js` does this work. Without JavaScript, the text and the links still work.
     - The message board page as it appeared in the earlier design:
 
         ![Website message board page](assets/images/website-message-board-feature.webp)
+
+- Privacy:
+
+    - The privacy page `privacy.html` tells the visitor that the site has no forms and collects no personal data directly.
+    - A table shows each third party, what it stores, and when. The third parties are the Acast player, Instagram, Google Analytics, Google Fonts and Font Awesome from cdnjs.
+    - The page tells the visitor how to change or withdraw consent, with the "Cookie settings" button.
+    - It names the controller, Dominic Francis, with a link to his website. It shows no email address.
+    - The page has no link in the navigation. The footer of each page links to it.
+
+- Cookie consent and analytics:
+
+    - On the first visit, a banner at the bottom of the window asks about analytics cookies only. The "Accept" and "Reject" buttons have the same size, colour and weight.
+    - The script `assets/js/consent.js` makes the banner. It stores the choice in `localStorage`, under the key `oaw-consent`, with the date.
+    - The banner does not trap focus. It sits after the footer in the page, and sticks to the bottom of the window.
+    - "Reject" deletes the `_ga` and `_ga_*` cookies for the current host and its parent domains.
+    - The script `assets/js/analytics.js` loads Google Analytics only when the stored choice is "accepted". It listens for the event `oaw:consentchange` from `consent.js`. Thus "Accept" loads Google Analytics without a reload.
+    - Without JavaScript, the banner does not show, and no analytics load.
+    - **Before go-live, replace the placeholder ID `G-XXXXXXXXXX`.** The constant `GA_MEASUREMENT_ID` at the top of `assets/js/analytics.js` holds it. While the value is the placeholder, `analytics.js` does nothing and sends no request to Google.
 
 - Custom 404:
 
@@ -254,7 +275,7 @@ The forms had no backend. They did not send data to the hosts. Issue #30 covers 
 
 - The addition of a website forum would allow fans of the podcast to interact, discuss the show, and share their life experiences.
 - A mailing list with a real backend (issue #30).
-- Analytics, with cookie consent before any analytics loads (issues #21 and #22).
+- The real Google Analytics measurement ID in `assets/js/analytics.js` (issue #21).
 
 ### Structure
 
@@ -409,6 +430,7 @@ The `PAGES` list contains these files:
 - `about.html`
 - `message-board.html`
 - `404.html`
+- `privacy.html`
 - `sitemap.xml`
 - `robots.txt`
 
@@ -513,7 +535,12 @@ Links to the podcast, on various platforms:
 ## Technologies Used
 
 - The website is built with [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS). The earlier design also used [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)). The redesign removed it.
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) is used in one small script, `assets/js/message-board.js`. It loads the Instagram posts only when the visitor asks for them.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) is used in four small scripts. The site works without them.
+    - `assets/js/consent.js` shows the cookie banner and stores the choice.
+    - `assets/js/analytics.js` loads Google Analytics only after the visitor accepts.
+    - `assets/js/player.js` loads the Acast player only when the visitor presses "Play here".
+    - `assets/js/message-board.js` loads the Instagram posts only when the visitor asks for them.
+- [Google Analytics](https://marketingplatform.google.com/about/analytics/) counts visits, only after the visitor accepts analytics cookies.
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
 - [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
 - The [Responsive Viewer](https://responsiveviewer.org/) extension was used in all browsers (except Firefox, which does not seem to support it) to create images of the website's pages on a variety of devices.

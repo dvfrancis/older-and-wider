@@ -42,14 +42,14 @@ Two well-known women talk honestly, and with humour, about life after 50. The si
 ## Capabilities and Constraints
 
 - Static site: hand-written HTML and one CSS file. No build tools and no framework.
-- Small JavaScript files are approved: one for the message board (Instagram click-to-load) and one for the live shows page (issue #29). The site must work without them. No inline scripts and no inline styles (issue #24).
+- Small JavaScript files are approved: one for the message board (Instagram click-to-load), one for the home page player (Acast click-to-load), one for cookie consent, one for analytics, and one for the live shows page (issue #29). The site must work without them. No inline scripts and no inline styles (issue #24).
 - The site has no forms. The contact page and the mailing-list form were removed. Do not add server-side handling without a discussion first.
 - Deploy: `build.sh` copies an allowlist of pages to a shared S3 bucket. A push to `main` deploys to production.
 - Keep `README.md`. Update it to show the new design. Do not delete it.
 - Undecided: the future of `TESTING.md` and of the assessment screenshots in `documentation/`.
 - Undecided: the backend for a future mailing list (issue #30).
 - To do: a sitemap (issue #19) and a robots.txt (issue #20).
-- Undecided: analytics and cookie consent (issues #21 and #22). Consent must come before analytics.
+- Analytics and cookie consent (issues #21 and #22): done, except the real Google Analytics ID. Google Analytics loads only after the visitor accepts.
 
 ## Brand Commitments
 

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A static marketing site for the Older and Wider podcast (first a Code Institute project). The site has hand-written HTML, one CSS file and one small script. It has no framework, no package manager and no test suite. Font Awesome and Google Fonts load from CDNs. The pages do not use Bootstrap.
 
-Source pages live at the repo root: `index.html`, `about.html`, `message-board.html`, `404.html`. The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html`.
+Source pages live at the repo root: `index.html`, `about.html`, `message-board.html`, `404.html`, `privacy.html`. The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html`.
 
 **Design.** `DESIGN.md` holds the design system: colours, fonts, components and rules. `PRODUCT.md` holds the product record. Read both before you change the look or the copy. The show name is "Older and Wider". Do not use an ampersand in new text. `design-options/` holds five earlier design concepts for reference. `build.sh` does not deploy it.
 
@@ -40,11 +40,11 @@ Three deliberate details in `build.sh` that are easy to break:
 
 Routine deploys should go through CI — push to `main` and let the workflow run. If you do deploy by hand, note that this machine's default AWS profile is a read-only user. `build.sh`'s safety check only reads (`aws s3 ls`), so it passes, and the run then fails partway through the first `aws s3 sync`. A local `--deploy` needs a write-capable profile (`admin` or `poweruser` are configured), e.g. `AWS_PROFILE=admin ./build.sh --deploy`.
 
-**Gotcha: adding a new page is two steps.** Creating `foo.html` at the root is not enough — it must also be added to the `PAGES` array in `build.sh` or it will never reach the bucket. The allowlist is intentional: it stops stray root files silently going live. `PAGES` is now `(index.html about.html message-board.html 404.html)`. `DIRS` is `(assets)`, so `design-options/` and `documentation/` do not deploy.
+**Gotcha: adding a new page is two steps.** Creating `foo.html` at the root is not enough — it must also be added to the `PAGES` array in `build.sh` or it will never reach the bucket. The allowlist is intentional: it stops stray root files silently going live. `PAGES` is now `(index.html about.html message-board.html 404.html privacy.html)`. `DIRS` is `(assets)`, so `design-options/` and `documentation/` do not deploy.
 
 ## Structure and conventions
 
-**No templating.** Each of the four pages has its own copy of the header, nav and footer. The footer is byte-identical in all four pages. The nav has three links: Home, About and Message Board. The link to the current page carries `aria-current="page"`. `404.html` uses root-relative paths (`/index.html`, `/assets/...`), so it works at any missing address. A nav or footer change means you must edit all four files by hand.
+**No templating.** Each of the five pages has its own copy of the header, nav and footer. The footer is byte-identical in `index.html`, `about.html`, `message-board.html` and `privacy.html`. The footer in `404.html` differs only in its root-relative paths. The footer has a "Privacy" link and a "Cookie settings" button (`data-consent-open`, `hidden` until `consent.js` runs). The nav has three links: Home, About and Message Board. The privacy page has no nav item. The link to the current page carries `aria-current="page"`. `404.html` uses root-relative paths (`/index.html`, `/assets/...`), so it works at any missing address. A nav or footer change means you must edit all five files by hand.
 
 **No page redirects.** No page has a `<meta http-equiv="refresh">`. The earlier `404.html` and the two completion pages redirected after 30 seconds. The redesign removed this behaviour.
 
@@ -54,7 +54,12 @@ Routine deploys should go through CI — push to `main` and let the workflow run
 
 **CSS** is one stylesheet, `assets/css/main.css` (about 2,000 lines). `styles.css` was deleted. `:root` defines custom properties for the colours, fonts, gutter and shadows. Use these properties for colour. The rules use literal `#000` and `#fff` only in mask and halftone gradients. The main colours are pink `--pink` `#F492BF`, red `--red` `#A60201` and magenta `--magenta` `#E8046C`. The fonts are Anton, Barlow Condensed and Barlow. The breakpoints are `48rem` and `64rem`. The file also has `prefers-reduced-motion` and `prefers-contrast` blocks. The masthead uses a container query unit (`cqi`).
 
-**JavaScript.** `assets/js/message-board.js` is the only script. Only `message-board.html` loads it. It adds Instagram's `embed.js` after the visitor presses "Show the posts here", because `embed.js` sets cookies. Every page works without JavaScript. Do not add inline scripts or inline styles (issue #24).
+**JavaScript.** Every page works without JavaScript. Do not add inline scripts or inline styles (issue #24). All scripts load with `defer`. The site has four scripts:
+
+- `assets/js/consent.js` runs on every page. It shows the cookie banner on the first visit. The banner asks about analytics cookies only. The script stores the choice in `localStorage` under `oaw-consent`, as `{choice, date}`. It sends the event `oaw:consentchange` and exposes `window.oawConsent`. "Reject" deletes the `_ga` and `_ga_*` cookies.
+- `assets/js/analytics.js` runs on every page, after `consent.js`. It loads Google Analytics only when the choice is "accepted". `GA_MEASUREMENT_ID` is the placeholder `G-XXXXXXXXXX`. While it is the placeholder, the script does nothing. Replace it before go-live.
+- `assets/js/player.js` runs on `index.html` only. It inserts the Acast iframe after the visitor presses "Play here". It does not remember the choice. Without JavaScript, the page shows a "Listen on Acast" link.
+- `assets/js/message-board.js` runs on `message-board.html` only. It adds Instagram's `embed.js` after the visitor presses "Show the posts here", because `embed.js` sets cookies.
 
 ## Documentation is part of the deliverable
 
