@@ -25,7 +25,7 @@ There are several references scattered across the site which refer back to items
 
 ![Preview of the Older and Wider website at different screen sizes](assets/images/site-preview.webp)
 
-This preview shows the earlier design. A new preview of the redesign is to be added.
+This preview shows the earlier design. The [Screenshots](#screenshots) section shows the new design.
 
 ### Site Link
 
@@ -40,7 +40,8 @@ The live site can be accessed [here].
     3. [Site Link](#site-link)
 2. [Design](#design)
     1. [Design System](#design-system)
-    2. [Earlier Design Concepts](#earlier-design-concepts)
+    2. [Screenshots](#screenshots)
+    3. [Earlier Design Concepts](#earlier-design-concepts)
 3. [User Experience Design](#user-experience-design)
     1. [Strategy](#strategy)
         1. [User Experience](#user-experience)
@@ -93,6 +94,27 @@ The main parts of the design are:
 - A letter to the listeners, "Dear OWLs", from Jenny and Judith.
 
 The show name is "Older and Wider". The site does not use an ampersand in the name.
+
+### Screenshots
+
+The screenshots show the live site on 27 November 2026, in Safari's engine (WebKit). The phone width is 390 px. The desktop width is 1440 px.
+
+| Page | Phone | Desktop |
+|---|---|---|
+| Home | [Phone](documentation/screenshots/phone-index.webp) | [Desktop](documentation/screenshots/desktop-index.webp) |
+| About | [Phone](documentation/screenshots/phone-about.webp) | [Desktop](documentation/screenshots/desktop-about.webp) |
+| Message Board | [Phone](documentation/screenshots/phone-message-board.webp) | [Desktop](documentation/screenshots/desktop-message-board.webp) |
+| Privacy | [Phone](documentation/screenshots/phone-privacy.webp) | [Desktop](documentation/screenshots/desktop-privacy.webp) |
+| 404 | [Phone](documentation/screenshots/phone-404.webp) | [Desktop](documentation/screenshots/desktop-404.webp) |
+| Cookie banner | [Phone](documentation/screenshots/phone-consent-banner.webp) | [Desktop](documentation/screenshots/desktop-consent-banner.webp) |
+
+The home page on a phone:
+
+![The home page on a phone, with the masthead, the cover photo, the latest episode and the cookie banner](documentation/screenshots/phone-consent-banner.webp)
+
+The home page on a desktop:
+
+![The top of the home page on a desktop, with the masthead, the cover photo and the cookie banner](documentation/screenshots/desktop-consent-banner.webp)
 
 ### Earlier Design Concepts
 
