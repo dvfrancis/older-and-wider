@@ -9,11 +9,9 @@
         content="How the Older and Wider podcast site handles your privacy. The site has no forms, and analytics cookies load only if you say yes.">
     <meta name="author" content="Dominic Francis">
     <link rel="icon" href="assets/images/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600&family=Barlow:wght@400;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="assets/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/barlow-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="assets/css/main.css">
@@ -88,13 +86,6 @@
                                 press Reject or ignore the question.</td>
                         </tr>
                         <tr>
-                            <th scope="row" data-label="Service">Google Fonts</th>
-                            <td data-label="What it is for">Sends the lettering you see on every page.</td>
-                            <td data-label="What it stores">Nothing. Google sees your IP address when your browser
-                                fetches the fonts.</td>
-                            <td data-label="When">On every page.</td>
-                        </tr>
-                        <tr>
                             <th scope="row" data-label="Service">Font Awesome, from cdnjs</th>
                             <td data-label="What it is for">Sends the small icons, such as the play button.</td>
                             <td data-label="What it stores">Nothing. Cloudflare, which runs cdnjs, sees your IP
@@ -126,7 +117,7 @@
                     </div>
                     <p>You can also clear cookies and site data in your browser settings at any time.</p>
                     <p>With JavaScript turned off, the question does not appear and nothing on the list above loads,
-                        apart from the fonts and the icons.</p>
+                        apart from the icons.</p>
                 </div>
                 <div class="privacy-block">
                     <h2 class="privacy-heading" id="contact-title">Who looks after this site</h2>

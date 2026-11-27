@@ -1,5 +1,40 @@
 /* Older and Wider: home page stylesheet */
 
+/* Fonts are hosted on this site, not loaded from Google Fonts.
+   Each page preloads Anton, Barlow 400 and Barlow Condensed 600, to reduce layout shift.
+   All four fonts use the SIL Open Font License. */
+@font-face {
+    font-family: "Anton";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/anton-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/barlow-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/barlow-600.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Barlow Condensed";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/barlow-condensed-600.woff2") format("woff2");
+}
+
 :root {
     --pink: #F492BF;
     --red: #A60201;
