@@ -86,12 +86,12 @@ The status of each test is:
 | CSS validation | Done on the new design, 27 November 2026 |
 | Manual validation | Earlier design only. To be re-run on the new design. |
 | User story validation | Earlier design only. To be re-run on the new design. |
-| Browser compatibility | Earlier design only. To be re-run on the new design. |
+| Browser compatibility | WebKit and Chromium done on the new design, 27 November 2026. Firefox not done. |
 | Accessibility (WAVE) | Earlier design only. To be re-run on the new design. |
 | Responsiveness | Earlier design only. To be re-run on the new design. |
 | Performance (Lighthouse) | Done on the new design, 27 November 2026 |
 
-**Browser tests: to be re-run on the new design.** The Lighthouse scores for the new design are in the Performance section. The screenshots in the sections after Code Validation show the earlier design.
+**Browser tests: partly done on the new design.** The results are in the Browser Compatibility section. The Lighthouse scores for the new design are in the Performance section. The screenshots in the sections after Code Validation show the earlier design.
 
 This document keeps the results for the removed pages for the record. Each heading for a removed page has the label "(page removed)".
 
@@ -550,7 +550,32 @@ The message board page now answers this goal. It links to the Instagram and Face
 
 ## Browser Compatibility
 
-**Lighthouse and browser tests: to be re-run on the new design.** The screenshots below show the earlier design.
+### Results for the new design
+
+The tests ran on 27 November 2026 against the local preview at `http://127.0.0.1:8000`. Each test loaded all five pages at 390 x 844 (phone) and 1440 x 900 (desktop).
+
+| Engine | Browsers | Method | Result |
+|---|---|---|---|
+| WebKit | Safari on Mac, iPhone and iPad | Playwright 1.49.1, full-page screenshots, phone emulation for 390 px | PASS on all 10 views. No horizontal scroll. No script errors. All images load. |
+| Chromium | Chrome, Edge, Opera | The Claude Code browser and Lighthouse 12 | PASS on all pages. |
+| Gecko | Firefox | Not done. The Playwright Firefox build does not start on this version of macOS. | To do by hand. |
+
+Checks in each view:
+
+- The halftone screen shows on the photos.
+- The masthead fits the width of the page.
+- The bingo ticket shows all 27 cells.
+- The consent banner, the Play here button and the footer show correctly.
+
+To do the Firefox test by hand:
+
+1. Start the preview with `python3 -m http.server 8000`.
+2. Open each page in Firefox at phone width and at desktop width.
+3. Do the four checks above.
+
+### Results for the earlier design
+
+The screenshots below show the earlier design.
 
 The website has been successfully tested in the following browsers (desktop screenshots used to allow for a larger preview, except for Safari as there is no Windows version of that browser):
 
