@@ -1,360 +1,308 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en-GB">
 
 <head>
-
-    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Older and Wider | The weekly podcast with Jenny Eclair and Judith Holder</title>
     <meta name="description"
-        content="Older and Wider is a humorous podcast, where two friends chat and share their day-to-day experiences as 'women of a certain age'.">
-    <meta name="keywords"
-        content="older and wider, older and wider podcast, jenny eclair, judith holder, producer daisy, culture corner, snore law, message board">
+        content="Older and Wider is a weekly podcast where Jenny Eclair and Judith Holder talk frankly, and with humour, about getting older. Listen to the latest episode and book the 2027 live tour.">
     <meta name="author" content="Dominic Francis">
-
-    <!-- Link for custom favicon -->
-    <!-- using https://stackoverflow.com/questions/35037482/favicon-with-github-pages -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-    <!--Links for Google Fonts-->
+    <link rel="icon" href="assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Marcellus&family=Pontano+Sans:wght@300..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600&family=Barlow:wght@400;600&display=swap"
         rel="stylesheet">
-
-    <!--Link for Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!--Link to website CSS file-->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Older & Wider | Join The Gang</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
 
-    <!-- Header and navigation -->
-    <header class="container-fluid mb-5 fixed-top">
-        <div class="row teal">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-3">
-                <h1 class="fs-2 fw-bold"><a href="index.html" rel="bookmark">The Older & Wider Podcast</a></h1>
-            </div>
-        </div>
-        <div class="row">
-            <nav class="col-12 col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-lg bg-body-tertiary pb-3">
-                <div class="mx-auto">
-                    <button class="navbar-toggler mb-4" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarHome" aria-controls="navbarHome" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon pt-4 pb-4"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarHome">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link selected fs-5" aria-current="page" aria-label="Link to the home page"
-                                href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" aria-label="Link to the about page" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" aria-label="Link to the message board page"
-                                href="message-board.html">Message Board</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" aria-label="Link to the contact page"
-                                href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+    <header class="site-header">
+        <nav class="strip" aria-label="Main">
+            <ul class="strip-list">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="message-board.html">Message Board</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
 
-        <!-- Hero image and podcast player -->
-        <!-- Info on responsive image management taken from https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images -->
-        <section class="container-fluid">
-            <div class="row">
-                <div class="intro-card w-75 mx-auto">
-                    <div class="card-body">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center text-center mx-auto">
-                            <h2 class="fs-1 pt-4 px-3 pb-3 mb-2 fw-bold">Join the Older & Wider Podcast Gang</h2>
+        <section class="cover" aria-labelledby="masthead">
+            <div class="cover-inner">
+                <h1 class="masthead" id="masthead">Older <span class="masthead-and">and</span> Wider</h1>
+                <p class="issue-line">
+                    <span>Issue 374 <span aria-hidden="true">·</span> 27 November 2026</span>
+                    <span class="issue-hosts">Every week with Jenny Eclair and Judith Holder</span>
+                </p>
+
+                <div class="cover-body">
+                    <figure class="cover-photo screen">
+                        <img src="assets/images/home-cover-merch_960.webp" srcset="
+                                assets/images/home-cover-merch_256.webp 256w,
+                                assets/images/home-cover-merch_480.webp 480w,
+                                assets/images/home-cover-merch_800.webp 800w,
+                                assets/images/home-cover-merch_960.webp 960w"
+                            sizes="(min-width: 64rem) 44rem, 100vw" width="960" height="641"
+                            alt="Jenny Eclair in a pink Older and Wider T-shirt and Judith Holder in a blue one, both drinking from Older and Wider mugs"
+                            fetchpriority="high">
+                    </figure>
+
+                    <div class="lines lines-left">
+                        <a class="slab slab-lead" href="#listen">
+                            <span class="lead-title">The one with the polls, paper-mache and a new Older and Wider Live
+                                Show!</span>
+                            <span class="lead-action">
+                                <span class="play-disc" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                                Play the latest episode
+                                <span class="lead-time">50:26</span>
+                            </span>
+                        </a>
+                        <a class="slab slab-white" href="#listen">
+                            <span class="line-big">Hypochondriac's bingo</span>
+                            <span class="line-small">plus your questions, answered on air</span>
+                        </a>
+                        <a class="slab slab-magenta" href="#tour">
+                            <span class="line-big">Eight nights out with the OWLs</span>
+                        </a>
+                    </div>
+
+                    <div class="lines lines-right">
+                        <a class="flash" href="#tour">
+                            <span class="flash-top">Live 2027</span>
+                            <span class="flash-bottom">Tickets on sale now</span>
+                        </a>
+                        <a class="slab slab-blue" href="https://olderandwider.shop" rel="external">
+                            <span class="line-big">Mugs, tea towels and badges in the shop</span>
+                        </a>
+                        <a class="slab slab-white" href="#letter">
+                            <span class="line-big line-red">A letter from Jenny and Judith<span
+                                    class="visually-hidden">:</span></span>
+                            <span class="line-small">Why getting older is funnier than it sounds</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="contents">
+
+            <section class="listen" id="listen" aria-labelledby="listen-title">
+                <div class="contents-inner">
+                    <h2 class="contents-title" id="listen-title">This week</h2>
+                    <div class="listen-grid">
+                        <div class="listen-player">
+                            <iframe src="https://embed.acast.com/63b6b30a19c20a0011527ce4"
+                                title="Older and Wider podcast player"
+                                allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                                loading="lazy"></iframe>
                         </div>
-                        <div
-                            class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-8 text-center text-center mx-auto">
-                            <div id="homeCarouselIndicators" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="0"
-                                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="1"
-                                        aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="2"
-                                        aria-label="Slide 3"></button>
-                                    <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="3"
-                                        aria-label="Slide 4"></button>
-                                    <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="4"
-                                        aria-label="Slide 5"></button>
-                                    <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="5"
-                                        aria-label="Slide 6"></button>
+                        <div class="listen-side">
+                            <p class="listen-ep">
+                                <span class="ep-no">374</span>
+                                <span class="ep-title">The one with the polls, paper-mache and a new Older and Wider
+                                    Live Show!</span>
+                                <span class="ep-meta"><time datetime="2026-11-27">27 Nov 2026</time>, 50:26</span>
+                            </p>
+                            <p class="platforms-label">Or listen on</p>
+                            <ul class="platforms">
+                                <li><a href="https://podcasts.apple.com/gb/podcast/older-and-wider-podcast/id1446310659"
+                                        rel="external"><i class="fa-brands fa-apple" aria-hidden="true"></i>Apple
+                                        Podcasts</a></li>
+                                <li><a href="https://open.spotify.com/show/3ScVA6cJZpMifpJJDmmodP" rel="external"><i
+                                            class="fa-brands fa-spotify" aria-hidden="true"></i>Spotify</a></li>
+                                <li><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><i
+                                            class="fa-solid fa-podcast" aria-hidden="true"></i>Acast</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="back-title" id="back-title">Eyes down for back issues</h3>
+                    <p class="back-lead">Pick a number and we will take you to that episode on Acast. The pink
+                        dabs are the four we called most recently.</p>
+                    <div class="ticket-wrap">
+                        <div class="ticket">
+                            <p class="ticket-serial"><span>Older and Wider</span> <span>Ticket 374</span></p>
+                            <div class="ticket-grid">
+                                <ol class="ticket-numbers" aria-labelledby="back-title">
+                                <li class="tk r1 c1"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>359</a></li>
+                                <li class="tk r3 c1"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>360</a></li>
+                                <li class="tk r2 c2"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>361</a></li>
+                                <li class="tk r1 c3"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>362</a></li>
+                                <li class="tk r2 c3"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>363</a></li>
+                                <li class="tk r2 c4"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>364</a></li>
+                                <li class="tk r3 c4"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>365</a></li>
+                                <li class="tk r1 c5"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>366</a></li>
+                                <li class="tk r2 c6"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>367</a></li>
+                                <li class="tk r3 c6"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>368</a></li>
+                                <li class="tk r1 c7"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>369</a></li>
+                                <li class="tk r1 c8 called"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>370</a></li>
+                                <li class="tk r3 c8 called"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>371</a></li>
+                                <li class="tk r2 c9 called"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>372</a></li>
+                                <li class="tk r3 c9 called"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external"><span class="visually-hidden">Episode </span>373</a></li>
+                                </ol>
+                                <div class="ticket-blanks" aria-hidden="true">
+                                <span class="blank r1 c2"></span>
+                                <span class="blank r1 c4"></span>
+                                <span class="blank r1 c6"></span>
+                                <span class="blank r1 c9"></span>
+                                <span class="blank r2 c1"></span>
+                                <span class="blank r2 c5"></span>
+                                <span class="blank r2 c7"></span>
+                                <span class="blank r2 c8"></span>
+                                <span class="blank r3 c2"></span>
+                                <span class="blank r3 c3"></span>
+                                <span class="blank r3 c5"></span>
+                                <span class="blank r3 c7"></span>
                                 </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img sizes="(min-width: 1400px) 50vw, calc(62.5vw - 22px)" srcset="
-                                            assets/images/home-page-carousel-1_256.webp 256w,
-                                            assets/images/home-page-carousel-1_800.webp 800w,
-                                            assets/images/home-page-carousel-1_1190.webp 1190w,
-                                            assets/images/home-page-carousel-1_1480.webp 1480w,
-                                            assets/images/home-page-carousel-1_1790.webp 1790w,
-                                            assets/images/home-page-carousel-1_2048.webp 2048w"
-                                            src="assets/images/home-page-carousel-1.webp" class="d-block w-100"
-                                            alt="Jenny Eclair and Judith Holder backstage before a live show">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <p class="raspberry">Jenny Eclair and Judith Holder</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img sizes="(min-width: 1400px) 50vw, calc(62.5vw - 22px)" srcset="
-                                            assets/images/home-page-carousel-2_256.webp 256w,
-                                            assets/images/home-page-carousel-2_800.webp 800w,
-                                            assets/images/home-page-carousel-2_1190.webp 1190w,
-                                            assets/images/home-page-carousel-2_1480.webp 1480w,
-                                            assets/images/home-page-carousel-2_1790.webp 1790w,
-                                            assets/images/home-page-carousel-2_2048.webp 2048w"
-                                            src="assets/images/home-page-carousel-2.webp" class="d-block w-100"
-                                            alt="Jenny Eclair and Judith Holder practising for a live show">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <p class="raspberry">Jenny and Judith practising for a live show</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img sizes="(min-width: 1400px) 50vw, calc(62.5vw - 22px)" srcset="
-                                            assets/images/home-page-carousel-3_256.webp 256w,
-                                            assets/images/home-page-carousel-3_800.webp 800w,
-                                            assets/images/home-page-carousel-3_1190.webp 1190w,
-                                            assets/images/home-page-carousel-3_1480.webp 1480w,
-                                            assets/images/home-page-carousel-3_1790.webp 1790w,
-                                            assets/images/home-page-carousel-3_2048.webp 2048w"
-                                            src="assets/images/home-page-carousel-3.webp" class="d-block w-100"
-                                            alt="Jenny Eclair and Judith Holder standing outside smiling">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <p class="raspberry">Jenny and Judith - Friends Forever!</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img sizes="(min-width: 1400px) 50vw, calc(62.5vw - 22px)" srcset="
-                                            assets/images/home-page-carousel-4_256.webp 256w,
-                                            assets/images/home-page-carousel-4_800.webp 800w,
-                                            assets/images/home-page-carousel-4_1190.webp 1190w,
-                                            assets/images/home-page-carousel-4_1480.webp 1480w,
-                                            assets/images/home-page-carousel-4_1790.webp 1790w,
-                                            assets/images/home-page-carousel-4_2048.webp 2048w"
-                                            src="assets/images/home-page-carousel-4.webp" class="d-block w-100"
-                                            alt="Jenny Eclair and Judith Holder taking a selfie">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <p class="raspberry">Judith and Jenny take a dressing room selfie</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img sizes="(min-width: 1400px) 50vw, calc(62.5vw - 22px)" srcset="
-                                            assets/images/home-page-carousel-5_256.webp 256w,
-                                            assets/images/home-page-carousel-5_800.webp 800w,
-                                            assets/images/home-page-carousel-5_1190.webp 1190w,
-                                            assets/images/home-page-carousel-5_1480.webp 1480w,
-                                            assets/images/home-page-carousel-5_1790.webp 1790w,
-                                            assets/images/home-page-carousel-5_2048.webp 2048w"
-                                            src="assets/images/home-page-carousel-5.webp" class="d-block w-100"
-                                            alt="Jenny Eclair and Judith Holder with a gang member at a live show">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <p class="raspberry">Judith (l) and Jenny (r) on stage with a gang member
-                                                (centre)</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img sizes="(min-width: 1400px) 50vw, calc(62.5vw - 22px)" srcset="
-                                            assets/images/home-page-carousel-6_256.webp 256w,
-                                            assets/images/home-page-carousel-6_800.webp 800w,
-                                            assets/images/home-page-carousel-6_1190.webp 1190w,
-                                            assets/images/home-page-carousel-6_1480.webp 1480w,
-                                            assets/images/home-page-carousel-6_1790.webp 1790w,
-                                            assets/images/home-page-carousel-6_2048.webp 2048w"
-                                            src="assets/images/home-page-carousel-6.webp" class="d-block w-100"
-                                            alt="Jenny Eclair and Judith Holder in a close up selfie">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <p class="raspberry">Judith and Jenny - Extreme Close Up!</p>
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button"
-                                        data-bs-target="#homeCarouselIndicators" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button"
-                                        data-bs-target="#homeCarouselIndicators" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center text-center pb-4 mx-auto">
-                                <p class="fs-4 pt-4 text-center">
-                                    Older & Wider is a cheeky
-                                    peek into life's second act,
-                                    served up with a cuppa and a hearty laugh by hosts, and good friends, Jenny Eclair
-                                    and
-                                    Judith Holder. Together, they share the delightful oddities
-                                    and
-                                    endearing eccentricities that clutter their lives, as they navigate the rich
-                                    tapestry
-                                    of
-                                    mature
-                                    adulthood. It is also a celebration, where every wrinkle tells a story, every laugh
-                                    is
-                                    shared,
-                                    and friends understand that life, like a fine wine, only gets better with age.</p>
-                                <p class="fs-4 pt-3 text-center">
-                                    A new episode of the Older & Wider podcast is released every Friday, and can be
-                                    downloaded from <a href="https://shows.acast.com/older-and-wider-podcast"
-                                        rel="bookmark" target="_blank">Acast</a>, <a
-                                        href="https://podcasts.apple.com/gb/podcast/older-and-wider-podcast/id1446310659"
-                                        rel="bookmark" target="_blank">Apple Podcasts</a>, or <a
-                                        href="https://open.spotify.com/show/3ScVA6cJZpMifpJJDmmodP" rel="bookmark"
-                                        target="_blank">Spotify</a>.
-                                </p>
-                                <p class="fs-4 pt-3 text-center">
-                                    Older & Wider was nominated for the British Podcast Awards - Listeners' Choice 2022.
-                                </p>
-                                <a href="about.html" class="fs-4 btn btn-info btn-sm mt-3" rel="bookmark">
-                                    About the Podcast</a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row mt-5">
-                <div
-                    class="col-12 col-sm-12 col-md-12 col-lg-12 pb-5 text-center mx-auto podcast-card w-75 mb-5 mx-auto">
-                    <div class="card-body">
-                        <h2 class="fs-1 mt-4 mb-4 fw-bold">Listen to the Podcast</h2>
-                        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-                            title="Embed Player" height="450"
-                            style="width:100%;max-width:95%;overflow:hidden;border-radius:20px;border:none;overflow:hidden;"
-                            src="https://embed.acast.com/63b6b30a19c20a0011527ce4"></iframe>
+                    <h4 class="called-title">Last called</h4>
+                    <ul class="called-list">
+                        <li>
+                            <a href="https://shows.acast.com/older-and-wider-podcast" rel="external">
+                                <span class="lc-no">373</span>
+                                <span class="lc-title">The one with the new Bond and the new thumbnail</span>
+                                <span class="lc-meta"><time datetime="2026-11-20">20 Nov 2026</time>, 51:57</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://shows.acast.com/older-and-wider-podcast" rel="external">
+                                <span class="lc-no">372</span>
+                                <span class="lc-title">The one with the reunion, some hidden boots and the new merch!</span>
+                                <span class="lc-meta"><time datetime="2026-11-13">13 Nov 2026</time>, 47:05</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://shows.acast.com/older-and-wider-podcast" rel="external">
+                                <span class="lc-no">371</span>
+                                <span class="lc-title">The one with the kicking off and a sleep over at Jenny's</span>
+                                <span class="lc-meta"><time datetime="2026-11-06">6 Nov 2026</time>, 56:46</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://shows.acast.com/older-and-wider-podcast" rel="external">
+                                <span class="lc-no">370</span>
+                                <span class="lc-title">The one with the fugue state</span>
+                                <span class="lc-meta"><time datetime="2026-10-30">30 Oct 2026</time>, 48:04</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="all-episodes"><a href="https://shows.acast.com/older-and-wider-podcast" rel="external">Every episode on Acast <i
+                                class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
+                </div>
+            </section>
+
+            <section class="tour" id="tour" aria-labelledby="tour-title">
+                <div class="contents-inner tour-grid">
+                    <div class="tour-intro">
+                        <h2 class="tour-title" id="tour-title">Even Older and Wider</h2>
+                        <p class="tour-sub">The live tour, 2027. Tickets on sale now.</p>
+                        <p>Come and be part of the podcast with a room full of OWLs. Expect games, including
+                            hypochondriac's bingo, and a Q&amp;A with Jenny and Judith.</p>
+                        <a class="book" href="https://www.jennyeclair.com/olderandwider" rel="external">
+                            <i class="fa-solid fa-ticket" aria-hidden="true"></i>Book tickets
+                        </a>
+                    </div>
+                    <table class="dates">
+                        <caption class="visually-hidden">Even Older and Wider tour dates, 2027</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Town</th>
+                                <th scope="col">Venue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><time datetime="2027-04-25">Sun 25 Apr</time></td>
+                                <td>Leeds</td>
+                                <td>City Varieties</td>
+                            </tr>
+                            <tr>
+                                <td><time datetime="2027-05-01">Sat 1 May</time></td>
+                                <td>Birmingham</td>
+                                <td>Birmingham Rep Theatre</td>
+                            </tr>
+                            <tr>
+                                <td><time datetime="2027-05-23">Sun 23 May</time></td>
+                                <td>Salford</td>
+                                <td>The Lowry, Quays Theatre</td>
+                            </tr>
+                            <tr>
+                                <td><time datetime="2027-06-06">Sun 6 Jun</time></td>
+                                <td>London</td>
+                                <td>Leicester Square Theatre</td>
+                            </tr>
+                            <tr>
+                                <td><time datetime="2027-06-20">Sun 20 Jun</time></td>
+                                <td>London</td>
+                                <td>Leicester Square Theatre</td>
+                            </tr>
+                            <tr>
+                                <td><time datetime="2027-06-27">Sun 27 Jun</time></td>
+                                <td>London</td>
+                                <td>Leicester Square Theatre</td>
+                            </tr>
+                            <tr>
+                                <td><time datetime="2027-07-03">Sat 3 Jul</time></td>
+                                <td>Bristol</td>
+                                <td>Redgrave Theatre</td>
+                            </tr>
+                            <tr>
+                                <td><time datetime="2027-07-04">Sun 4 Jul</time></td>
+                                <td>London</td>
+                                <td>Leicester Square Theatre</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="letter" id="letter" aria-labelledby="letter-title">
+                <div class="contents-inner letter-inner">
+                    <h2 class="letter-title" id="letter-title">Dear OWLs</h2>
+                    <div class="letter-body">
+                        <p>We are two women of a certain age who talk far too much, mostly about our bodies, our
+                            families and whatever went wrong this week. Nothing is off limits, and very little of it
+                            is dignified.</p>
+                        <p>Pop the kettle on and join us. You are an OWL now, an Older and Wider Listener, whether
+                            you like it or not.</p>
+                        <p class="sign-off">Love, Jenny and Judith</p>
+                        <p class="award"><i class="fa-solid fa-award" aria-hidden="true"></i>Nominated for the British
+                            Podcast Awards, Listeners' Choice 2022</p>
+                        <p><a class="letter-link" href="about.html">More about the podcast</a></p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-        </section>
-
-        <!-- Live shows -->
-        <section class="container-fluid">
-
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center mx-auto live-card w-75 pt-4 mb-4 mx-auto">
-                    <div class="card-body">
-                        <h2 class="fs-1 mb-5 fw-bold">Older & Wider - Live!</h2>
-                        <p class="fs-4 mt-4 mb-4 mx-4">A chance to take part in the podcast with other <abbr
-                                title="Older & Wider listeners">OWLs</abbr>, while enjoying games (such as
-                            hypochondirac's bingo) and a Q&A with Jenny and Judith.</p>
-                        <p class="fs-4 mt-4 mb-4 mx-5">The show will take place at the Leicester Square Theatre, in
-                            London.</p>
-                        <a href="https://www.seetickets.com/tour/older-and-wider-live" rel="external"
-                            class="fs-5 btn btn-primary btn-sm mb-4" target="_blank" aria-label="Live Show Tickets">Buy
-                            Tickets</a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Merchandise -->
-        <section class="container-fluid">
-
-            <div class="row pt-4">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center mx-auto merch-card w-75 mb-5 pb-4 mx-auto">
-                    <div class="card-body">
-                        <h2 class="fs-1 mt-3 mb-4 pt-4 fw-bold">Merch</h2>
-                        <p class="fs-4 mb-3 mx-4 text-center">Visit our official merchandise store, where you can buy a
-                            selection of podcast-themed memorabilia, such as mugs, tea towels, and badges.</p>
-                        <a href="https://olderandwidershop.com" class="fs-5 btn btn-primary btn-sm"
-                            aria-label="Visit the merchandise website" target="_blank">See the
-                            Merch</a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Mailing list sign-up -->
-        <section class="container-fluid">
-
-            <div class="row list-card pb-4 w-75 mx-auto">
-                <div class="card-body">
-                    <div class="col-12 text-center mt-4 mb-4 mx-auto">
-                        <h2 class="fs-1 mb-4 pt-3 fw-bold">Mailing List</h2>
-                        <p class="fs-4 mb-4 mx-4 text-center">Fancy receiving more behind-the-scenes information about
-                            the podcast? Then sign up for our newsletter.</p>
-                    </div>
-                    <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-xxl-4 text-center mt-4 mb-4 mx-auto">
-                        <form method="GET" action="mailing-list-completion.html" class="mb-4" aria-label="Mailing List">
-                            <label for="list-email" class="form-label mb-5 fs-5">Email</label>
-                            <input type="email" id="list-email" class="form-control mb-5" name="list_email"
-                                placeholder="Enter your email address" required>
-                            <input type="submit" class="fs-5 send btn btn-primary btn-sm pt-2 pb-2" value="Send"
-                                aria-label="Submit">
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </section>
+        </div>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="container-fluid teal mt-5">
-
-        <!-- Social media links -->
-        <div class="row">
-            <div class="col text-center mt-3 mb-2">
-                <a href="https://www.instagram.com/olderandwiderpodcast/" target="_blank" rel="noopener noreferrer"
-                    class="fa fa-instagram me-2" aria-label="Visit Instagram"><span class="socials">Instagram</span></a>
-                <a href="https://www.facebook.com/profile.php?id=61555198800248" target="_blank"
-                    rel="noopener noreferrer" class="fa fa-facebook ms-2" aria-label="Visit Facebook"><span
-                        class="socials">Facebook</span></a>
-            </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-mark">Older <span class="footer-and">and</span> Wider</p>
+            <ul class="footer-links">
+                <li><a href="https://www.instagram.com/olderandwiderpodcast/" rel="external"><i
+                            class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61555198800248" rel="external"><i
+                            class="fa-brands fa-facebook" aria-hidden="true"></i>Facebook</a></li>
+                <li><a href="https://olderandwider.shop" rel="external"><i class="fa-solid fa-bag-shopping"
+                            aria-hidden="true"></i>Shop</a></li>
+            </ul>
+            <p class="credit">Website by <a href="https://www.dominicfrancis.co.uk/" rel="external">Dominic
+                    Francis</a></p>
         </div>
-
-        <div class="row">
-            <!-- Legal and copyright information -->
-            <!-- using https://blog.hubspot.com/website/html-code-copyright -->
-            <div class="col text-center">
-                <p> &#169; 2024, <a href="https://www.dominicfrancis.co.uk/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Visit LinkedIn">Dominic
-                        Francis</a> (<a href="https://shows.acast.com/older-and-wider-podcast"
-                        aria-label="Visit the Older & Wider podcast on the Acast website" rel="external"
-                        target="_blank">Older &
-                        Wider</a> is hosted by <a href="https://www.acast.com" class="smallprint"
-                        aria-label="Visit the Acast website" rel="external" target="_blank">Acast</a>)
-                </p>
-            </div>
-        </div>
-
     </footer>
-
-    <!-- Link to Fontawesome JavaScript -->
-    <script src="https://kit.fontawesome.com/9a47a7f2a8.js" crossorigin="anonymous"></script>
-
-    <!--Link to Bootstrap JavaScript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
 
 </body>
 
