@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-27T18:09:57+00:00",
+  "title": "Design System: Older and Wider",
+  "extensions": {
+    "colorMeta": {
+      "cover-pink": {
+        "role": "primary",
+        "displayName": "Cover Pink",
+        "canonical": "#F492BF",
+        "tonalRamp": [
+          "#1B010E",
+          "#3C1328",
+          "#5F2C45",
+          "#854564",
+          "#AD6184",
+          "#D77EA7",
+          "#FFA2CD",
+          "#FFD1F7"
+        ]
+      },
+      "masthead-red": {
+        "role": "primary",
+        "displayName": "Masthead Red",
+        "canonical": "#A60201",
+        "tonalRamp": [
+          "#2C0000",
+          "#550000",
+          "#810000",
+          "#AC1B13",
+          "#C85244",
+          "#E37E6F",
+          "#FEAC9F",
+          "#FFDED4"
+        ]
+      },
+      "logotype-magenta": {
+        "role": "secondary",
+        "displayName": "Logotype Magenta",
+        "canonical": "#E8046C",
+        "tonalRamp": [
+          "#2A0005",
+          "#54001A",
+          "#810033",
+          "#B1004D",
+          "#E4006A",
+          "#FF568C",
+          "#FF8DB4",
+          "#FFC5E1"
+        ],
+        "note": "Magenta on pink is a logotype exception to contrast rules. It applies only to the word AND in the show name."
+      },
+      "coverline-blue": {
+        "role": "secondary",
+        "displayName": "Coverline Blue",
+        "canonical": "#6771DD",
+        "tonalRamp": [
+          "#06032B",
+          "#1A1B52",
+          "#31357D",
+          "#4B52AB",
+          "#6670DB",
+          "#8895F6",
+          "#AFBDFF",
+          "#DDEAFF"
+        ]
+      },
+      "flash-yellow": {
+        "role": "tertiary",
+        "displayName": "Flash Yellow",
+        "canonical": "#FFD23F",
+        "tonalRamp": [
+          "#160800",
+          "#332100",
+          "#533C00",
+          "#755A00",
+          "#997900",
+          "#BF9A15",
+          "#E9BF32",
+          "#FFEA69"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1A1A1A",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#7D7D7D",
+          "#9E9E9E",
+          "#C4C4C4",
+          "#EEEEEE"
+        ]
+      },
+      "paper-white": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#7D7D7D",
+          "#9E9E9E",
+          "#C4C4C4",
+          "#EEEEEE"
+        ]
+      },
+      "ticket-pink": {
+        "role": "neutral",
+        "displayName": "Ticket Pink",
+        "canonical": "#FCE4EF",
+        "tonalRamp": [
+          "#0F090C",
+          "#2A2125",
+          "#473C41",
+          "#67595F",
+          "#88787F",
+          "#AB99A1",
+          "#D2BDC7",
+          "#FFE7F2"
+        ]
+      },
+      "studio-grey": {
+        "role": "neutral",
+        "displayName": "Studio Grey",
+        "canonical": "#5E5D60",
+        "tonalRamp": [
+          "#0B0B0D",
+          "#242326",
+          "#403F42",
+          "#5E5D60",
+          "#7E7D80",
+          "#9F9EA1",
+          "#C4C3C7",
+          "#EFEEF1"
+        ],
+        "note": "Approved only as the photo-matched cover panel backdrop, always under the halftone screen. Not a brand colour."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The masthead only. Anton capitals, sized to the container width."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles. 4rem, then 5rem from 48rem, then 6rem from 64rem."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Lead coverline, flash roundel top line, Book tickets button."
+      },
+      "subhead": {
+        "displayName": "Subhead",
+        "purpose": "Coverlines, episode titles, sub-section titles. Barlow Condensed 600 capitals."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav links, issue line, table headings, ticket serial. Barlow Condensed 600 capitals."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All running text. Lines of 34rem to 36rem, or 52ch."
+      },
+      "body-large": {
+        "displayName": "Body Large",
+        "purpose": "The letter from the hosts."
+      },
+      "body-strong": {
+        "displayName": "Body Strong",
+        "purpose": "Text links, award panel."
+      }
+    },
+    "contrast": [
+      {
+        "pair": "paper-white on masthead-red",
+        "ratio": 7.98,
+        "use": "all sizes"
+      },
+      {
+        "pair": "ink on cover-pink",
+        "ratio": 8.05,
+        "use": "all sizes"
+      },
+      {
+        "pair": "ink on flash-yellow",
+        "ratio": 12.05,
+        "use": "all sizes"
+      },
+      {
+        "pair": "masthead-red on paper-white",
+        "ratio": 7.98,
+        "use": "all sizes"
+      },
+      {
+        "pair": "masthead-red on ticket-pink",
+        "ratio": 6.65,
+        "use": "all sizes"
+      },
+      {
+        "pair": "masthead-red on cover-pink",
+        "ratio": 3.69,
+        "use": "large text only"
+      },
+      {
+        "pair": "paper-white on logotype-magenta",
+        "ratio": 4.5,
+        "use": "large text only"
+      },
+      {
+        "pair": "paper-white on coverline-blue",
+        "ratio": 4.21,
+        "use": "large text only"
+      },
+      {
+        "pair": "logotype-magenta on cover-pink",
+        "ratio": 2.08,
+        "use": "fails; logotype exception only"
+      },
+      {
+        "pair": "paper-white on cover-pink",
+        "ratio": 2.16,
+        "use": "fails; do not use"
+      }
+    ],
+    "shadows": [
+      {
+        "name": "rest",
+        "value": "0 0.125rem 0.375rem rgba(26, 26, 26, 0.18)",
+        "purpose": "Coverline slabs and flash roundel at rest."
+      },
+      {
+        "name": "lift",
+        "value": "0 1rem 1.75rem -0.5rem rgba(26, 26, 26, 0.38)",
+        "purpose": "Coverline slabs and flash roundel on hover and focus."
+      },
+      {
+        "name": "button",
+        "value": "0 0.5rem 1rem -0.25rem rgba(26, 26, 26, 0.4)",
+        "purpose": "Book tickets button."
+      },
+      {
+        "name": "ticket",
+        "value": "drop-shadow(0 0.625rem 0.875rem rgba(120, 0, 40, 0.24))",
+        "purpose": "Bingo ticket paper; follows the scalloped edges."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All state transitions."
+      },
+      {
+        "name": "lift",
+        "value": "transform 0.45s, box-shadow 0.45s; translateY(-0.375rem) rotate(-0.6deg)",
+        "purpose": "Coverline lift on hover and focus. Off under prefers-reduced-motion."
+      },
+      {
+        "name": "dab",
+        "value": "opacity 0.2s, transform 0.45s; scale(0.35) rotate(-20deg) to scale(1) rotate(4deg)",
+        "purpose": "Bingo dab on hover, focus and active."
+      }
+    ],
+    "halftone": {
+      "pitch": "5px",
+      "lift": 2.45,
+      "ink": 0.26,
+      "method": "Grey copy of the photo multiplied with a radial dot pattern, thresholded with contrast(24), multiplied over the colour photo.",
+      "removedUnder": "prefers-contrast: more"
+    },
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "48rem"
+      },
+      {
+        "name": "desktop",
+        "value": "64rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Nav Strip",
+      "kind": "nav",
+      "refersTo": "nav-strip-link",
+      "description": "Slim red strip above the masthead. The current page has a yellow underline.",
+      "html": "<nav class=\"ds-strip\" aria-label=\"Main\"><a href=\"#\" aria-current=\"page\">Home</a><a href=\"#\">About</a><a href=\"#\">Contact</a><a href=\"#\">Message Board</a></nav>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:0 0.25rem;background:var(--red);color:var(--white);} .ds-strip a{display:flex;align-items:center;min-height:2.75rem;padding:0 0.625rem;color:inherit;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.0625rem;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;text-underline-offset:0.2em;} .ds-strip a:hover{text-decoration:underline;} .ds-strip a[aria-current=page]{text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:0.15em;} .ds-strip a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;}"
+    },
+    {
+      "name": "Masthead",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "The show name in Anton capitals. AND is magenta: the logotype exception.",
+      "html": "<div class=\"ds-mast\">Older <span>and</span> Wider</div>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-mast{background:var(--pink);color:var(--red);font-family:Anton,'Barlow Condensed',sans-serif;font-size:4rem;line-height:0.9;letter-spacing:-0.01em;text-transform:uppercase;text-align:center;white-space:nowrap;padding:0.5rem 1rem;} .ds-mast span{color:var(--magenta);}"
+    },
+    {
+      "name": "Lead Coverline",
+      "kind": "card",
+      "refersTo": "slab-lead",
+      "description": "The newest episode as a red slab with a yellow play disc. Press it to play.",
+      "html": "<a class=\"ds-slab ds-lead\" href=\"#\"><span class=\"ds-lead-title\">The one with the polls, paper-mache and a new live show!</span><span class=\"ds-action\"><span class=\"ds-disc\" aria-hidden=\"true\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\"><path d=\"M4 2.5v11l9-5.5z\" fill=\"currentColor\"/></svg></span>Play the latest episode<span class=\"ds-time\">50:26</span></span></a>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-slab{display:block;max-width:19rem;padding:0.75rem 1rem;text-decoration:none;text-transform:uppercase;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;line-height:1.05;box-shadow:var(--rest-shadow);transition:transform 0.45s var(--ease-out),box-shadow 0.45s var(--ease-out);} .ds-slab:hover,.ds-slab:focus-visible{transform:translateY(-0.375rem) rotate(-0.6deg);box-shadow:var(--lift-shadow);} .ds-slab:focus-visible{outline:3px solid var(--ink);outline-offset:3px;} .ds-slab:hover .ds-big{text-decoration:underline;text-decoration-thickness:0.06em;} .ds-big{display:block;font-size:1.625rem;} .ds-small{display:block;margin-top:0.25rem;font-size:1.25rem;letter-spacing:0.02em;} @media (prefers-reduced-motion:reduce){.ds-slab{transition:none;}.ds-slab:hover,.ds-slab:focus-visible{transform:none;}} .ds-lead{background:var(--red);color:var(--white);padding:1rem 1.125rem 1.125rem;} .ds-lead-title{display:block;font-family:Anton,'Barlow Condensed',sans-serif;font-weight:400;font-size:1.875rem;line-height:1.08;} .ds-action{display:flex;align-items:center;gap:0.75rem;margin-top:0.875rem;font-size:1.375rem;line-height:1.3;letter-spacing:0.04em;} .ds-disc{display:grid;place-items:center;flex:none;width:3rem;height:3rem;border-radius:50%;background:var(--yellow);color:var(--ink);} .ds-time{margin-left:auto;font-variant-numeric:tabular-nums;} .ds-lead:hover .ds-lead-title{text-decoration:underline;text-decoration-thickness:0.06em;}"
+    },
+    {
+      "name": "Coverline Slabs",
+      "kind": "card",
+      "refersTo": "slab-white",
+      "description": "Square solid slabs in white, magenta and blue. They lift like a page on hover and focus.",
+      "html": "<div class=\"ds-stack\"><a class=\"ds-slab ds-white\" href=\"#\"><span class=\"ds-big\">Hypochondriac's bingo</span><span class=\"ds-small\">plus your questions, answered on air</span></a><a class=\"ds-slab ds-magenta\" href=\"#\"><span class=\"ds-big\">Eight nights out with the OWLs</span></a><a class=\"ds-slab ds-blue\" href=\"#\"><span class=\"ds-big\">Mugs, tea towels and badges in the shop</span></a></div>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-slab{display:block;max-width:19rem;padding:0.75rem 1rem;text-decoration:none;text-transform:uppercase;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;line-height:1.05;box-shadow:var(--rest-shadow);transition:transform 0.45s var(--ease-out),box-shadow 0.45s var(--ease-out);} .ds-slab:hover,.ds-slab:focus-visible{transform:translateY(-0.375rem) rotate(-0.6deg);box-shadow:var(--lift-shadow);} .ds-slab:focus-visible{outline:3px solid var(--ink);outline-offset:3px;} .ds-slab:hover .ds-big{text-decoration:underline;text-decoration-thickness:0.06em;} .ds-big{display:block;font-size:1.625rem;} .ds-small{display:block;margin-top:0.25rem;font-size:1.25rem;letter-spacing:0.02em;} @media (prefers-reduced-motion:reduce){.ds-slab{transition:none;}.ds-slab:hover,.ds-slab:focus-visible{transform:none;}} .ds-stack{display:flex;flex-direction:column;gap:0.75rem;padding:1rem;background:var(--pink);} .ds-white{background:var(--white);color:var(--ink);} .ds-magenta{background:var(--magenta);color:var(--white);} .ds-blue{background:var(--blue);color:var(--white);} .ds-magenta .ds-big,.ds-blue .ds-big{font-size:1.75rem;}"
+    },
+    {
+      "name": "Flash Roundel",
+      "kind": "custom",
+      "refersTo": "flash-roundel",
+      "description": "Yellow circle, turned -8deg, that sells the live tour.",
+      "html": "<a class=\"ds-flash\" href=\"#\"><span class=\"ds-flash-top\">Live 2027</span><span class=\"ds-flash-bottom\">Tickets on sale now</span></a>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-flash{display:grid;place-content:center;width:7.75rem;height:7.75rem;border-radius:50%;background:var(--yellow);color:var(--ink);text-align:center;text-decoration:none;text-transform:uppercase;box-shadow:var(--rest-shadow);transform:rotate(-8deg);transition:transform 0.45s var(--ease-out),box-shadow 0.45s var(--ease-out);} .ds-flash:hover,.ds-flash:focus-visible{transform:translateY(-0.375rem) rotate(-10deg);box-shadow:var(--lift-shadow);} .ds-flash:focus-visible{outline:3px solid var(--ink);outline-offset:3px;} .ds-flash-top{font-family:Anton,'Barlow Condensed',sans-serif;font-size:1.875rem;line-height:1;} .ds-flash-bottom{display:block;max-width:6rem;margin:0.25rem auto 0;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.0625rem;line-height:1.05;}"
+    },
+    {
+      "name": "Book Tickets Button",
+      "kind": "button",
+      "refersTo": "button-book",
+      "description": "Yellow pill with ink Anton text on the red tour band.",
+      "html": "<div class=\"ds-band\"><a class=\"ds-book\" href=\"#\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z\" fill=\"currentColor\"/></svg>Book tickets</a></div>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-band{background:var(--red);padding:1.5rem;} .ds-book{display:inline-flex;align-items:center;gap:0.75rem;min-height:3.75rem;padding:0 1.75rem;background:var(--yellow);color:var(--ink);font-family:Anton,'Barlow Condensed',sans-serif;font-size:1.75rem;text-transform:uppercase;text-decoration:none;border-radius:999px;box-shadow:0 0.5rem 1rem -0.25rem rgba(26,26,26,0.4);} .ds-book:hover{text-decoration:underline;text-decoration-thickness:0.06em;} .ds-book:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;}"
+    },
+    {
+      "name": "Bingo Ticket",
+      "kind": "custom",
+      "refersTo": "ticket-number",
+      "description": "Back issues on a 9 by 3 UK bingo ticket. Each row has 5 numbers and 4 blanks. Magenta dabs mark recent episodes and every number on hover, focus and active.",
+      "html": "<div class=\"ds-ticket\"><div class=\"ds-grid\"><a class=\"ds-tk\" href=\"#\">359</a><span class=\"ds-blank\"></span><a class=\"ds-tk\" href=\"#\">362</a><span class=\"ds-blank\"></span><a class=\"ds-tk\" href=\"#\">366</a><span class=\"ds-blank\"></span><a class=\"ds-tk\" href=\"#\">369</a><a class=\"ds-tk ds-called\" href=\"#\">370</a><span class=\"ds-blank\"></span><span class=\"ds-blank\"></span><a class=\"ds-tk\" href=\"#\">361</a><a class=\"ds-tk\" href=\"#\">363</a><a class=\"ds-tk\" href=\"#\">364</a><span class=\"ds-blank\"></span><a class=\"ds-tk\" href=\"#\">367</a><span class=\"ds-blank\"></span><span class=\"ds-blank\"></span><a class=\"ds-tk ds-called\" href=\"#\">372</a><a class=\"ds-tk\" href=\"#\">360</a><span class=\"ds-blank\"></span><span class=\"ds-blank\"></span><a class=\"ds-tk\" href=\"#\">365</a><span class=\"ds-blank\"></span><a class=\"ds-tk\" href=\"#\">368</a><span class=\"ds-blank\"></span><a class=\"ds-tk ds-called\" href=\"#\">371</a><a class=\"ds-tk ds-called\" href=\"#\">373</a></div></div>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-ticket{padding:1rem;background:var(--pink-soft);} .ds-grid{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));grid-auto-rows:minmax(3.5rem,auto);gap:2px;padding:2px;background:var(--red);} .ds-blank{background:var(--red);border:3px solid var(--white);} .ds-tk,.ds-tk.ds-called{position:relative;isolation:isolate;display:grid;place-items:center;background:var(--white);color:var(--red);font-family:Anton,'Barlow Condensed',sans-serif;font-size:1.75rem;line-height:1;font-variant-numeric:tabular-nums;text-decoration:none;transition:color 0.2s var(--ease-out);} .ds-tk::before{content:'';position:absolute;z-index:-1;left:50%;top:50%;width:min(94%,5.75rem);aspect-ratio:1;translate:-50% -50%;background:var(--magenta);opacity:0;border-radius:47% 53% 44% 56% / 55% 46% 54% 45%;transform:scale(0.35) rotate(-20deg);transition:transform 0.45s var(--ease-out),opacity 0.2s var(--ease-out);} .ds-called,.ds-tk:hover,.ds-tk:focus-visible,.ds-tk:active{color:var(--white);} .ds-called::before,.ds-tk:hover::before,.ds-tk:focus-visible::before,.ds-tk:active::before{opacity:1;transform:scale(1) rotate(4deg);} .ds-tk:focus-visible{outline:4px solid var(--ink);outline-offset:-4px;}"
+    },
+    {
+      "name": "Episode List Item",
+      "kind": "card",
+      "refersTo": "subhead",
+      "description": "Last called episode: red Anton number, subhead title, date and time.",
+      "html": "<a class=\"ds-ep\" href=\"#\"><span class=\"ds-no\">373</span><span class=\"ds-title\">The one with the new Bond and the new thumbnail</span><span class=\"ds-meta\">20 Nov 2026, 51:57</span></a>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-ep{display:grid;grid-template-columns:4.25rem 1fr;gap:0.125rem 1rem;padding:1rem;background:var(--white);color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.25);font-family:Barlow,sans-serif;font-size:1.125rem;} .ds-no{grid-row:span 2;font-family:Anton,'Barlow Condensed',sans-serif;font-size:2.5rem;line-height:1;color:var(--red);} .ds-title{font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.375rem;line-height:1.2;text-transform:uppercase;} .ds-meta{font-variant-numeric:tabular-nums;} .ds-ep:hover .ds-title{text-decoration:underline;text-decoration-thickness:2px;} .ds-ep:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "This Week's Issue",
+    "overview": "The home page is the cover and the contents pages of a 1980s British women's weekly. The two hosts are the cover stars. The masthead fills the full width. Coverlines sit on the cover as solid colour slabs. A yellow flash roundel sells the live tour. Below the cover, the contents pages use full-width colour bands: white for listening, red for the tour, pink for the letter, and ink for the footer.\n\nThe type is loud, condensed and in capitals. Body text is large and calm, for older eyes. Depth is soft and physical. A coverline lifts like a page that a hand picks up. Photos carry a halftone dot screen, as on cheap magazine paper. Back issues sit on a UK bingo ticket.\n\nThe world rejects the podcast default: a hero with a player and a row of equal cards.",
+    "keyCharacteristics": [
+      "Pink cover ground with a red and magenta masthead.",
+      "Solid, square coverline slabs in red, white, magenta and blue.",
+      "Display type in Anton capitals. Labels in Barlow Condensed capitals.",
+      "Tonal halftone screen on photos.",
+      "Bingo ticket grid for back issues, with magenta dabs.",
+      "Soft shadows that respond to hover and focus."
+    ],
+    "rules": [
+      {
+        "name": "The Logotype Exception Rule",
+        "body": "Set the word AND in Logotype Magenta in the show name. This pair is exempt from contrast rules. The exemption applies only to the show name in display lettering.",
+        "section": "colors"
+      },
+      {
+        "name": "The Name Rule",
+        "body": "Write the show name as \"Older and Wider\". Spell out \"and\". Do not use an ampersand.",
+        "section": "colors"
+      },
+      {
+        "name": "The Studio Grey Rule",
+        "body": "Use Studio Grey only as the cover panel backdrop, and always under the halftone screen. Do not use it for text, borders or other surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The Large Text Only Rule",
+        "body": "Use Masthead Red on Cover Pink, white on Logotype Magenta and white on Coverline Blue only for large text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Capitals Rule",
+        "body": "Set Anton and Barlow Condensed in capitals with `text-transform`. Write the source text in sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Serif Rule",
+        "body": "Do not use a serif face. Use only Anton, Barlow Condensed and Barlow.",
+        "section": "typography"
+      },
+      {
+        "name": "The Balance Rule",
+        "body": "Apply balanced wrapping to display, headline, title and subhead text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Page Lift Rule",
+        "body": "Lift a coverline on hover and focus by 0.375rem and turn it by -0.6deg, with the Lift shadow. Use the out-expo curve over 0.45s.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Halftone Rule",
+        "body": "Put the halftone screen on cover photos. Remove the screen under `prefers-contrast: more`.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Soft Shadow Rule",
+        "body": "Use only blurred shadows. Do not use hard offset shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** write the show name as \"Older and Wider\", with AND in Logotype Magenta in display lettering.",
+      "**Do** set display, subhead, label, nav and button text in capitals.",
+      "**Do** use the contrast pairs in the Colors section, and keep the large-text-only pairs at large sizes.",
+      "**Do** put the halftone screen on cover photos, and remove it under `prefers-contrast: more`.",
+      "**Do** remove the lift and the turn under `prefers-reduced-motion: reduce`.",
+      "**Do** keep every touch target 2.75rem high or more.",
+      "**Do** keep all style rules in the stylesheet and all tokens as custom properties on `:root`."
+    ],
+    "donts": [
+      "**Don't** use an ampersand in the show name.",
+      "**Don't** use Studio Grey outside the cover panel.",
+      "**Don't** put white or Logotype Magenta text on Cover Pink, except the logotype.",
+      "**Don't** use em dashes.",
+      "**Don't** use eyebrow text above headings.",
+      "**Don't** number sections.",
+      "**Don't** use gradient text.",
+      "**Don't** use hard offset shadows.",
+      "**Don't** use inline styles or inline scripts.",
+      "**Don't** use a serif face."
+    ]
+  }
+}
