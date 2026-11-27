@@ -85,7 +85,7 @@ The main parts of the design are:
 - A pink ground (#F492BF).
 - Red (#A60201) for the masthead and the display text.
 - The logotype "Older and Wider". The word "and" is magenta (#E8046C), as on the tour poster.
-- Three fonts from Google Fonts: Anton for display text, Barlow Condensed for labels, and Barlow for body text.
+- Three fonts, hosted on the site: Anton for display text, Barlow Condensed for labels, and Barlow for body text.
 - A halftone dot screen on the photos, as in a printed magazine.
 - A magazine cover on the home page, with an issue line and cover lines.
 - A bingo ticket on the home page that leads to back issues of the podcast.
@@ -234,7 +234,7 @@ The project keeps them for reference. The build script does not deploy them. The
 - Privacy:
 
     - The privacy page `privacy.html` tells the visitor that the site has no forms and collects no personal data directly.
-    - A table shows each third party, what it stores, and when. The third parties are the Acast player, Instagram, Google Analytics, Google Fonts and Font Awesome from cdnjs.
+    - A table shows each third party, what it stores, and when. The third parties are the Acast player, Instagram, Google Analytics and Font Awesome from cdnjs.
     - The page tells the visitor how to change or withdraw consent, with the "Cookie settings" button.
     - It names the controller, Dominic Francis, with a link to his website. It shows no email address.
     - The page has no link in the navigation. The footer of each page links to it.
@@ -378,7 +378,7 @@ The earlier design used palette 389 of the [Sarah Renae Clarke Colour Catalogue,
 
 #### Typography
 
-The fonts come from the 2027 tour poster. They load from Google Fonts:
+The fonts come from the 2027 tour poster. The site hosts the font files in `assets/fonts/`. Each page preloads Anton, Barlow 400 and Barlow Condensed 600. This stops the layout shift that occurred when the fonts loaded from Google Fonts:
 
 - [Anton](https://fonts.google.com/specimen/Anton) for the masthead and the display text.
 - [Barlow Condensed](https://fonts.google.com/specimen/Barlow+Condensed) for labels.
@@ -554,7 +554,7 @@ Links to the podcast, on various platforms:
 - [Elfsight](https://elfsight.com/) was used to create the Instagram embed code for message-board.html in the earlier design. The redesign uses Instagram's own `embed.js`, which loads only when the visitor asks.
 - [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used to determine the colour scheme of the earlier design.
 - [Font Joy](https://fontjoy.com/) was used to determine font pairings for the earlier design.
-- [Google Fonts](https://fonts.google.com/) is used to source the Anton, Barlow Condensed and Barlow fonts. The earlier design used Marcellus and Pontano Sans.
+- [Google Fonts](https://fonts.google.com/) is the source of the Anton, Barlow Condensed and Barlow font files. The site hosts the files. All three fonts use the SIL Open Font License. The earlier design used Marcellus and Pontano Sans.
 - [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook colours.
 - [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) was used to edit all images.
 - [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.

@@ -743,10 +743,10 @@ Lighthouse 12 ran on 27 November 2026 in headless Chrome. It tested the local pr
 
 | Page | Device | Performance | Accessibility | Best Practices | SEO |
 |---|---|---|---|---|---|
-| `index.html` | Mobile | 87 | 96 | 100 | 100 |
-| `index.html` | Desktop | 87 | 100 | 100 | 100 |
-| `about.html` | Mobile | 90 | 96 | 100 | 100 |
-| `about.html` | Desktop | 84 | 96 | 100 | 100 |
+| `index.html` | Mobile | 95 | 96 | 100 | 100 |
+| `index.html` | Desktop | 100 | 100 | 100 | 100 |
+| `about.html` | Mobile | 95 | 96 | 100 | 100 |
+| `about.html` | Desktop | 100 | 96 | 100 | 100 |
 | `message-board.html` | Mobile | 93 | 100 | 100 | 100 |
 | `message-board.html` | Desktop | 99 | 100 | 100 | 100 |
 | `privacy.html` | Mobile | 92 | 100 | 100 | 100 |
@@ -758,7 +758,7 @@ Notes on the scores below 100:
 
 - **Accessibility 96.** The colour contrast audit fails on the word AND in the masthead. The word is magenta on pink. It is part of the logotype. WCAG 1.4.3 does not apply contrast rules to logotypes.
 - **SEO 66 on `404.html`.** The page has a `noindex` tag. Lighthouse marks the page as not crawlable. This is correct for an error page.
-- **Performance.** The web fonts cause layout shift when they load. Cumulative Layout Shift is 0.209 on `index.html` and 0.316 on `about.html` on desktop. The target is 0.1 or less. This is open.
+- **Performance.** The first run gave a layout shift of 0.209 on `index.html` and 0.316 on `about.html` on desktop. The cause was the fonts from Google Fonts. The site now hosts the fonts and preloads them. The second run gave a layout shift of 0 on `index.html` and 0.018 on `about.html`. The scores in the table are from the second run for these two pages.
 
 ### Lighthouse results for the earlier design
 
