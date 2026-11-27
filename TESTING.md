@@ -21,6 +21,8 @@
     5. [contact.html (page removed)](#contacthtml-page-removed-1)
     6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-1)
     7. [404.html](#404html)
+    8. [privacy.html](#privacyhtml)
+    9. [Cookie Consent and Click-to-Load](#cookie-consent-and-click-to-load)
 4. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
@@ -63,10 +65,14 @@
 
 The site had a full redesign in November 2026. The redesign made these changes:
 
-- The site now has four pages: `index.html`, `about.html`, `message-board.html` and `404.html`.
+- The site now has five pages: `index.html`, `about.html`, `message-board.html`, `404.html` and `privacy.html`.
 - The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html`.
 - One stylesheet, `assets/css/main.css`, replaced `styles.css` and Bootstrap.
-- One small script, `assets/js/message-board.js`, loads the Instagram posts when the visitor asks.
+- Four small scripts:
+    - `assets/js/consent.js` shows the cookie banner.
+    - `assets/js/analytics.js` loads Google Analytics after consent.
+    - `assets/js/player.js` loads the Acast player when the visitor asks.
+    - `assets/js/message-board.js` loads the Instagram posts when the visitor asks.
 - No page has an automatic redirect.
 
 The status of each test is:
@@ -100,6 +106,7 @@ The [W3C Nu HTML Checker](https://validator.w3.org/nu/) checked the source file 
 | about.html | 0 | 0 | PASS |
 | message-board.html | 0 | 0 | PASS |
 | 404.html | 0 | 0 | PASS |
+| privacy.html | 0 | 0 | PASS |
 
 To repeat the test, run this command in the repository root for each page:
 
@@ -149,13 +156,13 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator) checked `a
 
 | FILE | ERRORS | WARNINGS |
 | --- | --- | --- |
-| main.css | 3 | 53 |
+| main.css | 3 | 63 |
 
 The 3 errors are limits of the validator. They are not errors in the CSS. The section [Validator Limits](#validator-limits) gives the reason for each error.
 
-The 53 warnings are:
+The 63 warnings are:
 
-- 50 warnings that the validator does not check CSS custom properties (variables). This is a limit of the validator.
+- 60 warnings that the validator does not check CSS custom properties (variables). This is a limit of the validator.
 - 3 warnings that `-webkit-mask` (two times) and `-webkit-mask-composite` are vendor extensions. The stylesheet uses them as a fallback for older WebKit browsers. The standard `mask` properties follow them.
 
 To repeat the test, run this command in the repository root:
@@ -367,6 +374,40 @@ The redesign removed this page. These results are kept for the record.
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+
+### privacy.html
+
+The tests used a local server and headless Google Chrome on 27 November 2026. The viewport widths were 390px and 1440px.
+
+| TEST | EXPECTED RESULT | RESULT |
+| --- | --- | --- |
+| Open the page | The page shows the title, the date "Last updated 27 November 2026" and the table of third parties. | PASS |
+| Check the navigation | The navigation shows Home, About and Message Board. No link has `aria-current`. | PASS |
+| Check the table at 390px | Each service shows as one block, with a label above each value. | PASS |
+| Check the table at 1440px | The table shows four columns. | PASS |
+| Press "Cookie settings" in the page | The cookie banner opens. | PASS |
+| Press the link to the website of Dominic Francis | The link opens https://www.dominicfrancis.co.uk/. | PASS |
+| Check for horizontal scroll at 390px | The page does not scroll sideways. | PASS |
+
+### Cookie Consent and Click-to-Load
+
+The tests used a local server and headless Google Chrome, driven by a Playwright script, on 27 November 2026. Each test started with a new browser profile.
+
+| TEST | EXPECTED RESULT | RESULT |
+| --- | --- | --- |
+| Open each of the five pages for the first time | The banner shows. No request goes to `embed.acast.com`, `instagram.com` or `googletagmanager.com`. | PASS |
+| Measure "Accept" and "Reject" | The two buttons have the same width, height, font size, weight and colours. | PASS |
+| Press "Accept" with the placeholder ID | The site stores "accepted". No request goes to `googletagmanager.com`. | PASS |
+| Press "Accept" with a test ID | The site loads `gtag/js` from `googletagmanager.com`, with no reload. No request goes before "Accept". | PASS |
+| Press "Reject" | The site stores "rejected" and deletes the `_ga` and `_ga_*` cookies. Other cookies stay. | PASS |
+| Reload the page after "Reject" | The banner stays closed. | PASS |
+| Press "Cookie settings" in the footer | The banner opens, shows the earlier choice and gets focus. | PASS |
+| Use the banner with the keyboard | Tab goes to the privacy link, "Accept" and "Reject". After a choice, focus goes back to "Cookie settings". | PASS |
+| Press "Play here" on the home page | The Acast player loads in place of the button and gets focus. | PASS |
+| Turn off JavaScript | No banner shows. "Cookie settings" and "Play here" are hidden. The "Listen on Acast" link shows. No third-party embed loads. | PASS |
+| Set `prefers-reduced-motion: reduce` | The banner shows with no animation. | PASS |
+
+Before go-live, replace the placeholder ID `G-XXXXXXXXXX` in `assets/js/analytics.js`. Then do the GA4 Realtime test in issue #21.
 
 ## User Story Validation
 

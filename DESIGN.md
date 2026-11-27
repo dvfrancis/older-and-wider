@@ -333,13 +333,14 @@ Contents bands use 3rem to 3.5rem of vertical space. Desktop grids split the lis
 Every touch target is 2.75rem high or more.
 
 ### Pages
-The site has four pages. Each page has the same nav strip and the same footer.
+The site has five pages. Each page has the same nav strip and the same footer.
 - `index.html`: the cover and the contents pages.
 - `about.html`: the feature spread.
 - `message-board.html`: the readers' page.
 - `404.html`: the error in print.
+- `privacy.html`: the privacy notice.
 
-The nav strip has three links: Home, About, Message Board.
+The nav strip has three links: Home, About, Message Board. The privacy page has no link in the nav strip. The footer links to it.
 
 These pages are deleted. Do not link to them:
 - `contact.html`
@@ -509,6 +510,30 @@ The bingo ticket has scalloped tear-off edges at the top and bottom, and a dotte
 - **After load:** The script hides the block (`hidden`) and moves focus to the "On the board" title.
 - **On error:** The script removes the failed script and enables the button again. The post links still work.
 
+### Click-to-load player (Home)
+- **Purpose:** Nothing loads from Acast until the visitor presses the button. The site does not remember the choice.
+- **Panel:** `.player-consent`. A Ticket Pink panel with a 0.5rem radius. The minimum height is 14rem, and 28rem from 64rem.
+- **Button:** `.board-load.player-load`. The load button style, with a play icon and the label "Play here".
+- **Note:** `.player-note`. Body type. It tells the visitor that the player stores a language setting and a session item.
+- **Without JavaScript:** the button and the note are hidden. A "Listen on Acast" link in the same style shows.
+- **Script:** `assets/js/player.js` puts the Acast iframe in place of the panel and moves focus to it.
+
+### Cookie banner (all pages)
+- **Purpose:** It asks about analytics cookies only. Google Analytics loads only after "Accept".
+- **Position:** `.consent`. It sits after the footer and sticks to the bottom of the window. It does not trap focus.
+- **Style:** Paper White with ink text, a 3px ink rule at the top and a soft upward shadow.
+- **Title:** `.consent-title`. Barlow Condensed 600, 1.5rem, capitals, Masthead Red.
+- **Buttons:** `.consent-button`. "Accept" and "Reject" have the same size, colour and weight: Masthead Red with white Label type, 3.25rem high. They are in two equal columns on phones, and 10rem each from 48rem.
+- **Hover / Focus:** the button lifts by 0.25rem with the Lift shadow and an underline.
+- **Motion:** the banner rises from the bottom over 0.45s on the out-expo curve. Under `prefers-reduced-motion: reduce` it has no animation.
+- **Reopen:** the "Cookie settings" button in the footer (`.footer-settings`) opens the banner and shows the earlier choice.
+
+### Privacy page
+- **Intro band:** Cover Pink. A Headline title in Masthead Red (`.privacy-title`), the issue line with the date, and Body Large text (`.privacy-lead`).
+- **Table band:** Paper White. On phones, each row of `.privacy-table` is a block with a Label above each value. From 48rem it is a table with a 3px ink rule under the headings.
+- **Lower band:** Cover Pink, two columns from 64rem. It holds "Changing your mind" and "Who looks after this site".
+- **Section titles:** `.privacy-heading`. Anton, 2.75rem, then 3.5rem from 48rem, Masthead Red, with a 3px ink rule.
+
 ### Pinned post wall (Message Board)
 - **Structure:** `.board-list`. Each post is a `blockquote.instagram-media` with one link inside. Without JavaScript, each post is a link to Instagram.
 - **Paper stocks:** Each post uses one of three stocks:
@@ -559,6 +584,6 @@ The bingo ticket has scalloped tear-off edges at the top and bottom, and a dotte
 - **Don't** use hard offset shadows.
 - **Don't** use inline styles or inline scripts.
 - **Don't** use a serif face.
-- **Don't** load Instagram, or any other third-party script, before the visitor asks.
+- **Don't** load Instagram, Acast, Google Analytics, or any other third-party script, before the visitor asks.
 - **Don't** add a meta refresh to a page.
 - **Don't** link to the deleted contact and completion pages.
