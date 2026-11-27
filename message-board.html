@@ -1,136 +1,180 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en-GB">
 
 <head>
-
-    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Older and Wider | Message Board</title>
     <meta name="description"
-        content="Share your experiences with Jenny and Judith on their 'message board' (Instagram page).">
-    <meta name="keywords" content="older and wider, older and wider podcast, message board, instagram">
+        content="The Older and Wider message board lives on Instagram. Follow Jenny Eclair and Judith Holder, share your stories and see the latest posts from the podcast.">
     <meta name="author" content="Dominic Francis">
-
-    <!-- Link for custom favicon -->
-    <!-- using https://stackoverflow.com/questions/35037482/favicon-with-github-pages -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-    <!--Links for Google Fonts-->
+    <link rel="icon" href="assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Marcellus&family=Pontano+Sans:wght@300..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@600&family=Barlow:wght@400;600&display=swap"
         rel="stylesheet">
-
-    <!--Link for Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!--Link to website CSS file-->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Older & Wider | Message Board</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/message-board.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Header and navigation -->
-    <header class="container-fluid fixed-top">
-
-        <div class="row teal">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-3">
-                <h1 class="fs-2 fw-bold"><a href="index.html" rel="bookmark">The Older & Wider Podcast</a></h1>
-            </div>
-        </div>
-        <div class="row">
-            <nav class="col-12 col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-lg bg-body-tertiary pb-3">
-                <div class="mx-auto">
-                    <button class="navbar-toggler mb-4" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarHome" aria-controls="navbarHome" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon pt-4 pb-4"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarHome">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" aria-label="Link to home page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" aria-label="Link to the about page" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link selected fs-5" aria-current="page"
-                                aria-label="Link to the message board page" href="message-board.html">Message Board</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" aria-label="Link to the contact page"
-                                href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
+    <header class="site-header">
+        <nav class="strip" aria-label="Main">
+            <ul class="strip-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="message-board.html" aria-current="page">Message Board</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
 
-        <!-- Instagram plugin -->
-        <section>
-            <div class="mb-card p-5 mx-5 mx-auto w-75">
-                <div class="card-body">
-                    <h2 class="fs-1 fw-bold mb-5 text-center">Connect with the Gang via the Message Board *</h2>
-                    <div class="elfsight-app-c3de1de5-09ee-4ab0-9cee-06f4450d7d4f" data-elfsight-app-lazy></div>
-                    <p class="fs-4 mt-5 text-center">* this is what we call our Instagram page</p>
+        <section class="board-intro" aria-labelledby="board-title">
+            <div class="contents-inner board-intro-inner">
+                <div class="board-intro-text">
+                    <h1 class="board-title" id="board-title">Letters and snaps from the OWLs</h1>
+                    <p class="board-lead">Our message board is the Older and Wider Instagram page. Come and say
+                        hello, tell us your stories and see what Jenny and Judith have been up to this week.</p>
+                    <div class="board-follow">
+                        <a class="slab slab-lead board-slab" href="https://www.instagram.com/olderandwiderpodcast/"
+                            rel="external">
+                            <span class="board-slab-icon" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
+                            <span class="lead-title">Follow us on Instagram</span>
+                            <span class="board-handle">@olderandwiderpodcast</span>
+                        </a>
+                        <a class="slab slab-white board-slab-small" href="https://www.facebook.com/profile.php?id=61555198800248"
+                            rel="external">
+                            <span class="line-big line-red"><i class="fa-brands fa-facebook" aria-hidden="true"></i>Find
+                                us on Facebook</span>
+                        </a>
+                    </div>
                 </div>
+                <figure class="board-print">
+                    <div class="board-print-photo screen">
+                        <img src="assets/images/home-cover-merch_800.webp" srcset="
+                                assets/images/home-cover-merch_256.webp 256w,
+                                assets/images/home-cover-merch_480.webp 480w,
+                                assets/images/home-cover-merch_800.webp 800w,
+                                assets/images/home-cover-merch_960.webp 960w"
+                            sizes="(min-width: 64rem) 32rem, calc(100vw - 3.25rem)" width="960" height="641"
+                            alt="Jenny Eclair in a pink Older and Wider T-shirt and Judith Holder in a blue one, both drinking from Older and Wider mugs">
+                    </div>
+                    <p class="flash board-flash"><span class="flash-top">Hello</span> <span
+                            class="flash-bottom">OWLs, come and say hi</span></p>
+                </figure>
+            </div>
+        </section>
+
+        <section class="board-posts" aria-labelledby="posts-title">
+            <div class="contents-inner">
+                <h2 class="contents-title" id="posts-title" tabindex="-1">On the board</h2>
+
+                <div class="board-consent" id="board-consent">
+                    <button class="board-load" type="button" id="board-load">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>Show the posts here
+                    </button>
+                    <p class="board-note">Loading them lets Instagram set cookies on your device.</p>
+                </div>
+
+                <ul class="board-list">
+                    <li>
+                        <blockquote class="instagram-media post-red"
+                            data-instgrm-permalink="https://www.instagram.com/reel/DgNGi6Zonxq/"
+                            data-instgrm-version="14">
+                            <a href="https://www.instagram.com/reel/DgNGi6Zonxq/" rel="external">
+                                <span class="post-meta"><i class="fa-solid fa-video" aria-hidden="true"></i>Video
+                                    <time datetime="2026-11-26">26 Nov 2026</time></span>
+                                <span class="post-text">The new live show is announced, with tickets on sale from 27 November</span>
+                                <span class="post-link">See this post on Instagram</span>
+                            </a>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote class="instagram-media post-white"
+                            data-instgrm-permalink="https://www.instagram.com/p/DgGHKIeofuD/"
+                            data-instgrm-version="14">
+                            <a href="https://www.instagram.com/p/DgGHKIeofuD/" rel="external">
+                                <span class="post-meta"><i class="fa-solid fa-camera" aria-hidden="true"></i>Photo
+                                    <time datetime="2026-11-23">23 Nov 2026</time></span>
+                                <span class="post-text"><q>An Everyman cinema one Monday morning</q></span>
+                                <span class="post-link">See this post on Instagram</span>
+                            </a>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote class="instagram-media post-letter"
+                            data-instgrm-permalink="https://www.instagram.com/p/DgCqFkliJ9N/"
+                            data-instgrm-version="14">
+                            <a href="https://www.instagram.com/p/DgCqFkliJ9N/" rel="external">
+                                <span class="post-meta"><i class="fa-solid fa-images" aria-hidden="true"></i>Photo set
+                                    <time datetime="2026-11-22">22 Nov 2026</time></span>
+                                <span class="post-text"><q>Me and Geof outside 19 Rossall Road</q></span>
+                                <span class="post-link">See this post on Instagram</span>
+                            </a>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote class="instagram-media post-red"
+                            data-instgrm-permalink="https://www.instagram.com/p/DgA4E4uoQ2x/"
+                            data-instgrm-version="14">
+                            <a href="https://www.instagram.com/p/DgA4E4uoQ2x/" rel="external">
+                                <span class="post-meta"><i class="fa-solid fa-camera" aria-hidden="true"></i>Photo
+                                    <time datetime="2026-11-21">21 Nov 2026</time></span>
+                                <span class="post-text"><q>Best £10 I've ever spent on marketplace.</q></span>
+                                <span class="post-link">See this post on Instagram</span>
+                            </a>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote class="instagram-media post-white"
+                            data-instgrm-permalink="https://www.instagram.com/p/Df8-fcmoS88/"
+                            data-instgrm-version="14">
+                            <a href="https://www.instagram.com/p/Df8-fcmoS88/" rel="external">
+                                <span class="post-meta"><i class="fa-solid fa-camera" aria-hidden="true"></i>Photo
+                                    <time datetime="2026-11-19">19 Nov 2026</time></span>
+                                <span class="post-text"><q>Same Podcast. New Pic.</q></span>
+                                <span class="post-link">See this post on Instagram</span>
+                            </a>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote class="instagram-media post-letter"
+                            data-instgrm-permalink="https://www.instagram.com/p/Df6wKXGolIF/"
+                            data-instgrm-version="14">
+                            <a href="https://www.instagram.com/p/Df6wKXGolIF/" rel="external">
+                                <span class="post-meta"><i class="fa-solid fa-camera" aria-hidden="true"></i>Photo
+                                    <time datetime="2026-11-19">19 Nov 2026</time></span>
+                                <span class="post-text"><q>Posh College dinner</q></span>
+                                <span class="post-link">See this post on Instagram</span>
+                            </a>
+                        </blockquote>
+                    </li>
+                </ul>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="container-fluid teal mt-5">
-
-        <!-- Social media links -->
-        <div class="row">
-            <div class="col text-center mt-3 mb-2">
-                <a href="https://www.instagram.com/olderandwiderpodcast/" target="_blank" rel="noopener noreferrer"
-                    class="fa fa-instagram me-2" aria-label="Visit Instagram"><span class="socials">Instagram</span></a>
-                <a href="https://www.facebook.com/profile.php?id=61555198800248" target="_blank"
-                    rel="noopener noreferrer" class="fa fa-facebook ms-2" aria-label="Visit Facebook"><span
-                        class="socials">Facebook</span></a>
-            </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-mark">Older <span class="footer-and">and</span> Wider</p>
+            <ul class="footer-links">
+                <li><a href="https://www.instagram.com/olderandwiderpodcast/" rel="external"><i
+                            class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61555198800248" rel="external"><i
+                            class="fa-brands fa-facebook" aria-hidden="true"></i>Facebook</a></li>
+                <li><a href="https://olderandwider.shop" rel="external"><i class="fa-solid fa-bag-shopping"
+                            aria-hidden="true"></i>Shop</a></li>
+            </ul>
+            <p class="credit">Website by <a href="https://www.dominicfrancis.co.uk/" rel="external">Dominic
+                    Francis</a></p>
         </div>
-
-        <div class="row">
-            <!-- Legal and copyright information -->
-            <!-- using https://blog.hubspot.com/website/html-code-copyright -->
-            <div class="col text-center">
-                <p> &#169; 2024, <a href="https://www.dominicfrancis.co.uk/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Visit LinkedIn">Dominic
-                        Francis</a> (<a href="https://shows.acast.com/older-and-wider-podcast"
-                        aria-label="Visit the Older & Wider podcast on the Acast website" rel="external"
-                        target="_blank">Older &
-                        Wider</a> is hosted by <a href="https://www.acast.com" class="smallprint"
-                        aria-label="Visit the Acast website" rel="external" target="_blank">Acast</a>)
-                </p>
-            </div>
-        </div>
-
     </footer>
-
-    <!-- Link to Elfsight JavaScript -->
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-
-    <!--Link to Fontawesome-->
-    <script src="https://kit.fontawesome.com/9a47a7f2a8.js" crossorigin="anonymous"></script>
-
-    <!-- Link to Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
 
 </body>
 
