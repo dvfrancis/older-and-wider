@@ -88,12 +88,12 @@ The status of each test is:
 | CSS validation | Done on the new design, 27 November 2026 |
 | Manual validation | Earlier design only. To be re-run on the new design. |
 | User story validation | Earlier design only. To be re-run on the new design. |
-| Browser compatibility | WebKit and Chromium done on the new design, 27 November 2026. Firefox not done. |
+| Browser compatibility | Done on the new design, 27 November 2026 |
 | Accessibility (WAVE) | Earlier design only. To be re-run on the new design. |
 | Responsiveness | Earlier design only. To be re-run on the new design. |
 | Performance (Lighthouse) | Done on the new design, 27 November 2026 |
 
-**Browser tests: partly done on the new design.** The results are in the Browser Compatibility section. The Lighthouse scores for the new design are in the Performance section. The screenshots in the sections after Code Validation show the earlier design.
+**Browser tests: done on the new design.** The results are in the Browser Compatibility section. The Lighthouse scores for the new design are in the Performance section. The screenshots in the sections after Code Validation show the earlier design.
 
 This document keeps the results for the removed pages for the record. Each heading for a removed page has the label "(page removed)".
 
@@ -560,7 +560,7 @@ The tests ran on 27 November 2026 against the local preview at `http://127.0.0.1
 |---|---|---|---|
 | WebKit | Safari on Mac, iPhone and iPad | Playwright 1.49.1, full-page screenshots, phone emulation for 390 px | PASS on all 10 views. No horizontal scroll. No script errors. All images load. |
 | Chromium | Chrome, Edge, Opera | The Claude Code browser and Lighthouse 12 | PASS on all pages. |
-| Gecko | Firefox | Not done. The Playwright Firefox build does not start on this version of macOS. | To do by hand. |
+| Gecko | Firefox | The site owner checked all five pages by hand, at phone width and desktop width. The Playwright Firefox build does not start on this version of macOS. | PASS on all pages. |
 
 Checks in each view:
 
