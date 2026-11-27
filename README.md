@@ -1,20 +1,20 @@
-# The Older & Wider Podcast
+# The Older and Wider Podcast
 
 ## Overview
 
-Older & Wider is a humorous (and [real](https://shows.acast.com/older-and-wider-podcast)) podcast, where two friends chat and share their day-to-day experiences as older women. It is hosted by retired television producer/writer, Judith Holder, and award-winning comedian, Jenny Eclair.
+Older and Wider is a humorous (and [real](https://shows.acast.com/older-and-wider-podcast)) podcast, where two friends chat and share their day-to-day experiences as older women. It is hosted by retired television producer/writer, Judith Holder, and award-winning comedian, Jenny Eclair.
 
-The purpose of the website is to give interested parties insights and information about the podcast, and will include an embedded podcast player, details on live events, and access to the popular Instagram page; it also provides a way to contact the podcast directly, share stories, and make suggestions for the show.
+The website gives information about the podcast. It has an embedded podcast player, the dates of the 2027 live tour, a link to the shop, and access to the Instagram page that the hosts call the "message board". The podcast has had over 7.5 million downloads.
 
 ### Background Information
 
 There are several references scattered across the site which refer back to items that are regularly mentioned, or discussed, on the podcast:
 
-- Older & Wider Listeners are called OWLs.
+- Older and Wider Listeners are called OWLs.
 - Anyone listening to the podcast is regarded as "part of the gang", or a "gang member".
 - Snore Law is invoked by either Jenny or Judith when they feel the conversation has got too boring; this is usually accompanied by a loud snoring noise.
 - Jenny and Judith both love coleslaw, and it is mentioned frequently.
-- When people contact the podcast, Jenny and Judith insist that people include their age with fractions; for example, "This email is from Sarah who is 59 and three quarters" (this is why the age field on the contact form is a text input).
+- When people contact the podcast, Jenny and Judith insist that people include their age with fractions; for example, "This email is from Sarah who is 59 and three quarters" (the removed contact form used a text input for age for this reason).
 - Jenny and Judith have stated that a Breton top is the de facto uniform of an OWL.
 - Jenny and Judith regularly refer to the podcast Instagram page as the "message board".
 - There are a couple of regular podcast features:
@@ -23,7 +23,9 @@ There are several references scattered across the site which refer back to items
 
 ### Site Preview
 
-![Preview of the Older & Wider website at different screen sizes](assets/images/site-preview.webp)
+![Preview of the Older and Wider website at different screen sizes](assets/images/site-preview.webp)
+
+This preview shows the earlier design. A new preview of the redesign is to be added.
 
 ### Site Link
 
@@ -36,14 +38,18 @@ The live site can be accessed [here].
     1. [Background Information](#background-information)
     2. [Site Preview](#site-preview)
     3. [Site Link](#site-link)
-2. [User Experience Design](#user-experience-design)
+2. [Design](#design)
+    1. [Design System](#design-system)
+    2. [Earlier Design Concepts](#earlier-design-concepts)
+3. [User Experience Design](#user-experience-design)
     1. [Strategy](#strategy)
         1. [User Experience](#user-experience)
         2. [User Expectations](#user-expectations)
         3. [User Stories](#user-stories)
     2. [Scope](#scope)
         1. [Existing Features](#existing-features)
-        2. [Future Features](#future-features)
+        2. [Removed Features](#removed-features)
+        3. [Future Features](#future-features)
     3. [Structure](#structure)
         1. [User Flow Diagram](#user-flow-diagram)
     4. [Skeleton](#skeleton)
@@ -57,15 +63,47 @@ The live site can be accessed [here].
         2. [Typography](#typography)
         3. [Media](#media)
         4. [Content](#content)
-3. [Testing](#testing)
-4. [Deployment](#deployment)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
     1. [Amazon S3 and CloudFront](#amazon-s3-and-cloudfront)
     2. [Forks](#forks)
     3. [Local Clones](#local-clones)
     4. [Gitpod Workspaces](#gitpod-workspaces)
-5. [Credits and References](#credits-and-references)
-6. [Technologies Used](#technologies-used)
-7. [Acknowledgements](#acknowledgements)
+6. [Credits and References](#credits-and-references)
+7. [Technologies Used](#technologies-used)
+8. [Acknowledgements](#acknowledgements)
+
+## Design
+
+### Design System
+
+The redesign gives the site the look of a weekly magazine. The 2027 tour poster for "Even Older and Wider" sets the colours and the fonts. [DESIGN.md](DESIGN.md) holds the full design system. Read it before you change the look of the site. [PRODUCT.md](PRODUCT.md) holds the product record: the users, the purpose and the brand rules.
+
+The main parts of the design are:
+
+- A pink ground (#F492BF).
+- Red (#A60201) for the masthead and the display text.
+- The logotype "Older and Wider". The word "and" is magenta (#E8046C), as on the tour poster.
+- Three fonts from Google Fonts: Anton for display text, Barlow Condensed for labels, and Barlow for body text.
+- A halftone dot screen on the photos, as in a printed magazine.
+- A magazine cover on the home page, with an issue line and cover lines.
+- A bingo ticket on the home page that leads to back issues of the podcast.
+- A table of the dates of the 2027 tour.
+- A letter to the listeners, "Dear OWLs", from Jenny and Judith.
+
+The show name is "Older and Wider". The site does not use an ampersand in the name.
+
+### Earlier Design Concepts
+
+The folder `design-options/` holds five earlier design concepts:
+
+- `bingo`
+- `magazine`
+- `pier-show`
+- `step-row`
+- `variety-bill`
+
+The project keeps them for reference. The build script does not deploy them. The live design develops the magazine concept.
 
 ## User Experience Design
 
@@ -94,15 +132,15 @@ The live site can be accessed [here].
 
 - First time visitor goals:
 
-    - "What is the Older & Wider podcast about?"
+    - "What is the Older and Wider podcast about?"
     - "Who is Jenny Eclair?"
     - "Who is Judith Holder?"
-    - "Where can I listen to the Older & Wider Podcast"
-    - "When are episodes of the Older & Wider podcast released?"
+    - "Where can I listen to the Older and Wider Podcast"
+    - "When are episodes of the Older and Wider podcast released?"
 
 - Returning visitor goals:
 
-    - "I want to find out more background information about the Older & Wider podcast"
+    - "I want to find out more background information about the Older and Wider podcast"
     - "What was mentioned during the 'Culture Corner' segment of this week's show?"
     - "Has the podcast won any awards?"
     - "What is the 'Message Board' - it was mentioned by Jenny and Judith in this week's episode, but where can I access it?"
@@ -119,119 +157,104 @@ The live site can be accessed [here].
 
 - General
 
-    - All pages will be responsive at different screen sizes, and change layout accordingly and appropriately.
-    - All screenshots shown in this section were taken from the desktop site, to give the clearest examples possible (apart from the Header section which also shows the header as seen on mobile devices, with a hamburger menu). 
+    - Each page is responsive. The layout changes at 48rem (768px) and at 64rem (1024px).
+    - Each page works without JavaScript.
+    - The site has four pages: Home, About, Message Board and a custom 404 page.
+    - The screenshots in this section show the earlier design. New screenshots of the redesign are to be added.
 
 - Browser Tab Icon:
 
-    - A custom HTML favicon will be shown to aid users' identification of the site. It will also appear whenever someone adds the site as a bookmark or favourite.
+    - A custom favicon helps users to identify the site. It also shows when a user adds the site as a bookmark or favourite.
 
         ![Website custom favicon](assets/images/website-favicon.webp)
 
 - Header:
 
-    - Fixed at the top of each page - contains the site name and navigation.
-    - The header allows the user to identify where they are on the site.
-    - Plain background colour with contrasting text.
-    - Site name will be centred in the first row, and link back to the home page when clicked.
-    - Navigation bar will be centred in the second row, beneath the site name, and contain links to:
-        - Home - this takes the user back to the home page when clicked.
-        - About - this takes the user to a page with information about the podcast and both hosts.
-        - Message Board - this takes the user to a page with the podcast's embedded Instagram profile.
-        - Contact - this takes the user to a contact form that can be completed to send a message to the podcast hosts.
-    - The currently active page is indicated on the navigation bar.
-    - The header as it appears on desktops:
+    - The header is a strip at the top of each page. It holds the main navigation.
+    - The navigation has three links: Home, About and Message Board.
+    - The link to the current page has the attribute `aria-current="page"`. This attribute tells screen readers which page is open.
+    - The header as it appeared on desktops in the earlier design:
 
         ![Website header](assets/images/website-header.webp)
 
-    - The header as it appears on mobile:
+    - The header as it appeared on mobile in the earlier design:
 
         ![Website mobile menu](assets/images/website-mobile-menu.webp)
 
-    - and with expanded hamburger menu:
+    - and with the expanded hamburger menu of the earlier design:
 
         ![Website mobile menu expanded](assets/images/website-mobile-menu-expanded.webp)
 
 - Footer:
 
-    - Fixed at the bottom of each page - it contains the social media icons, and legal information.
-    - The footer allows the user to jump to the social media properties of the podcast.
-    - Plain background colour with contrasting text.
-    - Social media icons are centred in the first row.
-    - Legal information is centred in the second row.
-    - On hover, each social media icon will change colour, and also when clicked. The legal links only change colour on hover:
+    - The footer is at the bottom of each page. It shows the logotype "Older and Wider".
+    - It has links to Instagram, Facebook and the shop at [olderandwider.shop](https://olderandwider.shop).
+    - It has a credit link to the author of the website.
+    - The footer as it appeared in the earlier design:
 
-        ![Website footer](assets/images/website-footer.webp)        
+        ![Website footer](assets/images/website-footer.webp)
 
 - Home (index):
 
-    - This is the first page a user sees when they enter the site. It contains all pertinent information regarding the podcast, with links to other pages where required.
-    - The home page allows the user to get a good overview of the purpose of the podcast and gives them glimpses of associated activities.
-    - The page has an introduction to the podcast, a carousel of images, a podcast player, information about the live shows, a link to an external merchandise website, and a mailing list signup form.
-    - The live shows section has an explanation of the live shows, and a button that, when clicked, will open a new tab to the ticket site.
-    - The merchandise section has a button that, when clicked, takes the user to the merchandise website via a new tab.
-    - In the mailing list section, the user has the opportunity to sign-up for a regularly released newsletter.
+    - The home page looks like the cover of a weekly magazine. It has these sections:
+        - Cover: the masthead, an issue line with the episode number and the date, a halftone photo of the hosts, and cover lines. Each cover line links to a section of the page or to the shop.
+        - This week: the Acast player for the latest episode, and links to Apple Podcasts, Spotify and Acast.
+        - Back issues: a bingo ticket. Each number on the ticket links to the podcast on Acast. A "Last called" list shows the four previous episodes.
+        - Tour: "Even Older and Wider", the 2027 live tour. A table shows the eight dates, towns and venues. The "Book tickets" link opens the ticket page.
+        - Letter: "Dear OWLs", a letter from Jenny and Judith, with the award nomination.
+    - The home page as it appeared in the earlier design:
 
         ![Website home page](assets/images/website-index-feature.webp)
 
-- Mailing List Completion:
-
-    - A custom completion page appears once 'Send' is clicked on the mailing list signup form on the home page, with suggested links to other parts of the site.
-    - The page will add humour to the site while offering suggested links to other pages on the site.
-    - After 30 seconds, the page will redirect automatically to the home page.
-
-        ![Website mailing list completion page](assets/images/website-mailing-list-completion-feature.webp)
-
 - About:
 
-    - This section contains more detailed information about the podcast's purpose and the people behind it. It helps the user to understand the motivations behind the creation and continuation of the podcast.
-    - Sections are:
-        - Information about the podcast.
-        - Biography of Jenny Eclair.
-        - Biography of Judith Holder.
+    - The about page gives information about the podcast and the two hosts. It has these sections:
+        - What is Older and Wider? This section tells the history of the podcast. It gives the number of downloads (over 7.5 million) and the award nomination.
+        - Who is Judith Holder? A biography, with a contact sheet of more photos.
+        - Who is Jenny Eclair? A biography, with a contact sheet of more photos.
+        - Hear them for yourself: links to the latest episode and to every episode on Acast.
+    - The about page as it appeared in the earlier design:
 
         ![Website about page](assets/images/website-about-feature.webp)
 
 - Message Board:
 
-    - The "message board" page allows the user to read posts on the Instagram page without having to navigate away from the site, so keeping them on the site for longer.
-    - The podcast's Instagram profile is embedded on this page.
+    - The hosts call the podcast's Instagram page the "message board". This page links to it, and to the Facebook page.
+    - The page shows six recent Instagram posts as short text quotes or summaries, with their dates and links. No content loads from Instagram when the page opens.
+    - The button "Show the posts here" loads the full Instagram posts. The note next to the button tells the visitor that Instagram then sets cookies.
+    - The script `assets/js/message-board.js` does this work. It is the only script on the site. Without JavaScript, the text and the links still work.
+    - The message board page as it appeared in the earlier design:
 
         ![Website message board page](assets/images/website-message-board-feature.webp)
 
-- Contact:
-
-    - The 'Contact' page allows the user to send a message to the podcast hosts, helping them to feel involved in the podcast, it contains:
-        - First Name field - for user's first name.
-        - Last Name field - for user's last name.
-        - Age field (a text input that allows people to enter their age as, for example, "58 and a half" – a running joke on the podcast).
-        - Message field - for users to enter their message.
-        - Send button - users can click this button to send their message.
-        - Reset button - users can click this button to clear any information already entered on the form.
-    - All fields have validation where appropriate.
-    - Text input fields all have placeholder text.
-    - All inputs are required.
-
-        ![Website contact page](assets/images/website-contact-feature.webp)
-    
-- Contact Completion:
-
-    - A custom completion page appears once 'Send' is clicked on the Contact page, with suggested links to other parts of the site.
-    - The page will add humour to the site while offering suggested links to other pages on the site.
-    - After 30 seconds, the page will redirect automatically to the home page.
-
-        ![Website contact completion page](assets/images/website-contact-completion-feature.webp)
-
 - Custom 404:
-    - A custom 404 error page appears whenever a user attempts to navigate to a non-existent page.
-    - The page will add humour to the site while offering suggested links to other pages on the site.
-    - After 30 seconds, the page will redirect automatically to the home page.
+
+    - A custom 404 error page shows when a user goes to a page that does not exist.
+    - The page uses the humour of the podcast ("Snore Law has been invoked"). It links to the latest episode and to the home page.
+    - The page does not redirect. The earlier design redirected to the home page after 30 seconds.
+    - The page uses root-relative links, so it works at any address.
+    - The 404 page as it appeared in the earlier design:
 
         ![Website custom 404 error page](assets/images/website-404-feature.webp)
+
+#### Removed Features
+
+The redesign removed these pages and features:
+
+- The mailing list form on the home page, and its completion page `mailing-list-completion.html`.
+- The contact page `contact.html`, with its contact form, and its completion page `contact-completion.html`.
+- The "Contact" link in the navigation.
+- The image carousels on the home page and the about page.
+- The Bootstrap framework.
+
+The forms had no backend. They did not send data to the hosts. Issue #30 covers a future backend for the mailing list.
 
 #### Future Features
 
 - The addition of a website forum would allow fans of the podcast to interact, discuss the show, and share their life experiences.
+- A mailing list with a real backend (issue #30).
+- A sitemap (issue #19) and a robots.txt file (issue #20).
+- Analytics, with cookie consent before any analytics loads (issues #21 and #22).
 
 ### Structure
 
@@ -249,21 +272,21 @@ After I created the wireframes, and was bulding the site, I altered the layout o
 
 The hamburger menu (shown in the header on smaller mobile devices) was also centred on the screen.
 
-The wireframes presented here show my initial ideas:
+The wireframes presented here show my initial ideas. They show the first design, before the redesign. The redesign removed three of these pages. Their headings below are marked "(page removed)".
 
 ##### Mobile
 
 ###### Home
 ![Home (index)](documentation/wireframes/mobile/home.webp)
-###### Mailing List Completion
+###### Mailing List Completion (page removed)
 ![Mailing List Completion](documentation/wireframes/mobile/mailing-list-completion.webp)
 ###### About
 ![About](documentation/wireframes/mobile/about.webp)
 ###### Message Board
 ![Message Board](documentation/wireframes/mobile/message-board.webp)
-###### Contact
+###### Contact (page removed)
 ![Contact](documentation/wireframes/mobile/contact.webp)
-###### Contact Completion
+###### Contact Completion (page removed)
 ![Contact Completion](documentation/wireframes/mobile/contact-completion.webp)
 ###### Custom 404
 ![Custom 404](documentation/wireframes/mobile/404.webp)
@@ -272,15 +295,15 @@ The wireframes presented here show my initial ideas:
 
 ###### Home
 ![Home (index)](documentation/wireframes/mobile/home-menu.webp)
-###### Mailing List Completion
+###### Mailing List Completion (page removed)
 ![Mailing List Completion](documentation/wireframes/mobile/mailing-list-completion-menu.webp)
 ###### About
 ![About](documentation/wireframes/mobile/about-menu.webp)
 ###### Message Board
 ![Message Board](documentation/wireframes/mobile/message-board-menu.webp)
-###### Contact
+###### Contact (page removed)
 ![Contact](documentation/wireframes/mobile/contact-menu.webp)
-###### Contact Completion
+###### Contact Completion (page removed)
 ![Contact Completion](documentation/wireframes/mobile/contact-completion-menu.webp)
 ###### Custom 404
 ![Custom 404](documentation/wireframes/mobile/404-menu.webp)
@@ -289,15 +312,15 @@ The wireframes presented here show my initial ideas:
 
 ###### Home
 ![Home (index)](documentation/wireframes/tablet/home.webp)
-###### Mailing List Completion
+###### Mailing List Completion (page removed)
 ![Mailing List Completion](documentation/wireframes/tablet/mailing-list-completion.webp)
 ###### About
 ![About](documentation/wireframes/tablet/about.webp)
 ###### Message Board
 ![Message Board](documentation/wireframes/tablet/message-board.webp)
-###### Contact
+###### Contact (page removed)
 ![Contact](documentation/wireframes/tablet/contact.webp)
-###### Contact Completion
+###### Contact Completion (page removed)
 ![Contact Completion](documentation/wireframes/tablet/contact-completion.webp)
 ###### Custom 404
 ![Custom 404](documentation/wireframes/tablet/custom-404.webp)
@@ -306,15 +329,15 @@ The wireframes presented here show my initial ideas:
 
 ###### Home
 ![Home (index)](documentation/wireframes/desktop/home.webp)
-###### Mailing List Completion
+###### Mailing List Completion (page removed)
 ![Mailing List Completion](documentation/wireframes/desktop/mailing-list-completion.webp)
 ###### About
 ![About](documentation/wireframes/desktop/about.webp)
 ###### Message Board
 ![Message Board](documentation/wireframes/desktop/message-board.webp)
-###### Contact
+###### Contact (page removed)
 ![Contact](documentation/wireframes/desktop/contact.webp)
-###### Contact Completion
+###### Contact Completion (page removed)
 ![Contact Completion](documentation/wireframes/desktop/contact-completion.webp)
 ###### Custom 404
 ![Custom 404](documentation/wireframes/desktop/custom-404.webp)
@@ -323,32 +346,33 @@ The wireframes presented here show my initial ideas:
 
 #### Colours
 
-The following colours have been used to add interesting backgrounds to site sections, with white (#FFF) as a contrasting colour, which is also used for all text:
+The colours come from the 2027 tour poster. [DESIGN.md](DESIGN.md) gives the full palette, the rules for each colour, and the contrast figures. The main colours are:
 
-![Website colour scheme](assets/images/website-colours.webp)
+- Pink (#F492BF): the page ground.
+- Red (#A60201): the masthead and the display text.
+- Magenta (#E8046C): the word "and" in the logotype.
 
-[Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)]:https://brandpalettes.com/facebook-colors
-[Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)]: https://brandpalettes.com/instagram-color-codes
+The stylesheet defines each colour as a CSS custom property in `:root`, for example `--pink`.
 
-For the the hover and active link states of each social media icon I used:
-
-- [Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)].
-- [Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)].
-
-The colours used are taken from palette 389 of the [Sarah Renae Clarke Colour Catalogue, Volume 2](https://sarahrenaeclark.com/shop/the-color-catalog-volume-2/).
+The earlier design used palette 389 of the [Sarah Renae Clarke Colour Catalogue, Volume 2](https://sarahrenaeclark.com/shop/the-color-catalog-volume-2/), with teal and raspberry. The redesign replaced it.
 
 #### Typography
 
-Fonts were chosen from Google Fonts:
-  
-- [Marcellus](https://fonts.google.com/specimen/Marcellus) was used for H1 and H2 tags.
-- [Pontano Sans](https://fonts.google.com/specimen/Pontano+Sans) was used for all other body text.
+The fonts come from the 2027 tour poster. They load from Google Fonts:
+
+- [Anton](https://fonts.google.com/specimen/Anton) for the masthead and the display text.
+- [Barlow Condensed](https://fonts.google.com/specimen/Barlow+Condensed) for labels.
+- [Barlow](https://fonts.google.com/specimen/Barlow) for body text.
+
+The earlier design used Marcellus and Pontano Sans. The redesign replaced them.
 
 #### Media
 
-All images used on the site have been taken from the Older & Wider podcast [Instagram](https://www.instagram.com/olderandwiderpodcast) page and [merchandise website](https://olderandwider.shop).
+All images used on the site have been taken from the Older and Wider podcast [Instagram](https://www.instagram.com/olderandwiderpodcast) page, the [shop](https://olderandwider.shop), and the 2027 tour poster.
 
-For the image carousels that appear on index.html and about.html, I used [RespImageLint](https://ausi.github.io/respimagelint/) to advise about creating alternates for all images, that would be appropriate at different screens sizes. This was then implemented using the HTML `img` `srcset` attribute for each image used.
+The stylesheet puts a halftone dot screen on the photos, so that they look like print in a magazine.
+
+Each photo has fixed-width variants (for example `_256.webp`, `_480.webp` and `_800.webp`). The HTML `img` `srcset` and `sizes` attributes select the correct variant for the screen. I used [RespImageLint](https://ausi.github.io/respimagelint/) to advise about these variants.
 
 #### Content
 
@@ -378,6 +402,15 @@ Two details are important before you change any of this:
 - The script uploads the pages last, after the assets. Thus a live page cannot refer to an asset that is not yet in the bucket.
 
 To add a new page, you must do two steps. It is not sufficient to make the file in the repository root. You must also add the name of the file to the `PAGES` list in `build.sh`. If you do not, the site will never include that page.
+
+The `PAGES` list contains these four pages:
+
+- `index.html`
+- `about.html`
+- `message-board.html`
+- `404.html`
+
+The `DIRS` list contains only `assets`. Thus the script does not deploy `design-options/` or `documentation/`. The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html` from the list.
 
 ### Forks
 
@@ -410,7 +443,7 @@ When using Gitpod, you can click the button below to create a workspace from thi
 
 ## Credits and References
 
-All images on this site are taken from either the podcast's [Instagram](https://www.instagram.com/olderandwiderpodcast/) page or [merchandise website](https://olderandwider.shop). Links to live sites are also used for the social media icons, and in the footer. This is done to help promote the podcast, and as a mark of respect for all the work that has gone into it. Once this project has been assessed, my intention is to get in touch with the podcast to let Jenny and Judith know about it.
+All images on this site are taken from the podcast's [Instagram](https://www.instagram.com/olderandwiderpodcast/) page, the Older and Wider shop at [olderandwider.shop](https://olderandwider.shop), or the 2027 tour poster. The colours and fonts of the site also come from the tour poster. Links to live sites are also used for the social media icons, and in the footer. This is done to help promote the podcast, and as a mark of respect for all the work that has gone into it. Once this project has been assessed, my intention is to get in touch with the podcast to let Jenny and Judith know about it.
 
 The following references were used for general advice and help in implementing specific functionality on the website:
 - [Duckett, J. (2011) HTML & CSS - Design and Build Websites. Indianapolis: John Wiley & Sons, Inc.](https://htmlandcssbook.com/) - general coding advice.
@@ -420,15 +453,17 @@ The following references were used for general advice and help in implementing s
 - [W3 Schools CSS :visited Selector](https://www.w3schools.com/cssref/sel_visited.php) and 
  [CSS-Tricks :visited](https://css-tricks.com/almanac/selectors/v/visited/) - styling the navigation links after they had been visited.
 - [Background on semantic HTML5 elements](https://www.freecodecamp.org/news/semantic-html5-elements/) - ordering semantic HTMl elements.
-- [Redirect to custom form completion page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections?ref=library.linkbot.com) - creating a redirect from the website's custom completion pages.
+- [Redirect to custom form completion page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections?ref=library.linkbot.com) - creating a redirect from the website's custom completion pages (earlier design; the redesign removed these pages and the redirect).
 - [How to Implement ARIA Tags for Better Accessibility](https://dev.to/sarveshh/how-to-implement-aria-tags-for-better-accessibility-a-comprehensive-guide-for-web-developers-h3k) - how and where to use ARIA tags.
 - [Using Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) - creating media queries to control ``body`` padding at different screen sizes.
 - [Creating a custom 404 page for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) - implementing a GutHub Pages custom 404 page.
-- [How To Change the Color of the Bootstrap 5 Mobile Menu Icon](https://www.youtube.com/watch?v=45QSuJaHEss) - altering the colour of the hamburger menu on mobile devices.
-- [How to use srcset and sizes for responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images) - making the website's image carousels more responsive.
+- [How To Change the Color of the Bootstrap 5 Mobile Menu Icon](https://www.youtube.com/watch?v=45QSuJaHEss) - altering the colour of the hamburger menu on mobile devices (earlier design).
+- [How to use srcset and sizes for responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images) - making the website's images responsive.
 - [The Only Markdown Cheatsheet You Need](https://github.com/im-luka/markdown-cheatsheet) - creating the README.md and TESTING.md documentation.
 
 References used to gain a general understanding about the podcast, and for creating website content:
+
+- PodcastingToday press release for the 2027 tour (November 2026) - the source of the figure of over 7.5 million downloads.
 
 - [Jenny Eclair's website](https://jennyeclair.com)
 - [Jenny Eclair's Wikipedia page](https://en.wikipedia.org/wiki/Jenny_Eclair)
@@ -457,8 +492,8 @@ Links to the podcast, on various platforms:
     
 ## Technologies Used
 
-- The website was built using [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), and [Bootstrap.](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was not specifically used except where it was required for Bootstrap, particularly in making responsive menus work on mobile devices.
+- The website is built with [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS). The earlier design also used [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)). The redesign removed it.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) is used in one small script, `assets/js/message-board.js`. It loads the Instagram posts only when the visitor asks for them.
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
 - [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
 - The [Responsive Viewer](https://responsiveviewer.org/) extension was used in all browsers (except Firefox, which does not seem to support it) to create images of the website's pages on a variety of devices.
@@ -468,10 +503,10 @@ Links to the podcast, on various platforms:
 - [Opera](https://www.opera.com/) was used for website testing.
 - [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots ofan iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).
 - [Figma](https://www.figma.com/) was used to create the wireframes and the user flow diagram.
-- [Elfsight](https://elfsight.com/) was used to create the Instagram embed code for message-board.html.
-- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used to determine the website's colur scheme.
-- [Font Joy](https://fontjoy.com/) was used to determine font pairings.
-- [Google Fonts](https://fonts.google.com/) was used to source the Marcellus and Pontano Sans fonts.
+- [Elfsight](https://elfsight.com/) was used to create the Instagram embed code for message-board.html in the earlier design. The redesign uses Instagram's own `embed.js`, which loads only when the visitor asks.
+- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used to determine the colour scheme of the earlier design.
+- [Font Joy](https://fontjoy.com/) was used to determine font pairings for the earlier design.
+- [Google Fonts](https://fonts.google.com/) is used to source the Anton, Barlow Condensed and Barlow fonts. The earlier design used Marcellus and Pontano Sans.
 - [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook colours.
 - [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) was used to edit all images.
 - [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.

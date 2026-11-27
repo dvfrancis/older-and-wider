@@ -17,13 +17,13 @@ Many visitors use a phone. Some visitors have weaker eyesight or less confidence
 
 ## Product Purpose
 
-The site is the home of the Older & Wider podcast on the web. It is a real podcast site. It is no longer a Code Institute assessment.
+The site is the home of the Older and Wider podcast on the web. It is a real podcast site. It is no longer a Code Institute assessment.
 
 The visitor actions, in order of priority:
 
 1. Listen to an episode.
 2. Book a ticket for a live show.
-3. Join the mailing list, send a message, or visit the shop and social pages.
+3. Visit the shop and the social pages. A mailing list may return later (issue #30).
 
 Success means that a visitor plays an episode or books a ticket with little effort.
 
@@ -41,13 +41,13 @@ Two well-known women talk honestly, and with humour, about life after 50. The si
 
 ## Capabilities and Constraints
 
-- Static site: hand-written HTML and one CSS file. No build tools and no framework. Bootstrap 5.3.3 loads from a CDN.
-- A small JavaScript file is approved for the live shows page (issue #29). No inline scripts and no inline styles (issue #24).
-- The forms have no backend. Do not add server-side handling without a discussion first.
+- Static site: hand-written HTML and one CSS file. No build tools and no framework.
+- Small JavaScript files are approved: one for the message board (Instagram click-to-load) and one for the live shows page (issue #29). The site must work without them. No inline scripts and no inline styles (issue #24).
+- The site has no forms. The contact page and the mailing-list form were removed. Do not add server-side handling without a discussion first.
 - Deploy: `build.sh` copies an allowlist of pages to a shared S3 bucket. A push to `main` deploys to production.
 - Keep `README.md`. Update it to show the new design. Do not delete it.
 - Undecided: the future of `TESTING.md` and of the assessment screenshots in `documentation/`.
-- Undecided: the backend for the contact and mailing-list forms. No issue exists for this yet.
+- Undecided: the backend for a future mailing list (issue #30).
 - To do: a sitemap (issue #19) and a robots.txt (issue #20).
 - Undecided: analytics and cookie consent (issues #21 and #22). Consent must come before analytics.
 
@@ -70,9 +70,13 @@ Absences. Do not invent these:
 
 - Testimonials or listener quotes.
 - Listener numbers, download figures, or awards other than the one below.
+- Permission from the hosts to use their photos and artwork. The site uses them without permission at present.
 
 Confirmed by the owner: the podcast was nominated for the British Podcast Awards, Listeners' Choice 2022. Use this wording only.
-- Permission from the hosts to use their photos and artwork. The site uses them without permission at present.
+
+Confirmed by the owner: the podcast has had over 7.5 million downloads, across 374 episodes. The source is the press release for the 2027 tour (PodcastingToday, November 2026). Do not use a higher figure without a new source.
+
+The message board quotes the opening words of six Instagram posts, with their dates. The source is each post on @olderandwiderpodcast, read on 27 November 2026. The first post is a video, so the page gives a summary of it, not a quote. Replace these six posts when they are out of date.
 
 ## Product Principles
 

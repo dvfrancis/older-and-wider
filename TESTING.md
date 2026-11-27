@@ -1,140 +1,218 @@
-[Return to Older & Wider README.md](https://github.com/dvfrancis/older-and-wider/blob/main/README.md)
+[Return to Older and Wider README.md](https://github.com/dvfrancis/older-and-wider/blob/main/README.md)
 
 # Testing
 
 ## Index
 
-1. [Code Validation](#code-validation)
+1. [Test Status After the Redesign](#test-status-after-the-redesign)
+2. [Code Validation](#code-validation)
     1. [HTML](#html)
-        1. [index.html](#indexhtml)
-        2. [mailing-list-completion.html](#mailing-list-completionhtml)
-        3. [about.html](#abouthtml)
-        4. [message-board.html](#message-boardhtml)
-        5. [contact.html](#contacthtml)
-        6. [contact-completion.html](#contact-completionhtml)
-        7. [404.html](#404html)
+        1. [HTML Results for the New Design](#html-results-for-the-new-design)
+        2. [Earlier HTML Results](#earlier-html-results)
     2. [CSS](#css)
-        1. [index.html](#indexhtml-1)
-        2. [mailing-list-completion.html](#mailing-list-completionhtml-1)
-        3. [about.html](#abouthtml-1)
-        4. [message-board.html](#message-boardhtml-1)
-        5. [contact.html](#contacthtml-1)
-        6. [contact-completion.html](#contact-completionhtml-1)
-        7. [404.html](#404html-1)
-2. [Manual Validation](#manual-validation)
-    1. [index.html](#indexhtml-2)
-    2. [mailing-list-completion.html](#mailing-list-completionhtml-2)
-    3. [about.html](#abouthtml-2)
-    4. [message-board.html](#message-boardhtml-2)
-    5. [contact.html](#contacthtml-2)
-    6. [contact-completion.html](#contact-completionhtml-2)
-    7. [404.html](#404html-2)
-3. [User Story Validation](#user-story-validation)
+        1. [main.css](#maincss)
+        2. [Validator Limits](#validator-limits)
+        3. [Earlier CSS Results](#earlier-css-results)
+3. [Manual Validation](#manual-validation)
+    1. [index.html](#indexhtml)
+    2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-1)
+    3. [about.html](#abouthtml)
+    4. [message-board.html](#message-boardhtml)
+    5. [contact.html (page removed)](#contacthtml-page-removed-1)
+    6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-1)
+    7. [404.html](#404html)
+4. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
     3. [Frequent Visitor Goals](#frequent-visitor-goals)
-4. [Browser Compatibility](#browser-compatibility)
+5. [Browser Compatibility](#browser-compatibility)
     1. [Google Chrome](#google-chrome)
     2. [Microsoft Edge](#microsoft-edge)
     3. [Firefox](#firefox)
     4. [Opera](#opera)
-5. [Accessibility](#accessibility)
-    1. [index.html](#404html-3)
-    2. [mailing-list-completion.html](#mailing-list-completionhtml-3)
+    5. [Safari (on an iPad)](#safari-on-an-ipad)
+    6. [Safari (on an iPhone)](#safari-on-an-iphone)
+6. [Accessibility](#accessibility)
+    1. [index.html](#indexhtml-1)
+    2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-2)
+    3. [about.html](#abouthtml-1)
+    4. [message-board.html](#message-boardhtml-1)
+    5. [contact.html (page removed)](#contacthtml-page-removed-2)
+    6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-2)
+    7. [404.html](#404html-1)
+7. [Responsiveness](#responsiveness)
+    1. [index.html](#indexhtml-2)
+    2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-3)
+    3. [about.html](#abouthtml-2)
+    4. [message-board.html](#message-boardhtml-2)
+    5. [contact.html (page removed)](#contacthtml-page-removed-3)
+    6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-3)
+    7. [404.html](#404html-2)
+8. [Performance](#performance)
+    1. [index.html](#indexhtml-3)
+    2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-4)
     3. [about.html](#abouthtml-3)
     4. [message-board.html](#message-boardhtml-3)
-    5. [contact.html](#contact-completionhtml-3)
-    6. [contact-completion.html](#contact-completionhtml-3)
+    5. [contact.html (page removed)](#contacthtml-page-removed-4)
+    6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-4)
     7. [404.html](#404html-3)
-6. [Responsiveness](#responsiveness)
-    1. [index.html](#indexhtml-4)
-    2. [mailing-list-completion.html](#mailing-list-completionhtml-4)
-    3. [about.html](#abouthtml-4)
-    4. [message-board.html](#message-boardhtml-4)
-    5. [contact.html](#contacthtml-4)
-    6. [contact-completion.html](#contact-completionhtml-4)
-    7. [404.html](#404html-4)
-7. [Performance](#performance)
-    1. [index.html](#indexhtml-5)
-    2. [mailing-list-completion.html](#mailing-list-completionhtml-5)
-    3. [about.html](#abouthtml-5)
-    4. [message-board.html](#message-boardhtml-5)
-    5. [contact.html](#contacthtml-5)
-    6. [contact-completion.html](#contact-completionhtml-5)
-    7. [404.html](#404html-5)
-8. [Bugs](#bugs)
-9. [Unfixed Bugs](#unfixed-bugs)
+9. [Bugs](#bugs)
+10. [Unfixed Bugs](#unfixed-bugs)
+
+## Test Status After the Redesign
+
+The site had a full redesign in November 2026. The redesign made these changes:
+
+- The site now has four pages: `index.html`, `about.html`, `message-board.html` and `404.html`.
+- The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html`.
+- One stylesheet, `assets/css/main.css`, replaced `styles.css` and Bootstrap.
+- One small script, `assets/js/message-board.js`, loads the Instagram posts when the visitor asks.
+- No page has an automatic redirect.
+
+The status of each test is:
+
+| TEST | STATUS |
+| --- | --- |
+| HTML validation | Done on the new design, 27 November 2026 |
+| CSS validation | Done on the new design, 27 November 2026 |
+| Manual validation | Earlier design only. To be re-run on the new design. |
+| User story validation | Earlier design only. To be re-run on the new design. |
+| Browser compatibility | Earlier design only. To be re-run on the new design. |
+| Accessibility (WAVE) | Earlier design only. To be re-run on the new design. |
+| Responsiveness | Earlier design only. To be re-run on the new design. |
+| Performance (Lighthouse) | Earlier design only. To be re-run on the new design. |
+
+**Lighthouse and browser tests: to be re-run on the new design.** This document does not give scores for the new design yet. The screenshots in the sections after Code Validation show the earlier design.
+
+This document keeps the results for the removed pages for the record. Each heading for a removed page has the label "(page removed)".
 
 ## Code Validation
 
 ### HTML
 
-Below are the results of HTML validation for each page, using the [W3C Markup Validation Service](https://validator.w3.org):
+#### HTML Results for the New Design
 
-#### index.html
+The [W3C Nu HTML Checker](https://validator.w3.org/nu/) checked the source file of each page on 27 November 2026. The checker version was 26.11.27.
+
+| PAGE | ERRORS | WARNINGS | RESULT |
+| --- | --- | --- | --- |
+| index.html | 0 | 0 | PASS |
+| about.html | 0 | 0 | PASS |
+| message-board.html | 0 | 0 | PASS |
+| 404.html | 0 | 0 | PASS |
+
+To repeat the test, run this command in the repository root for each page:
+
+```bash
+curl -s -H 'Content-Type: text/html; charset=utf-8' --data-binary @index.html 'https://validator.w3.org/nu/?out=gnu'
+```
+
+An empty output means that the checker found no errors and no warnings. Screenshots of the new results are to be added.
+
+#### Earlier HTML Results
+
+These results are for the earlier design. The [W3C Markup Validation Service](https://validator.w3.org) made them.
+
+##### index.html (earlier design)
 
 ![HTML validation of index.html](documentation/validation/html-index.webp)
 
-#### mailing-list-completion.html
+##### mailing-list-completion.html (page removed)
 
-![HTML validation of index.html](documentation/validation/html-mailing-list-completion.webp)
+![HTML validation of mailing-list-completion.html](documentation/validation/html-mailing-list-completion.webp)
 
-#### about.html
+##### about.html (earlier design)
 
-![HTML validation of index.html](documentation/validation/html-about.webp)
+![HTML validation of about.html](documentation/validation/html-about.webp)
 
-#### message-board.html
+##### message-board.html (earlier design)
 
-![HTML validation of index.html](documentation/validation/html-message-board.webp)
+![HTML validation of message-board.html](documentation/validation/html-message-board.webp)
 
-#### contact.html
+##### contact.html (page removed)
 
-![HTML validation of index.html](documentation/validation/html-contact.webp)
+![HTML validation of contact.html](documentation/validation/html-contact.webp)
 
-#### contact-completion.html
+##### contact-completion.html (page removed)
 
-![HTML validation of index.html](documentation/validation/html-contact-completion.webp)
+![HTML validation of contact-completion.html](documentation/validation/html-contact-completion.webp)
 
-#### 404.html
+##### 404.html (earlier design)
 
-![HTML validation of index.html](documentation/validation/html-404.webp)
+![HTML validation of 404.html](documentation/validation/html-404.webp)
 
 ### CSS
 
-Below are the results of CSS validation for each page, using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator). There were no warnings for the local CSS file, but warnings were generated for Bootstrap's CSS file, over which I have no control:
+#### main.css
+
+The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator) checked `assets/css/main.css` on 27 November 2026. The profile was "CSS level 3 + SVG", with all warnings shown.
+
+| FILE | ERRORS | WARNINGS |
+| --- | --- | --- |
+| main.css | 3 | 53 |
+
+The 3 errors are limits of the validator. They are not errors in the CSS. The section [Validator Limits](#validator-limits) gives the reason for each error.
+
+The 53 warnings are:
+
+- 50 warnings that the validator does not check CSS custom properties (variables). This is a limit of the validator.
+- 3 warnings that `-webkit-mask` (two times) and `-webkit-mask-composite` are vendor extensions. The stylesheet uses them as a fallback for older WebKit browsers. The standard `mask` properties follow them.
+
+To repeat the test, run this command in the repository root:
+
+```bash
+curl -s -F "file=@assets/css/main.css;type=text/css" -F output=text -F profile=css3svg -F warning=1 'https://jigsaw.w3.org/css-validator/validator'
+```
+
+Screenshots of the new results are to be added.
+
+#### Validator Limits
+
+The validator does not know three CSS features that `main.css` uses. Current versions of Chrome, Edge, Firefox and Safari support all three features.
+
+| LINE | SELECTOR | VALIDATOR MESSAGE | REASON |
+| --- | --- | --- | --- |
+| 147 | `.cover-inner` | Property "container-type" does not exist | `container-type` comes from the CSS container queries specification. The validator does not know this property. |
+| 153 | `.masthead` | Value Error: font-size. Parse Error | The value is `calc(100cqi / 6.45)`. `cqi` is a container query unit. The validator does not know this unit, so it cannot read the `calc()`. |
+| 986 | `.cover-photo` | Too many values or values are not recognized | The `mask` property has two `linear-gradient()` layers. The CSS Masking specification permits a comma-separated list of mask layers. The validator does not accept the list. |
+
+#### Earlier CSS Results
+
+These results are for the earlier design. They check `styles.css` and Bootstrap. The redesign deleted `styles.css` and removed Bootstrap. There were no warnings for the local CSS file, but warnings were generated for Bootstrap's CSS file, over which I had no control:
 
 ![Bootstrap CSS errors](documentation/validation/css-bootstrap-warnings.webp)
 
-#### index.html
+##### index.html (earlier CSS)
 
 ![CSS validation of index.html](documentation/validation/css-index.webp)
 
-#### mailing-list-completion.html
+##### mailing-list-completion.html (page removed, earlier CSS)
 
-![CSS validation of index.html](documentation/validation/css-mailing-list-completion.webp)
+![CSS validation of mailing-list-completion.html](documentation/validation/css-mailing-list-completion.webp)
 
-#### about.html
+##### about.html (earlier CSS)
 
-![CSS validation of index.html](documentation/validation/css-about.webp)
+![CSS validation of about.html](documentation/validation/css-about.webp)
 
-#### message-board.html
+##### message-board.html (earlier CSS)
 
-![CSS validation of index.html](documentation/validation/css-message-board.webp)
+![CSS validation of message-board.html](documentation/validation/css-message-board.webp)
 
-#### contact.html
+##### contact.html (page removed, earlier CSS)
 
-![CSS validation of index.html](documentation/validation/css-contact.webp)
+![CSS validation of contact.html](documentation/validation/css-contact.webp)
 
-#### contact-completion.html
+##### contact-completion.html (page removed, earlier CSS)
 
-![CSS validation of index.html](documentation/validation/css-contact-completion.webp)
+![CSS validation of contact-completion.html](documentation/validation/css-contact-completion.webp)
 
-#### 404.html
+##### 404.html (earlier CSS)
 
-![CSS validation of index.html](documentation/validation/css-404.webp)
-
+![CSS validation of 404.html](documentation/validation/css-404.webp)
 
 ## Manual Validation
+
+These results are for the earlier design. They include the "Contact" link, the image carousels and the forms. The redesign removed these items. To be re-run on the new design.
 
 Here are the results of a manual test of all links, and any form fields, for each page:
 
@@ -163,7 +241,9 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
-### mailing-list-completion.html
+### mailing-list-completion.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
@@ -222,7 +302,9 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
-### contact.html
+### contact.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
@@ -245,7 +327,9 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
-### contact-completion.html
+### contact-completion.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
@@ -285,6 +369,8 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
 ## User Story Validation
+
+These results are for the earlier design. Some section names in the tables are from the earlier design. To be re-run on the new design.
 
 ### First Time Visitor Goals
 
@@ -336,7 +422,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
 | About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS |
-| Home page | Navigate to the home page, scroll down to the section called "Mailing List", enter a valid email address, and click the button titled 'Send' to be included on the podcast's mailing list | User is added to the mailing list, and will receive further information via email | User is added to the mailing list, and will receive further information via email | PASS | 
+| Home page | Navigate to the home page, scroll down to the section called "Mailing List", enter a valid email address, and click the button titled 'Send' to be included on the podcast's mailing list | User is added to the mailing list, and will receive further information via email | User is added to the mailing list, and will receive further information via email | REMOVED (the redesign removed the mailing list form) | 
 
 ![Returning visitor goal 1](documentation/validation/returning-visitor-goal-1a.webp)
 ![Returning visitor goal 1](documentation/validation/returning-visitor-goal-1b.webp)
@@ -371,7 +457,9 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Contact page | Navigate to the contact page, and complete the contact form to send a message to the podcast | A message is sent, and the user is redirected to the contact completion page | A message is sent, and the user is redirected to the contact completion page | PASS | 
+| Contact page | Navigate to the contact page, and complete the contact form to send a message to the podcast | A message is sent, and the user is redirected to the contact completion page | A message is sent, and the user is redirected to the contact completion page | REMOVED (the redesign removed the contact page) | 
+
+The message board page now answers this goal. It links to the Instagram and Facebook pages of the podcast. To be re-run on the new design.
 
 ![Frequent visitor goal 1](documentation/validation/frequent-visitor-goals-1.webp)
 
@@ -392,6 +480,8 @@ Here are the results of a manual test of all links, and any form fields, for eac
 ![Frequent visitor goal 3](documentation/validation/frequent-visitor-goals-3.webp)
 
 ## Browser Compatibility
+
+**Lighthouse and browser tests: to be re-run on the new design.** The screenshots below show the earlier design.
 
 The website has been successfully tested in the following browsers (desktop screenshots used to allow for a larger preview, except for Safari as there is no Windows version of that browser):
 
@@ -421,13 +511,17 @@ The website has been successfully tested in the following browsers (desktop scre
 
 ## Accessibility
 
+These results are for the earlier design. To be re-run on the new design. The redesign removed the auto-redirect, so the redirect errors below do not apply to the new `404.html`.
+
 Pages were tested for accessibility using the [Wave Accessibility Evaluation Tool](https://wave.webaim.org):
 
 ### index.html
 
 ![WAVE report for index.html](documentation/validation/wave-report-index.webp)
 
-### mailing-list-completion.html
+### mailing-list-completion.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 The error being shown here is because of the auto-redirect setup on the page, which is part of the design:
 
@@ -435,17 +529,21 @@ The error being shown here is because of the auto-redirect setup on the page, wh
 
 ### about.html
 
-![WAVE report for index.html](documentation/validation/wave-report-about.webp)
+![WAVE report for about.html](documentation/validation/wave-report-about.webp)
 
 ### message-board.html
 
-![WAVE report for about.html](documentation/validation/wave-report-message-board.webp)
+![WAVE report for message-board.html](documentation/validation/wave-report-message-board.webp)
 
-### contact.html
+### contact.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 ![WAVE report for contact.html](documentation/validation/wave-report-contact.webp)
 
-### contact-completion.html
+### contact-completion.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 The error being shown here is because of the auto-redirect setup on the page, which is part of the design:
 
@@ -458,6 +556,8 @@ The error being shown here is because of the auto-redirect setup on the page, wh
 ![WAVE report for 404.html](documentation/validation/wave-report-404.webp)
 
 ## Responsiveness
+
+These results are for the earlier design. To be re-run on the new design.
 
 Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 360px x 640px), tablet size (Apple iPad Retina - 768px 1024px), and desktop size (1400px x 700px), using the [Responsive Web Design Checker](https://responsivedesignchecker.com/):
 
@@ -475,7 +575,9 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 
 ![Responsiveness report for index.html](documentation/validation/responsive-index-desktop.webp)
 
-### mailing-list-completion.html
+### mailing-list-completion.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 #### Mobile
 
@@ -518,7 +620,9 @@ For some reason, the Instagram widget does not load for this preview, and the so
 
 ![Responsiveness report for message-board.html](documentation/validation/responsive-message-board-desktop.webp)
 
-### contact.html
+### contact.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 #### Mobile
 
@@ -532,7 +636,9 @@ For some reason, the Instagram widget does not load for this preview, and the so
 
 ![Responsiveness report for contact.html](documentation/validation/responsive-contact-desktop.webp)
 
-### contact-completion.html
+### contact-completion.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 #### Mobile
 
@@ -562,6 +668,8 @@ For some reason, the Instagram widget does not load for this preview, and the so
 
 ## Performance
 
+**Lighthouse and browser tests: to be re-run on the new design.** The scores below are for the earlier design. The notes about the redirect do not apply to the new `404.html`, because the redesign removed the redirect.
+
 Each page was audited using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/), for both mobile and desktop:
 
 ### index.html
@@ -574,7 +682,9 @@ Each page was audited using [Google Lighthouse](https://developer.chrome.com/doc
 
 ![Desktop performance report for index.html](documentation/validation/performance-index-desktop.webp)
 
-### mailing-list-completion.html
+### mailing-list-completion.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 The lower score for accessibility here is caused by two things - the presence of the redirect (which is part of the site design), and because FontAwesome automatically adds the ``aria-hidden="true"`` class to all of its icons. This cannot be stopped and is conflicting with my own ARIA label on each social media icon. 
 
@@ -608,7 +718,9 @@ The lower score for performance here is because, among other things, the images 
 
 ![Desktop performance report for message-board.html](documentation/validation/performance-message-board-desktop.webp)
 
-### contact.html
+### contact.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 #### Mobile
 
@@ -618,7 +730,9 @@ The lower score for performance here is because, among other things, the images 
 
 ![Desktop performance report for contact.html](documentation/validation/performance-contact-desktop.webp)
 
-### contact-completion.html
+### contact-completion.html (page removed)
+
+The redesign removed this page. These results are kept for the record.
 
 The lower score for accessibility here is caused by two things - the presence of the redirect (which is part of the site design), and because FontAwesome automatically adds the ``aria-hidden="true"`` class to all of its icons. This cannot be stopped and is conflicting with my own ARIA label on each social media icon. 
 
@@ -643,6 +757,8 @@ The lower score for accessibility here is caused by two things - the presence of
 ![Desktop performance report for 404.html](documentation/validation/performance-404-desktop.webp)
 
 ## Bugs
+
+These bugs were found in the earlier design. Some of them relate to Bootstrap or to the contact page, which the redesign removed.
 
 Here is a list of bugs encountered while building this website. Images shown illustrate the original problem:
 

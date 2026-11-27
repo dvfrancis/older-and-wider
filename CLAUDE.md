@@ -4,9 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static marketing site for the Older & Wider podcast (a Code Institute project). Hand-written HTML and one CSS file — no framework, no package manager, no JavaScript of its own, no test suite. Bootstrap 5.3.3, Font Awesome, and Google Fonts all load from CDNs.
+A static marketing site for the Older and Wider podcast (first a Code Institute project). The site has hand-written HTML, one CSS file and one small script. It has no framework, no package manager and no test suite. Font Awesome and Google Fonts load from CDNs. The pages do not use Bootstrap.
 
-Source pages live at the repo root: `index.html`, `about.html`, `contact.html`, `contact-completion.html`, `mailing-list-completion.html`, `message-board.html`, `404.html`.
+Source pages live at the repo root: `index.html`, `about.html`, `message-board.html`, `404.html`. The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html`.
+
+**Design.** `DESIGN.md` holds the design system: colours, fonts, components and rules. `PRODUCT.md` holds the product record. Read both before you change the look or the copy. The show name is "Older and Wider". Do not use an ampersand in new text. `design-options/` holds five earlier design concepts for reference. `build.sh` does not deploy it.
 
 ## Commands
 
@@ -38,19 +40,21 @@ Three deliberate details in `build.sh` that are easy to break:
 
 Routine deploys should go through CI — push to `main` and let the workflow run. If you do deploy by hand, note that this machine's default AWS profile is a read-only user. `build.sh`'s safety check only reads (`aws s3 ls`), so it passes, and the run then fails partway through the first `aws s3 sync`. A local `--deploy` needs a write-capable profile (`admin` or `poweruser` are configured), e.g. `AWS_PROFILE=admin ./build.sh --deploy`.
 
-**Gotcha: adding a new page is two steps.** Creating `foo.html` at the root is not enough — it must also be added to the `PAGES` array in `build.sh` or it will never reach the bucket. The allowlist is intentional: it stops stray root files silently going live.
+**Gotcha: adding a new page is two steps.** Creating `foo.html` at the root is not enough — it must also be added to the `PAGES` array in `build.sh` or it will never reach the bucket. The allowlist is intentional: it stops stray root files silently going live. `PAGES` is now `(index.html about.html message-board.html 404.html)`. `DIRS` is `(assets)`, so `design-options/` and `documentation/` do not deploy.
 
 ## Structure and conventions
 
-**No templating.** The header, nav and footer are duplicated in every page — the footer is byte-identical across all seven, and the nav differs only in which link carries `class="nav-link selected"` and `aria-current="page"`. A nav or footer change means editing all seven files by hand.
+**No templating.** Each of the four pages has its own copy of the header, nav and footer. The footer is byte-identical in all four pages. The nav has three links: Home, About and Message Board. The link to the current page carries `aria-current="page"`. `404.html` uses root-relative paths (`/index.html`, `/assets/...`), so it works at any missing address. A nav or footer change means you must edit all four files by hand.
 
-**The three dead-end pages self-redirect.** `contact-completion.html`, `mailing-list-completion.html` and `404.html` each carry `<meta http-equiv="refresh" content="30; url=index.html">`. This is intentional site design; `TESTING.md` notes it as the known cause of their lower Lighthouse accessibility scores.
+**No page redirects.** No page has a `<meta http-equiv="refresh">`. The earlier `404.html` and the two completion pages redirected after 30 seconds. The redesign removed this behaviour.
 
-**Responsive images.** Every photo has pre-generated fixed-width variants alongside the original (`home-page-carousel-1_256.webp`, `_800.webp`, `_1190.webp`, …) wired up via `srcset` with a `sizes` expression. Two `sizes` recipes are in use — one for the index carousel, one for the about-page cards. Adding an image means generating its width variants too, not just dropping in a single file.
+**Responsive images.** Every photo has pre-generated fixed-width variants next to the original (for example `home-cover-merch_256.webp`, `_480.webp`, `_800.webp`, `_960.webp`). Each `img` uses `srcset` with a `sizes` expression that matches its layout slot. If you add an image, also make its width variants.
 
-**Forms have no backend.** The contact and mailing-list forms are `method="GET"` pointing at a static `*-completion.html` page. Do not assume a server or add server-side handling without discussing it first.
+**No forms.** The redesign removed the contact form and the mailing-list form. Issue #30 covers a future mailing-list backend. Do not add a server or server-side handling without a discussion first.
 
-**CSS** is a single 373-line `assets/css/styles.css`: a small reset, element defaults, then colour utility classes (`.teal` `#007696`, `.raspberry` `#a30041`), then six `@media` blocks matching Bootstrap's breakpoints. Colours are literal hex values, not custom properties.
+**CSS** is one stylesheet, `assets/css/main.css` (about 2,000 lines). `styles.css` was deleted. `:root` defines custom properties for the colours, fonts, gutter and shadows. Use these properties for colour. The rules use literal `#000` and `#fff` only in mask and halftone gradients. The main colours are pink `--pink` `#F492BF`, red `--red` `#A60201` and magenta `--magenta` `#E8046C`. The fonts are Anton, Barlow Condensed and Barlow. The breakpoints are `48rem` and `64rem`. The file also has `prefers-reduced-motion` and `prefers-contrast` blocks. The masthead uses a container query unit (`cqi`).
+
+**JavaScript.** `assets/js/message-board.js` is the only script. Only `message-board.html` loads it. It adds Instagram's `embed.js` after the visitor presses "Show the posts here", because `embed.js` sets cookies. Every page works without JavaScript. Do not add inline scripts or inline styles (issue #24).
 
 ## Documentation is part of the deliverable
 

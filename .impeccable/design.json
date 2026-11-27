@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-27T18:09:57+00:00",
+  "generatedAt": "2026-11-27T18:50:22+00:00",
   "title": "Design System: Older and Wider",
   "extensions": {
     "colorMeta": {
@@ -123,7 +123,8 @@
           "#AB99A1",
           "#D2BDC7",
           "#FFE7F2"
-        ]
+        ],
+        "note": "In the CSS this is --pink-soft. Also the pink letter post stock."
       },
       "studio-grey": {
         "role": "neutral",
@@ -149,7 +150,7 @@
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section titles. 4rem, then 5rem from 48rem, then 6rem from 64rem."
+        "purpose": "Section titles, feature titles, the Message Board title and the 404 title. 4rem, then 5rem from 48rem, then 6rem from 64rem. Feature titles start at 3.25rem."
       },
       "title": {
         "displayName": "Title",
@@ -169,11 +170,11 @@
       },
       "body-large": {
         "displayName": "Body Large",
-        "purpose": "The letter from the hosts."
+        "purpose": "The letter from the hosts, the Message Board lead and the 404 lead."
       },
       "body-strong": {
         "displayName": "Body Strong",
-        "purpose": "Text links, award panel."
+        "purpose": "Text links, award panel, the standfirst (at 1.5rem to 2.25rem)."
       }
     },
     "contrast": [
@@ -200,6 +201,16 @@
       {
         "pair": "masthead-red on ticket-pink",
         "ratio": 6.65,
+        "use": "all sizes"
+      },
+      {
+        "pair": "ink on ticket-pink",
+        "ratio": 14.49,
+        "use": "all sizes"
+      },
+      {
+        "pair": "paper-white on ink",
+        "ratio": 17.4,
         "use": "all sizes"
       },
       {
@@ -248,6 +259,21 @@
         "name": "ticket",
         "value": "drop-shadow(0 0.625rem 0.875rem rgba(120, 0, 40, 0.24))",
         "purpose": "Bingo ticket paper; follows the scalloped edges."
+      },
+      {
+        "name": "print",
+        "value": "0 0.625rem 1.25rem -0.375rem rgba(26, 26, 26, 0.35)",
+        "purpose": "Second photos on the About page and the Message Board print."
+      },
+      {
+        "name": "post",
+        "value": "0 0.625rem 1.25rem -0.375rem rgba(26, 26, 26, 0.3)",
+        "purpose": "Posts on the wall at rest. Posts use the lift shadow on hover and focus."
+      },
+      {
+        "name": "pin",
+        "value": "0 0.1875rem 0.25rem rgba(26, 26, 26, 0.35)",
+        "purpose": "The yellow pin on each post."
       }
     ],
     "motion": [
@@ -259,7 +285,7 @@
       {
         "name": "lift",
         "value": "transform 0.45s, box-shadow 0.45s; translateY(-0.375rem) rotate(-0.6deg)",
-        "purpose": "Coverline lift on hover and focus. Off under prefers-reduced-motion."
+        "purpose": "Coverline, follow slab, load button and post lift on hover and focus. Off under prefers-reduced-motion."
       },
       {
         "name": "dab",
@@ -272,7 +298,13 @@
       "lift": 2.45,
       "ink": 0.26,
       "method": "Grey copy of the photo multiplied with a radial dot pattern, thresholded with contrast(24), multiplied over the colour photo.",
-      "removedUnder": "prefers-contrast: more"
+      "removedUnder": "prefers-contrast: more",
+      "appliesTo": [
+        "Cover photo and cover panel (index.html)",
+        ".photo-frame on the three large About photos",
+        ".board-print-photo on the Message Board",
+        ".err-photo on the 404 page"
+      ]
     },
     "breakpoints": [
       {
@@ -283,15 +315,45 @@
         "name": "desktop",
         "value": "64rem"
       }
-    ]
+    ],
+    "pages": {
+      "live": [
+        {
+          "file": "index.html",
+          "role": "The cover and the contents pages."
+        },
+        {
+          "file": "about.html",
+          "role": "The feature spread."
+        },
+        {
+          "file": "message-board.html",
+          "role": "The readers' page."
+        },
+        {
+          "file": "404.html",
+          "role": "The error in print. noindex. No meta refresh."
+        }
+      ],
+      "nav": [
+        "Home",
+        "About",
+        "Message Board"
+      ],
+      "deleted": [
+        "contact.html",
+        "contact-completion.html",
+        "mailing-list-completion.html"
+      ]
+    }
   },
   "components": [
     {
       "name": "Nav Strip",
       "kind": "nav",
       "refersTo": "nav-strip-link",
-      "description": "Slim red strip above the masthead. The current page has a yellow underline.",
-      "html": "<nav class=\"ds-strip\" aria-label=\"Main\"><a href=\"#\" aria-current=\"page\">Home</a><a href=\"#\">About</a><a href=\"#\">Contact</a><a href=\"#\">Message Board</a></nav>",
+      "description": "Slim red strip above the masthead. Links: Home, About, Message Board. The current page has a yellow underline.",
+      "html": "<nav class=\"ds-strip\" aria-label=\"Main\"><a href=\"#\" aria-current=\"page\">Home</a><a href=\"#\">About</a><a href=\"#\">Message Board</a></nav>",
       "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:0 0.25rem;background:var(--red);color:var(--white);} .ds-strip a{display:flex;align-items:center;min-height:2.75rem;padding:0 0.625rem;color:inherit;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.0625rem;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;text-underline-offset:0.2em;} .ds-strip a:hover{text-decoration:underline;} .ds-strip a[aria-current=page]{text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:0.15em;} .ds-strip a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;}"
     },
     {
@@ -349,18 +411,100 @@
       "description": "Last called episode: red Anton number, subhead title, date and time.",
       "html": "<a class=\"ds-ep\" href=\"#\"><span class=\"ds-no\">373</span><span class=\"ds-title\">The one with the new Bond and the new thumbnail</span><span class=\"ds-meta\">20 Nov 2026, 51:57</span></a>",
       "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-ep{display:grid;grid-template-columns:4.25rem 1fr;gap:0.125rem 1rem;padding:1rem;background:var(--white);color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.25);font-family:Barlow,sans-serif;font-size:1.125rem;} .ds-no{grid-row:span 2;font-family:Anton,'Barlow Condensed',sans-serif;font-size:2.5rem;line-height:1;color:var(--red);} .ds-title{font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.375rem;line-height:1.2;text-transform:uppercase;} .ds-meta{font-variant-numeric:tabular-nums;} .ds-ep:hover .ds-title{text-decoration:underline;text-decoration-thickness:2px;} .ds-ep:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}"
+    },
+    {
+      "name": "Feature Spread",
+      "kind": "custom",
+      "refersTo": "feature-title",
+      "description": "About page feature: red Anton title over a 3px ink rule, a standfirst, then a halftone photo beside a body column with a drop cap.",
+      "html": "<article class=\"ds-feature\"><h2 class=\"ds-ftitle\">Who is Judith Holder?</h2><p class=\"ds-stand\">BAFTA-nominated twice, a best-selling author, and the woman who had the idea for this podcast.</p><div class=\"ds-fgrid\"><figure class=\"ds-fphoto\"><span class=\"ds-img\"></span><figcaption>Judith's rescued hair-do</figcaption></figure><div class=\"ds-fbody\"><p class=\"ds-opener\">Before Judith started presenting Older and Wider with Jenny, she had a successful career as a broadcaster, producer and writer.</p><p>She created \"Grumpy Old Women\".</p></div></div></article>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-feature{background:var(--white);color:var(--ink);padding:1.5rem;font-family:Barlow,sans-serif;font-size:1.125rem;line-height:1.55;} .ds-ftitle{margin:0;padding-bottom:0.5rem;border-bottom:3px solid var(--ink);color:var(--red);font-family:Anton,'Barlow Condensed',sans-serif;font-weight:400;font-size:3.25rem;line-height:0.95;text-transform:uppercase;text-wrap:balance;} .ds-stand{max-width:32ch;margin:1.25rem 0 2rem;font-weight:600;font-size:1.5rem;line-height:1.25;text-wrap:balance;} .ds-fgrid{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:2rem;align-items:start;} .ds-fphoto{margin:0;} .ds-img{display:block;aspect-ratio:4/5;background:linear-gradient(135deg,#5E5D60,#9F9EA1);} .ds-fphoto figcaption{margin-top:0.5rem;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.0625rem;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;} .ds-fbody p{margin:0 0 1rem;} .ds-opener::first-letter{float:left;margin:0.1em 0.12em 0 0;font-family:Anton,'Barlow Condensed',sans-serif;font-size:4.25em;line-height:0.8;color:var(--red);}"
+    },
+    {
+      "name": "Second Print",
+      "kind": "custom",
+      "refersTo": "second-print",
+      "description": "A loose photo in a host profile: a white print with the print shadow, turned 1.5deg.",
+      "html": "<div class=\"ds-pinkband\"><figure class=\"ds-print\"><span class=\"ds-img\"></span><figcaption>Jenny with her Perrier Award, in 1995</figcaption></figure></div>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-pinkband{background:var(--pink);padding:2rem;} .ds-print{width:min(100%,20rem);margin:0;padding:0.625rem 0.625rem 0.75rem;background:var(--white);box-shadow:0 0.625rem 1.25rem -0.375rem rgba(26,26,26,0.35);transform:rotate(-1.5deg);} .ds-img{display:block;aspect-ratio:1;background:linear-gradient(135deg,#5E5D60,#9F9EA1);} .ds-print figcaption{margin-top:0.5rem;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.0625rem;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);}"
+    },
+    {
+      "name": "Contact Sheet",
+      "kind": "custom",
+      "refersTo": "contact-sheet",
+      "description": "The rest of the shoot on a strip of film: ink ground, white sprocket holes, square frames with label captions.",
+      "html": "<div class=\"ds-sheet\"><h3 class=\"ds-stitle\">More of Judith</h3><ul class=\"ds-frames\"><li><span class=\"ds-img\"></span><span class=\"ds-cap\">Judith raises a toast</span></li><li><span class=\"ds-img\"></span><span class=\"ds-cap\">Judith relaxes on holiday</span></li><li><span class=\"ds-img\"></span><span class=\"ds-cap\">Judith and Mike at a wedding</span></li><li><span class=\"ds-img\"></span><span class=\"ds-cap\">Judith on a river</span></li></ul></div>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-sheet{padding:1.5rem 1rem 1.75rem;background:linear-gradient(90deg,rgba(255,255,255,0.5) 0 0.625rem,transparent 0.625rem) 0.5rem 0.5rem/1.5rem 0.375rem repeat-x,linear-gradient(90deg,rgba(255,255,255,0.5) 0 0.625rem,transparent 0.625rem) 0.5rem calc(100% - 0.5rem)/1.5rem 0.375rem repeat-x,var(--ink);color:var(--white);} .ds-stitle{margin:0 0 0.75rem;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.25rem;line-height:1.1;letter-spacing:0.08em;text-transform:uppercase;} .ds-frames{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem 0.5rem;margin:0;padding:0;list-style:none;} .ds-img{display:block;aspect-ratio:1;background:linear-gradient(135deg,#5E5D60,#9F9EA1);} .ds-cap{display:block;margin-top:0.375rem;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1rem;line-height:1.2;letter-spacing:0.03em;text-transform:uppercase;}"
+    },
+    {
+      "name": "Hear Them Band",
+      "kind": "custom",
+      "refersTo": "hear-band",
+      "description": "Red band at the end of the About page: a white Anton title, a white slab to play the latest episode, and a link to Acast.",
+      "html": "<section class=\"ds-hear\"><h2 class=\"ds-htitle\">Hear them for yourself</h2><div class=\"ds-hlinks\"><a class=\"ds-slab ds-lift\" href=\"#\"><span class=\"ds-disc\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M4 2.5v11l9-5.5z\" fill=\"currentColor\"/></svg></span><span class=\"ds-big\">Play the latest episode</span></a><a class=\"ds-all\" href=\"#\">Every episode on Acast</a></div></section>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-lift{transition:transform 0.45s var(--ease-out),box-shadow 0.45s var(--ease-out);} .ds-lift:hover,.ds-lift:focus-visible{transform:translateY(-0.375rem) rotate(-0.6deg);box-shadow:var(--lift-shadow);} @media (prefers-reduced-motion:reduce){.ds-lift{transition:none;}.ds-lift:hover,.ds-lift:focus-visible{transform:none;}} .ds-hear{display:grid;gap:1.5rem;padding:2rem 1.5rem;background:var(--red);color:var(--white);} .ds-hear :focus-visible{outline:3px solid var(--yellow);outline-offset:3px;} .ds-htitle{margin:0;font-family:Anton,'Barlow Condensed',sans-serif;font-weight:400;font-size:3.5rem;line-height:0.95;text-transform:uppercase;text-wrap:balance;} .ds-hlinks{display:grid;justify-items:start;gap:1rem;} .ds-slab{display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;background:var(--white);color:var(--red);text-decoration:none;text-transform:uppercase;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;box-shadow:var(--rest-shadow);} .ds-big{font-size:1.75rem;line-height:1.05;} .ds-slab:hover .ds-big{text-decoration:underline;text-decoration-thickness:0.06em;} .ds-disc{display:grid;place-items:center;flex:none;width:3rem;height:3rem;border-radius:50%;background:var(--yellow);color:var(--ink);} .ds-all{display:inline-flex;align-items:center;min-height:2.75rem;color:var(--white);font-family:Barlow,sans-serif;font-weight:600;font-size:1.125rem;}"
+    },
+    {
+      "name": "Follow Slabs",
+      "kind": "card",
+      "refersTo": "board-slab",
+      "description": "Message Board intro: a red Instagram slab with a yellow icon disc and the handle, and a white Facebook slab.",
+      "html": "<div class=\"ds-follow\"><a class=\"ds-bslab ds-lift\" href=\"#\"><span class=\"ds-icon\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"17.5\" cy=\"6.5\" r=\"1.2\" fill=\"currentColor\"/></svg></span><span class=\"ds-ltitle\">Follow us on Instagram</span><span class=\"ds-handle\">@olderandwiderpodcast</span></a><a class=\"ds-wslab ds-lift\" href=\"#\"><span class=\"ds-big\">Find us on Facebook</span></a></div>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-lift{transition:transform 0.45s var(--ease-out),box-shadow 0.45s var(--ease-out);} .ds-lift:hover,.ds-lift:focus-visible{transform:translateY(-0.375rem) rotate(-0.6deg);box-shadow:var(--lift-shadow);} @media (prefers-reduced-motion:reduce){.ds-lift{transition:none;}.ds-lift:hover,.ds-lift:focus-visible{transform:none;}} .ds-follow{display:flex;flex-direction:column;gap:0.75rem;max-width:36rem;padding:1.5rem;background:var(--pink);} .ds-bslab,.ds-wslab{text-decoration:none;text-transform:uppercase;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;line-height:1.05;box-shadow:var(--rest-shadow);} .ds-bslab:focus-visible,.ds-wslab:focus-visible{outline:3px solid var(--ink);outline-offset:3px;} .ds-bslab{display:grid;gap:0.5rem;padding:1.25rem 1.25rem 1.375rem;background:var(--red);color:var(--white);} .ds-icon{display:grid;place-items:center;width:3.5rem;height:3.5rem;border-radius:50%;background:var(--yellow);color:var(--ink);} .ds-ltitle{font-family:Anton,'Barlow Condensed',sans-serif;font-weight:400;font-size:2.5rem;line-height:1.08;} .ds-handle{font-size:1.375rem;letter-spacing:0.04em;text-transform:none;overflow-wrap:anywhere;} .ds-bslab:hover .ds-ltitle,.ds-wslab:hover .ds-big{text-decoration:underline;text-decoration-thickness:0.06em;} .ds-wslab{display:block;padding:0.75rem 1rem;background:var(--white);color:var(--red);} .ds-big{font-size:1.625rem;}"
+    },
+    {
+      "name": "Board Print With Hello Roundel",
+      "kind": "custom",
+      "refersTo": "board-print",
+      "description": "A white halftone print of the hosts, turned 1.5deg, with a yellow Hello roundel at the top left corner. The roundel is not a link.",
+      "html": "<div class=\"ds-pinkband\"><figure class=\"ds-bprint\"><span class=\"ds-img\"></span><p class=\"ds-hello\"><span class=\"ds-htop\">Hello</span><span class=\"ds-hbot\">OWLs, come and say hi</span></p></figure></div>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-pinkband{background:var(--pink);padding:3.5rem 2rem 2rem;} .ds-bprint{position:relative;width:min(100%,34rem);margin:0 auto;padding:0.625rem 0.625rem 0.75rem;background:var(--white);box-shadow:0 0.625rem 1.25rem -0.375rem rgba(26,26,26,0.35);transform:rotate(1.5deg);} .ds-img{display:block;aspect-ratio:960/641;background:linear-gradient(135deg,#5E5D60,#9F9EA1);} .ds-hello{position:absolute;top:-2.75rem;left:-0.5rem;display:grid;place-content:center;width:6.5rem;height:6.5rem;margin:0;border-radius:50%;background:var(--yellow);color:var(--ink);text-align:center;text-transform:uppercase;box-shadow:var(--rest-shadow);transform:rotate(-8deg);} .ds-htop{font-family:Anton,'Barlow Condensed',sans-serif;font-size:1.5rem;line-height:1;} .ds-hbot{display:block;max-width:5rem;margin:0.25rem auto 0;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1rem;line-height:1.05;}"
+    },
+    {
+      "name": "Click To Load Consent",
+      "kind": "button",
+      "refersTo": "board-load",
+      "description": "A red button that loads Instagram only when pressed, with a cookie note under it. Nothing loads from Instagram before the press.",
+      "html": "<div class=\"ds-consent\"><button class=\"ds-load ds-lift\" type=\"button\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"17.5\" cy=\"6.5\" r=\"1.2\" fill=\"currentColor\"/></svg>Show the posts here</button><p class=\"ds-note\">Loading them lets Instagram set cookies on your device.</p></div>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-lift{transition:transform 0.45s var(--ease-out),box-shadow 0.45s var(--ease-out);} .ds-lift:hover,.ds-lift:focus-visible{transform:translateY(-0.375rem) rotate(-0.6deg);box-shadow:var(--lift-shadow);} @media (prefers-reduced-motion:reduce){.ds-lift{transition:none;}.ds-lift:hover,.ds-lift:focus-visible{transform:none;}} .ds-consent{display:grid;justify-items:start;gap:0.75rem;padding:1.5rem;background:var(--white);color:var(--ink);font-family:Barlow,sans-serif;font-size:1.125rem;line-height:1.55;} .ds-load{display:inline-flex;align-items:center;gap:0.75rem;min-height:3.25rem;padding:0.75rem 1.25rem;border:0;border-radius:0;background:var(--red);color:var(--white);font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.5rem;line-height:1.05;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;box-shadow:var(--rest-shadow);} .ds-load:hover,.ds-load:focus-visible{text-decoration:underline;text-decoration-thickness:0.06em;} .ds-load:focus-visible{outline:3px solid var(--ink);outline-offset:3px;} .ds-load:disabled{cursor:progress;} .ds-note{max-width:36rem;margin:0;}"
+    },
+    {
+      "name": "Pinned Post Wall",
+      "kind": "card",
+      "refersTo": "post-letter",
+      "description": "Posts as pinned paper in three stocks: pink letter, red slab, white print. Each has a yellow pin and its own tilt and width.",
+      "html": "<ul class=\"ds-wall\"><li class=\"ds-t1\"><a class=\"ds-post ds-red\" href=\"#\"><span class=\"ds-meta\">Video<time>26 Nov 2026</time></span><span class=\"ds-text\">The new live show is announced</span><span class=\"ds-link\">See this post on Instagram</span></a></li><li class=\"ds-t2\"><a class=\"ds-post ds-white\" href=\"#\"><span class=\"ds-meta\">Photo<time>23 Nov 2026</time></span><span class=\"ds-text\">An Everyman cinema one Monday morning</span><span class=\"ds-link\">See this post on Instagram</span></a></li><li class=\"ds-t3\"><a class=\"ds-post ds-letter\" href=\"#\"><span class=\"ds-meta\">Photo set<time>22 Nov 2026</time></span><span class=\"ds-text\">Me and Geof outside 19 Rossall Road</span><span class=\"ds-link\">See this post on Instagram</span></a></li></ul>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;align-items:start;margin:0;padding:2rem 1.5rem;list-style:none;background:var(--white);} .ds-wall>li{transform:rotate(var(--tilt,0deg));} .ds-t1{--tilt:-1deg;} .ds-t2{--tilt:1.2deg;width:88%;justify-self:end;} .ds-t3{--tilt:-0.6deg;width:94%;} .ds-post{position:relative;display:grid;gap:0.75rem;min-height:2.75rem;padding:1.5rem 1.25rem 1.25rem;background:var(--pink-soft);color:var(--red);text-decoration:none;box-shadow:0 0.625rem 1.25rem -0.375rem rgba(26,26,26,0.3);transition:transform 0.45s var(--ease-out),box-shadow 0.45s var(--ease-out);} .ds-post::before{content:'';position:absolute;top:-0.5rem;left:50%;width:1.125rem;height:1.125rem;margin-left:-0.5625rem;border-radius:50%;background:var(--yellow);box-shadow:0 0.1875rem 0.25rem rgba(26,26,26,0.35);} .ds-post:hover,.ds-post:focus-visible{transform:translateY(-0.375rem) rotate(-0.6deg);box-shadow:var(--lift-shadow);} .ds-post:focus-visible{outline:3px solid var(--ink);outline-offset:3px;} .ds-red{background:var(--red);color:var(--white);} .ds-white{background:var(--white);border:1px solid rgba(26,26,26,0.18);} .ds-meta{display:flex;gap:0.75rem;padding-bottom:0.5rem;border-bottom:1px solid currentColor;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.0625rem;letter-spacing:0.06em;text-transform:uppercase;font-variant-numeric:tabular-nums;} .ds-meta time{margin-left:auto;} .ds-text{font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.75rem;line-height:1.08;text-transform:uppercase;text-wrap:balance;} .ds-white .ds-text,.ds-letter .ds-text{color:var(--ink);} .ds-link{font-family:Barlow,sans-serif;font-weight:600;text-decoration:underline;text-decoration-thickness:0.08em;text-underline-offset:0.2em;} .ds-post:hover .ds-link{text-decoration-thickness:0.15em;} @media (prefers-reduced-motion:reduce){.ds-post{transition:none;}.ds-post:hover,.ds-post:focus-visible{transform:none;}}"
+    },
+    {
+      "name": "Loaded Post Wall",
+      "kind": "custom",
+      "refersTo": "post-white",
+      "description": "After Instagram loads: no tilt, an even auto-fill grid, and Instagram's inline min-width of 326px overridden so a post fits a small phone.",
+      "html": "<ul class=\"ds-loaded\"><li><span class=\"ds-embed\"></span></li><li><span class=\"ds-embed\"></span></li><li><span class=\"ds-embed\"></span></li></ul>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-loaded{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr));gap:1.5rem;margin:0;padding:1.5rem;list-style:none;background:var(--white);} .ds-loaded>li{justify-self:stretch;width:100%;transform:none;} .ds-embed{display:block;height:20rem;border:1px solid rgba(26,26,26,0.18);background:var(--white);width:100% !important;min-width:0 !important;margin:0 !important;}"
+    },
+    {
+      "name": "Error In Print",
+      "kind": "custom",
+      "refersTo": "err-flash",
+      "description": "404 page: a red Anton title, a lead slab back to the latest episode, and a halftone print with a yellow 404 roundel. noindex, no meta refresh.",
+      "html": "<section class=\"ds-err\"><div><h1 class=\"ds-etitle\">This page went to press missing</h1><p class=\"ds-elead\">We have looked everywhere for it, even down the back of the sofa.</p><a class=\"ds-eslab ds-lift\" href=\"#\"><span class=\"ds-disc\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M4 2.5v11l9-5.5z\" fill=\"currentColor\"/></svg></span>Play the latest episode</a></div><div class=\"ds-epic\"><span class=\"ds-ephoto\"></span><p class=\"ds-eflash\" aria-hidden=\"true\"><span class=\"ds-etop\">404</span><span class=\"ds-ebot\">Gone to press</span></p></div></section>",
+      "css": ":host{--pink:#F492BF;--red:#A60201;--magenta:#E8046C;--white:#FFFFFF;--ink:#1A1A1A;--blue:#6771DD;--yellow:#FFD23F;--pink-soft:#FCE4EF;--ease-out:cubic-bezier(0.16,1,0.3,1);--rest-shadow:0 0.125rem 0.375rem rgba(26,26,26,0.18);--lift-shadow:0 1rem 1.75rem -0.5rem rgba(26,26,26,0.38);} .ds-lift{transition:transform 0.45s var(--ease-out),box-shadow 0.45s var(--ease-out);} .ds-lift:hover,.ds-lift:focus-visible{transform:translateY(-0.375rem) rotate(-0.6deg);box-shadow:var(--lift-shadow);} @media (prefers-reduced-motion:reduce){.ds-lift{transition:none;}.ds-lift:hover,.ds-lift:focus-visible{transform:none;}} .ds-err{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:center;padding:3rem 2rem;background:var(--pink);color:var(--ink);font-family:Barlow,sans-serif;} .ds-etitle{margin:0;color:var(--red);font-family:Anton,'Barlow Condensed',sans-serif;font-weight:400;font-size:4rem;line-height:0.95;letter-spacing:-0.005em;text-transform:uppercase;text-wrap:balance;} .ds-elead{max-width:34rem;margin:1.25rem 0 1.75rem;font-size:1.25rem;line-height:1.55;} .ds-eslab{display:inline-flex;align-items:center;gap:0.75rem;padding:1rem 1.125rem;background:var(--red);color:var(--white);text-decoration:none;text-transform:uppercase;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.375rem;letter-spacing:0.04em;box-shadow:var(--rest-shadow);} .ds-eslab:focus-visible{outline:3px solid var(--ink);outline-offset:3px;} .ds-disc{display:grid;place-items:center;width:3rem;height:3rem;border-radius:50%;background:var(--yellow);color:var(--ink);} .ds-epic{position:relative;width:min(100%,22rem);justify-self:center;} .ds-ephoto{display:block;aspect-ratio:1;background:linear-gradient(135deg,#5E5D60,#9F9EA1);border:0.625rem solid var(--white);box-shadow:var(--lift-shadow);transform:rotate(2deg);} .ds-eflash{position:absolute;top:-2.5rem;left:-0.75rem;z-index:1;display:grid;place-content:center;width:7.75rem;height:7.75rem;margin:0;border-radius:50%;background:var(--yellow);color:var(--ink);text-align:center;text-transform:uppercase;box-shadow:var(--rest-shadow);transform:rotate(-8deg);} .ds-etop{font-family:Anton,'Barlow Condensed',sans-serif;font-size:2.5rem;line-height:1;} .ds-ebot{display:block;max-width:6rem;margin:0.25rem auto 0;font-family:'Barlow Condensed',Barlow,sans-serif;font-weight:600;font-size:1.0625rem;line-height:1.05;}"
     }
   ],
   "narrative": {
     "northStar": "This Week's Issue",
-    "overview": "The home page is the cover and the contents pages of a 1980s British women's weekly. The two hosts are the cover stars. The masthead fills the full width. Coverlines sit on the cover as solid colour slabs. A yellow flash roundel sells the live tour. Below the cover, the contents pages use full-width colour bands: white for listening, red for the tour, pink for the letter, and ink for the footer.\n\nThe type is loud, condensed and in capitals. Body text is large and calm, for older eyes. Depth is soft and physical. A coverline lifts like a page that a hand picks up. Photos carry a halftone dot screen, as on cheap magazine paper. Back issues sit on a UK bingo ticket.\n\nThe world rejects the podcast default: a hero with a player and a row of equal cards.",
+    "overview": "The home page is the cover and the contents pages of a 1980s British women's weekly. The two hosts are the cover stars. The masthead fills the full width. Coverlines sit on the cover as solid colour slabs. A yellow flash roundel sells the live tour. Below the cover, the contents pages use full-width colour bands: white for listening, red for the tour, pink for the letter, and ink for the footer.\n\nThe type is loud, condensed and in capitals. Body text is large and calm, for older eyes. Depth is soft and physical. A coverline lifts like a page that a hand picks up. Photos carry a halftone dot screen, as on cheap magazine paper. Back issues sit on a UK bingo ticket.\n\nThe other pages are inside pages of the same issue:\n- The About page is a feature interview spread, with one profile for each host.\n- The Message Board page is the readers' page. Posts show as letters and prints pinned to a wall.\n- The 404 page is an error in print. The missing page \"went to press missing\".\n\nThe world rejects the podcast default: a hero with a player and a row of equal cards.",
     "keyCharacteristics": [
       "Pink cover ground with a red and magenta masthead.",
       "Solid, square coverline slabs in red, white, magenta and blue.",
       "Display type in Anton capitals. Labels in Barlow Condensed capitals.",
       "Tonal halftone screen on photos.",
       "Bingo ticket grid for back issues, with magenta dabs.",
-      "Soft shadows that respond to hover and focus."
+      "Soft shadows that respond to hover and focus.",
+      "Host photos as white-bordered prints, laid on the page at a small angle.",
+      "A pinned post wall in three paper stocks, with a yellow pin on each post."
     ],
     "rules": [
       {
@@ -405,7 +549,17 @@
       },
       {
         "name": "The Halftone Rule",
-        "body": "Put the halftone screen on cover photos. Remove the screen under `prefers-contrast: more`.",
+        "body": "Put the halftone screen on cover photos and on the large host photos. Remove the screen under `prefers-contrast: more`.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Laid Print Rule",
+        "body": "Show a loose photo as a print on the page. Give it a white border and a soft shadow. Turn it between 1.5deg and 2deg.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Straight Embed Rule",
+        "body": "Remove the tilt from a post when Instagram loads it. A live embed sits straight in an even grid.",
         "section": "elevation"
       },
       {
@@ -418,10 +572,12 @@
       "**Do** write the show name as \"Older and Wider\", with AND in Logotype Magenta in display lettering.",
       "**Do** set display, subhead, label, nav and button text in capitals.",
       "**Do** use the contrast pairs in the Colors section, and keep the large-text-only pairs at large sizes.",
-      "**Do** put the halftone screen on cover photos, and remove it under `prefers-contrast: more`.",
+      "**Do** put the halftone screen on cover photos and large host photos, and remove it under `prefers-contrast: more`.",
       "**Do** remove the lift and the turn under `prefers-reduced-motion: reduce`.",
       "**Do** keep every touch target 2.75rem high or more.",
-      "**Do** keep all style rules in the stylesheet and all tokens as custom properties on `:root`."
+      "**Do** keep all style rules in the stylesheet and all tokens as custom properties on `:root`.",
+      "**Do** load a third-party embed only after the visitor presses a button. Tell the visitor about cookies next to the button.",
+      "**Do** remove the tilt from a post when Instagram loads it."
     ],
     "donts": [
       "**Don't** use an ampersand in the show name.",
@@ -433,7 +589,10 @@
       "**Don't** use gradient text.",
       "**Don't** use hard offset shadows.",
       "**Don't** use inline styles or inline scripts.",
-      "**Don't** use a serif face."
+      "**Don't** use a serif face.",
+      "**Don't** load Instagram, or any other third-party script, before the visitor asks.",
+      "**Don't** add a meta refresh to a page.",
+      "**Don't** link to the deleted contact and completion pages."
     ]
   }
 }
