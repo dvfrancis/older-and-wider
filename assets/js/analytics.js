@@ -3,9 +3,10 @@
 (function () {
     "use strict";
 
-    // REPLACE THIS PLACEHOLDER with the real GA4 measurement ID before go-live.
-    // While the value is the placeholder, this file does nothing.
-    var GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+    // The GA4 measurement ID. dominicfrancis.co.uk uses the same ID.
+    // In GA4, filter reports by hostname to see this site alone.
+    // If the value is the placeholder G-XXXXXXXXXX, this file does nothing.
+    var GA_MEASUREMENT_ID = "G-KQEX5744PM";
 
     // A real ID is "G-" and letters or digits. The placeholder is all X.
     var isRealId = /^G-[A-Z0-9]{4,}$/.test(GA_MEASUREMENT_ID) && !/^G-X+$/.test(GA_MEASUREMENT_ID);
