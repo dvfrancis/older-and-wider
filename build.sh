@@ -42,6 +42,30 @@ done
 find "$OUT" -name '.DS_Store' -delete
 find "$OUT" -name '._*' -delete
 
+# Fingerprint the CSS and JS files. Assets are cached for one year as immutable,
+# so a changed file must get a new name. Otherwise returning visitors keep the old copy.
+# The source files keep their plain names. Only deploy/ gets the hashed names.
+# Images are not fingerprinted. Give a replaced image a new file name.
+for f in "$OUT"/assets/css/*.css "$OUT"/assets/js/*.js; do
+  [ -e "$f" ] || continue
+  hash=$(shasum -a 256 "$f" | cut -c1-10)
+  dir=$(dirname "$f")
+  base=$(basename "$f")
+  name="${base%.*}"
+  ext="${base##*.}"
+  hashed="$name.$hash.$ext"
+  mv "$f" "$dir/$hashed"
+  ref="${dir#"$OUT"/}/$base"
+  # perl -pi works the same on macOS and on the Linux CI runner.
+  OLD="$ref" NEW="${dir#"$OUT"/}/$hashed" perl -pi -e 's/\Q$ENV{OLD}\E/$ENV{NEW}/g' "$OUT"/*.html
+done
+
+# Fail the build if a page still names an asset without its fingerprint.
+if grep -nE 'assets/(css|js)/[A-Za-z0-9_-]+\.(css|js)"' "$OUT"/*.html; then
+  echo "error: the pages above still reference an unfingerprinted asset" >&2
+  exit 1
+fi
+
 echo "Built $(find "$OUT" -type f | wc -l | tr -d ' ') files into $OUT/ ($(du -sh "$OUT" | cut -f1))"
 
 [ "${1:-}" = "--deploy" ] || exit 0

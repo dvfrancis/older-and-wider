@@ -36,6 +36,7 @@ Three deliberate details in `build.sh` that are easy to break:
 
 - **Every S3 path goes through `DEST`.** `DEST` is `s3://$BUCKET/$PREFIX`. The deploy syncs with `--delete`. A sync that points at the bucket root erases the other sites. Do not write `s3://$BUCKET/` in the script. Do not change `PREFIX` unless you also change the origin path and the `Prefix` parameter of the role stack.
 - **Cache-Control does the invalidation work.** Assets sync with `max-age=31536000, immutable`; HTML syncs with `no-cache`. That is why a deploy lands without a CloudFront invalidation. Changing these headers reintroduces the 24h default TTL.
+- **CSS and JS file names get a hash.** `build.sh` renames each file in `assets/css/` and `assets/js/` in `deploy/`, for example `main.bea7c67fec.css`. It then changes the links in each page. A changed file gets a new name, so the one-year cache cannot serve an old copy. The source files keep their plain names. Images do not get a hash. Give a replaced image a new file name.
 - **HTML syncs last**, after assets, so a live page never references an asset that has not uploaded yet.
 
 Routine deploys should go through CI — push to `main` and let the workflow run. If you do deploy by hand, note that this machine's default AWS profile is a read-only user. `build.sh`'s safety check only reads (`aws s3 ls`), so it passes, and the run then fails partway through the first `aws s3 sync`. A local `--deploy` needs a write-capable profile (`admin` or `poweruser` are configured), e.g. `AWS_PROFILE=admin ./build.sh --deploy`.
@@ -57,7 +58,7 @@ Routine deploys should go through CI — push to `main` and let the workflow run
 **JavaScript.** Every page works without JavaScript. Do not add inline scripts or inline styles (issue #24). All scripts load with `defer`. The site has four scripts:
 
 - `assets/js/consent.js` runs on every page. It shows the cookie banner on the first visit. The banner asks about analytics cookies only. The script stores the choice in `localStorage` under `oaw-consent`, as `{choice, date}`. It sends the event `oaw:consentchange` and exposes `window.oawConsent`. "Reject" deletes the `_ga` and `_ga_*` cookies.
-- `assets/js/analytics.js` runs on every page, after `consent.js`. It loads Google Analytics only when the choice is "accepted". `GA_MEASUREMENT_ID` is the placeholder `G-XXXXXXXXXX`. While it is the placeholder, the script does nothing. Replace it before go-live.
+- `assets/js/analytics.js` runs on every page, after `consent.js`. It loads Google Analytics only when the choice is "accepted". `GA_MEASUREMENT_ID` is `G-KQEX5744PM`, the same ID as dominicfrancis.co.uk. Filter GA4 reports by hostname to see this site alone.
 - `assets/js/player.js` runs on `index.html` only. It inserts the Acast iframe after the visitor presses "Play here". It does not remember the choice. Without JavaScript, the page shows a "Listen on Acast" link.
 - `assets/js/message-board.js` runs on `message-board.html` only. It adds Instagram's `embed.js` after the visitor presses "Show the posts here", because `embed.js` sets cookies.
 

@@ -433,7 +433,7 @@ The tests used a local server and headless Google Chrome, driven by a Playwright
 | Turn off JavaScript | No banner shows. "Cookie settings" and "Play here" are hidden. The "Listen on Acast" link shows. No third-party embed loads. | PASS |
 | Set `prefers-reduced-motion: reduce` | The banner shows with no animation. | PASS |
 
-Before go-live, replace the placeholder ID `G-XXXXXXXXXX` in `assets/js/analytics.js`. Then do the GA4 Realtime test in issue #21.
+`assets/js/analytics.js` now holds the real ID `G-KQEX5744PM`. After the deploy, do the GA4 Realtime test in issue #21.
 
 ## User Story Validation
 

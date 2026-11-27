@@ -247,7 +247,7 @@ The project keeps them for reference. The build script does not deploy them. The
     - "Reject" deletes the `_ga` and `_ga_*` cookies for the current host and its parent domains.
     - The script `assets/js/analytics.js` loads Google Analytics only when the stored choice is "accepted". It listens for the event `oaw:consentchange` from `consent.js`. Thus "Accept" loads Google Analytics without a reload.
     - Without JavaScript, the banner does not show, and no analytics load.
-    - **Before go-live, replace the placeholder ID `G-XXXXXXXXXX`.** The constant `GA_MEASUREMENT_ID` at the top of `assets/js/analytics.js` holds it. While the value is the placeholder, `analytics.js` does nothing and sends no request to Google.
+    - The constant `GA_MEASUREMENT_ID` at the top of `assets/js/analytics.js` holds the GA4 ID `G-KQEX5744PM`. dominicfrancis.co.uk uses the same ID. Filter GA4 reports by the hostname `older-and-wider.dominicfrancis.co.uk` to see this site alone.
 
 - Custom 404:
 
@@ -275,7 +275,6 @@ The forms had no backend. They did not send data to the hosts. Issue #30 covers 
 
 - The addition of a website forum would allow fans of the podcast to interact, discuss the show, and share their life experiences.
 - A mailing list with a real backend (issue #30).
-- The real Google Analytics measurement ID in `assets/js/analytics.js` (issue #21).
 
 ### Structure
 
@@ -420,6 +419,8 @@ To assemble the site on your own computer, but not deploy it, run the command `.
 Two details are important before you change any of this:
 
 - The cache headers remove the necessity for a cache invalidation step. The script uploads the assets with a one year `max-age`, and the mark `immutable`. It uploads the pages with `no-cache`. CloudFront obeys these headers. Thus a new deployment becomes visible immediately.
+- The script adds a hash to the name of each CSS and JS file in `deploy/`, for example `main.bea7c67fec.css`. It changes the links in each page to match. A changed file gets a new name. Thus returning visitors do not keep an old copy from the one-year cache. The build stops if a page links to a file without a hash.
+- The deploy workflow also runs when `sitemap.xml` or `robots.txt` changes.
 - The script uploads the pages last, after the assets. Thus a live page cannot refer to an asset that is not yet in the bucket.
 
 To add a new page, you must do two steps. It is not sufficient to make the file in the repository root. You must also add the name of the file to the `PAGES` list in `build.sh`. If you do not, the site will never include that page.
