@@ -52,13 +52,15 @@
     6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-3)
     7. [404.html](#404html-2)
 8. [Performance](#performance)
-    1. [index.html](#indexhtml-3)
-    2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-4)
-    3. [about.html](#abouthtml-3)
-    4. [message-board.html](#message-boardhtml-3)
-    5. [contact.html (page removed)](#contacthtml-page-removed-4)
-    6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-4)
-    7. [404.html](#404html-3)
+    1. [Lighthouse results for the new design](#lighthouse-results-for-the-new-design)
+    2. [Lighthouse results for the earlier design](#lighthouse-results-for-the-earlier-design)
+    3. [index.html](#indexhtml-3)
+    4. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-4)
+    5. [about.html](#abouthtml-3)
+    6. [message-board.html](#message-boardhtml-3)
+    7. [contact.html (page removed)](#contacthtml-page-removed-4)
+    8. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-4)
+    9. [404.html](#404html-3)
 9. [Bugs](#bugs)
 10. [Unfixed Bugs](#unfixed-bugs)
 
@@ -87,9 +89,9 @@ The status of each test is:
 | Browser compatibility | Earlier design only. To be re-run on the new design. |
 | Accessibility (WAVE) | Earlier design only. To be re-run on the new design. |
 | Responsiveness | Earlier design only. To be re-run on the new design. |
-| Performance (Lighthouse) | Earlier design only. To be re-run on the new design. |
+| Performance (Lighthouse) | Done on the new design, 27 November 2026 |
 
-**Lighthouse and browser tests: to be re-run on the new design.** This document does not give scores for the new design yet. The screenshots in the sections after Code Validation show the earlier design.
+**Browser tests: to be re-run on the new design.** The Lighthouse scores for the new design are in the Performance section. The screenshots in the sections after Code Validation show the earlier design.
 
 This document keeps the results for the removed pages for the record. Each heading for a removed page has the label "(page removed)".
 
@@ -735,7 +737,32 @@ The redesign removed this page. These results are kept for the record.
 
 ## Performance
 
-**Lighthouse and browser tests: to be re-run on the new design.** The scores below are for the earlier design. The notes about the redirect do not apply to the new `404.html`, because the redesign removed the redirect.
+### Lighthouse results for the new design
+
+Lighthouse 12 ran on 27 November 2026 in headless Chrome. It tested the local preview at `http://127.0.0.1:8000`.
+
+| Page | Device | Performance | Accessibility | Best Practices | SEO |
+|---|---|---|---|---|---|
+| `index.html` | Mobile | 87 | 96 | 100 | 100 |
+| `index.html` | Desktop | 87 | 100 | 100 | 100 |
+| `about.html` | Mobile | 90 | 96 | 100 | 100 |
+| `about.html` | Desktop | 84 | 96 | 100 | 100 |
+| `message-board.html` | Mobile | 93 | 100 | 100 | 100 |
+| `message-board.html` | Desktop | 99 | 100 | 100 | 100 |
+| `privacy.html` | Mobile | 92 | 100 | 100 | 100 |
+| `privacy.html` | Desktop | 98 | 100 | 100 | 100 |
+| `404.html` | Mobile | 92 | 100 | 100 | 66 |
+| `404.html` | Desktop | 89 | 100 | 100 | 66 |
+
+Notes on the scores below 100:
+
+- **Accessibility 96.** The colour contrast audit fails on the word AND in the masthead. The word is magenta on pink. It is part of the logotype. WCAG 1.4.3 does not apply contrast rules to logotypes.
+- **SEO 66 on `404.html`.** The page has a `noindex` tag. Lighthouse marks the page as not crawlable. This is correct for an error page.
+- **Performance.** The web fonts cause layout shift when they load. Cumulative Layout Shift is 0.209 on `index.html` and 0.316 on `about.html` on desktop. The target is 0.1 or less. This is open.
+
+### Lighthouse results for the earlier design
+
+The scores below are for the earlier design. The notes about the redirect do not apply to the new `404.html`, because the redesign removed the redirect.
 
 Each page was audited using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/), for both mobile and desktop:
 
