@@ -541,11 +541,12 @@ Three files do this work, and are easier to understand together:
 
 To assemble the site on your own computer, but not deploy it, run the command `./build.sh` in the repository root.
 
-Two details are important before you change any of this:
+These details are important before you change any of this:
 
 - The cache headers remove the necessity for a cache invalidation step. The script uploads the assets with a one year `max-age`, and the mark `immutable`. It uploads the pages with `no-cache`. CloudFront obeys these headers. Thus a new deployment becomes visible immediately.
 - The script adds a hash to the name of each CSS and JS file in `deploy/`, for example `main.bea7c67fec.css`. It changes the links in each page to match. A changed file gets a new name. Thus returning visitors do not keep an old copy from the one-year cache. The build stops if a page links to a file without a hash.
-- The deploy workflow also runs when `sitemap.xml`, `robots.txt` or `favicon.ico` changes.
+- Before it adds the hash, the script makes the CSS smaller with `scripts/minify_css.py`. The script removes comments and extra white space, and keeps strings and `url()` values. It changes only the copy in `deploy/`. The tests for it are in `scripts/test_minify_css.py`.
+- The deploy workflow also runs when `sitemap.xml`, `robots.txt`, `favicon.ico` or `scripts/minify_css.py` changes.
 - The script uploads the pages last, after the assets. Thus a live page cannot refer to an asset that is not yet in the bucket.
 
 To add a new page, you must do two steps. It is not sufficient to make the file in the repository root. You must also add the name of the file to the `PAGES` list in `build.sh`. If you do not, the site will never include that page.

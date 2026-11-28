@@ -282,7 +282,9 @@ a {
     --screen-lift: 2.45;
     --screen-ink: 0.26;
     --screen-pos: 50% 50%;
-    --screen-photo: url("../images/home-cover-merch_960.webp");
+    /* The halftone needs little detail, so it uses the small 480 px file.
+       On a 1x phone the img element uses the same file. */
+    --screen-photo: url("../images/home-cover-merch_480.webp");
 }
 
 @media (prefers-contrast: more) {
