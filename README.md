@@ -306,7 +306,7 @@ The project keeps them for reference. The build script does not deploy them. The
        - "Coming up". This part shows a message and a link to `jennyeclair.com` when no solo show is on sale.
        - "Earlier tours". This table has one row for each tour or Edinburgh show.
        - "Every date we found". Each tour has its dates in a `details` element. The Grumpy Old Women shows are in a separate group.
-    3. Wider work. This section lists the books, television and radio of each host. Each item has a link to its source. Where possible, an item also links to the work itself. A book links to its page on Amazon UK, and a television or radio series links to its page on BBC Programmes or Channel 4. Most books show a cover from Open Library. The cover of The Book of Nanas comes from Hachette UK, its publisher. The site keeps a copy of each cover in `assets/images/covers/`.
+    3. Wider work. This section lists the books, television and radio of each host. Each item has a link to its source. Where possible, an item also links to the work itself. A book links to its page on Amazon UK, and a television or radio series links to its page on BBC Programmes or Channel 4. Most books show a cover from Open Library. The covers of The Book of Nanas and Jokes, Jokes, Jokes come from Hachette UK, the publisher. The site keeps a copy of each cover in `assets/images/covers/`.
 
     Each date is in a `time` element with a `datetime` attribute. If only the month is known, the attribute has the form `YYYY-MM`.
 
