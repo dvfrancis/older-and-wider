@@ -51,7 +51,7 @@ Routine deploys should go through CI — push to `main` and let the workflow run
 
 **Responsive images.** Every photo has pre-generated fixed-width variants next to the original (for example `home-cover-merch_256.webp`, `_480.webp`, `_800.webp`, `_960.webp`). Each `img` uses `srcset` with a `sizes` expression that matches its layout slot. If you add an image, also make its width variants.
 
-**No forms.** The redesign removed the contact form and the mailing-list form. Issue #30 covers a future mailing-list backend. Do not add a server or server-side handling without a discussion first.
+**No forms.** The redesign removed the contact form and the mailing-list form. A mailing list is deferred (issue #30, closed as not planned). Raise it with the hosts only after the site has run for some time. Do not add a server or server-side handling without a discussion first.
 
 **CSS** is one stylesheet, `assets/css/main.css` (about 2,000 lines). `styles.css` was deleted. `:root` defines custom properties for the colours, fonts, gutter and shadows. Use these properties for colour. The rules use literal `#000` and `#fff` only in mask and halftone gradients. The main colours are pink `--pink` `#F492BF`, red `--red` `#A60201` and magenta `--magenta` `#E8046C`. The fonts are Anton, Barlow Condensed and Barlow. The breakpoints are `48rem` and `64rem`. The file also has `prefers-reduced-motion` and `prefers-contrast` blocks. The masthead uses a container query unit (`cqi`).
 

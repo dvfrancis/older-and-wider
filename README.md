@@ -291,12 +291,12 @@ The redesign removed these pages and features:
 - The image carousels on the home page and the about page.
 - The Bootstrap framework.
 
-The forms had no backend. They did not send data to the hosts. Issue #30 covers a future backend for the mailing list.
+The forms had no backend. They did not send data to the hosts. A mailing list is deferred until the site has run for some time. Issue #30 holds the plan.
 
 #### Future Features
 
 - The addition of a website forum would allow fans of the podcast to interact, discuss the show, and share their life experiences.
-- A mailing list with a real backend (issue #30).
+- A mailing list, if the hosts want one after the site has run for some time (issue #30).
 
 ### Structure
 
