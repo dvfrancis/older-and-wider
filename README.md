@@ -665,8 +665,8 @@ Do these steps after the last show of a tour.
 5. Put the date in a `time` element. Use the form `YYYY-MM-DD`.
 6. If only the month is confirmed, use the form `YYYY-MM`. Write the month and the year only.
 7. Add the source to the paragraph of sources below the table, if the source is new.
-8. If the exact date is not confirmed, add `<span class="arc-tbc">Date TBC</span>` after the `time` element.
-9. If the venue is also not confirmed, write "Date and venue TBC" in the span, and "Venue TBC" in the venue cell.
+8. If the exact date is not confirmed, add `<span class="arc-tbc">Date uncertain</span>` after the `time` element.
+9. If the venue is also not confirmed, write "Date and venue uncertain" in the span, and "Venue uncertain" in the venue cell.
 10. Remove the span when a source confirms the date.
 
 #### Move a Tour from the Live Shows Page to the Archive
