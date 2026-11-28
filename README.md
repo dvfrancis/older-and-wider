@@ -1121,7 +1121,7 @@ The policy sends these headers:
 - `X-Content-Type-Options: nosniff`.
 - `X-Frame-Options: DENY`. No other site can show these pages in a frame.
 - `Referrer-Policy: strict-origin-when-cross-origin`.
-- `Permissions-Policy`. It turns off the camera, the microphone, location, payment and other browser features that the site does not use.
+- `Permissions-Policy`. It turns off the camera, the microphone, location, payment and other browser features that the site does not use. Do not add `browsing-topics`. Current versions of Chrome do not know it and show a console warning.
 - A Content Security Policy (CSP). The CSP gives the hosts from which a page can load files.
 
 The CSP allows these hosts, and no others:
@@ -1137,7 +1137,7 @@ The parameter `CspMode` has two values:
 - `report-only` sends `Content-Security-Policy-Report-Only`. The browser shows each violation in the console, but it does not block anything.
 - `enforce` sends `Content-Security-Policy`. The browser blocks each violation.
 
-On 28 November 2026 the live stack uses `report-only`. Issue #98 gives the last test before the change to `enforce`.
+The live stack uses `enforce`, from 28 November 2026. To test a new host, deploy with `CspMode=report-only` first. Then read the console of each page.
 
 If you add a script that loads a file from a new host, add the host to the CSP before you deploy the page. Otherwise the browser blocks the file.
 

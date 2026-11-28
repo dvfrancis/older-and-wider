@@ -15,7 +15,7 @@ Description: >-
 Parameters:
   CspMode:
     Type: String
-    Default: report-only
+    Default: enforce
     AllowedValues:
       - report-only
       - enforce
@@ -81,7 +81,7 @@ Resources:
           Items:
             - Header: Permissions-Policy
               Value: >-
-                accelerometer=(), bluetooth=(), browsing-topics=(), camera=(),
+                accelerometer=(), bluetooth=(), camera=(),
                 display-capture=(), geolocation=(), gyroscope=(), hid=(),
                 magnetometer=(), microphone=(), midi=(), payment=(), serial=(),
                 usb=(), xr-spatial-tracking=()
