@@ -569,6 +569,7 @@ a {
     letter-spacing: 0.03em;
     border-bottom: 1px solid var(--ink);
     padding-bottom: 0.375rem;
+    scroll-margin-top: 1.5rem;
 }
 
 .back-lead {
@@ -1564,7 +1565,6 @@ a {
     text-wrap: balance;
     color: var(--red);
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid var(--ink);
 }
 
 .board-lead {
@@ -1633,7 +1633,7 @@ a {
     --screen-lift: 2.45;
     --screen-ink: 0.26;
     --screen-pos: 50% 50%;
-    --screen-photo: url("../images/home-cover-merch_800.webp");
+    --screen-photo: url("../images/board-mirror-selfie_800.webp");
 }
 
 .board-print img {
