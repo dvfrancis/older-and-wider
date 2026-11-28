@@ -14,7 +14,7 @@ The [README as submitted](https://github.com/dvfrancis/older-and-wider/blob/152a
 
 | Submitted design (June 2024) | Current design (November 2026) |
 |---|---|
-| ![The home page as submitted, with a teal header, a photo carousel and red and green content panels](assets/images/website-index-feature.webp) | ![The home page after the redesign, with a pink masthead, a magazine cover photo and a bingo ticket of back issues](documentation/screenshots/desktop-index-redesign.webp) |
+| ![The home page as submitted, with a teal header, a photo carousel and red and green content panels](assets/images/website-index-feature.webp) | ![The home page after the redesign, with a pink masthead, a magazine cover photo and a bingo ticket of back issues](documentation/screenshots/desktop-index.webp) |
 
 ### Background Information
 
@@ -129,13 +129,15 @@ The show name is "Older and Wider". The site does not use an ampersand in the na
 
 ### Screenshots
 
-The screenshots show the live site on 27 November 2026, in Safari's engine (WebKit). The phone width is 390 px. The desktop width is 1440 px.
+The screenshots show the live site on 28 November 2026, in Safari's engine (WebKit). The phone width is 390 px. The desktop width is 1440 px.
 
 | Page | Phone | Desktop |
 |---|---|---|
 | Home | [Phone](documentation/screenshots/phone-index.webp) | [Desktop](documentation/screenshots/desktop-index.webp) |
 | About | [Phone](documentation/screenshots/phone-about.webp) | [Desktop](documentation/screenshots/desktop-about.webp) |
 | Message Board | [Phone](documentation/screenshots/phone-message-board.webp) | [Desktop](documentation/screenshots/desktop-message-board.webp) |
+| Shows | [Phone](documentation/screenshots/phone-live-shows.webp) | [Desktop](documentation/screenshots/desktop-live-shows.webp) |
+| Archive | [Phone](documentation/screenshots/phone-archive.webp) | [Desktop](documentation/screenshots/desktop-archive.webp) |
 | Privacy | [Phone](documentation/screenshots/phone-privacy.webp) | [Desktop](documentation/screenshots/desktop-privacy.webp) |
 | 404 | [Phone](documentation/screenshots/phone-404.webp) | [Desktop](documentation/screenshots/desktop-404.webp) |
 | Cookie banner | [Phone](documentation/screenshots/phone-consent-banner.webp) | [Desktop](documentation/screenshots/desktop-consent-banner.webp) |
@@ -214,7 +216,7 @@ The project keeps them for reference. The build script does not deploy them. The
 
     - Each page is responsive. The layout changes at 48rem (768px) and at 64rem (1024px).
     - Each page works without JavaScript.
-    - The site has six pages: Home, About, Live Shows, Message Board, Privacy and a custom 404 page.
+    - The site has seven pages: Home, About, Message Board, Shows, Archive, Privacy and a custom 404 page.
     - No third-party embed loads until the visitor asks for it. Google Analytics loads only after the visitor accepts analytics cookies.
     - Each link to another website opens in a new tab. The link has the attributes `rel="external noopener" target="_blank" aria-describedby="new-tab"`.
     - The footer of each page holds a hidden element `<span id="new-tab" hidden>Opens in a new tab</span>`. Screen readers read this text with each external link.
@@ -1022,7 +1024,7 @@ Keep the CSS for the embed markup in `assets/css/main.css`. List mode uses it if
 
 The repository root contains a `sitemap.xml` file and a `robots.txt` file. Both files are in the `PAGES` list. Thus they deploy to the root of the site, with `no-cache`.
 
-- `sitemap.xml` lists the pages for search engines. It lists the home page, `about.html`, `live-shows.html`, `message-board.html` and `privacy.html`. It does not list `404.html`, because that page has a `noindex` tag.
+- `sitemap.xml` lists the pages for search engines. It lists the home page, `about.html`, `live-shows.html`, `archive.html`, `message-board.html` and `privacy.html`. It does not list `404.html`, because that page has a `noindex` tag.
 - `robots.txt` lets all crawlers read all pages. It gives the address of the sitemap.
 
 When you add or remove a page, update `sitemap.xml`. Change the `lastmod` date of each page that you change.
