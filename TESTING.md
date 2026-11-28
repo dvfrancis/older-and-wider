@@ -14,6 +14,7 @@
         2. [Validator Limits](#validator-limits)
         3. [Earlier CSS Results](#earlier-css-results)
     3. [Sitemap and robots.txt](#sitemap-and-robotstxt)
+    4. [Search and Share Tags](#search-and-share-tags)
 3. [Automated Tests](#automated-tests)
     1. [Episode Update Script](#episode-update-script)
     2. [Running the Tests](#running-the-tests)
@@ -268,6 +269,24 @@ ls deploy/sitemap.xml deploy/robots.txt
 ```
 
 The first command shows no output if the XML is well-formed.
+
+### Search and Share Tags
+
+A Python script checked the `head` of the six pages in `sitemap.xml` on 28 November 2026.
+
+| CHECK | RESULT |
+| --- | --- |
+| Each page has one `link rel="canonical"` | Pass |
+| Each canonical address agrees with a `loc` in `sitemap.xml` | Pass |
+| Each page has `og:title`, `og:description`, `og:url`, `og:image` and `twitter:card` | Pass |
+| Each `og:title` agrees with the `title`, and each `og:description` agrees with the meta description | Pass |
+| Each `title` has 60 characters or fewer | Pass. The home page title has 56 characters. |
+| Each meta description has 160 characters or fewer | Pass. The longest has 154 characters. |
+| `share-card-v1.jpg` is 1200 x 630 pixels | Pass. The file is 147 KB. |
+| The `ld+json` block of `index.html` is valid JSON with `@type` `PodcastSeries` | Pass |
+| `404.html` has no canonical tag and no share tags | Pass |
+| The Rich Results Test finds the `PodcastSeries` data | To be tested after the deploy |
+| A social preview shows the share image | To be tested after the deploy |
 
 ## Automated Tests
 
