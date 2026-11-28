@@ -5,7 +5,9 @@ Run from the repository root:
     python3 -m unittest discover -s scripts -v
 
 The tests use the feeds in scripts/fixtures/ and a temporary copy of
-index.html. They do not use the network and do not change index.html.
+scripts/fixtures/index.html. That file is a copy of index.html at episode 374,
+so the tests still pass after the live page moves on. The tests do not use
+the network and do not change index.html.
 """
 
 import contextlib
@@ -23,7 +25,8 @@ sys.path.insert(0, str(HERE))
 import update_episodes  # noqa: E402
 
 FIXTURES = HERE / "fixtures"
-PAGE = HERE.parent / "index.html"
+PAGE = FIXTURES / "index.html"
+LIVE_PAGE = HERE.parent / "index.html"
 SHOW = "https://shows.acast.com/older-and-wider-podcast/episodes/"
 
 
@@ -175,6 +178,13 @@ class BadFeedTest(PageTestCase):
         self.page.write_text("<p>No markers</p>\n", encoding="utf-8")
         self.before = self.page.read_bytes()
         self.assert_refused("feed-current.xml")
+
+
+class LivePageTest(unittest.TestCase):
+    def test_live_page_has_every_marker_pair(self):
+        episodes = update_episodes.parse_feed((FIXTURES / "feed-current.xml").read_bytes())
+        page = LIVE_PAGE.read_text(encoding="utf-8")
+        update_episodes.apply_sections(page, update_episodes.render_sections(episodes))
 
 
 class HelperTest(unittest.TestCase):
