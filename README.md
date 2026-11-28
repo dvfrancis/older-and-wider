@@ -73,6 +73,7 @@ The live site can be accessed [here].
         2. [Correct a Show](#correct-a-show)
         3. [Remove a Cancelled Show](#remove-a-cancelled-show)
         4. [Move a Finished Tour to the Archive](#move-a-finished-tour-to-the-archive)
+        5. [Add or Correct a Venue](#add-or-correct-a-venue)
     4. [Archive Maintenance](#archive-maintenance)
         1. [Add an Older and Wider Show to the Archive](#add-an-older-and-wider-show-to-the-archive)
         2. [Move a Tour from the Live Shows Page to the Archive](#move-a-tour-from-the-live-shows-page-to-the-archive)
@@ -274,6 +275,15 @@ The project keeps them for reference. The build script does not deploy them. The
         - Intro: the page title, a short text and the 2027 tour poster. The poster has alt text, and each date on it is also on the page as text.
         - Forthcoming shows: white text on the red of the poster dates panel. Each show gives the date with the day of the week and the year, the town or city, the venue, the tour name and a ticket link. The earliest show is first.
         - Recent shows: the shows of the current tour that are in the past. The latest show is first. Past shows have no ticket link.
+        - The venues: Ink text and white cards on Soft Pink. The section has one list item for each venue. Each item gives these data:
+            - The name of the venue and the town or city.
+            - The postal address.
+            - A link to the website of the venue.
+            - A link to the access information of the venue, if the venue publishes it.
+            - The dates of the Older and Wider shows at the venue, each in a `time` element.
+    - The venue text of each show is a link to the venue item, for example `<a href="#venue-city-varieties">`. The link stays in the show when the script moves the show to Recent shows.
+    - The Theatre at the Tabard has no show in the 2027 tour. Its item lists the four earlier shows under the label "Past shows". Earlier shows at the other venues are in the archive.
+    - Each address and access link comes from the website of the venue. The Lowry and the Theatre at the Tabard block automated requests. The address of The Lowry comes from a technical specification on its website. The access link of The Lowry and the address of the Tabard come from search results on the domain of each venue.
     - Each date is in a `time` element with a `datetime` attribute, for example `datetime="2027-04-25"`.
     - Each ticket link names the show, for example "Tickets for Leeds, 25 April". The link opens the ticket page of the venue. The Bristol show is not on sale yet, so its link opens [jennyeclair.com/olderandwider](https://jennyeclair.com/olderandwider).
     - The poster gives the last London show as "SAT 04 JUL". The Leicester Square Theatre website gives Sunday 4 July 2027. The page uses the date from the theatre and tells the visitor about the error on the poster.
@@ -592,7 +602,7 @@ The script `assets/js/live-shows.js` moves past shows. Other changes to `live-sh
 <li class="show">
     <p class="show-date"><time datetime="2027-04-25">Sunday 25 April 2027</time></p>
     <h3 class="show-place">Leeds</h3>
-    <p class="show-venue">City Varieties</p>
+    <p class="show-venue"><a href="#venue-city-varieties">City Varieties</a></p>
     <p class="show-tour">Even Older and Wider</p>
     <p class="show-tickets"><a href="https://leedsheritagetheatres.com/whats-on/even-older-and-wider-2027/" rel="external">Tickets for Leeds, 25 April</a></p>
 </li>
@@ -654,6 +664,22 @@ Do these steps after the last show of a tour.
 8. Add the shows of the next tour, if one is announced. Refer to [Add a Show](#add-a-show).
 9. Change the poster and its alt text in `live-shows.html` for the next tour. Make the `_480` and `_800` width variants of the new poster.
 10. Change the `lastmod` dates of `live-shows.html` and `archive.html` in `sitemap.xml`.
+
+#### Add or Correct a Venue
+
+Each venue is one `li` element with the class `venue` in the list `venues`. Get each fact from the website of the venue.
+
+1. Find the `li` element of the venue. To add a venue, copy one `li` element.
+2. Give the new `li` element a unique `id` that starts with `venue-`, for example `venue-city-varieties`.
+3. Write the name of the venue in the `h3` element. Write the town or city in the `venue-place` paragraph.
+4. Write the postal address in the `venue-address` paragraph. Put a `br` element between the lines.
+5. Set the `href` of the website link to the home page of the venue.
+6. Set the `href` of the access link to the access page of the venue.
+7. If the venue has no access page, delete the access link.
+8. Add each Older and Wider date at the venue to the list `venue-dates`. Use a `time` element for each date.
+9. Make the venue text of each show at the venue a link to the `id`, for example `<a href="#venue-city-varieties">`.
+10. Make sure that each `#venue-` link agrees with an `id` on the page.
+11. Do not copy text or photos from the website of the venue.
 
 ### Archive Maintenance
 

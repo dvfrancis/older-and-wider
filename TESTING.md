@@ -577,6 +577,12 @@ The tests used a local server and headless Google Chrome on 28 November 2026. Th
 | Check the navigation at 375px | The five links fit on one row. Each link is above the masthead, so a click reaches it. | PASS |
 | Check the navigation at 1440px | The five links fit on one row. | PASS |
 | Check for horizontal scroll at 375px | The page does not scroll sideways. | PASS |
+| Check the venues section | The section "The venues" is below Recent shows. It lists six venues in a `ul` element. Each venue gives the name, the town or city, the postal address, a website link and its show dates in `time` elements. | PASS |
+| Check the Theatre at the Tabard | The venue has the label "Past shows". It lists the four shows of 2024 and 2025 from `archive.html`. It has no access link, because no access page was found. | PASS |
+| Check the venue links of the shows | Each `#venue-` link in a show agrees with an `id` on the page. A click on the link scrolls to the venue and outlines it. | PASS |
+| Check a venue link after a move | The Leeds show had a past date, and the script moved it to Recent shows. Its venue link stays. A click opens `#venue-city-varieties`. | PASS |
+| Check the venue website and access links | Each link gives the status 200. The Lowry (403) and the Theatre at the Tabard (429) block automated requests. A person must open those links in a browser. | PASS |
+| Check the venues at 375px, 768px and 1440px | The venues show in one column, two columns and three columns. The page does not scroll sideways. | PASS |
 
 These are the five manual tests of the script `assets/js/live-shows.js`. For each test, a copy of `live-shows.html` had changed dates. The script read the copy in the browser.
 
