@@ -634,6 +634,7 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 | Venue list on a phone | Open the list at 375 px. | The search box and the letters fill the width. The map is below the letters. The page does not scroll sideways. | Pass, 28 November 2026. |
 | Venue list without JavaScript | Turn off JavaScript and open the list. | The search box and the letter buttons do not show. The map and all letters show. Each show list opens. | Pass, 28 November 2026. |
 | Console | Open the developer tools on `archive.html`. | The console shows no errors. | Pass, 28 November 2026. |
+| BAFTA nominations | Open "Wider work" on `archive.html`. | The Dame Edna Experience gives the 1988 nomination. After They Were Famous gives the 2002 nomination. Each links to the IMDb awards page of Judith Holder. | Pass, 28 November 2026. |
 | Show list of a venue | Open the letter "K". Click "2 shows" under Brewery Arts Centre, Kendal. | The list opens under the venue. It gives Sat 20 May 2017, How To Be A Middle Aged Woman (Without Going Insane), then Fri 11 Feb 2011, Old Dog New Tricks. The sign changes from plus to minus. | Pass, 28 November 2026. |
 | Search by show | Type "Old Dog New Tricks". | 66 towns match. The show list of each matching venue opens. | Pass, 28 November 2026. |
 | Search by year | Type "2027". | 5 towns match: Birmingham, Bristol, Leeds, London and Salford. These hold the 8 dates of the 2027 tour. | Pass, 28 November 2026. |
