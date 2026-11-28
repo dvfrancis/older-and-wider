@@ -14,7 +14,11 @@
         2. [Validator Limits](#validator-limits)
         3. [Earlier CSS Results](#earlier-css-results)
     3. [Sitemap and robots.txt](#sitemap-and-robotstxt)
-3. [Manual Validation](#manual-validation)
+3. [Automated Tests](#automated-tests)
+    1. [Episode Update Script](#episode-update-script)
+    2. [Running the Tests](#running-the-tests)
+    3. [Episode Update Results](#episode-update-results)
+4. [Manual Validation](#manual-validation)
     1. [index.html](#indexhtml)
     2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-1)
     3. [about.html](#abouthtml)
@@ -24,11 +28,11 @@
     7. [404.html](#404html)
     8. [privacy.html](#privacyhtml)
     9. [Cookie Consent and Click-to-Load](#cookie-consent-and-click-to-load)
-4. [User Story Validation](#user-story-validation)
+5. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
     3. [Frequent Visitor Goals](#frequent-visitor-goals)
-5. [Browser Compatibility](#browser-compatibility)
+6. [Browser Compatibility](#browser-compatibility)
     1. [Results for the new design](#results-for-the-new-design)
     2. [Results for the earlier design](#results-for-the-earlier-design)
     3. [Google Chrome](#google-chrome)
@@ -37,7 +41,7 @@
     6. [Opera](#opera)
     7. [Safari (on an iPad)](#safari-on-an-ipad)
     8. [Safari (on an iPhone)](#safari-on-an-iphone)
-6. [Accessibility](#accessibility)
+7. [Accessibility](#accessibility)
     1. [index.html](#indexhtml-1)
     2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-2)
     3. [about.html](#abouthtml-1)
@@ -45,7 +49,7 @@
     5. [contact.html (page removed)](#contacthtml-page-removed-2)
     6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-2)
     7. [404.html](#404html-1)
-7. [Responsiveness](#responsiveness)
+8. [Responsiveness](#responsiveness)
     1. [index.html](#indexhtml-2)
     2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-3)
     3. [about.html](#abouthtml-2)
@@ -53,7 +57,7 @@
     5. [contact.html (page removed)](#contacthtml-page-removed-3)
     6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-3)
     7. [404.html](#404html-2)
-8. [Performance](#performance)
+9. [Performance](#performance)
     1. [Lighthouse results for the new design](#lighthouse-results-for-the-new-design)
     2. [Lighthouse results for the earlier design](#lighthouse-results-for-the-earlier-design)
     3. [index.html](#indexhtml-3)
@@ -63,8 +67,8 @@
     7. [contact.html (page removed)](#contacthtml-page-removed-4)
     8. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-4)
     9. [404.html](#404html-3)
-9. [Bugs](#bugs)
-10. [Unfixed Bugs](#unfixed-bugs)
+10. [Bugs](#bugs)
+11. [Unfixed Bugs](#unfixed-bugs)
 
 ## Test Status After the Redesign
 
@@ -92,6 +96,7 @@ The status of each test is:
 | Accessibility (WAVE) | Earlier design only. To be re-run on the new design. |
 | Responsiveness | Earlier design only. To be re-run on the new design. |
 | Performance (Lighthouse) | Done on the new design, 27 November 2026 |
+| Automated tests (episode update) | Done, 28 November 2026. All 24 tests pass. |
 
 **Browser tests: done on the new design.** The results are in the Browser Compatibility section. The Lighthouse scores for the new design are in the Performance section. The screenshots in the sections after Code Validation show the earlier design.
 
@@ -246,6 +251,74 @@ ls deploy/sitemap.xml deploy/robots.txt
 ```
 
 The first command shows no output if the XML is well-formed.
+
+## Automated Tests
+
+### Episode Update Script
+
+The script `scripts/update_episodes.py` updates the episode content of the home page from the podcast RSS feed. The README describes the script in the section "Automatic Episode Update".
+
+The file `scripts/test_update_episodes.py` contains the tests for the script. The tests use the Python `unittest` module. They do not use the network. They do not change `index.html`.
+
+The tests use these fixture files in `scripts/fixtures/`:
+
+| FILE | CONTENT |
+| --- | --- |
+| `index.html` | A copy of the home page at episode 374. The tests change only a temporary copy of this file. |
+| `feed-current.xml` | The 20 newest items of the live feed on 28 November 2026. The long descriptions are removed. |
+| `feed-new-episode.xml` | The current feed with a new episode 375 on 4 December 2026. The title contains `&` and `<>`. The duration is longer than one hour. |
+| `feed-no-numbers.xml` | The current feed with no episode numbers in the titles. |
+| `feed-broken.xml` | The first half of the current feed. It is not valid XML. |
+| `feed-short.xml` | The 15 newest items only. The script needs 16. |
+
+The tests examine these conditions:
+
+| TEST | EXPECTED RESULT |
+| --- | --- |
+| The current feed | The page does not change. `--check` exits with code 0. |
+| A new episode 375 | The masthead shows "Issue 375 · 4 December 2026". |
+| A new episode 375 | The cover and "This week" show episode 375, its title, its date and the duration 1:02:03. |
+| A new episode 375 | The ticket serial shows "Ticket 375". |
+| A new episode 375 | The ticket shows 360 to 374 in the same cells. 371 to 374 have a dab. Each number links to its own episode. |
+| A new episode 375 | "Last called" shows 374, 373, 372 and 371, with their dates and durations. |
+| A new episode 375 | The text outside the markers does not change. A second run makes no change. |
+| A new episode 375 with `--check` | The script shows a diff and exits with code 1. The page does not change. |
+| A broken feed | The script exits with code 2. The page does not change. |
+| A feed with no episode numbers | The script exits with code 2. The page does not change. |
+| A feed with fewer than 16 episodes | The script exits with code 2. The page does not change. |
+| A missing feed file | The script exits with code 2. The page does not change. |
+| A page with no markers | The script exits with code 2. The page does not change. |
+| An older item with no number | The script skips the item and uses the next episode. |
+| A repost of episode 200 in the middle of the feed | The script skips the repost. The episodes stay in number order. |
+| A repost of episode 373 as the newest item | Episode 374 stays the latest episode. |
+| A new episode 375 | The `lastmod` date of the home page in `sitemap.xml` changes to the date of episode 375. |
+| A bad feed | `sitemap.xml` does not change. |
+| The live `index.html` | It contains each pair of episode markers. |
+| Title prefixes, durations and dates | "Ep 374.", "Ep. 366" and "Episode 12:" give the correct number. "2027: the tour is on sale" gives no number. Durations show as m:ss or h:mm:ss. Dates show in UK format. |
+
+### Running the Tests
+
+To run the tests, do these steps:
+
+1. Open a terminal in the repository root.
+2. Run the command `python3 -m unittest discover -s scripts -v`.
+3. Make sure that the last line of the output is `OK`.
+
+To compare the page with the live feed, run the command `python3 scripts/update_episodes.py --check`. The command exits with code 0 if the page is up to date.
+
+The workflow `.github/workflows/update-episodes.yml` runs the tests before each update. If a test fails, the workflow stops. The page does not change.
+
+### Episode Update Results
+
+The results on 28 November 2026 were these:
+
+| TEST | RESULT |
+| --- | --- |
+| `python3 -m unittest discover -s scripts -v` | Pass. 28 tests ran with no failures. |
+| `python3 scripts/update_episodes.py --check` against the live feed | Pass. The page is up to date at episode 374. |
+| W3C Markup Validator on `index.html` with episode 375 from `feed-new-episode.xml` | Pass. No errors and no warnings. |
+| W3C Markup Validator on `index.html` with the live feed | Pass. No errors and no warnings. |
+| `./build.sh` | Pass. |
 
 ## Manual Validation
 

@@ -67,10 +67,11 @@ The live site can be accessed [here].
 4. [Testing](#testing)
 5. [Deployment](#deployment)
     1. [Amazon S3 and CloudFront](#amazon-s3-and-cloudfront)
-    2. [Sitemap and robots.txt](#sitemap-and-robotstxt)
-    3. [Forks](#forks)
-    4. [Local Clones](#local-clones)
-    5. [Gitpod Workspaces](#gitpod-workspaces)
+    2. [Automatic Episode Update](#automatic-episode-update)
+    3. [Sitemap and robots.txt](#sitemap-and-robotstxt)
+    4. [Forks](#forks)
+    5. [Local Clones](#local-clones)
+    6. [Gitpod Workspaces](#gitpod-workspaces)
 6. [Credits and References](#credits-and-references)
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
@@ -228,7 +229,8 @@ The project keeps them for reference. The build script does not deploy them. The
     - The home page looks like the cover of a weekly magazine. It has these sections:
         - Cover: the masthead, an issue line with the episode number and the date, a halftone photo of the hosts, and cover lines. Each cover line links to a section of the page or to the shop.
         - This week: a "Play here" button for the latest episode, and links to Apple Podcasts, Spotify and Acast. The Acast player loads only when the visitor presses the button. A note next to the button tells the visitor that the player stores a language setting and a session item in the browser. The site does not remember this choice, so the button shows on each visit. The script `assets/js/player.js` does this work. Without JavaScript, the button is replaced by a "Listen on Acast" link.
-        - Back issues: a bingo ticket. Each number on the ticket links to the podcast on Acast. A "Last called" list shows the four previous episodes.
+        - Back issues: a bingo ticket. Each number on the ticket links to its own episode on Acast. A "Last called" list shows the four previous episodes.
+        - The episode content updates automatically each Friday from the podcast RSS feed. Refer to [Automatic Episode Update](#automatic-episode-update).
         - Tour: "Even Older and Wider", the 2027 live tour. A table shows the eight dates, towns and venues. The "Book tickets" link opens the ticket page.
         - Letter: "Dear OWLs", a letter from Jenny and Judith, with the award nomination.
     - The home page as it appeared in the earlier design:
@@ -431,12 +433,12 @@ All page content was initially written by myself, inspired by the sources listed
 
 ### Amazon S3 and CloudFront
 
-The site is stored in an Amazon S3 bucket, and served through Amazon CloudFront, in the `eu-west-2` region. The bucket is `portfolio-dominicfrancis`. It holds more than one site. Each site has its own folder, and this site uses the folder `older-and-wider`. CloudFront reads that folder through an origin path. Thus the address of each page stays the same. Deployment is automatic. Each push to the `main` branch that changes a page, an asset, or the build script publishes the site again.
+The site is stored in an Amazon S3 bucket, and served through Amazon CloudFront, in the `eu-west-2` region. The bucket is `portfolio-dominicfrancis`. It holds more than one site. Each site has its own folder, and this site uses the folder `older-and-wider`. CloudFront reads that folder through an origin path. Thus the address of each page stays the same. Deployment is automatic. Each push to the `main` branch that changes a page, an asset, or the build script publishes the site again. The weekly episode update also publishes the site. Refer to [Automatic Episode Update](#automatic-episode-update).
 
 Three files do this work, and are easier to understand together:
 
 - `build.sh` assembles the site into a `deploy/` directory, and then copies it to the site folder in the bucket. It copies only the pages and directories in its list. Thus an unwanted file in the repository root cannot go live by accident. Git does not track `deploy/`, and the script makes it again on each run.
-- `.github/workflows/deploy.yml` runs the command `./build.sh --deploy --yes` on each push to the `main` branch that changes `*.html`, `assets/**`, `build.sh`, or the workflow file. GitHub Actions runs the same script that you run on your own computer. Thus the two cannot become different.
+- `.github/workflows/deploy.yml` runs the command `./build.sh --deploy --yes` on each push to the `main` branch that changes `*.html`, `assets/**`, `build.sh`, or the workflow file. GitHub Actions runs the same script that you run on your own computer. Thus the two cannot become different. Another workflow can also call this workflow (`workflow_call`). The episode update workflow uses this trigger.
 - `infra/deploy-role.yaml` is the CloudFormation template for the role that the workflow uses. The role trusts only the `main` branch of this repository. Its permissions apply only to this site's folder, and to the one distribution. The role cannot read or delete the folder of another site. No Amazon Web Services keys are kept in the repository, or in GitHub.
 
 To assemble the site on your own computer, but not deploy it, run the command `./build.sh` in the repository root.
@@ -462,6 +464,71 @@ The `PAGES` list contains these files:
 - `favicon.ico`
 
 The `DIRS` list contains only `assets`. Thus the script does not deploy `design-options/` or `documentation/`. The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html` from the list.
+
+### Automatic Episode Update
+
+The home page shows the latest episode and the 15 episodes before it. A GitHub Action keeps this content up to date. The hosts do not need to do any work.
+
+The parts that update are these:
+
+- The issue line in the masthead, for example "Issue 374 · 27 November 2026".
+- The cover headline and the duration of the latest episode.
+- The "This week" number, title, date and duration.
+- The bingo ticket. It shows the 15 episodes before the latest episode. The 4 newest of these have a pink dab.
+- The ticket serial ("Ticket 374").
+- The "Last called" list. It shows the 4 episodes before the latest episode, newest first.
+
+These files do the work:
+
+- `scripts/update_episodes.py` reads the Acast RSS feed. It changes only the text between the episode marker comments in `index.html`, for example `<!-- episodes:masthead:start -->`. The script uses the Python standard library only.
+- `.github/workflows/update-episodes.yml` runs the script each Friday at 06:17 and 18:17 UTC. You can also start it manually from the Actions tab in GitHub.
+- `scripts/test_update_episodes.py` contains the tests. The workflow runs the tests before the script.
+
+The workflow does these steps:
+
+1. It runs the tests.
+2. It runs the script against the live feed.
+3. If `index.html` changes, it commits `index.html` and `sitemap.xml` to `main` as "chore: update the home page for episode N". It rebases the commit on `main` before the push, because `main` can move while the job runs.
+4. It calls `deploy.yml` to publish the commit.
+
+If `index.html` does not change, the workflow stops after step 2.
+
+A push from the `GITHUB_TOKEN` of a workflow does not start other workflows. Thus step 4 calls `deploy.yml` directly. The called workflow runs on `refs/heads/main`, so the deploy role trusts it.
+
+The script obeys these rules:
+
+- It takes the episode number from the `itunes:episode` field. If that field is missing, it uses the prefix of the title, for example "Ep 374.".
+- A title prefix must start with "Ep" or "Episode". A title such as "2027: the tour" does not give a number.
+- It puts the episodes in number order. The latest episode is the highest number.
+- It skips a second item with the same number, for example a repost of an old episode.
+- It removes the number prefix from the title on the page.
+- If the newest episode has no number, the script stops. It does not change the page.
+- It skips an older item that has no number, for example a "sick note" week.
+- If the feed does not load or does not parse, the script stops. It does not change the page.
+- If the feed has fewer than 16 numbered episodes, the script stops. It does not change the page.
+- It links each bingo number to the page of its episode on Acast.
+- It keeps the bingo layout. The 15 numbers go up column by column. Each row has five numbers and four blanks.
+- When `index.html` changes, it sets the `lastmod` date of the home page in `sitemap.xml` to the date of the latest episode.
+
+The start time of 06:17 UTC is after the usual release time of an episode. The feed shows a release at about 02:00 to 04:00 UTC each Friday. The run at 18:17 UTC catches an episode that comes out late.
+
+Do not edit the text between the episode markers by hand. The next run replaces it.
+
+To see the change that the script would make, run this command in the repository root:
+
+```bash
+python3 scripts/update_episodes.py --check
+```
+
+The command shows a diff. It does not change the page. It exits with code 1 if the page would change.
+
+To update the page on your own computer, run this command:
+
+```bash
+python3 scripts/update_episodes.py
+```
+
+To use a local feed file, add `--feed` and the path of the file.
 
 ### Sitemap and robots.txt
 

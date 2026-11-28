@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/global/feed/rss.xslt" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:podaccess="https://access.acast.com/schema/1.0/" xmlns:acast="https://schema.acast.com/1.0/">
+   <script src="https://feeds.acast.com/global/feed/xslt-polyfill.min.js" xmlns="http://www.w3.org/1999/xhtml"></script>
+    <channel>
+		<ttl>60</ttl>
+		<generator>acast.com</generator>
+		<title>Older and Wider Podcast</title>
+		<link>https://soundcloud.com/user-575974822</link>
+		<atom:link href="https://feeds.acast.com/public/shows/63b6b30a19c20a0011527ce4" rel="self" type="application/rss+xml"/>
+		<language>en</language>
+		<copyright>Avalon Television Ltd </copyright>
+		<itunes:keywords/>
+		<itunes:author>Avalon </itunes:author>
+		<itunes:subtitle>From the writers of the internationally successfu…</itunes:subtitle>
+		<itunes:explicit>true</itunes:explicit>
+		<itunes:owner>
+			<itunes:name>Older and Wider Podcast</itunes:name>
+			<itunes:email>info+63b6b30a19c20a0011527ce4@mg-eu.acast.com</itunes:email>
+		</itunes:owner>
+		<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+		<acast:showUrl>older-and-wider-podcast</acast:showUrl>
+        <acast:network id="6421b8e4c594890011b30c18" slug="older-wider-vendor"><![CDATA[Older and Wider ]]></acast:network>
+		<acast:importedFeed>https://feeds.soundcloud.com/users/soundcloud:users:553437042/sounds.rss</acast:importedFeed>
+		<itunes:type>episodic</itunes:type>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+			<image>
+				<url>https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg</url>
+				<link>https://soundcloud.com/user-575974822</link>
+				<title>Older and Wider Podcast</title>
+			</image>
+			<itunes:new-feed-url>https://feeds.acast.com/public/shows/63b6b30a19c20a0011527ce4</itunes:new-feed-url>
+		<item>
+			<title>Ep 374. The one with the polls, paper-mache and a new Older and Wider Live Show! </title>
+			<itunes:title>Ep 374. The one with the polls, paper-mache and a new Older and Wider Live Show! </itunes:title>
+			<pubDate>Fri, 27 Nov 2026 02:02:00 GMT</pubDate>
+			<itunes:duration>50:26</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6b085a07f82f6a279ca04db5/media.mp3" length="72634468" type="audio/mpeg"/>
+			<guid isPermaLink="false">6b085a07f82f6a279ca04db5</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6b085a07f82f6a279ca04db5</link>
+			<acast:episodeId>6b085a07f82f6a279ca04db5</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 373. The one with the new Bond and the new thumbnail</title>
+			<itunes:title>Ep 373. The one with the new Bond and the new thumbnail</itunes:title>
+			<pubDate>Fri, 20 Nov 2026 02:02:00 GMT</pubDate>
+			<itunes:duration>51:57</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6afed7ff2c093095d7afd5bf/media.mp3" length="49886772" type="audio/mpeg"/>
+			<guid isPermaLink="false">6afed7ff2c093095d7afd5bf</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6afed7ff2c093095d7afd5bf</link>
+			<acast:episodeId>6afed7ff2c093095d7afd5bf</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 372. The one with the reunion, some hidden boots and the new merch! </title>
+			<itunes:title>Ep 372. The one with the reunion, some hidden boots and the new merch! </itunes:title>
+			<pubDate>Fri, 13 Nov 2026 03:02:00 GMT</pubDate>
+			<itunes:duration>47:05</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6af5e82b54f9838e8b91d972/media.mp3" length="67813494" type="audio/mpeg"/>
+			<guid isPermaLink="false">6af5e82b54f9838e8b91d972</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6af5e82b54f9838e8b91d972</link>
+			<acast:episodeId>6af5e82b54f9838e8b91d972</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title><![CDATA[Ep 371. The one with the kicking off and a sleep over at Jenny's]]></title>
+			<itunes:title><![CDATA[Ep 371. The one with the kicking off and a sleep over at Jenny's]]></itunes:title>
+			<pubDate>Fri, 06 Nov 2026 02:02:00 GMT</pubDate>
+			<itunes:duration>56:46</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6aecd5345e56bd617c7ad0a7/media.mp3" length="81753886" type="audio/mpeg"/>
+			<guid isPermaLink="false">6aecd5345e56bd617c7ad0a7</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6aecd5345e56bd617c7ad0a7</link>
+			<acast:episodeId>6aecd5345e56bd617c7ad0a7</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 370. The one with the fugue state </title>
+			<itunes:title>Ep 370. The one with the fugue state </itunes:title>
+			<pubDate>Fri, 30 Oct 2026 03:08:00 GMT</pubDate>
+			<itunes:duration>48:04</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6ae33fa4d925811fc2bfb37b/media.mp3" length="69225272" type="audio/mpeg"/>
+			<guid isPermaLink="false">6ae33fa4d925811fc2bfb37b</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6ae33fa4d925811fc2bfb37b</link>
+			<acast:episodeId>6ae33fa4d925811fc2bfb37b</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 369. The one with the teary drive and peri-retirement </title>
+			<itunes:title>Ep 369. The one with the teary drive and peri-retirement </itunes:title>
+			<pubDate>Fri, 23 Oct 2026 02:00:00 GMT</pubDate>
+			<itunes:duration>55:48</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6ada1c67b4643bca15d1efc9/media.mp3" length="80367343" type="audio/mpeg"/>
+			<guid isPermaLink="false">6ada1c67b4643bca15d1efc9</guid>
+			<itunes:explicit>true</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6ada1c67b4643bca15d1efc9</link>
+			<acast:episodeId>6ada1c67b4643bca15d1efc9</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 368. The one with the new double act </title>
+			<itunes:title>Ep 368. The one with the new double act </itunes:title>
+			<pubDate>Fri, 16 Oct 2026 03:00:00 GMT</pubDate>
+			<itunes:duration>48:42</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6acf8be8eea51f2aa3bf49c7/media.mp3" length="70136623" type="audio/mpeg"/>
+			<guid isPermaLink="false">6acf8be8eea51f2aa3bf49c7</guid>
+			<itunes:explicit>true</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6acf8be8eea51f2aa3bf49c7</link>
+			<acast:episodeId>6acf8be8eea51f2aa3bf49c7</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 367. The one with the cycling holiday catch up</title>
+			<itunes:title>Ep 367. The one with the cycling holiday catch up</itunes:title>
+			<pubDate>Fri, 09 Oct 2026 01:02:00 GMT</pubDate>
+			<itunes:duration>59:57</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6ac7632e68b7ce6ffb313230/media.mp3" length="57564264" type="audio/mpeg"/>
+			<guid isPermaLink="false">6ac7632e68b7ce6ffb313230</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6ac7632e68b7ce6ffb313230</link>
+			<acast:episodeId>6ac7632e68b7ce6ffb313230</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title><![CDATA[Ep. 366 The one with a trip to CostCo and Ikea plus Jenny's Halloween Crafts! ]]></title>
+			<itunes:title><![CDATA[Ep. 366 The one with a trip to CostCo and Ikea plus Jenny's Halloween Crafts! ]]></itunes:title>
+			<pubDate>Fri, 02 Oct 2026 02:02:00 GMT</pubDate>
+			<itunes:duration>54:55</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6abcf7126ffb28f8d6183444/media.mp3" length="79096077" type="audio/mpeg"/>
+			<guid isPermaLink="false">6abcf7126ffb28f8d6183444</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6abcf7126ffb28f8d6183444</link>
+			<acast:episodeId>6abcf7126ffb28f8d6183444</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep. 365 The one with all the taste sensations and a guess at the bill </title>
+			<itunes:title>Ep. 365 The one with all the taste sensations and a guess at the bill </itunes:title>
+			<pubDate>Fri, 25 Sep 2026 02:00:00 GMT</pubDate>
+			<itunes:duration>54:27</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6ab51f3d59a98735e1457d51/media.mp3" length="78418603" type="audio/mpeg"/>
+			<guid isPermaLink="false">6ab51f3d59a98735e1457d51</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6ab51f3d59a98735e1457d51</link>
+			<acast:episodeId>6ab51f3d59a98735e1457d51</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 364. The one with the mirror at the end of the bed </title>
+			<itunes:title>Ep 364. The one with the mirror at the end of the bed </itunes:title>
+			<pubDate>Fri, 18 Sep 2026 02:01:00 GMT</pubDate>
+			<itunes:duration>47:45</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6aabe0d9fce2f88226102acd/media.mp3" length="68778333" type="audio/mpeg"/>
+			<guid isPermaLink="false">6aabe0d9fce2f88226102acd</guid>
+			<itunes:explicit>true</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6aabe0d9fce2f88226102acd</link>
+			<acast:episodeId>6aabe0d9fce2f88226102acd</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 363. The one with the dahlia shield and the onion sweat </title>
+			<itunes:title>Ep 363. The one with the dahlia shield and the onion sweat </itunes:title>
+			<pubDate>Fri, 11 Sep 2026 02:03:00 GMT</pubDate>
+			<itunes:duration>53:03</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6aa2b6a2564171e32a0859ba/media.mp3" length="50935013" type="audio/mpeg"/>
+			<guid isPermaLink="false">6aa2b6a2564171e32a0859ba</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6aa2b6a2564171e32a0859ba</link>
+			<acast:episodeId>6aa2b6a2564171e32a0859ba</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 362. The one with Chipping Norton Man, a silent auction and the first day of school! </title>
+			<itunes:title>Ep 362. The one with Chipping Norton Man, a silent auction and the first day of school! </itunes:title>
+			<pubDate>Fri, 04 Sep 2026 01:02:00 GMT</pubDate>
+			<itunes:duration>57:27</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6a996f87054653259addcaf7/media.mp3" length="82740641" type="audio/mpeg"/>
+			<guid isPermaLink="false">6a996f87054653259addcaf7</guid>
+			<itunes:explicit>true</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6a996f87054653259addcaf7</link>
+			<acast:episodeId>6a996f87054653259addcaf7</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 361. The one with the tantrums, house envy and a fifty pence prize! </title>
+			<itunes:title>Ep 361. The one with the tantrums, house envy and a fifty pence prize! </itunes:title>
+			<pubDate>Fri, 28 Aug 2026 02:03:00 GMT</pubDate>
+			<itunes:duration>50:41</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6a90564dd3e4bd90415436d3/media.mp3" length="73012467" type="audio/mpeg"/>
+			<guid isPermaLink="false">6a90564dd3e4bd90415436d3</guid>
+			<itunes:explicit>true</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6a90564dd3e4bd90415436d3</link>
+			<acast:episodeId>6a90564dd3e4bd90415436d3</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 360. The one with the double math pencil case and a bonquette bagsier </title>
+			<itunes:title>Ep 360. The one with the double math pencil case and a bonquette bagsier </itunes:title>
+			<pubDate>Fri, 21 Aug 2026 02:03:00 GMT</pubDate>
+			<itunes:duration>54:03</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6a87217ed6b6da9392e17949/media.mp3" length="77847726" type="audio/mpeg"/>
+			<guid isPermaLink="false">6a87217ed6b6da9392e17949</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6a87217ed6b6da9392e17949</link>
+			<acast:episodeId>6a87217ed6b6da9392e17949</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 359. The one with the eclipse and the Chamberlain duties</title>
+			<itunes:title>Ep 359. The one with the eclipse and the Chamberlain duties</itunes:title>
+			<pubDate>Fri, 14 Aug 2026 02:00:00 GMT</pubDate>
+			<itunes:duration>51:37</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6a7de72483128ee3d2e71b92/media.mp3" length="74341939" type="audio/mpeg"/>
+			<guid isPermaLink="false">6a7de72483128ee3d2e71b92</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6a7de72483128ee3d2e71b92</link>
+			<acast:episodeId>6a7de72483128ee3d2e71b92</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 358. The one with The Odyssey and the grommets</title>
+			<itunes:title>Ep 358. The one with The Odyssey and the grommets</itunes:title>
+			<pubDate>Fri, 07 Aug 2026 02:00:00 GMT</pubDate>
+			<itunes:duration>49:30</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6a74ceecc3e1347e8b84f288/media.mp3" length="71290628" type="audio/mpeg"/>
+			<guid isPermaLink="false">6a74ceecc3e1347e8b84f288</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6a74ceecc3e1347e8b84f288</link>
+			<acast:episodeId>6a74ceecc3e1347e8b84f288</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 357. The one with the cycling advice and the sausage roll</title>
+			<itunes:title>Ep 357. The one with the cycling advice and the sausage roll</itunes:title>
+			<pubDate>Fri, 31 Jul 2026 02:00:00 GMT</pubDate>
+			<itunes:duration>54:04</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6a6b6d896e736c293d867688/media.mp3" length="77886434" type="audio/mpeg"/>
+			<guid isPermaLink="false">6a6b6d896e736c293d867688</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6a6b6d896e736c293d867688</link>
+			<acast:episodeId>6a6b6d896e736c293d867688</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title><![CDATA[Ep 356. The one with the diversion and an M&S pit stop]]></title>
+			<itunes:title><![CDATA[Ep 356. The one with the diversion and an M&S pit stop]]></itunes:title>
+			<pubDate>Fri, 24 Jul 2026 01:02:00 GMT</pubDate>
+			<itunes:duration>41:14</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6a5fa3311fed88da55c18234/media.mp3" length="59398836" type="audio/mpeg"/>
+			<guid isPermaLink="false">6a5fa3311fed88da55c18234</guid>
+			<itunes:explicit>true</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6a5fa3311fed88da55c18234</link>
+			<acast:episodeId>6a5fa3311fed88da55c18234</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+		<item>
+			<title>Ep 355. The one with the preserved lemons and the dreaded portals </title>
+			<itunes:title>Ep 355. The one with the preserved lemons and the dreaded portals </itunes:title>
+			<pubDate>Fri, 17 Jul 2026 03:46:44 GMT</pubDate>
+			<itunes:duration>54:53</itunes:duration>
+			<enclosure url="https://sphinx.acast.com/p/open/s/63b6b30a19c20a0011527ce4/e/6a58dffd78e0412bc6a9b232/media.mp3" length="79052741" type="audio/mpeg"/>
+			<guid isPermaLink="false">6a58dffd78e0412bc6a9b232</guid>
+			<itunes:explicit>false</itunes:explicit>
+			<link>https://shows.acast.com/older-and-wider-podcast/episodes/6a58dffd78e0412bc6a9b232</link>
+			<acast:episodeId>6a58dffd78e0412bc6a9b232</acast:episodeId>
+			<acast:showId>63b6b30a19c20a0011527ce4</acast:showId>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:image href="https://assets.pippa.io/shows/63b6b30a19c20a0011527ce4/1795086378980-9d59b679-3f07-4f63-9f74-20e77f000d8b.jpeg"/>
+		</item>
+    	<itunes:category text="Comedy"/>
+    </channel>
+</rss>
