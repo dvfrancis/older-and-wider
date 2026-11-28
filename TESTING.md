@@ -602,6 +602,7 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 
 | Test | Action | Expected result | Result |
 |---|---|---|---|
+| Sixty! (FFS!) dates | Open the tour "Sixty! (FFS!)". Compare its dates with the copies of jennyeclair.com of 4 December 2021, 14 January 2022 and 7 March 2022. | The tour has 90 dates. The 16 shows of January and February 2022 are in the list. The shows at Dorchester, Hexham, Barnard Castle, Alnwick and Northallerton have their new 2022 dates. | Pass, 28 November 2026. Swansea Grand Theatre is on Friday 4 February 2022. |
 | W3C Markup Validator | Send `archive.html` to the Nu validator. | No errors and no warnings. | Pass. No messages, 28 November 2026. |
 | W3C CSS Validator | Send `assets/css/main.css` to the CSS validator. | No new errors from the archive block. | Pass. The three errors are older. They are on lines 185, 191 and 1030, outside the archive block. |
 | Phone width | Open the page at 375 pixels wide. Open each `details` element. | No horizontal scroll. Each row of a table shows as a block. | Pass. The scroll width is 375 pixels. |
