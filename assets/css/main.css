@@ -2999,6 +2999,77 @@ a {
     text-decoration: underline;
 }
 
+/* Back to top: a link fixed to the bottom right of the window.
+   The cookie banner (z-index 10) covers it.
+   Where the browser supports scroll-driven animation, the link fades in
+   after the first screen. Other browsers always show it. */
+.to-top {
+    position: fixed;
+    right: var(--gutter);
+    bottom: var(--gutter);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    background: var(--yellow);
+    box-shadow: var(--rest-shadow);
+    color: var(--ink);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.125rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+
+/* The arrow has empty alternative text, so screen readers do not read it. */
+.to-top::before {
+    content: "\2191";
+    content: "\2191" / "";
+    margin-right: 0.375rem;
+}
+
+.to-top:hover,
+.to-top:focus-visible {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--lift-shadow);
+    text-decoration: underline;
+}
+
+/* Keep a focused control clear of the link when the page scrolls to it. */
+html:has(.to-top) {
+    scroll-padding-bottom: 4.5rem;
+}
+
+@supports (animation-timeline: scroll()) {
+    .to-top {
+        animation: to-top-show linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 100vh;
+    }
+
+    /* A keyboard user can always see the link when it has focus. */
+    .to-top:focus-visible {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+@keyframes to-top-show {
+    0%,
+    40% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 /* Headings */
 .arc-heading {
     margin-bottom: 1.5rem;
@@ -3710,12 +3781,15 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
     .arc-jump a,
-    .arc-venue-map-dots circle {
+    .arc-venue-map-dots circle,
+    .to-top {
         transition: none;
     }
 
     .arc-jump a:hover,
-    .arc-jump a:focus-visible {
+    .arc-jump a:focus-visible,
+    .to-top:hover,
+    .to-top:focus-visible {
         transform: none;
     }
 }

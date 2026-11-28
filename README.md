@@ -339,6 +339,8 @@ The project keeps them for reference. The build script does not deploy them. The
 
     Each date is in a `time` element with a `datetime` attribute. If only the month is known, the attribute has the form `YYYY-MM`.
 
+    A "Back to top" link is fixed to the bottom right of the window. It opens `#top`, the `id` of the page header. The link needs no JavaScript. In a browser that supports scroll-driven animation, the link shows only after the first screen.
+
     The page has one script of its own, `assets/js/archive-venues.js`, for the venue search. All the content shows without JavaScript.
 
 - Message Board:

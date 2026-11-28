@@ -174,19 +174,19 @@ These results are for the earlier design. The [W3C Markup Validation Service](ht
 
 #### main.css
 
-The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator) checked `assets/css/main.css` again on 28 November 2026, after the venues and covers blocks were added. The validator checked the live file `main.c471768e88.css`. The profile was "CSS level 3 + SVG", with all warnings shown.
+The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator) checked `assets/css/main.css` again on 28 November 2026, after the venue list and the "Back to top" link were added. The profile was "CSS level 3 + SVG", with the normal warnings shown.
 
 | FILE | ERRORS | WARNINGS |
 | --- | --- | --- |
-| main.css | 3 | 91 |
+| main.css | 6 | 103 |
 
-The 3 errors are limits of the validator. They are not errors in the CSS. The section [Validator Limits](#validator-limits) gives the reason for each error.
+The 6 errors are limits of the validator. They are not errors in the CSS. The section [Validator Limits](#validator-limits) gives the reason for each error.
 
-The 91 warnings are:
+The 103 warnings are:
 
-- 87 warnings that the validator does not check CSS custom properties (variables). This is a limit of the validator.
+- 97 warnings that the validator does not check CSS custom properties (variables). This is a limit of the validator.
 - 3 warnings that `-webkit-mask` (two times) and `-webkit-mask-composite` are vendor extensions. The stylesheet uses them as a fallback for older WebKit browsers. The standard `mask` properties follow them.
-- 1 warning that `::-webkit-details-marker` is a vendor extension. The archive uses it to hide the default marker of each `summary` element in Safari.
+- 3 warnings that `::-webkit-details-marker` is a vendor extension. The archive uses it to hide the default marker of the `summary` elements in Safari. The tours, the venue letters and the venue show lists use it.
 
 To repeat the test, run this command in the repository root:
 
@@ -198,13 +198,16 @@ Screenshots of the new results are to be added.
 
 #### Validator Limits
 
-The validator does not know three CSS features that `main.css` uses. Current versions of Chrome, Edge, Firefox and Safari support all three features.
+The validator does not know some CSS features that `main.css` uses. Current versions of Chrome, Edge, Firefox and Safari support container queries and mask layers. Chrome, Edge and Safari support scroll-driven animations. The rules for scroll-driven animations are in an `@supports` block. A browser without the feature ignores them and always shows the "Back to top" link.
 
 | LINE | SELECTOR | VALIDATOR MESSAGE | REASON |
 | --- | --- | --- | --- |
 | 185 | `.cover-inner` | Property "container-type" does not exist | `container-type` comes from the CSS container queries specification. The validator does not know this property. |
 | 191 | `.masthead` | Value Error: font-size. Parse Error | The value is `calc(100cqi / 6.05)`. `cqi` is a container query unit. The validator does not know this unit, so it cannot read the `calc()`. |
-| 1033 | `.cover-photo` | Too many values or values are not recognized | The `mask` property has two `linear-gradient()` layers. The CSS Masking specification permits a comma-separated list of mask layers. The validator does not accept the list. |
+| 1034 | `.cover-photo` | Too many values or values are not recognized | The `mask` property has two `linear-gradient()` layers. The CSS Masking specification permits a comma-separated list of mask layers. The validator does not accept the list. |
+| 3046 | `@supports` | Property "animation-timeline" does not exist | The `@supports` condition tests for `animation-timeline`. The property comes from the CSS scroll-driven animations specification. The validator does not know this property. |
+| 3049 | `.to-top` | Property "animation-timeline" does not exist | The value `scroll(root)` links the fade of the "Back to top" link to the scroll position of the page. |
+| 3050 | `.to-top` | Property "animation-range" does not exist | The value `0 100vh` makes the fade happen during the first screen of scroll. |
 
 #### Earlier CSS Results
 
@@ -636,6 +639,10 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 | Console | Open the developer tools on `archive.html`. | The console shows no errors. | Pass, 28 November 2026. |
 | BAFTA nominations | Open "Wider work" on `archive.html`. | The Dame Edna Experience gives the 1988 nomination. After They Were Famous gives the 2002 nomination. Each links to the IMDb awards page of Judith Holder. | Pass, 28 November 2026. |
 | BAFTA nominations on the About page | Open "Who is Judith Holder?" on `about.html`. Click "archive". | The text names The Dame Edna Experience, 1988, and After They Were Famous, 2002. The link opens the Judith Holder list in Wider work. | Pass, 28 November 2026. |
+| Back to top hidden at the top | Open `archive.html`. | The "Back to top" link does not show. | Pass, 28 November 2026. |
+| Back to top shows | Scroll down more than one screen. | The yellow "Back to top" link shows at the bottom right. A screen reader reads "Back to top", with no arrow. | Pass, 28 November 2026. |
+| Back to top works | Click "Back to top". | The page goes to the top. The address ends with `#top`. | Pass, 28 November 2026. |
+| Back to top on a phone | Scroll down at 375 px. | The link is 16 px from the right and the bottom. It is 44 px tall. The page does not scroll sideways. | Pass, 28 November 2026. |
 | Show list of a venue | Open the letter "K". Click "2 shows" under Brewery Arts Centre, Kendal. | The list opens under the venue. It gives Sat 20 May 2017, How To Be A Middle Aged Woman (Without Going Insane), then Fri 11 Feb 2011, Old Dog New Tricks. The sign changes from plus to minus. | Pass, 28 November 2026. |
 | Search by show | Type "Old Dog New Tricks". | 66 towns match. The show list of each matching venue opens. | Pass, 28 November 2026. |
 | Search by year | Type "2027". | 5 towns match: Birmingham, Bristol, Leeds, London and Salford. These hold the 8 dates of the 2027 tour. | Pass, 28 November 2026. |
