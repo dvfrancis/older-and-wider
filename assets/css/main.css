@@ -131,6 +131,9 @@ a {
 
 /* Nav strip above the masthead */
 .strip {
+    /* Keep the nav above the masthead. The masthead text box reaches up over the nav. */
+    position: relative;
+    z-index: 2;
     background: var(--red);
     color: var(--white);
 }
@@ -185,7 +188,7 @@ a {
 .masthead {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: calc(100cqi / 6.45);
+    font-size: calc(100cqi / 5.7);
     line-height: 0.9;
     letter-spacing: -0.01em;
     text-transform: uppercase;
@@ -194,9 +197,15 @@ a {
     white-space: nowrap;
 }
 
-/* Logotype: AND in magenta, as on the tour flyer */
+/* Logotype: AND in magenta, as on the merchandise */
 .masthead-and {
     color: var(--magenta);
+}
+
+/* Only the masthead makes AND half size. The About title uses the class in a sentence. */
+.masthead .masthead-and {
+    font-size: 0.5em;
+    vertical-align: 0.42em;
 }
 
 .issue-line {

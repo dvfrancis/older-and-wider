@@ -20,6 +20,7 @@ on:
       - "build.sh"
       - "sitemap.xml"
       - "robots.txt"
+      - "favicon.ico"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
   workflow_call:
