@@ -1360,11 +1360,13 @@ a {
 /* Contact sheet: the rest of the shoot on a strip of ink */
 .contact-sheet {
     margin-top: 3rem;
-    padding: 2rem 1rem 2.25rem;
-    /* Sprocket holes: a row of white squares along each edge, as on film */
+    padding: 2.5rem 1rem 2.75rem;
+    /* Sprocket holes: a row of white squares along each edge, as on film.
+       Each hole is in the middle of its tile. "round" fits a whole number
+       of tiles, so no hole is cut at the edge. */
     background:
-        linear-gradient(90deg, var(--white) 0 0.625rem, transparent 0.625rem) 0.5rem 0.625rem / 1.25rem 0.625rem repeat-x,
-        linear-gradient(90deg, var(--white) 0 0.625rem, transparent 0.625rem) 0.5rem calc(100% - 0.625rem) / 1.25rem 0.625rem repeat-x,
+        linear-gradient(90deg, transparent 30%, var(--white) 30% 70%, transparent 70%) 0 0.75rem / 2.5rem 1rem round no-repeat,
+        linear-gradient(90deg, transparent 30%, var(--white) 30% 70%, transparent 70%) 0 calc(100% - 0.75rem) / 2.5rem 1rem round no-repeat,
         var(--ink);
     color: var(--white);
 }
@@ -1516,7 +1518,7 @@ a {
     }
 
     .contact-sheet {
-        padding: 2.25rem 1.5rem 2.5rem;
+        padding: 2.75rem 1.5rem 3rem;
     }
 
     .about-listen-inner {

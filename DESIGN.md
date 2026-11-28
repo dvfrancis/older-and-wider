@@ -416,7 +416,7 @@ Prints have a white border. The second photo and the Message Board print have 0.
 
 Rules are print rules: a 3px ink rule under section titles, feature titles and the Message Board title, and above the issue line. Rules elsewhere are 1px. The post meta line has a 1px rule in the text colour.
 
-The contact sheet is a strip of film. White sprocket holes run along the top and the bottom edge. Each hole is a solid white 0.625rem square, on a 1.25rem pitch.
+The contact sheet is a strip of film. White sprocket holes run along the top and the bottom edge. Each hole is a solid white 1rem square, on a 2.5rem pitch.
 
 Prints and posts are turned a little. The values are:
 - Second photos: -1.5deg (Jenny) and 1.5deg (Judith).
