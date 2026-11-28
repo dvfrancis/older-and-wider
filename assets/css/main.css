@@ -202,9 +202,9 @@ a {
     color: var(--magenta);
 }
 
-/* AND is smaller than OLDER and WIDER in every logotype: the masthead,
-   the About title and the footer mark. */
-.masthead-and,
+/* AND is smaller than OLDER and WIDER in the masthead and the footer mark.
+   The About title keeps AND at full size, in magenta. */
+.masthead .masthead-and,
 .footer-and {
     font-size: 0.75em;
     vertical-align: 0.14em;
