@@ -1,0 +1,87 @@
+# Updates the episode sections of index.html from the podcast RSS feed, then
+# deploys the site. scripts/update_episodes.py does the work and changes only
+# the text between the episode marker comments.
+#
+# A push made with GITHUB_TOKEN does not start other workflows, so the push
+# below does not start deploy.yml. The deploy job calls deploy.yml directly
+# instead. A called workflow runs in the context of this workflow, which
+# runs on refs/heads/main. The OIDC subject is therefore
+# repo:<owner>/<repo>:ref:refs/heads/main, the subject that the deploy role
+# in infra/deploy-role.yaml trusts.
+
+name: Update episodes
+
+on:
+  # New episodes come out on Friday at about 02:00 to 04:00 UTC (the pubDate
+  # in the feed). The first run puts the episode on the site by the morning.
+  # The second run catches an episode that comes out late. The minutes are
+  # not on the hour, because scheduled runs at the hour are often late.
+  schedule:
+    - cron: "17 6 * * 5"
+    - cron: "17 18 * * 5"
+  workflow_dispatch:
+
+permissions: {}
+
+# Two runs of this workflow never overlap. The deploy itself also uses the
+# deploy-site group of deploy.yml, so it never overlaps another deploy.
+concurrency:
+  group: update-episodes
+  cancel-in-progress: false
+
+jobs:
+  update:
+    # The push and the OIDC trust both need main. A manual run on another
+    # branch does nothing.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.update.outputs.changed }}
+      episode: ${{ steps.update.outputs.episode }}
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Test the update script
+        run: python3 -m unittest discover -s scripts -v
+
+      - name: Update index.html from the feed
+        id: update
+        run: python3 scripts/update_episodes.py
+
+      - name: Commit and push the change
+        id: commit
+        if: steps.update.outputs.changed == 'true'
+        env:
+          EPISODE: ${{ steps.update.outputs.episode }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "chore: update the home page for episode $EPISODE"
+          git push origin HEAD:main
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Report the result
+        env:
+          CHANGED: ${{ steps.update.outputs.changed }}
+          EPISODE: ${{ steps.update.outputs.episode }}
+        run: |
+          echo "Changed: $CHANGED (latest episode $EPISODE)" >> "$GITHUB_STEP_SUMMARY"
+          echo "Changed: $CHANGED (latest episode $EPISODE)"
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    permissions:
+      id-token: write
+      contents: read
+    uses: ./.github/workflows/deploy.yml
+    with:
+      # The SHA of the new commit. github.sha is still the commit from
+      # before the update.
+      ref: ${{ needs.update.outputs.sha }}
