@@ -779,7 +779,9 @@ The tests used the live site on 28 November 2026, after the deploy of the stack 
 | Page loads | Open each of the seven pages. Read the console. | No CSP violation. | PASS |
 | Acast player | Press "Play here" on the home page. Listen for `securitypolicyviolation` events. | The player loads. No violation. | PASS |
 | Instagram posts | Press "Show the posts here" on the message board. Listen for `securitypolicyviolation` events. | The posts load. No violation. | FAIL, then PASS. The first test gave 9 `style-src-attr` violations from `embed.js`. The CSP now has `style-src-attr 'unsafe-inline'`. The second test gave no violations. |
-| Google Analytics | Accept analytics cookies. Read the console. | Google Analytics loads. No violation. | To be tested by the site owner. Issue #98. |
+| Google Analytics | Accept analytics cookies. Reload. Read the console and the Network tab. | Google Analytics loads. No violation. | PASS, tested by the site owner. `gtag/js` gave 200. Two `collect` requests to `region1.google-analytics.com` gave 204. The console had no CSP message. |
+| Permissions-Policy warning | Read the console. | No warning about the headers. | FAIL, then PASS. Chrome gave "Unrecognized feature: 'browsing-topics'". The feature is removed from the header. |
+| Enforced CSP | Deploy with `CspMode=enforce`. Load the Acast player and the Instagram posts on the live site. | Both load. No violation. | PASS. The response has `Content-Security-Policy`. The Acast iframe and the 9 Instagram iframes load. |
 
 ### Audit Checks by Eye
 
