@@ -3054,6 +3054,19 @@ a {
     font-variant-numeric: tabular-nums;
 }
 
+/* A show with a date that is not confirmed */
+.arc-tbc {
+    display: inline-block;
+    padding: 0 0.375rem;
+    border: 1px solid currentColor;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
 /* Show tables: one block per row on phones */
 .arc-shows {
     display: block;
