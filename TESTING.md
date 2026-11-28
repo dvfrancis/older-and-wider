@@ -38,6 +38,7 @@
     13. [Self-Hosted Icons](#self-hosted-icons)
     14. [Page Weight](#page-weight)
     15. [Security Headers](#security-headers)
+    16. [Audit Checks by Eye](#audit-checks-by-eye)
 5. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
@@ -779,6 +780,20 @@ The tests used the live site on 28 November 2026, after the deploy of the stack 
 | Acast player | Press "Play here" on the home page. Listen for `securitypolicyviolation` events. | The player loads. No violation. | PASS |
 | Instagram posts | Press "Show the posts here" on the message board. Listen for `securitypolicyviolation` events. | The posts load. No violation. | FAIL, then PASS. The first test gave 9 `style-src-attr` violations from `embed.js`. The CSP now has `style-src-attr 'unsafe-inline'`. The second test gave no violations. |
 | Google Analytics | Accept analytics cookies. Read the console. | Google Analytics loads. No violation. | To be tested by the site owner. Issue #98. |
+
+### Audit Checks by Eye
+
+The website audit of 28 November 2026 gave some results that a tool cannot decide. These tests examined them on 28 November 2026, with axe-core 4.10.2 in the browser pane. For each item, a script measured the text colour against the nearest solid background. Then a person examined the item.
+
+| TEST | ACTION | EXPECTED RESULT | RESULT |
+| --- | --- | --- | --- |
+| Home page contrast | Run the axe `color-contrast` rule. Measure each "incomplete" item. | Each pair meets WCAG 2.1 AA. | PASS. 17 items. axe could not decide because of a pseudo-element or a gradient. Each text is on a solid colour. The lowest pair is white on blue `#6771DD`, 4.21:1, at 28 px. Large text needs 3:1. |
+| Bingo card dabs | Examine the four "called" numbers. | The magenta dab is behind all of the number. | PASS. White on magenta `#E8046C` is 4.5:1, at 51 px. |
+| About page contrast | Run the rule. Examine the contact sheet captions. | The captions are on solid ink. | PASS. 10 items. The gradient is the sprocket holes at the top and the bottom of the strip. The captions are white on ink, 17.4:1. |
+| Archive contrast | Open all `details` elements. Run the rule. | Each pair meets WCAG 2.1 AA. | PASS. 66 items, all summaries with a plus or minus sign. Red on white is 7.98:1. Ink on white is 17.4:1. |
+| Logotype | Examine the axe violation `.masthead-and` on the home page and on the About page. | The text is the brand name. | PASS. The magenta "and" on pink is 2.08:1. It is part of the logotype "Older and Wider". WCAG 1.4.3 has no contrast requirement for a logo or a brand name. The About title uses the logotype for the brand name only. |
+| Archive year headers | Examine each `arc-year` row. Count the date cells that contain the year. | Each year is a `th` with `scope="rowgroup"` at the start of its `tbody`. No information is only in the header. | PASS. 29 year headers. axe reports `th-has-data-cells` because the header spans all columns. The markup agrees with the HTML table model. Each of the 945 date cells contains the year, so a screen reader that skips the header loses no information. |
+| Archive page size | Examine the Lighthouse result for `archive.html`. | The page size does not make the page slow. | PASS. The page has 11,878 elements. Lighthouse gives 98 on mobile and 100 on desktop, 0 ms total blocking time and 0 layout shift. The page is 51 KB with Brotli. The `details` elements stay closed, so the browser does not draw the long lists at load. No change. |
 
 ## User Story Validation
 
