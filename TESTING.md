@@ -578,10 +578,10 @@ The tests used a local server and headless Google Chrome on 28 November 2026. Th
 | Check the navigation at 1440px | The five links fit on one row. | PASS |
 | Check for horizontal scroll at 375px | The page does not scroll sideways. | PASS |
 | Check the venues section | The section "The venues" is below Recent shows. It lists six venues in a `ul` element. Each venue gives the name, the town or city, the postal address, a website link and its show dates in `time` elements. | PASS |
-| Check the Theatre at the Tabard | The venue has the label "Past shows". It lists the four shows of 2024 and 2025 from `archive.html`. It has no access link, because no access page was found. | PASS |
+| Check the Theatre at the Tabard | The venue has the label "Past shows". It lists the four shows of 2024 and 2025 from `archive.html`. It has a website link and an access link. | PASS |
 | Check the venue links of the shows | Each `#venue-` link in a show agrees with an `id` on the page. A click on the link scrolls to the venue and outlines it. | PASS |
 | Check a venue link after a move | The Leeds show had a past date, and the script moved it to Recent shows. Its venue link stays. A click opens `#venue-city-varieties`. | PASS |
-| Check the venue website and access links | Each link gives the status 200. The Lowry (403) and the Theatre at the Tabard (429) block automated requests. A person must open those links in a browser. | PASS |
+| Check the venue website and access links | Each link gives the status 200. The Lowry (403) and the Theatre at the Tabard (429) block automated requests. A person opened those links in a browser on 28 November 2026. Each link opens the correct page. | PASS |
 | Check the venues at 375px, 768px and 1440px | The venues show in one column, two columns and three columns. The page does not scroll sideways. | PASS |
 
 These are the five manual tests of the script `assets/js/live-shows.js`. For each test, a copy of `live-shows.html` had changed dates. The script read the copy in the browser.
@@ -612,7 +612,7 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 | Book covers | Scroll to "Wider work" at 375 and 1440 pixels wide. | Each cover loads from `assets/images/covers/`. No image loads from another site. Each cover has no halftone screen. | Pass. 7 covers load. A cover is 80 pixels wide on a phone and 96 pixels wide from 48rem. |
 | Cover alt text | Examine each `img` element with the class `arc-cover`. | The `alt` text is empty, because the book name is next to the cover. The element has `width`, `height`, `srcset`, `sizes` and `loading="lazy"`. | Pass. |
 | Cover credit | Examine the end of "Wider work". | The text "Book covers from Open Library." links to `https://openlibrary.org`. | Pass. |
-| Lighthouse | Run Lighthouse for mobile and desktop. | Record the four scores. | To do. |
+| Lighthouse | Run Lighthouse for mobile and desktop. | Record the four scores. | Pass. The scores are in "Lighthouse results for the new design". |
 
 ### Cookie Consent and Click-to-Load
 
@@ -975,12 +975,17 @@ Lighthouse 12 ran on 27 November 2026 in headless Chrome. It tested the local pr
 | `privacy.html` | Desktop | 98 | 100 | 100 | 100 |
 | `404.html` | Mobile | 92 | 100 | 100 | 66 |
 | `404.html` | Desktop | 89 | 100 | 100 | 66 |
+| `live-shows.html` | Mobile | 98 | 100 | 100 | 100 |
+| `live-shows.html` | Desktop | 100 | 100 | 100 | 100 |
+| `archive.html` | Mobile | 98 | 100 | 100 | 100 |
+| `archive.html` | Desktop | 100 | 100 | 100 | 100 |
 
 Notes on the scores below 100:
 
 - **Accessibility 96.** The colour contrast audit fails on the word AND in the masthead. The word is magenta on pink. It is part of the logotype. WCAG 1.4.3 does not apply contrast rules to logotypes.
 - **SEO 66 on `404.html`.** The page has a `noindex` tag. Lighthouse marks the page as not crawlable. This is correct for an error page.
 - **Performance.** The first run gave a layout shift of 0.209 on `index.html` and 0.316 on `about.html` on desktop. The cause was the fonts from Google Fonts. The site now hosts the fonts and preloads them. The second run gave a layout shift of 0 on `index.html` and 0.018 on `about.html`. The scores in the table are from the second run for these two pages.
+- **`live-shows.html` and `archive.html`.** Lighthouse 12 tested the live site on 28 November 2026, after the venues, links and covers were added. The first mobile run of `live-shows.html` ran immediately after a deploy. It gave 79, with a layout shift of 0.199. Three more runs each gave 98 and a layout shift of 0. The table shows the later runs. Two runs of `archive.html` gave the same scores.
 
 ### Lighthouse results for the earlier design
 
