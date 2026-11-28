@@ -27,7 +27,8 @@
     6. [contact-completion.html (page removed)](#contact-completionhtml-page-removed-1)
     7. [404.html](#404html)
     8. [privacy.html](#privacyhtml)
-    9. [Cookie Consent and Click-to-Load](#cookie-consent-and-click-to-load)
+    9. [live-shows.html](#live-showshtml)
+    10. [Cookie Consent and Click-to-Load](#cookie-consent-and-click-to-load)
 5. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
@@ -117,6 +118,9 @@ The [W3C Nu HTML Checker](https://validator.w3.org/nu/) checked the source file 
 | message-board.html | 0 | 0 | PASS |
 | 404.html | 0 | 0 | PASS |
 | privacy.html | 0 | 0 | PASS |
+| live-shows.html | 0 | 0 | PASS |
+
+On 28 November 2026 the checker checked each page again, after the change to the navigation. The checker found no errors and no warnings on `live-shows.html`, `index.html`, `about.html`, `message-board.html`, `privacy.html` and `404.html`.
 
 To repeat the test, run this command in the repository root for each page:
 
@@ -485,12 +489,36 @@ The tests used a local server and headless Google Chrome on 27 November 2026. Th
 | TEST | EXPECTED RESULT | RESULT |
 | --- | --- | --- |
 | Open the page | The page shows the title, the date "Last updated 27 November 2026" and the table of third parties. | PASS |
-| Check the navigation | The navigation shows Home, About and Message Board. No link has `aria-current`. | PASS |
+| Check the navigation | The navigation shows Home, About, Live Shows, Archive and Message Board. No link has `aria-current`. | PASS |
 | Check the table at 390px | Each service shows as one block, with a label above each value. | PASS |
 | Check the table at 1440px | The table shows four columns. | PASS |
 | Press "Cookie settings" in the page | The cookie banner opens. | PASS |
 | Press the link to the website of Dominic Francis | The link opens https://www.dominicfrancis.co.uk/. | PASS |
 | Check for horizontal scroll at 390px | The page does not scroll sideways. | PASS |
+
+### live-shows.html
+
+The tests used a local server and headless Google Chrome on 28 November 2026. The date of today in the UK was 28 November 2026. The viewport widths were 375px, 768px and 1440px.
+
+| TEST | EXPECTED RESULT | RESULT |
+| --- | --- | --- |
+| Open the page | The page shows the title, the poster and the eight 2027 shows in Forthcoming shows, earliest first. Recent shows shows the message "No shows from this tour have happened yet". | PASS |
+| Check each show | Each show gives the date with the day of the week and the year, the town or city, the venue, the tour name and a ticket link. | PASS |
+| Check the ticket links | Each link text names the town and the date, for example "Tickets for Leeds, 25 April". Each address gives the status 200. The Lowry blocks automated requests, so a person must open that link in a browser. | PASS |
+| Check the navigation | The navigation shows Home, About, Live Shows, Archive and Message Board. "Live Shows" has `aria-current="page"`. | PASS |
+| Check the navigation at 375px | The five links fit on one row. Each link is above the masthead, so a click reaches it. | PASS |
+| Check the navigation at 1440px | The five links fit on one row. | PASS |
+| Check for horizontal scroll at 375px | The page does not scroll sideways. | PASS |
+
+These are the five manual tests of the script `assets/js/live-shows.js`. For each test, a copy of `live-shows.html` had changed dates. The script read the copy in the browser.
+
+| TEST | EXPECTED RESULT | RESULT |
+| --- | --- | --- |
+| Give a show a date in the past. The Leeds show had 27 November 2026, and the Birmingham show had 10 January 2026. | The two shows move to Recent shows, with the latest date first. Their ticket links are removed. The Recent shows message is hidden. The other six shows stay in Forthcoming shows. | PASS |
+| Give a show the date of today. The Leeds show had 28 November 2026. | The Leeds show stays in Forthcoming shows, with its ticket link. | PASS |
+| Give every forthcoming show a date in the past. Each show had its 2027 date in 2026. | All eight shows move to Recent shows, with the latest date first and no ticket links. The Forthcoming shows list is hidden, and the message "There are no forthcoming shows at the moment" shows. | PASS |
+| Turn off JavaScript, and open the copy with all dates in the past | The page shows all eight shows in Forthcoming shows, with their ticket links. No show is lost. | PASS |
+| Read the browser console on each test page | The console shows no errors and no warnings. No request fails. | PASS |
 
 ### Cookie Consent and Click-to-Load
 
