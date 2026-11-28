@@ -127,7 +127,7 @@ The [W3C Nu HTML Checker](https://validator.w3.org/nu/) checked the source file 
 
 On 28 November 2026 the checker checked each page again, after the change to the navigation. The checker found no errors and no warnings on `live-shows.html`, `index.html`, `about.html`, `message-board.html`, `privacy.html` and `404.html`.
 
-Later on 28 November 2026 the checker (version 26.11.28) checked the live `live-shows.html` and `archive.html`. This check came after the venues, the work links and the book covers were added. The checker found no errors and no warnings on the two pages. The site owner checked the live `archive.html` again in a browser, after the new tour dates and the new navigation order. The checker found no errors and no warnings.
+Later on 28 November 2026 the checker (version 26.11.28) checked the live `live-shows.html` and `archive.html`. This check came after the venues, the work links and the book covers were added. The checker found no errors and no warnings on the two pages. The site owner checked the live `archive.html` again in a browser, after the new tour dates and the new navigation order. The checker found no errors and no warnings. The site owner checked it once more after the new layout of the page, with the sections "Jenny and Judith's shows", "Jenny's solo shows" and "Wider work". The checker found no errors and no warnings.
 
 To repeat the test, run this command in the repository root for each page:
 
