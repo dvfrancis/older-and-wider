@@ -131,6 +131,9 @@ a {
 
 /* Nav strip above the masthead */
 .strip {
+    /* Keep the nav above the masthead. The masthead text box reaches up over the nav. */
+    position: relative;
+    z-index: 2;
     background: var(--red);
     color: var(--white);
 }
