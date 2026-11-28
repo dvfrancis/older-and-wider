@@ -23,7 +23,7 @@ DISTRIBUTION_ID="E1G3DY1FAYHJJJ"
 # Only these ship. An allowlist (rather than "everything except") means a new
 # stray file at the root can't silently end up on the bucket.
 # documentation/ is Code Institute assessment material, not part of the site.
-PAGES=(index.html about.html message-board.html 404.html privacy.html sitemap.xml robots.txt favicon.ico)
+PAGES=(index.html about.html live-shows.html archive.html message-board.html 404.html privacy.html sitemap.xml robots.txt favicon.ico)
 DIRS=(assets)
 
 rm -rf "$OUT"
