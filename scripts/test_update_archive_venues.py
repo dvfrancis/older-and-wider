@@ -128,7 +128,7 @@ class LivePageTest(unittest.TestCase):
         page = LIVE_PAGE.read_text(encoding="utf-8")
         rows = venues.show_rows(page) + venues.live_show_rows(venues.SHOWS_PAGE.read_text(encoding="utf-8"))
         listed = venues.count_venues(rows)
-        skipped = sum(1 for venue, _ in rows if venue in venues.SKIP)
+        skipped = sum(1 for row in rows if row[0] in venues.SKIP)
         self.assertEqual(sum(number for _, number in listed), len(rows) - skipped)
 
     def test_every_link_matches_a_venue(self):
@@ -175,8 +175,8 @@ class SmallPageTest(PageTestCase):
         self.assertEqual(code, 0, err)
         html = self.page.read_text(encoding="utf-8")
         self.assertIn("5 venues in 3 towns and cities, 6 shows", html)
-        self.assertIn('<span class="arc-venue-count">2 shows</span>', html)
-        self.assertIn('<span class="arc-venue-count">1 show</span>', html)
+        self.assertIn('<summary class="arc-venue-count">2 shows</summary>', html)
+        self.assertIn('<summary class="arc-venue-count">1 show</summary>', html)
         self.assertNotIn("Venue uncertain", html.split(venues.START)[1])
         # A second run changes nothing.
         code, out, _ = self.run_script("--check")
@@ -223,6 +223,36 @@ class SmallPageTest(PageTestCase):
         self.assertNotIn("<svg", html)
         self.assertIn('<li class="arc-venue-town"', html)
 
+    def test_rows_carry_the_date_and_the_show(self):
+        rows = venues.show_rows(SMALL_PAGE.replace("<table>\n<tr class", '<details class="arc-tour"><summary>'
+                                                     '<span class="arc-tour-name">Rescue &amp; More</span></summary>'
+                                                     "<table>\n<tr class"))
+        self.assertIn(
+            ("Leicester Square Theatre", "London", "Sunday 21 December 2025", "2025-12-21", "Older and Wider Live at Christmas"),
+            rows,
+        )
+        self.assertIn(("Her Majesty's Theatre", "Aberdeen", "Sun 2 Mar 2014", "2014-03-02", "Rescue & More"), rows)
+        live = venues.live_show_rows(
+            '<li class="show"><p class="show-date"><time datetime="2027-04-25">Sunday 25 April 2027</time></p>'
+            '<h3 class="show-place">Leeds</h3><p class="show-venue"><a href="#v">City Varieties</a></p>'
+            '<p class="show-tour">Even Older and Wider</p></li>'
+        )
+        self.assertEqual(live, [("City Varieties", "Leeds", "Sunday 25 April 2027", "2027-04-25", "Even Older and Wider")])
+
+    def test_show_list_is_latest_first(self):
+        self.run_script()
+        html = self.page.read_text(encoding="utf-8")
+        aberdeen = html.split('id="arc-venue-town-aberdeen"')[1].split("</details>")[0]
+        self.assertLess(aberdeen.index("2024-03-02"), aberdeen.index("2014-03-02"))
+        self.assertIn('<li><time datetime="2024-03-02">Sat 2 Mar 2024</time></li>', aberdeen)
+        self.assertIn('<details class="arc-venue-shows">', aberdeen)
+
+    def test_search_box_has_letter_buttons(self):
+        self.run_script()
+        html = self.page.read_text(encoding="utf-8")
+        self.assertIn('data-letters="open">Open all letters</button>', html)
+        self.assertIn('data-letters="close">Close all letters</button>', html)
+
     def test_text_outside_the_markers_is_unchanged(self):
         self.run_script()
         html = self.page.read_text(encoding="utf-8")
@@ -231,7 +261,7 @@ class SmallPageTest(PageTestCase):
     def test_names_are_escaped(self):
         page = SMALL_PAGE.replace("Leicester Square Theatre", "Bar &amp; Grill")
         block = venues.render(venues.count_venues(venues.show_rows(page)))
-        self.assertIn("<li>Bar &amp; Grill <span", block)
+        self.assertIn('<span class="arc-venue-name">Bar &amp; Grill</span>', block)
 
 
 class BadDataTest(PageTestCase):

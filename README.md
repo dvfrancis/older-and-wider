@@ -326,9 +326,11 @@ The project keeps them for reference. The build script does not deploy them. The
        - "Earlier tours". This part has a list of the tours and the Edinburgh shows, with the latest show first.
     3. Wider work. This section lists the books, television and radio of each host. Each item has a link to its source. Where possible, an item also links to the work itself. A book links to its page on Amazon UK, and a television or radio series links to its page on BBC Programmes or Channel 4. Most books show a cover from Open Library. The covers of The Book of Nanas and Jokes, Jokes, Jokes come from Hachette UK, the publisher. The site keeps a copy of each cover in `assets/images/covers/`.
     4. Venues. A closed `details` element lists every venue in the archive and every show on `live-shows.html`, which includes the 2027 tour. The visitor opens the list to see it. The list has these parts:
-       - A search box. The visitor types a town, a county or a venue. The list shows only the towns that match. The map shows the matching towns in red. The script `assets/js/archive-venues.js` does this work. Without JavaScript, the search box does not show.
+       - A search box. The visitor types a town, a county, a venue, a show or a year. The list shows only the towns that match. The map shows the matching towns in red. If the text matches a show or a date, the show list of the venue opens. The script `assets/js/archive-venues.js` does this work. Without JavaScript, the search box does not show.
+       - Two buttons, "Open all letters" and "Close all letters". Without JavaScript, the buttons do not show.
        - A map of the UK, Ireland and the Channel Islands. Each town is a dot. A bigger dot shows more shows. The towns in Australia are not on the map. A note under the map names them.
        - One closed `details` element for each first letter. Each letter lists its towns. Each town shows its county and its venues, with the number of shows at each venue.
+       - The number of shows at each venue is a closed `details` element. When it opens, it lists each show at the venue, with the date and the show name. The latest show is first. The show name of a tour date is the name of its tour.
        - A link to the website of each venue, if the venue has a website. Each link opens in a new tab.
 
        The script `scripts/update_archive_venues.py` builds the list. Refer to [Update the Venue List](#update-the-venue-list).
@@ -1173,7 +1175,7 @@ Links to the podcast, on various platforms:
     - `assets/js/message-board.js` loads the Instagram posts only when the visitor asks for them.
     - `assets/js/board-date.js` shows the date of today on the message board.
     - `assets/js/live-shows.js` moves each past show to Recent shows.
-    - `assets/js/archive-venues.js` shows the venue search on the archive page.
+    - `assets/js/archive-venues.js` shows the venue search and the letter buttons on the archive page.
 - [Google Analytics](https://marketingplatform.google.com/about/analytics/) counts visits, only after the visitor accepts analytics cookies.
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
 - [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
