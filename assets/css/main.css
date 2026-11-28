@@ -185,7 +185,7 @@ a {
 .masthead {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: calc(100cqi / 6.45);
+    font-size: calc(100cqi / 5.7);
     line-height: 0.9;
     letter-spacing: -0.01em;
     text-transform: uppercase;
@@ -194,8 +194,10 @@ a {
     white-space: nowrap;
 }
 
-/* Logotype: AND in magenta, as on the tour flyer */
+/* Logotype: AND in magenta and at half size, as on the merchandise */
 .masthead-and {
+    font-size: 0.5em;
+    vertical-align: 0.42em;
     color: var(--magenta);
 }
 

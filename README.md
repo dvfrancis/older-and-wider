@@ -189,8 +189,10 @@ The project keeps them for reference. The build script does not deploy them. The
 - Browser Tab Icon:
 
     - A custom favicon helps users to identify the site. It also shows when a user adds the site as a bookmark or favourite.
+    - The favicon shows OLDER, AND and WIDER on three lines, as on the merchandise. AND is smaller and in magenta.
+    - The site has a multi-size `.ico` file (16, 32 and 48 pixels), a 192 pixel PNG and a 180 pixel Apple touch icon.
 
-        ![Website custom favicon](assets/images/website-favicon.webp)
+        ![Website custom favicon](assets/images/oaw-icon-192.png)
 
 - Header:
 

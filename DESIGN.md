@@ -242,7 +242,7 @@ The palette comes from the 2027 tour poster. It is saturated, warm and printed i
   - Episode numbers, the bingo ticket grid and the red post stock.
 
 ### Secondary
-- **Logotype Magenta** (logotype-magenta): The word AND in the show name. Also the magenta coverline slab and the bingo dab.
+- **Logotype Magenta** (logotype-magenta): The word AND in the show name. AND is half the size of OLDER and WIDER, as on the merchandise. Also the magenta coverline slab and the bingo dab.
 - **Coverline Blue** (coverline-blue): One coverline slab (the shop). Use it only with white large text.
 
 ### Tertiary
