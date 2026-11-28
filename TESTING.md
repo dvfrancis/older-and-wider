@@ -33,6 +33,7 @@
     10. [archive.html](#archivehtml)
     11. [Cookie Consent and Click-to-Load](#cookie-consent-and-click-to-load)
     12. [External Links](#external-links)
+    13. [Self-Hosted Icons](#self-hosted-icons)
 5. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
@@ -701,6 +702,20 @@ A Python script checked the markup of the seven pages on 28 November 2026. A per
 | TEST | EXPECTED RESULT | RESULT |
 | --- | --- | --- |
 | External links open in a new tab and screen readers announce it | Each link to another website has `target="_blank"`, `rel="external noopener"` and `aria-describedby="new-tab"`. A click opens the site in a new tab. A screen reader reads "Opens in a new tab" with the link. | Markup PASS. Screen reader check to be done with VoiceOver. |
+
+### Self-Hosted Icons
+
+The site used Font Awesome from cdnjs until 28 November 2026. The file `assets/images/icons-v1.svg` now holds the 14 icons. The tests used a local server and the browser pane of the Claude desktop app, on 28 November 2026.
+
+| TEST | ACTION | EXPECTED RESULT | RESULT |
+| --- | --- | --- | --- |
+| No request to cdnjs | Open each of the seven pages. Examine the network requests. | No request goes to another host before consent. The sprite loads one time on each page. | PASS |
+| No Font Awesome markup | Search the pages, the fixtures and the scripts for `cdnjs`, `fa-solid`, `fa-brands` and `class="fa`. | No match. | PASS |
+| Icon size and colour | Measure each `svg.icon` on the home page, the message board, the privacy page and `404.html`. | Each icon is about 1em tall. The fill agrees with the colour of the text next to it. | PASS. The icons are 18 to 28 px tall. The fills are ink, white and red. |
+| Icons on `404.html` | Open `404.html`. | Each `use` element starts with `/assets/`. The four icons show. | PASS |
+| Hidden icons | Examine the icons that measure 0 px. | Each is inside an element that the scripts hide, for example "Listen on Acast". | PASS |
+| Script tests | Run `python3 -m unittest discover -s scripts -v`. Run `update_episodes.py --check` and `update_instagram.py --check`. | All tests pass. Each check reports no change. | PASS. 100 tests. |
+| Privacy page | Open `privacy.html`. | The services table has no Font Awesome row. | PASS |
 
 ## User Story Validation
 
