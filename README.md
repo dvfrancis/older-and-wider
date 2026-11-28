@@ -301,12 +301,15 @@ The project keeps them for reference. The build script does not deploy them. The
 
     The archive page, `archive.html`, has three sections:
 
-    1. Older and Wider live. This table shows each show with both hosts, with the latest show first.
+    1. Jenny and Judith's shows. This section has these parts:
+       - "Older and Wider live". This table shows each show with both hosts, with the latest show first.
+       - "Grumpy Old Women". This part has a list of the stage shows that Jenny and Judith wrote together, and the seasons in Australia.
     2. Jenny's solo shows. This section has these parts:
        - "Coming up". This part shows a message and a link to `jennyeclair.com` when no solo show is on sale.
-       - "Earlier tours". This table has one row for each tour or Edinburgh show.
-       - "Every date we found". Each tour has its dates in a `details` element. The Grumpy Old Women shows are in a separate group.
+       - "Earlier tours". This part has a list of the tours and the Edinburgh shows, with the latest show first.
     3. Wider work. This section lists the books, television and radio of each host. Each item has a link to its source. Where possible, an item also links to the work itself. A book links to its page on Amazon UK, and a television or radio series links to its page on BBC Programmes or Channel 4. Most books show a cover from Open Library. The covers of The Book of Nanas and Jokes, Jokes, Jokes come from Hachette UK, the publisher. The site keeps a copy of each cover in `assets/images/covers/`.
+
+    Each show in a list is a white card. A show with dates is a `details` element. When it opens, it shows a short text about the show, an optional note and the table of dates. A show with no single dates, for example an Edinburgh show, is a plain card that does not open. The paragraph above each list gives the total number of dates in the list. The seasons in Australia are not in the total.
 
     Each date is in a `time` element with a `datetime` attribute. If only the month is known, the attribute has the form `YYYY-MM`.
 
@@ -654,7 +657,7 @@ Do not move a cancelled show to Recent shows. Recent shows holds only the shows 
 
 Do these steps after the last show of a tour.
 
-1. Copy each show of the tour to the Older and Wider live shows section of `archive.html`.
+1. Copy each show of the tour to the part "Older and Wider live" of `archive.html`.
 2. Put the latest show first.
 3. Remove the ticket link from each copied show.
 4. Check each show against a reliable source, for example a podcast episode after the date. Do not copy a show that did not occur.
@@ -687,7 +690,7 @@ Each venue is one `li` element with the class `venue` in the list `venues`. Get 
 
 1. Make sure that a podcast episode or a venue listing confirms the show.
 2. Open `archive.html`.
-3. Find the table with the class `arc-shows` in the section "Older and Wider live".
+3. Find the table with the class `arc-shows` in the part "Older and Wider live". This part is in the section "Jenny and Judith's shows".
 4. Add a new `tr` element in the correct position. The latest show is first.
 5. Put the date in a `time` element. Use the form `YYYY-MM-DD`.
 6. If only the month is confirmed, use the form `YYYY-MM`. Write the month and the year only.
@@ -704,16 +707,18 @@ Follow the procedure [Move a Finished Tour to the Archive](#move-a-finished-tour
 
 A solo tour has many more dates than an Older and Wider tour. You must add the dates by hand.
 
-1. Add a row to the "Earlier tours" table. Give the name of the tour, the years and a short note.
-2. Write the note in your own words. Do not copy text from another website.
-3. Add a new `li` element to the list with the class `arc-tour-list`, below "Solo tours".
-4. In the `li` element, add a `details` element with the class `arc-tour` and a unique `id`, for example `dates-new-tour`.
-5. In the `summary` element, give the name of the tour, the years and the number of dates.
+1. Add a new `li` element to the list with the class `arc-tour-list`, below "Earlier tours". The latest tour is first.
+2. In the `li` element, add a `details` element with the class `arc-tour` and a unique `id`, for example `dates-new-tour`.
+3. In the `summary` element, give the name of the tour, the years and the number of dates.
+4. Below the `summary` element, add a paragraph with the class `arc-tour-about`. Write a short text about the tour.
+5. Write the text in your own words. Do not copy text from another website.
 6. Add a table with the class `arc-dates`. Use one `tbody` element for each year, with the latest year first.
 7. Start each `tbody` element with a row of the class `arc-year`.
 8. Give each date in the form "Sat 5 Oct 2024". Put it in a `time` element.
 9. Write the town or city in the second cell. Write the venue in the third cell.
-10. Link the name of the tour in the "Earlier tours" table to the `id` of the `details` element.
+10. Change the total number of dates in the paragraph above the list.
+
+A show with no single dates does not use a `details` element. Use a `div` element with the classes `arc-tour arc-tour-static`. Put the name and the years in a paragraph with the class `arc-tour-head`. Put the text about the show in a paragraph with the class `arc-tour-about`.
 
 #### Correct or Remove a Show
 
@@ -721,7 +726,7 @@ A solo tour has many more dates than an Older and Wider tour. You must add the d
 2. To correct the show, change the date, the town or the venue.
 3. To remove the show, delete its `tr` element.
 4. If you change a tour, change the number of dates in its `summary` element.
-5. Change the total number of dates in the paragraph below "Every date we found".
+5. Change the total number of dates in the paragraph above the list. Each list has its own total.
 
 #### Add a Book to Wider Work
 
