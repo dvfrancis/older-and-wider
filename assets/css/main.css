@@ -3124,10 +3124,6 @@ a {
     box-shadow: var(--rest-shadow);
 }
 
-.arc-tour-list + .arc-tour {
-    margin-top: 0.75rem;
-}
-
 .arc-tour summary {
     display: flex;
     flex-wrap: wrap;
