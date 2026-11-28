@@ -216,6 +216,8 @@ The project keeps them for reference. The build script does not deploy them. The
     - Each page works without JavaScript.
     - The site has six pages: Home, About, Live Shows, Message Board, Privacy and a custom 404 page.
     - No third-party embed loads until the visitor asks for it. Google Analytics loads only after the visitor accepts analytics cookies.
+    - Each link to another website opens in a new tab. The link has the attributes `rel="external noopener" target="_blank" aria-describedby="new-tab"`.
+    - The footer of each page holds a hidden element `<span id="new-tab" hidden>Opens in a new tab</span>`. Screen readers read this text with each external link.
     - The screenshots in this section show the earlier design. New screenshots of the redesign are to be added.
 
 - Browser Tab Icon:
@@ -620,7 +622,7 @@ The script `assets/js/live-shows.js` moves past shows. Other changes to `live-sh
     <h3 class="show-place">Leeds</h3>
     <p class="show-venue"><a href="#venue-city-varieties">City Varieties</a></p>
     <p class="show-tour">Even Older and Wider</p>
-    <p class="show-tickets"><a href="https://leedsheritagetheatres.com/whats-on/even-older-and-wider-2027/" rel="external">Tickets for Leeds, 25 April</a></p>
+    <p class="show-tickets"><a href="https://leedsheritagetheatres.com/whats-on/even-older-and-wider-2027/" rel="external noopener" target="_blank" aria-describedby="new-tab">Tickets for Leeds, 25 April</a></p>
 </li>
 ```
 
@@ -752,7 +754,7 @@ The "Wider work" section of `archive.html` links each book to its page on Amazon
 5. Add a `li` element to the list of the correct host.
 6. Add a paragraph with the class `arc-work-link` above the paragraph with the class `arc-source`.
 7. In the paragraph, link to `https://www.amazon.co.uk/dp/ISBN-10`. Do not add affiliate or tracking parameters.
-8. Write the link text in the form "Title on Amazon". Add `rel="external"` to the link.
+8. Write the link text in the form "Title on Amazon". Add `rel="external noopener" target="_blank" aria-describedby="new-tab"` to the link.
 9. Download the cover from `https://covers.openlibrary.org/b/isbn/ISBN-L.jpg?default=false`.
 10. If the address gives a 404 error, Open Library has no cover. Do not add a cover.
 11. Do not use a cover that is small or blank. Use `sips -g pixelWidth -g pixelHeight` to get its size.

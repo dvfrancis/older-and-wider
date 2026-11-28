@@ -32,6 +32,7 @@
     9. [live-shows.html](#live-showshtml)
     10. [archive.html](#archivehtml)
     11. [Cookie Consent and Click-to-Load](#cookie-consent-and-click-to-load)
+    12. [External Links](#external-links)
 5. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
@@ -652,6 +653,14 @@ The tests used a local server and headless Google Chrome, driven by a Playwright
 | Set `prefers-reduced-motion: reduce` | The banner shows with no animation. | PASS |
 
 `assets/js/analytics.js` now holds the real ID `G-KQEX5744PM`. After the deploy, do the GA4 Realtime test in issue #21.
+
+### External Links
+
+A Python script checked the markup of the seven pages on 28 November 2026. A person must do the screen reader check.
+
+| TEST | EXPECTED RESULT | RESULT |
+| --- | --- | --- |
+| External links open in a new tab and screen readers announce it | Each link to another website has `target="_blank"`, `rel="external noopener"` and `aria-describedby="new-tab"`. A click opens the site in a new tab. A screen reader reads "Opens in a new tab" with the link. | Markup PASS. Screen reader check to be done with VoiceOver. |
 
 ## User Story Validation
 

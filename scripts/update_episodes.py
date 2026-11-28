@@ -297,13 +297,13 @@ def render_sections(episodes: list[Episode]) -> dict[str, list[str]]:
     for (row, column), episode in zip(TICKET_CELLS, ticket):
         dab = " called" if episode in called else ""
         sections["ticket"].append(
-            f'<li class="tk r{row} c{column}{dab}"><a href="{attr(episode.url)}" rel="external">'
+            f'<li class="tk r{row} c{column}{dab}"><a href="{attr(episode.url)}" rel="external noopener" target="_blank" aria-describedby="new-tab">'
             f'<span class="visually-hidden">Episode </span>{episode.number}</a></li>'
         )
     for episode in reversed(called):
         sections["last-called"] += [
             "<li>",
-            f'    <a href="{attr(episode.url)}" rel="external">',
+            f'    <a href="{attr(episode.url)}" rel="external noopener" target="_blank" aria-describedby="new-tab">',
             f'        <span class="lc-no">{episode.number}</span>',
             f'        <span class="lc-title">{text(episode.title)}</span>',
             f"        {meta(episode, 'lc-meta')}",

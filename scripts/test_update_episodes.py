@@ -133,6 +133,13 @@ class NewEpisodeTest(PageTestCase):
         self.assertTrue(all(c[2].startswith(SHOW) for c in cells))
         self.assertEqual(len({c[2] for c in cells}), 15)
 
+    def test_links_open_in_a_new_tab(self):
+        for name in ("ticket", "last-called"):
+            links = re.findall(r"<a [^>]*>", self.section(name))
+            self.assertTrue(links)
+            for link in links:
+                self.assertIn('rel="external noopener" target="_blank" aria-describedby="new-tab"', link)
+
     def test_ticket_rows_have_five_numbers(self):
         rows = re.findall(r'class="tk r(\d)', self.section("ticket"))
         self.assertEqual(sorted(rows), ["1"] * 5 + ["2"] * 5 + ["3"] * 5)

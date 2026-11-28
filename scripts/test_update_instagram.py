@@ -119,6 +119,12 @@ class NormalUpdateTest(PageTestCase):
         # Post 5 has no photo, so it is skipped. Post 12 is the eleventh.
         self.assertEqual(links, ["1", "2", "3", "4", "6", "7", "8", "9", "10", "11"])
 
+    def test_links_open_in_a_new_tab(self):
+        links = re.findall(r"<a [^>]*>", self.posts)
+        self.assertEqual(len(links), 10)
+        for link in links:
+            self.assertIn('rel="external noopener" target="_blank" aria-describedby="new-tab"', link)
+
     def test_embed_markup_is_gone_between_markers(self):
         self.assertNotIn("instagram-media", self.posts)
         self.assertNotIn("<script", self.posts)
@@ -419,6 +425,7 @@ class ListModeTest(PageTestCase):
         self.assertIn('fa-video" aria-hidden="true"></i>Video', posts)
         self.assertIn('fa-images" aria-hidden="true"></i>Photo set', posts)
         self.assertIn('<span class="post-text">A reel about the tour</span>', posts)
+        self.assertEqual(posts.count('target="_blank" aria-describedby="new-tab"'), 3)
         self.assertEqual(re.findall(r'instagram-media (post-\w+)', posts), ["post-red", "post-white", "post-letter"])
         self.assertEqual(self.image_files(), [])
         sitemap = self.sitemap.read_text(encoding="utf-8")
