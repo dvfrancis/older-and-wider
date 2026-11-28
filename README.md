@@ -6,6 +6,16 @@ Older and Wider is a humorous (and [real](https://shows.acast.com/older-and-wide
 
 The website gives information about the podcast. It has an embedded podcast player, the dates of the 2027 live tour, a link to the shop, and access to the Instagram page that the hosts call the "message board". The podcast has had over 7.5 million downloads.
 
+### Redesign
+
+The site had a full redesign in November 2026. The Code Institute coursework submission was in June 2024. This README describes the current site.
+
+The [README as submitted](https://github.com/dvfrancis/older-and-wider/blob/152a9f3/README.md) is in the repository history at commit `152a9f3`. That version describes the site as the assessors saw it.
+
+| Submitted design (June 2024) | Current design (November 2026) |
+|---|---|
+| ![The home page as submitted, with a teal header, a photo carousel and red and green content panels](assets/images/website-index-feature.webp) | ![The home page after the redesign, with a pink masthead, a magazine cover photo and a bingo ticket of back issues](documentation/screenshots/desktop-index-redesign.webp) |
+
 ### Background Information
 
 There are several references scattered across the site which refer back to items that are regularly mentioned, or discussed, on the podcast:
@@ -35,9 +45,10 @@ The live site can be accessed [here].
 ## Index
 
 1. [Overview](#the-older-and-wider-podcast)
-    1. [Background Information](#background-information)
-    2. [Site Preview](#site-preview)
-    3. [Site Link](#site-link)
+    1. [Redesign](#redesign)
+    2. [Background Information](#background-information)
+    3. [Site Preview](#site-preview)
+    4. [Site Link](#site-link)
 2. [Design](#design)
     1. [Design System](#design-system)
     2. [Screenshots](#screenshots)
