@@ -643,6 +643,7 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 | Back to top shows | Scroll down more than one screen. | The yellow "Back to top" link shows at the bottom right. A screen reader reads "Back to top", with no arrow. | Pass, 28 November 2026. |
 | Back to top works | Click "Back to top". | The page goes to the top. The address ends with `#top`. | Pass, 28 November 2026. |
 | Back to top on a phone | Scroll down at 375 px. | The link is 16 px from the right and the bottom. It is 44 px tall. The page does not scroll sideways. | Pass, 28 November 2026. |
+| Short dates | Open `archive.html` and `live-shows.html`. Open a venue show list on the archive. | Each show date uses three letters for the day and the month, for example "Sat 3 Jul 2027". Each day of the week agrees with its `datetime`. | Pass, 28 November 2026. |
 | Show list of a venue | Open the letter "K". Click "2 shows" under Brewery Arts Centre, Kendal. | The list opens under the venue. It gives Sat 20 May 2017, How To Be A Middle Aged Woman (Without Going Insane), then Fri 11 Feb 2011, Old Dog New Tricks. The sign changes from plus to minus. | Pass, 28 November 2026. |
 | Search by show | Type "Old Dog New Tricks". | 66 towns match. The show list of each matching venue opens. | Pass, 28 November 2026. |
 | Search by year | Type "2027". | 5 towns match: Birmingham, Bristol, Leeds, London and Salford. These hold the 8 dates of the 2027 tour. | Pass, 28 November 2026. |
