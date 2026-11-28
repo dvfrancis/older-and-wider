@@ -42,6 +42,10 @@ done
 find "$OUT" -name '.DS_Store' -delete
 find "$OUT" -name '._*' -delete
 
+# Make the CSS smaller in deploy/ only. The source file keeps its comments.
+# This runs before the fingerprint, so the hash is the hash of the small file.
+python3 scripts/minify_css.py "$OUT"/assets/css/*.css
+
 # Fingerprint the CSS and JS files. Assets are cached for one year as immutable,
 # so a changed file must get a new name. Otherwise returning visitors keep the old copy.
 # The source files keep their plain names. Only deploy/ gets the hashed names.

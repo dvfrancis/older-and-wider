@@ -21,6 +21,7 @@
     3. [Episode Update Results](#episode-update-results)
     4. [Instagram Update Script](#instagram-update-script)
     5. [Instagram Update Results](#instagram-update-results)
+    6. [CSS Minifier](#css-minifier)
 4. [Manual Validation](#manual-validation)
     1. [index.html](#indexhtml)
     2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-1)
@@ -35,6 +36,7 @@
     11. [Cookie Consent and Click-to-Load](#cookie-consent-and-click-to-load)
     12. [External Links](#external-links)
     13. [Self-Hosted Icons](#self-hosted-icons)
+    14. [Page Weight](#page-weight)
 5. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
@@ -420,6 +422,23 @@ The results on 28 November 2026 were these:
 | W3C Markup Validator on `message-board.html` with the 10 posts from `media.json` | Pass. No errors and no warnings. |
 | `./build.sh` | Pass. |
 
+### CSS Minifier
+
+`scripts/minify_css.py` makes the CSS smaller in `deploy/`. `build.sh` runs it before it adds the hash to the file name. The tests are in `scripts/test_minify_css.py`.
+
+| TEST | EXPECTED RESULT | RESULT |
+| --- | --- | --- |
+| Remove comments and white space | `.a {\n color: red;\n}` gives `.a{color: red}`. | PASS |
+| Keep strings | The text in quotes does not change, also when it contains `/*` or `;`. | PASS |
+| Keep `url()` | A quoted or plain `url()` does not change. | PASS |
+| Keep the space before a colon | `.nav :hover` does not change to `.nav:hover`. | PASS |
+| Keep the space in `calc()` and `@media` | `calc(100% - 2rem)` and `(min-width: 48rem) and (...)` do not change. | PASS |
+| Comment between two words | `0/**/auto` gives `0 auto`. | PASS |
+| `main.css` keeps every rule | The small file has the same braces and strings. Without white space, the two files are the same. | PASS |
+| Pages look the same | Take a screenshot of each page from the source and from `deploy/` at 1280 and 375 pixels. Compare the pixels. | PASS, 28 November 2026. At 1280 pixels each pair is the same. At 375 pixels the difference is the same as between two screenshots of the source. |
+
+On 28 November 2026, `main.css` was 81,571 bytes (14,586 with gzip). The small file was 55,598 bytes (9,473 with gzip).
+
 ## Manual Validation
 
 These results are for the earlier design. They include the "Contact" link, the image carousels and the forms. The redesign removed these items. To be re-run on the new design.
@@ -735,6 +754,16 @@ The site used Font Awesome from cdnjs until 28 November 2026. The file `assets/i
 | Hidden icons | Examine the icons that measure 0 px. | Each is inside an element that the scripts hide, for example "Listen on Acast". | PASS |
 | Script tests | Run `python3 -m unittest discover -s scripts -v`. Run `update_episodes.py --check` and `update_instagram.py --check`. | All tests pass. Each check reports no change. | PASS. 100 tests. |
 | Privacy page | Open `privacy.html`. | The services table has no Font Awesome row. | PASS |
+
+### Page Weight
+
+These tests follow the website audit of 28 November 2026.
+
+| TEST | ACTION | EXPECTED RESULT | RESULT |
+| --- | --- | --- | --- |
+| About gallery photos | Examine the `srcset` of the eight small photos on `about.html`. | Each has a 480 px file between the 256 px and the largest file. Each 480 px file is 480 x 480 pixels. | PASS |
+| Home cover halftone | Examine `--screen-photo` in `.cover-body`. | It uses `home-cover-merch_480.webp`, not the 960 px file. | PASS. The second file is 19 KB, not 80 KB. On a 1x phone the `img` uses the same file. |
+| Halftone looks the same | Compare the cover with the 960 px file, the 256 px file and no file, at 1280 pixels. | No visible difference. | PASS. The halftone adds only a faint dot texture. |
 
 ## User Story Validation
 

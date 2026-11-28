@@ -18,6 +18,7 @@ on:
       - "*.html"
       - "assets/**"
       - "build.sh"
+      - "scripts/minify_css.py"
       - "sitemap.xml"
       - "robots.txt"
       - "favicon.ico"

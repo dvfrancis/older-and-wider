@@ -21,19 +21,19 @@ python3 scripts/update_episodes.py           # update the episode sections of in
 python3 scripts/update_instagram.py --check  # diff the message board posts, write nothing
 python3 scripts/update_archive_venues.py --check  # diff the archive venue list, write nothing
 python3 scripts/update_archive_venues.py          # rebuild the venue list in archive.html
-python3 -m unittest discover -s scripts -v   # tests for the three update scripts
+python3 -m unittest discover -s scripts -v   # tests for the update scripts and the CSS minifier
 ```
 
 `.claude/launch.json` defines the same preview server for the Claude Code preview tool.
 
-There is no linter. The only automated tests cover `scripts/update_episodes.py`, `scripts/update_instagram.py` and `scripts/update_archive_venues.py`. Each scheduled workflow runs only the tests of its own script. Other verification is manual and is recorded in `TESTING.md`: W3C Markup Validator for each page, W3C CSS Validator for the stylesheet, Lighthouse for mobile and desktop, plus a manual pass across Chrome, Edge, Firefox, Opera and Safari. Screenshots of each result go in `documentation/validation/` and are linked from `TESTING.md`.
+There is no linter. The only automated tests cover `scripts/update_episodes.py`, `scripts/update_instagram.py`, `scripts/update_archive_venues.py` and `scripts/minify_css.py`. Each scheduled workflow runs only the tests of its own script. Other verification is manual and is recorded in `TESTING.md`: W3C Markup Validator for each page, W3C CSS Validator for the stylesheet, Lighthouse for mobile and desktop, plus a manual pass across Chrome, Edge, Firefox, Opera and Safari. Screenshots of each result go in `documentation/validation/` and are linked from `TESTING.md`.
 
 ## Deployment pipeline
 
 Three files work together and should be understood as one unit:
 
 - **`build.sh`** copies an explicit allowlist of pages (`PAGES`) and directories (`DIRS`) into `deploy/`, wiping it first. `deploy/` is gitignored and always regenerated.
-- **`.github/workflows/deploy.yml`** runs `./build.sh --deploy --yes` on every push to `main` that touches `*.html`, `assets/**`, `build.sh`, `sitemap.xml`, `robots.txt`, `favicon.ico`, or the workflow itself. CI runs the identical script a human runs locally, so the two cannot drift.
+- **`.github/workflows/deploy.yml`** runs `./build.sh --deploy --yes` on every push to `main` that touches `*.html`, `assets/**`, `build.sh`, `sitemap.xml`, `robots.txt`, `favicon.ico`, `scripts/minify_css.py`, or the workflow itself. CI runs the identical script a human runs locally, so the two cannot drift.
 - **`infra/deploy-role.yaml`** is the CloudFormation stack (`older-and-wider-deploy-role`, eu-west-2) for the OIDC role CI assumes. Trust is locked to this repo's `main` branch. Permissions are scoped to this site's folder in the bucket, and to the one distribution. The role cannot read or delete the folder of another site. No stored AWS keys.
 
 **The bucket is shared.** The site is in the folder `older-and-wider` of the bucket `portfolio-dominicfrancis`. The bucket holds the other dominicfrancis.co.uk sites, one folder for each site. The CloudFront distribution (`E1G3DY1FAYHJJJ`) reads the folder through the origin path `/older-and-wider`. Thus the public addresses do not contain the folder name. The live site is https://older-and-wider.dominicfrancis.co.uk.
@@ -42,7 +42,7 @@ Four deliberate details in `build.sh` that are easy to break:
 
 - **Every S3 path goes through `DEST`.** `DEST` is `s3://$BUCKET/$PREFIX`. The deploy syncs with `--delete`. A sync that points at the bucket root erases the other sites. Do not write `s3://$BUCKET/` in the script. Do not change `PREFIX` unless you also change the origin path and the `Prefix` parameter of the role stack.
 - **Cache-Control does the invalidation work.** Assets sync with `max-age=31536000, immutable`; HTML syncs with `no-cache`. That is why a deploy lands without a CloudFront invalidation. Changing these headers reintroduces the 24h default TTL.
-- **CSS and JS file names get a hash.** `build.sh` renames each file in `assets/css/` and `assets/js/` in `deploy/`, for example `main.bea7c67fec.css`. It then changes the links in each page. A changed file gets a new name, so the one-year cache cannot serve an old copy. The source files keep their plain names. Images do not get a hash. Give a replaced image a new file name.
+- **CSS and JS file names get a hash.** `build.sh` renames each file in `assets/css/` and `assets/js/` in `deploy/`, for example `main.bea7c67fec.css`. It then changes the links in each page. A changed file gets a new name, so the one-year cache cannot serve an old copy. The source files keep their plain names. Before the hash, `scripts/minify_css.py` makes each CSS file in `deploy/` smaller. Images do not get a hash. Give a replaced image a new file name.
 - **HTML syncs last**, after assets, so a live page never references an asset that has not uploaded yet.
 
 Routine deploys should go through CI — push to `main` and let the workflow run. If you do deploy by hand, note that this machine's default AWS profile is a read-only user. `build.sh`'s safety check only reads (`aws s3 ls`), so it passes, and the run then fails partway through the first `aws s3 sync`. A local `--deploy` needs a write-capable profile (`admin` or `poweruser` are configured), e.g. `AWS_PROFILE=admin ./build.sh --deploy`.
