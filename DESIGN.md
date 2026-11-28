@@ -242,7 +242,7 @@ The palette comes from the 2027 tour poster. It is saturated, warm and printed i
   - Episode numbers, the bingo ticket grid and the red post stock.
 
 ### Secondary
-- **Logotype Magenta** (logotype-magenta): The word AND in the show name. AND is half the size of OLDER and WIDER, as on the merchandise. Also the magenta coverline slab and the bingo dab.
+- **Logotype Magenta** (logotype-magenta): The word AND in the show name. In the masthead, AND is 0.65 of the size of OLDER and WIDER, as on the merchandise. In the favicon, AND is smaller again, so that it fits on its own line. Also the magenta coverline slab and the bingo dab.
 - **Coverline Blue** (coverline-blue): One coverline slab (the shop). Use it only with white large text.
 
 ### Tertiary
@@ -395,12 +395,12 @@ The screen also covers these photos. Each one sets `--screen-photo` to its own i
 - The Message Board print (`.board-print-photo`).
 - The 404 print (`.err-photo`).
 
-The second photos and the contact sheet frames have no screen.
+The second photos and the contact sheet frames also carry the screen. Their dot layer uses the 256 pixel copy of each photo.
 
 ### Named Rules
 **The Page Lift Rule.** Lift a coverline on hover and focus by 0.375rem and turn it by -0.6deg, with the Lift shadow. Use the out-expo curve over 0.45s.
 
-**The Halftone Rule.** Put the halftone screen on cover photos and on the large host photos. Remove the screen under `prefers-contrast: more`.
+**The Halftone Rule.** Put the halftone screen on every photo. Remove the screen under `prefers-contrast: more`.
 
 **The Laid Print Rule.** Show a loose photo as a print on the page. Give it a white border and a soft shadow. Turn it between 1.5deg and 2deg.
 
@@ -416,7 +416,7 @@ Prints have a white border. The second photo and the Message Board print have 0.
 
 Rules are print rules: a 3px ink rule under section titles, feature titles and the Message Board title, and above the issue line. Rules elsewhere are 1px. The post meta line has a 1px rule in the text colour.
 
-The contact sheet is a strip of film. White sprocket holes run along the top and the bottom edge. Each hole is 0.625rem by 0.375rem, at 50% opacity, on a 1.5rem pitch.
+The contact sheet is a strip of film. White sprocket holes run along the top and the bottom edge. Each hole is a solid white 0.625rem square, on a 1.25rem pitch.
 
 Prints and posts are turned a little. The values are:
 - Second photos: -1.5deg (Jenny) and 1.5deg (Judith).
@@ -566,7 +566,7 @@ The bingo ticket has scalloped tear-off edges at the top and bottom, and a dotte
 - **Do** write the show name as "Older and Wider", with AND in Logotype Magenta in display lettering.
 - **Do** set display, subhead, label, nav and button text in capitals.
 - **Do** use the contrast pairs in the Colors section, and keep the large-text-only pairs at large sizes.
-- **Do** put the halftone screen on cover photos and large host photos, and remove it under `prefers-contrast: more`.
+- **Do** put the halftone screen on every photo, and remove it under `prefers-contrast: more`.
 - **Do** remove the lift and the turn under `prefers-reduced-motion: reduce`.
 - **Do** keep every touch target 2.75rem high or more.
 - **Do** keep all style rules in the stylesheet and all tokens as custom properties on `:root`.
