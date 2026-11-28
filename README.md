@@ -744,7 +744,7 @@ The "Wider work" section of `archive.html` links each book to its page on Amazon
 15. Give the `li` element the class `arc-work-book`.
 16. Put an `img` element with the class `arc-cover` first in the `li` element. Copy the attributes of an existing cover.
 17. Set `width="240"` and set `height` to the height of the 240 pixel file.
-18. Set `alt` to "Cover of Title".
+18. Set `alt` to an empty value. The book name is next to the cover.
 19. Put the text paragraphs of the book in a `div` element with the class `arc-work-text`.
 20. If you replace a cover, give the new files a new name. The browser keeps the old files for one year.
 

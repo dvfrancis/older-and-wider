@@ -610,7 +610,7 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 | Status of the work links | Send a request to each link that does not go to Amazon. | Each link gives the status 200. | Pass. The 4 BBC Programmes pages, the Channel 4 page and `openlibrary.org` give 200, 28 November 2026. |
 | Amazon links | Examine the ISBN-10 in each Amazon link. | The check digit is correct. Open Library gives the same title and author for the ISBN. | Pass. Amazon blocks automated requests, so the test examines the ISBN only. No link has an affiliate or tracking parameter. |
 | Book covers | Scroll to "Wider work" at 375 and 1440 pixels wide. | Each cover loads from `assets/images/covers/`. No image loads from another site. Each cover has no halftone screen. | Pass. 7 covers load. A cover is 80 pixels wide on a phone and 96 pixels wide from 48rem. |
-| Cover alt text | Examine each `img` element with the class `arc-cover`. | The `alt` text is "Cover of" and the title. The element has `width`, `height`, `srcset`, `sizes` and `loading="lazy"`. | Pass. |
+| Cover alt text | Examine each `img` element with the class `arc-cover`. | The `alt` text is empty, because the book name is next to the cover. The element has `width`, `height`, `srcset`, `sizes` and `loading="lazy"`. | Pass. |
 | Cover credit | Examine the end of "Wider work". | The text "Book covers from Open Library." links to `https://openlibrary.org`. | Pass. |
 | Lighthouse | Run Lighthouse for mobile and desktop. | Record the four scores. | To do. |
 
