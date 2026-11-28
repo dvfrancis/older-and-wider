@@ -116,7 +116,7 @@ def show_rows(page):
     before, rest = page.split(START)
     after = rest.split(END)[1]
     rows = []
-    for row in re.findall(r"<tr>(.*?)</tr>", before + after, re.S):
+    for row in re.findall(r"<tr\b[^>]*>(.*?)</tr>", before + after, re.S):
         cells = [text(cell) for cell in re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)]
         if len(cells) == 4:
             # Older and Wider live: date, show, venue, town.
