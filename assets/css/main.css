@@ -3431,3 +3431,108 @@ a {
         transform: none;
     }
 }
+
+/* Live shows: venues */
+/* The venues band is on Soft Pink, with Ink text and red headings.
+   Red on Soft Pink has a contrast of 6.6:1. Ink on Soft Pink has 14.5:1.
+   Each venue is a white card. Red on white has 8:1.
+   Each venue is one item of a list. The items stack on phones. */
+.shows-band-venues {
+    background: var(--pink-soft);
+    color: var(--ink);
+}
+
+.shows-band-venues .shows-heading {
+    color: var(--red);
+    border-bottom-color: var(--ink);
+}
+
+.shows-band-venues :focus-visible {
+    outline-color: var(--ink);
+}
+
+.show-venue a {
+    font-weight: 600;
+}
+
+.venues-lead {
+    max-width: 36rem;
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+}
+
+.venues-lead a {
+    font-weight: 600;
+}
+
+.venues {
+    display: grid;
+    gap: 1.5rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.venue {
+    display: grid;
+    align-content: start;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    background: var(--white);
+    border-top: 4px solid var(--red);
+    box-shadow: var(--rest-shadow);
+    scroll-margin-top: 1rem;
+}
+
+/* A visitor who follows a venue link from a show sees the venue marked */
+.venue:target {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.venue-name {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.75rem;
+    line-height: 1.08;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.venue-place,
+.venue-dates-label {
+    font-family: var(--font-label);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.venue-place {
+    font-size: 1.125rem;
+}
+
+.venue-dates-label {
+    margin-top: 0.5rem;
+}
+
+.venue-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-weight: 600;
+}
+
+.venue-dates li + li {
+    margin-top: 0.25rem;
+}
+
+@media (min-width: 48rem) {
+    .venues {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 64rem) {
+    .venues {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
