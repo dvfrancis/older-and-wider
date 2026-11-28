@@ -188,7 +188,7 @@ a {
 .masthead {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: calc(100cqi / 5.92);
+    font-size: calc(100cqi / 6.05);
     line-height: 0.9;
     letter-spacing: -0.01em;
     text-transform: uppercase;
@@ -202,10 +202,12 @@ a {
     color: var(--magenta);
 }
 
-/* Only the masthead makes AND smaller. The About title uses the class in a sentence. */
-.masthead .masthead-and {
-    font-size: 0.65em;
-    vertical-align: 0.23em;
+/* AND is smaller than OLDER and WIDER in every logotype: the masthead,
+   the About title and the footer mark. */
+.masthead-and,
+.footer-and {
+    font-size: 0.75em;
+    vertical-align: 0.14em;
 }
 
 .issue-line {
