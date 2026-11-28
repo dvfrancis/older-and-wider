@@ -325,13 +325,19 @@ The project keeps them for reference. The build script does not deploy them. The
        - "Coming up". This part shows a message and a link to `jennyeclair.com` when no solo show is on sale.
        - "Earlier tours". This part has a list of the tours and the Edinburgh shows, with the latest show first.
     3. Wider work. This section lists the books, television and radio of each host. Each item has a link to its source. Where possible, an item also links to the work itself. A book links to its page on Amazon UK, and a television or radio series links to its page on BBC Programmes or Channel 4. Most books show a cover from Open Library. The covers of The Book of Nanas and Jokes, Jokes, Jokes come from Hachette UK, the publisher. The site keeps a copy of each cover in `assets/images/covers/`.
-    4. Venues. A closed `details` element lists every venue in the archive, by town or city, with the number of shows at each venue. The visitor opens the list to see it. The script `scripts/update_archive_venues.py` builds the list. Refer to [Update the Venue List](#update-the-venue-list).
+    4. Venues. A closed `details` element lists every venue in the archive and every show on `live-shows.html`, which includes the 2027 tour. The visitor opens the list to see it. The list has these parts:
+       - A search box. The visitor types a town, a county or a venue. The list shows only the towns that match. The map shows the matching towns in red. The script `assets/js/archive-venues.js` does this work. Without JavaScript, the search box does not show.
+       - A map of the UK, Ireland and the Channel Islands. Each town is a dot. A bigger dot shows more shows. The towns in Australia are not on the map. A note under the map names them.
+       - One closed `details` element for each first letter. Each letter lists its towns. Each town shows its county and its venues, with the number of shows at each venue.
+       - A link to the website of each venue, if the venue has a website. Each link opens in a new tab.
+
+       The script `scripts/update_archive_venues.py` builds the list. Refer to [Update the Venue List](#update-the-venue-list).
 
     Each show in a list is a white card. A show with dates is a `details` element. When it opens, it shows a short text about the show, an optional note and the table of dates. A show with no single dates, for example an Edinburgh show, is a plain card that does not open. The paragraph above each list gives the total number of dates in the list. The seasons in Australia are not in the total.
 
     Each date is in a `time` element with a `datetime` attribute. If only the month is known, the attribute has the form `YYYY-MM`.
 
-    The page has no script of its own. All the content shows without JavaScript.
+    The page has one script of its own, `assets/js/archive-venues.js`, for the venue search. All the content shows without JavaScript.
 
 - Message Board:
 
@@ -777,7 +783,17 @@ The "Wider work" section of `archive.html` links each book to its page on Amazon
 
 #### Update the Venue List
 
-The script `scripts/update_archive_venues.py` builds the list of venues in the "Venues" section of `archive.html`. It reads each show row and writes the list between the markers `<!-- venues:list:start -->` and `<!-- venues:list:end -->`. Do not edit the text between the markers by hand.
+The script `scripts/update_archive_venues.py` builds the list of venues in the "Venues" section of `archive.html`. It reads each show row of `archive.html` and each show of `live-shows.html`. It writes the list between the markers `<!-- venues:list:start -->` and `<!-- venues:list:end -->`. Do not edit the text between the markers by hand.
+
+The script also reads three data files in `scripts/`:
+
+| File | Content | Line format |
+| --- | --- | --- |
+| `venue-links.txt` | The website of each venue. | `Town \| Venue \| https://address` |
+| `venue-places.txt` | The county and the position of each town. | `Town \| County \| latitude \| longitude` |
+| `venue-map-outline.txt` | The coastline for the map. | One shape on each line, as `longitude,latitude` pairs. |
+
+Each town in the list must have a line in `venue-places.txt`. If a town has no line, the script stops and names the town.
 
 1. Open a terminal in the root folder of the repository.
 2. Run `python3 scripts/update_archive_venues.py --check` to see the changes.
@@ -785,10 +801,15 @@ The script `scripts/update_archive_venues.py` builds the list of venues in the "
 4. Read the new list. Look for a venue that shows two times with different names.
 5. If you find one, add the name to `VENUE_ALIASES` in the script. Use the form `("Other name", "Town"): "Name to show"`.
 6. If one town has two names, add the name to `TOWN_ALIASES`.
-7. Run the script again.
-8. Run `python3 -m unittest discover -s scripts -v`. The test `test_live_list_is_up_to_date` fails when the list is out of date.
+7. If the script names a town with no place, add a line for the town to `venue-places.txt`.
+8. Get the county and the position of the town from [OpenStreetMap](https://www.openstreetmap.org/).
+9. To add a website link, add a line to `venue-links.txt`. Use the town and the venue name that the list shows.
+10. Open each new address in a browser before you add it.
+11. Run the script again.
+12. Run `python3 -m unittest discover -s scripts -v`. The test `test_live_list_is_up_to_date` fails when the list is out of date.
+13. The test `test_every_link_matches_a_venue` fails when a link has a wrong town or venue name.
 
-The script removes a note in brackets at the end of a venue name, for example "(warm-up)" or "(matinee)". It does not count rows with the venue "Venue uncertain". The archive tables keep the names as the sources give them.
+The script removes a note in brackets at the end of a venue name, for example "(warm-up)" or "(matinee)". It does not count rows with the venue "Venue uncertain". The archive tables keep the names as the sources give them. The script adds ", Australia" to the towns in Australia, so that Perth in Scotland and Perth in Australia stay apart.
 
 #### Data Sources and Limits
 
@@ -797,6 +818,9 @@ The script removes a note in brackets at the end of a venue name, for example "(
 - A solo date was announced. The data does not show that the show occurred.
 - The page shows the Grumpy Old Women UK tour of autumn 2007. Jenny Eclair wrote the show, but a different cast performed it. A note on the tour tells the visitor this.
 - Two rows in the source data had no place. The page does not show them. The dates are 20 April 2016 and 20 April 2017.
+- The venue websites come from search results. A person checked each address on 28 November 2026. Some venue sites block automated requests. A link to a closed venue goes to the venue page of its council or its owner.
+- The counties and the town positions come from OpenStreetMap (Nominatim). The English areas use the ceremonial counties. Some positions were corrected by hand.
+- The coastline of the map comes from the Natural Earth 1:50m land data. The data is in the public domain. The coastline is simplified to 526 points.
 
 ### Instagram Posts
 
@@ -1127,6 +1151,11 @@ References used to gain a general understanding about the podcast, and for creat
 - [The Lowry - Older & Wider Live!](https://thelowry.com/whats-on/older-and-wider-live-jenny-eclair-and-judith-holder/)
 - [See Tickets - Older & Wider Live!](https://www.seetickets.com/tour/older-and-wider-live)
 
+Data for the venue list and map on the archive page:
+
+- Town positions and counties © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), from the Nominatim service.
+- Coastline from [Natural Earth](https://www.naturalearthdata.com/), 1:50m land, public domain.
+
 Links to the podcast, on various platforms:
 
 - [Acast](https://shows.acast.com/older-and-wider-podcast)
@@ -1137,11 +1166,14 @@ Links to the podcast, on various platforms:
 ## Technologies Used
 
 - The website is built with [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS). The earlier design also used [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)). The redesign removed it.
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) is used in five small scripts. The site works without them.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) is used in seven small scripts. The site works without them.
     - `assets/js/consent.js` shows the cookie banner and stores the choice.
     - `assets/js/analytics.js` loads Google Analytics only after the visitor accepts.
     - `assets/js/player.js` loads the Acast player only when the visitor presses "Play here".
     - `assets/js/message-board.js` loads the Instagram posts only when the visitor asks for them.
+    - `assets/js/board-date.js` shows the date of today on the message board.
+    - `assets/js/live-shows.js` moves each past show to Recent shows.
+    - `assets/js/archive-venues.js` shows the venue search on the archive page.
 - [Google Analytics](https://marketingplatform.google.com/about/analytics/) counts visits, only after the visitor accepts analytics cookies.
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
 - [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.

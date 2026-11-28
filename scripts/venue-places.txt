@@ -1,0 +1,242 @@
+# Town data for the venue list and the map on archive.html.
+# One line per town: Town | County, state or area | latitude | longitude
+# Positions and areas come from OpenStreetMap (Nominatim), with corrections by hand.
+
+Aberdeen | Aberdeen City | 57.1482 | -2.0928
+Aberystwyth | Ceredigion | 52.4143 | -4.0817
+Aldershot | Hampshire | 51.2494 | -0.7630
+Alnwick | Northumberland | 55.4133 | -1.7072
+Andover | Hampshire | 51.2078 | -1.4794
+Arbroath | Angus | 56.5587 | -2.5816
+Banbury | Oxfordshire | 52.0602 | -1.3403
+Barking | Greater London | 51.5403 | 0.0793
+Barnard Castle | County Durham | 54.5448 | -1.9246
+Barnsley | South Yorkshire | 53.5528 | -1.4828
+Barnstaple | Devon | 51.0804 | -4.0600
+Barrow-in-Furness | Cumbria | 54.1289 | -3.2269
+Basildon | Essex | 51.5702 | 0.4584
+Basingstoke | Hampshire | 51.2628 | -1.0862
+Bath | Somerset | 51.3814 | -2.3597
+Bedford | Bedfordshire | 52.1364 | -0.4675
+Bedworth | Warwickshire | 52.4793 | -1.4663
+Belfast | County Antrim | 54.5964 | -5.9302
+Berwick | Northumberland | 55.7692 | -2.0026
+Bexhill-on-Sea | East Sussex | 50.8420 | 0.4709
+Billingham | County Durham | 54.6073 | -1.2911
+Birmingham | West Midlands | 52.4949 | -1.8518
+Bishop's Stortford | Hertfordshire | 51.8676 | 0.1632
+Blackburn | Lancashire | 53.7493 | -2.4841
+Blackpool | Lancashire | 53.8179 | -3.0510
+Bolton | Greater Manchester | 53.5783 | -2.4300
+Bournemouth | Dorset | 50.7447 | -1.8580
+Bradford | West Yorkshire | 53.7944 | -1.7519
+Bradford on Avon | Wiltshire | 51.3467 | -2.2504
+Braintree | Essex | 51.8780 | 0.5537
+Bridgwater | Somerset | 51.1283 | -3.0037
+Bridlington | East Riding of Yorkshire | 54.0822 | -0.1909
+Bridport | Dorset | 50.7338 | -2.7589
+Brighton | East Sussex | 50.8215 | -0.1401
+Brisbane, Australia | Queensland | -27.4690 | 153.0235
+Bristol | Bristol | 51.4430 | -2.5817
+Bromley | Greater London | 51.4028 | 0.0148
+Bury St Edmunds | Suffolk | 52.2460 | 0.7125
+Buxton | Derbyshire | 53.2593 | -1.9101
+Calstock | Cornwall | 50.4970 | -4.2070
+Camberley | Surrey | 51.3393 | -0.7461
+Cambridge | Cambridgeshire | 52.1976 | 0.1392
+Canterbury | Kent | 51.2800 | 1.0803
+Cardiff | Cardiff | 51.4817 | -3.1792
+Cardigan | Ceredigion | 52.0840 | -4.6604
+Carlisle | Cumbria | 54.8948 | -2.9362
+Chatham | Kent | 51.3819 | 0.5266
+Chelmsford | Essex | 51.7345 | 0.4731
+Cheltenham | Gloucestershire | 51.8996 | -2.0712
+Chester | Cheshire | 53.1909 | -2.8909
+Chipping Norton | Oxfordshire | 51.9383 | -1.5424
+Chorley | Lancashire | 53.6532 | -2.6294
+Christchurch | Dorset | 50.7651 | -1.8145
+Cirencester | Gloucestershire | 51.7171 | -1.9662
+Colchester | Essex | 51.8897 | 0.8995
+Corby | Northamptonshire | 52.4877 | -0.7033
+Corsham | Wiltshire | 51.4269 | -2.1846
+Coventry | West Midlands | 52.4082 | -1.5105
+Crawley | West Sussex | 51.1103 | -0.1801
+Crewe | Cheshire | 53.0996 | -2.4415
+Croydon | Greater London | 51.3737 | -0.1003
+Dartford | Kent | 51.4443 | 0.2181
+Derby | Derbyshire | 52.9142 | -1.4720
+Devizes | Wiltshire | 51.3525 | -1.9958
+Didcot | Oxfordshire | 51.6064 | -1.2460
+Doncaster | South Yorkshire | 53.5228 | -1.1335
+Dorchester | Dorset | 50.7132 | -2.4371
+Dorking | Surrey | 51.2325 | -0.3307
+Dublin | County Dublin | 53.3494 | -6.2606
+Dudley | West Midlands | 52.5111 | -2.0817
+Dundee | Dundee City | 56.4606 | -2.9702
+Dunstable | Bedfordshire | 51.8861 | -0.5209
+Durham | County Durham | 54.7761 | -1.5733
+Ealing | Greater London | 51.5127 | -0.3052
+Eastbourne | East Sussex | 50.7664 | 0.2782
+Eastleigh | Hampshire | 50.9692 | -1.3517
+Edinburgh | City of Edinburgh | 55.9533 | -3.1884
+Ely | Cambridgeshire | 52.3990 | 0.2620
+Epsom | Surrey | 51.3326 | -0.2678
+Exeter | Devon | 50.7256 | -3.5269
+Falmouth | Cornwall | 50.1552 | -5.0688
+Fareham | Hampshire | 50.8527 | -1.1783
+Farnham | Surrey | 51.2152 | -0.7985
+Faversham | Kent | 51.3158 | 0.8911
+Fleet | Hampshire | 51.2829 | -0.8316
+Folkestone | Kent | 51.0791 | 1.1794
+Glasgow | Glasgow City | 55.8612 | -4.2502
+Gloucester | Gloucestershire | 51.8654 | -2.2458
+Great Torrington | Devon | 50.9616 | -4.1398
+Greenwich | Greater London | 51.4821 | -0.0045
+Grimsby | Lincolnshire | 53.5671 | -0.0788
+Guildford | Surrey | 51.2356 | -0.5732
+Halifax | West Yorkshire | 53.7229 | -1.8605
+Harpenden | Hertfordshire | 51.8145 | -0.3549
+Harrogate | North Yorkshire | 53.9921 | -1.5391
+Harrow | Greater London | 51.5968 | -0.3373
+Hastings | East Sussex | 50.8551 | 0.5822
+Havant | Hampshire | 50.8519 | -0.9821
+Hayes | Greater London | 51.5077 | -0.4181
+Haywards Heath | West Sussex | 51.0000 | -0.1050
+Hebden Bridge | West Yorkshire | 53.7406 | -2.0092
+Helmsley | North Yorkshire | 54.2462 | -1.0613
+Henley | Oxfordshire | 51.5376 | -0.9050
+Hereford | Herefordshire | 52.0554 | -2.7152
+Hertford | Hertfordshire | 51.7957 | -0.0785
+Hexham | Northumberland | 54.9715 | -2.1018
+High Wycombe | Buckinghamshire | 51.6317 | -0.7560
+Holmfirth | West Yorkshire | 53.5704 | -1.7870
+Holt | Norfolk | 52.9054 | 1.0928
+Horsham | West Sussex | 51.0630 | -0.3295
+Hull | East Riding of Yorkshire | 53.7624 | -0.3301
+Inverness | Highland | 57.4790 | -4.2257
+Ipswich | Suffolk | 52.0579 | 1.1528
+Isle of Wight | Isle of Wight | 50.6710 | -1.3327
+Jersey | Jersey | 49.1868 | -2.1060
+Kendal | Cumbria | 54.3290 | -2.7472
+Keswick | Cumbria | 54.6010 | -3.1376
+Kettering | Northamptonshire | 52.3994 | -0.7280
+King's Lynn | Norfolk | 52.7539 | 0.3955
+Kingston | Greater London | 51.4123 | -0.3007
+Lancaster | Lancashire | 54.0488 | -2.8013
+Leamington Spa | Warwickshire | 52.2913 | -1.5364
+Leeds | West Yorkshire | 53.7974 | -1.5438
+Leicester | Leicestershire | 52.6362 | -1.1332
+Lichfield | Staffordshire | 52.6844 | -1.8275
+Lincoln | Lincolnshire | 53.2294 | -0.5405
+Liverpool | Merseyside | 53.3933 | -2.9166
+Llandudno | Conwy | 53.3225 | -3.8243
+London | Greater London | 51.5074 | -0.1278
+Loughborough | Leicestershire | 52.7724 | -1.2078
+Lowestoft | Suffolk | 52.4766 | 1.7538
+Lytham St Annes | Lancashire | 53.7485 | -2.9991
+Maidenhead | Berkshire | 51.5227 | -0.7197
+Maidstone | Kent | 51.2748 | 0.5232
+Manchester | Greater Manchester | 53.4425 | -2.2325
+Mansfield | Nottinghamshire | 53.1444 | -1.1964
+Margate | Kent | 51.3878 | 1.3820
+Masham | North Yorkshire | 54.2220 | -1.6565
+Melbourne, Australia | Victoria | -37.8142 | 144.9632
+Middlesbrough | North Yorkshire | 54.5760 | -1.2344
+Middleton | Greater Manchester | 53.5552 | -2.1870
+Milford Haven | Pembrokeshire | 51.7131 | -5.0359
+Millom | Cumbria | 54.2107 | -3.2719
+Milton Keynes | Buckinghamshire | 52.0407 | -0.7594
+Monmouth | Monmouthshire | 51.8099 | -2.7160
+Musselburgh | East Lothian | 55.9421 | -3.0539
+Nelson | Lancashire | 53.8363 | -2.2116
+New Milton | Hampshire | 50.7531 | -1.6551
+Newbury | Berkshire | 51.4020 | -1.3242
+Newcastle upon Tyne | Tyne and Wear | 54.9738 | -1.6132
+North Devon | Devon | 51.0615 | -3.9239
+Northallerton | North Yorkshire | 54.3405 | -1.4345
+Northampton | Northamptonshire | 52.2343 | -0.9028
+Norwich | Norfolk | 52.6286 | 1.2924
+Nottingham | Nottinghamshire | 52.9534 | -1.1496
+Oldham | Greater Manchester | 53.5416 | -2.1148
+Oswaldtwistle | Lancashire | 53.7398 | -2.3988
+Otley | West Yorkshire | 53.9055 | -1.6939
+Oxford | Oxfordshire | 51.7520 | -1.2578
+Paignton | Devon | 50.4377 | -3.5633
+Perth | Perth and Kinross | 56.3960 | -3.4370
+Perth, Australia | Western Australia | -31.9559 | 115.8606
+Peterborough | Cambridgeshire | 52.5726 | -0.2427
+Plymouth | Devon | 50.3714 | -4.1425
+Pocklington | East Riding of Yorkshire | 53.9316 | -0.7761
+Pontardawe | Neath Port Talbot | 51.7220 | -3.8489
+Poole | Dorset | 50.7402 | -1.9537
+Porthcawl | Bridgend | 51.4796 | -3.7041
+Portsmouth | Hampshire | 50.8000 | -1.0906
+Potters Bar | Hertfordshire | 51.6959 | -0.1849
+Preston | Lancashire | 53.7593 | -2.6993
+Radlett | Hertfordshire | 51.6844 | -0.3177
+Reading | Berkshire | 51.4545 | -0.9781
+Redditch | Worcestershire | 52.3058 | -1.9417
+Richmond | Greater London | 51.4406 | -0.3076
+Richmond, North Yorkshire | North Yorkshire | 54.4031 | -1.7375
+Runcorn | Cheshire | 53.3422 | -2.7335
+Salford | Greater Manchester | 53.4877 | -2.2892
+Salisbury | Wiltshire | 51.0691 | -1.7954
+Scarborough | North Yorkshire | 54.2820 | -0.4012
+Scunthorpe | Lincolnshire | 53.5922 | -0.6451
+Selby | North Yorkshire | 53.7840 | -1.0688
+Sheffield | South Yorkshire | 53.3807 | -1.4702
+Shoreham by Sea | West Sussex | 50.8322 | -0.2747
+Shrewsbury | Shropshire | 52.7078 | -2.7541
+Shropshire | Shropshire | 52.9023 | -2.4842
+Skegness | Lincolnshire | 53.1438 | 0.3429
+Southampton | Hampshire | 50.9025 | -1.4042
+Southend | Essex | 51.5388 | 0.7128
+Southport | Merseyside | 53.6487 | -3.0045
+Spalding | Lincolnshire | 52.7876 | -0.1526
+St Albans | Hertfordshire | 51.7531 | -0.3380
+Stafford | Staffordshire | 52.8063 | -2.1164
+Stamford | Lincolnshire | 52.6520 | -0.4805
+Stevenage | Hertfordshire | 51.9017 | -0.2027
+Stockport | Greater Manchester | 53.4079 | -2.1602
+Stockton-on-Tees | County Durham | 54.5546 | -1.3585
+Stoke-on-Trent | Staffordshire | 53.0162 | -2.1813
+Stourbridge | West Midlands | 52.4578 | -2.1474
+Stratford-upon-Avon | Warwickshire | 52.1928 | -1.7063
+Sturminster Newton | Dorset | 50.9290 | -2.3264
+Suffolk | Suffolk | 52.3330 | 1.6260
+Sunderland | Tyne and Wear | 54.9059 | -1.3829
+Sutton | Greater London | 51.3574 | -0.1736
+Swansea | Swansea | 51.6196 | -3.9459
+Swindon | Wiltshire | 51.5615 | -1.7854
+Sydney, Australia | New South Wales | -33.8698 | 151.2083
+Taunton | Somerset | 51.0148 | -3.1029
+Teddington | Greater London | 51.4278 | -0.3337
+Telford | Shropshire | 52.6781 | -2.4514
+Tewkesbury | Gloucestershire | 51.9938 | -2.1550
+Tiverton | Devon | 50.9026 | -3.4876
+Torquay | Devon | 50.4652 | -3.5211
+Tring | Hertfordshire | 51.7940 | -0.6609
+Truro | Cornwall | 50.2633 | -5.0518
+Tunbridge Wells | Kent | 51.1371 | 0.2673
+Ulverston | Cumbria | 54.1959 | -3.0963
+Walsall | West Midlands | 52.5848 | -1.9823
+Walton-on-Thames | Surrey | 51.3857 | -0.4198
+Warrington | Cheshire | 53.4016 | -2.5682
+Watford | Hertfordshire | 51.6554 | -0.3957
+Wellingborough | Northamptonshire | 52.3019 | -0.6937
+West Bromwich | West Midlands | 52.5187 | -1.9923
+West Lothian | West Lothian | 55.9167 | -3.5000
+Weston-super-Mare | Somerset | 51.3472 | -2.9779
+Weymouth | Dorset | 50.6096 | -2.4543
+Whitby | North Yorkshire | 54.4866 | -0.6136
+Whitstable | Kent | 51.3606 | 1.0241
+Wimbledon | Greater London | 51.4215 | -0.2064
+Wimborne | Dorset | 50.8000 | -1.9870
+Winchester | Hampshire | 51.0613 | -1.3132
+Windsor | Berkshire | 51.4838 | -0.6040
+Woking | Surrey | 51.3202 | -0.5565
+Worcester | Worcestershire | 52.1965 | -2.2096
+Workington | Cumbria | 54.6434 | -3.5454
+Worthing | West Sussex | 50.8115 | -0.3700
+Yeovil | Somerset | 50.9420 | -2.6319
+York | North Yorkshire | 53.9657 | -1.0743
