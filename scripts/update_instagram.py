@@ -427,7 +427,7 @@ def render_posts(posts: list[Post], images: dict[str, Image]) -> list[str]:
         )
         item = [
             "<li>",
-            f'    <a class="board-post {stock}" href="{attr(post.permalink)}" rel="external">',
+            f'    <a class="board-post {stock}" href="{attr(post.permalink)}" rel="external noopener" target="_blank" aria-describedby="new-tab">',
             '        <span class="post-photo">',
             f'            <img src="{IMAGE_URL}{largest}" srcset="{srcset}"',
             f'                sizes="{sizes(index)}" width="{width}" height="{height}"',
@@ -537,7 +537,7 @@ def render_list(posts: list[ListedPost]) -> list[str]:
             f'    <blockquote class="instagram-media {stock}"',
             f'        data-instgrm-permalink="{attr(post.url)}"',
             '        data-instgrm-version="14">',
-            f'        <a href="{attr(post.url)}" rel="external">',
+            f'        <a href="{attr(post.url)}" rel="external noopener" target="_blank" aria-describedby="new-tab">',
             f'            <span class="post-meta"><i class="fa-solid {icon}" aria-hidden="true"></i>{label}',
             f'                <time datetime="{post.date.isoformat()}">{short_date(post.date)}</time></span>',
             f'            <span class="post-text">{body}</span>',
