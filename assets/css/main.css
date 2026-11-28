@@ -2924,3 +2924,510 @@ a {
         display: none;
     }
 }
+
+/* Archive page */
+
+/* Archive page: the back issues of the weekly.
+   It uses the tokens and the shared classes above.
+   On phones each table row shows as a block. From 48rem the tables show as tables.
+   Each tour of dates is in a details element, so the page stays short. */
+
+.arc-intro,
+.arc-band-pink {
+    background: var(--pink);
+}
+
+.arc-band-white {
+    background: var(--white);
+}
+
+.arc-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 3rem var(--gutter) 3.5rem;
+}
+
+.arc-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.arc-intro .issue-line {
+    margin-top: 1rem;
+}
+
+.arc-lead {
+    max-width: 36rem;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+}
+
+/* Jump links: white slabs with red text */
+.arc-jump ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.arc-jump a {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    background: var(--white);
+    box-shadow: var(--rest-shadow);
+    color: var(--red);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+
+.arc-jump a:hover,
+.arc-jump a:focus-visible {
+    transform: translateY(-0.375rem) rotate(-0.6deg);
+    box-shadow: var(--lift-shadow);
+    text-decoration: underline;
+}
+
+/* Headings */
+.arc-heading {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--ink);
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 2.75rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+/* Barlow Condensed 600 at 1.75rem is large text, so red passes on pink */
+.arc-subhead {
+    margin: 2.5rem 0 1rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 1.05;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.arc-group {
+    margin: 2.25rem 0 1rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 1px solid var(--ink);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.arc-text {
+    max-width: 36rem;
+    margin-bottom: 1rem;
+}
+
+.arc-small {
+    max-width: 44rem;
+    margin-top: 1.25rem;
+    font-size: 1rem;
+}
+
+.arc-date,
+.arc-dates time {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Show tables: one block per row on phones */
+.arc-shows {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.arc-shows thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.arc-shows tbody,
+.arc-shows tr,
+.arc-shows th,
+.arc-shows td {
+    display: block;
+}
+
+.arc-shows tr {
+    padding: 0.875rem 0 1rem;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+}
+
+.arc-shows .arc-date,
+.arc-shows tbody th {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.1;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.arc-shows .arc-date {
+    color: var(--red);
+}
+
+.arc-band-pink .arc-shows tbody th {
+    color: var(--ink);
+}
+
+.arc-tours tbody th a {
+    text-decoration-thickness: 0.06em;
+}
+
+.arc-shows td + td {
+    margin-top: 0.125rem;
+}
+
+/* Tour dates: each tour is a details element on white paper */
+.arc-tour-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.arc-tour {
+    background: var(--white);
+    box-shadow: var(--rest-shadow);
+}
+
+.arc-tour-list + .arc-tour {
+    margin-top: 0.75rem;
+}
+
+.arc-tour summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.125rem 0.75rem;
+    min-height: 2.75rem;
+    padding: 0.75rem 3.25rem 0.75rem 1rem;
+    position: relative;
+    cursor: pointer;
+    list-style: none;
+}
+
+.arc-tour summary::-webkit-details-marker {
+    display: none;
+}
+
+/* The plus sign turns into a minus sign when the tour is open */
+.arc-tour summary::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-top: -0.875rem;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: center;
+}
+
+.arc-tour[open] summary::after {
+    content: "\2212";
+}
+
+.arc-tour summary:hover .arc-tour-name {
+    text-decoration: underline;
+}
+
+.arc-tour summary:focus-visible {
+    outline-offset: -3px;
+}
+
+.arc-tour-name {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.arc-tour-meta {
+    font-size: 1rem;
+}
+
+.arc-tour-note {
+    max-width: 36rem;
+    padding: 0 1rem 0.75rem;
+    font-size: 1rem;
+}
+
+/* Date tables inside a tour: one block per row on phones */
+.arc-dates {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.arc-dates thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.arc-dates tbody,
+.arc-dates tr,
+.arc-dates th,
+.arc-dates td {
+    display: block;
+}
+
+.arc-dates tbody tr {
+    padding: 0.5rem 1rem;
+    border-top: 1px solid rgba(26, 26, 26, 0.2);
+}
+
+.arc-dates .arc-year {
+    padding: 0;
+    border: 0;
+}
+
+.arc-dates .arc-year th {
+    padding: 0.25rem 1rem;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.125rem;
+    letter-spacing: 0.06em;
+    text-align: left;
+}
+
+.arc-dates .arc-date {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.125rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.arc-dates .arc-town {
+    display: inline;
+    font-weight: 600;
+}
+
+.arc-dates .arc-town::after {
+    content: ", ";
+}
+
+.arc-dates .arc-town + td {
+    display: inline;
+}
+
+/* Wider work */
+.arc-work {
+    display: grid;
+    gap: 1rem;
+}
+
+.arc-work-block .arc-subhead {
+    margin-top: 1rem;
+}
+
+.arc-work-list li {
+    padding: 0.875rem 0 1rem;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+}
+
+.arc-work-name {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.arc-work-list p + p {
+    margin-top: 0.25rem;
+}
+
+.arc-source {
+    font-size: 1rem;
+}
+
+@media (min-width: 48rem) {
+    .arc-title {
+        font-size: 5rem;
+    }
+
+    .arc-heading {
+        font-size: 3.5rem;
+    }
+
+    .arc-shows,
+    .arc-dates {
+        display: table;
+    }
+
+    .arc-shows thead,
+    .arc-dates thead {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip-path: none;
+        white-space: normal;
+        display: table-header-group;
+    }
+
+    .arc-shows tbody,
+    .arc-dates tbody {
+        display: table-row-group;
+    }
+
+    .arc-shows tr,
+    .arc-dates tr,
+    .arc-dates tbody tr {
+        display: table-row;
+    }
+
+    .arc-shows th,
+    .arc-shows td,
+    .arc-dates th,
+    .arc-dates td,
+    .arc-dates .arc-town,
+    .arc-dates .arc-town + td {
+        display: table-cell;
+        margin: 0;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .arc-shows th,
+    .arc-shows td {
+        padding: 0.875rem 1.25rem 1rem 0;
+        border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+    }
+
+    .arc-shows thead th,
+    .arc-dates thead th {
+        padding-top: 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid var(--ink);
+        font-family: var(--font-label);
+        font-weight: 600;
+        font-size: 1.0625rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .arc-shows .arc-date,
+    .arc-shows tbody th {
+        font-size: 1.25rem;
+    }
+
+    .arc-shows .arc-date {
+        width: 15rem;
+    }
+
+    .arc-tours tbody th {
+        width: 34%;
+    }
+
+    .arc-tours td:nth-child(2) {
+        width: 9rem;
+        white-space: nowrap;
+    }
+
+    .arc-dates thead th {
+        padding: 0.5rem 1rem;
+    }
+
+    .arc-dates th,
+    .arc-dates td {
+        padding: 0.375rem 1rem;
+        border-top: 1px solid rgba(26, 26, 26, 0.2);
+    }
+
+    .arc-dates .arc-date {
+        width: 11rem;
+        font-size: 1.0625rem;
+    }
+
+    .arc-dates .arc-town {
+        width: 30%;
+    }
+
+    .arc-dates .arc-town::after {
+        content: none;
+    }
+
+    .arc-dates .arc-year th {
+        padding: 0.25rem 1rem;
+        border-top: 0;
+    }
+}
+
+@media (min-width: 64rem) {
+    .arc-inner {
+        padding: 3.5rem var(--gutter) 4rem;
+    }
+
+    .arc-title {
+        font-size: 6rem;
+    }
+
+    .arc-work {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    .arc-tour-list {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .arc-jump a {
+        transition: none;
+    }
+
+    .arc-jump a:hover,
+    .arc-jump a:focus-visible {
+        transform: none;
+    }
+}
