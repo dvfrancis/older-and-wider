@@ -1,0 +1,184 @@
+# Updates the Instagram posts on message-board.html, then deploys the site.
+# scripts/update_instagram.py does the work and changes only the text
+# between the instagram:posts marker comments.
+#
+# The script has two modes:
+# - API mode, when the secrets IG_ACCESS_TOKEN and IG_USER_ID exist. The
+#   script gets the 10 latest posts from the Instagram API and saves the
+#   photos in assets/images/instagram/.
+# - List mode, when the secrets do not exist. The script builds the posts
+#   from scripts/instagram-posts.txt.
+#
+# A push made with GITHUB_TOKEN does not start other workflows, so the push
+# below does not start deploy.yml. The deploy job calls deploy.yml directly
+# instead. A called workflow runs in the context of this workflow, which
+# runs on refs/heads/main. The OIDC subject is therefore
+# repo:<owner>/<repo>:ref:refs/heads/main, the subject that the deploy role
+# in infra/deploy-role.yaml trusts.
+#
+# The refresh job keeps the long-lived Instagram token valid. A token
+# expires 60 days after it is made or refreshed. GITHUB_TOKEN cannot write
+# repository secrets, so the job uses the secret GH_SECRETS_PAT. That is a
+# fine-grained personal access token with Secrets read and write on this
+# repository only.
+
+name: Update Instagram posts
+
+on:
+  # Every 6 hours. The minute is not on the hour, because scheduled runs at
+  # the hour are often late.
+  schedule:
+    - cron: "23 */6 * * *"
+  # A change to the post list updates the page at once.
+  push:
+    branches: [main]
+    paths:
+      - "scripts/instagram-posts.txt"
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: Refresh the Instagram access token in this run.
+        type: boolean
+        default: false
+
+permissions: {}
+
+# Two runs of this workflow never overlap. The deploy itself also uses the
+# deploy-site group of deploy.yml, so it never overlaps another deploy.
+concurrency:
+  group: update-instagram
+  cancel-in-progress: false
+
+jobs:
+  update:
+    # The push and the OIDC trust both need main. A manual run on another
+    # branch does nothing.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.update.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Install cwebp
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y webp
+
+      - name: Test the update script
+        run: python3 -m unittest discover -s scripts -v
+
+      - name: Update message-board.html
+        id: update
+        env:
+          # An empty value puts the script in list mode.
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python3 scripts/update_instagram.py
+
+      - name: Commit and push the change
+        id: commit
+        if: steps.update.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- message-board.html sitemap.xml
+          # The image folder exists only after a run in API mode.
+          if [ -d assets/images/instagram ] || [ -n "$(git ls-files assets/images/instagram)" ]; then
+            git add -A -- assets/images/instagram
+          fi
+          git commit -m "chore: update the Instagram posts on the message board"
+          # Main can move while this job runs. Put the commit on top of it.
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Report the result
+        env:
+          CHANGED: ${{ steps.update.outputs.changed }}
+          MODE: ${{ steps.update.outputs.mode }}
+          POSTS: ${{ steps.update.outputs.posts }}
+        run: |
+          {
+            echo "Changed: $CHANGED ($POSTS posts, $MODE mode)"
+            if [ "$MODE" = "list" ]; then
+              echo ""
+              echo "API mode is off, because the secrets IG_ACCESS_TOKEN and IG_USER_ID are not set."
+              echo "The page uses scripts/instagram-posts.txt. README.md tells you how to turn on API mode."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "Changed: $CHANGED ($POSTS posts, $MODE mode)"
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    permissions:
+      id-token: write
+      contents: read
+    uses: ./.github/workflows/deploy.yml
+    with:
+      # The SHA of the new commit. github.sha is still the commit from
+      # before the update.
+      ref: ${{ needs.update.outputs.sha }}
+
+  refresh:
+    # The refresh runs after the update, so the two never use the token at
+    # the same time. It also runs when the update fails.
+    needs: update
+    if: ${{ !cancelled() && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Decide if the token needs a refresh
+        id: plan
+        env:
+          HAS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN != '' }}
+          HAS_PAT: ${{ secrets.GH_SECRETS_PAT != '' }}
+          EVENT: ${{ github.event_name }}
+          ASKED: ${{ inputs.refresh }}
+        run: |
+          # Refresh one time each week, in the first scheduled run on Monday.
+          # A token lasts 60 days, so a failed refresh has more chances.
+          due=false
+          if [ "$EVENT" = "schedule" ] && [ "$(date -u +%u)" = "1" ] && [ "$(date -u +%H)" -lt 6 ]; then
+            due=true
+          fi
+          if [ "$EVENT" = "workflow_dispatch" ] && [ "$ASKED" = "true" ]; then
+            due=true
+          fi
+          run=false
+          if [ "$HAS_TOKEN" != "true" ]; then
+            echo "No refresh: IG_ACCESS_TOKEN is not set."
+          elif [ "$due" != "true" ]; then
+            echo "No refresh: a refresh is not due in this run."
+          elif [ "$HAS_PAT" != "true" ]; then
+            echo "::warning::The token is not refreshed, because GH_SECRETS_PAT is not set. The token expires 60 days after it was made."
+            echo "Warning: the Instagram token is not refreshed, because the secret GH_SECRETS_PAT is not set." >> "$GITHUB_STEP_SUMMARY"
+          else
+            run=true
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v7
+        if: steps.plan.outputs.run == 'true'
+        with:
+          ref: main
+
+      - name: Refresh the token and store it
+        if: steps.plan.outputs.run == 'true'
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_SECRETS_PAT }}
+        run: |
+          token_file="$RUNNER_TEMP/ig-token"
+          trap 'rm -f "$token_file"' EXIT
+          # The script masks the new token in the log before it writes the file.
+          python3 scripts/update_instagram.py --refresh-token --token-out "$token_file"
+          gh secret set IG_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY" < "$token_file"
+          echo "The Instagram token is refreshed." >> "$GITHUB_STEP_SUMMARY"
