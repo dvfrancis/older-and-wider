@@ -194,11 +194,15 @@ a {
     white-space: nowrap;
 }
 
-/* Logotype: AND in magenta and at half size, as on the merchandise */
+/* Logotype: AND in magenta, as on the merchandise */
 .masthead-and {
+    color: var(--magenta);
+}
+
+/* Only the masthead makes AND half size. The About title uses the class in a sentence. */
+.masthead .masthead-and {
     font-size: 0.5em;
     vertical-align: 0.42em;
-    color: var(--magenta);
 }
 
 .issue-line {
