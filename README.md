@@ -633,7 +633,7 @@ The script `assets/js/live-shows.js` moves past shows. Other changes to `live-sh
 
 ```html
 <li class="show">
-    <p class="show-date"><time datetime="2027-04-25">Sunday 25 April 2027</time></p>
+    <p class="show-date"><time datetime="2027-04-25">Sun 25 Apr 2027</time></p>
     <h3 class="show-place">Leeds</h3>
     <p class="show-venue"><a href="#venue-city-varieties">City Varieties</a></p>
     <p class="show-tour">Even Older and Wider</p>
@@ -655,7 +655,7 @@ After each change, do these steps:
 3. Copy one `li` element in the list `shows-forthcoming`.
 4. Put the copy in date order. The earliest show is first.
 5. Set the `datetime` attribute to the date in the form `YYYY-MM-DD`.
-6. Write the date in the `time` element with the day of the week and the year.
+6. Write the date in the `time` element with the day of the week and the year. Use three letters for the day and the month, for example "Sun 25 Apr 2027".
 7. Change the town or city, the venue and the tour name.
 8. Set the `href` of the ticket link to the ticket page of the show.
 9. If the show has no ticket page, use `https://jennyeclair.com/olderandwider`.
