@@ -186,6 +186,8 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator) checked `a
 | --- | --- | --- |
 | main.css | 6 | 103 |
 
+The site owner checked the live file `assets/css/main.f0861cfa6b.css` with the same profile on 28 November 2026. This is the file that `build.sh` makes smaller and gives a hash. The validator found the same 6 errors and the same 103 warnings. Each message shows line 1, because the small file has one line. The selectors agree with the table in [Validator Limits](#validator-limits).
+
 The 6 errors are limits of the validator. They are not errors in the CSS. The section [Validator Limits](#validator-limits) gives the reason for each error.
 
 The 103 warnings are:
