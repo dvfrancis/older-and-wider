@@ -436,6 +436,20 @@ class ListModeTest(PageTestCase):
         shown = re.findall(r'data-instgrm-permalink="https://www.instagram.com/p/Post(\d+)/"', posts)
         self.assertEqual(shown, [str(day) for day in range(12, 2, -1)])
 
+    def test_share_link_is_cleaned(self):
+        # The Share button of Instagram adds a query. Some links have no www.
+        self.write_list(
+            "2026-11-28 | https://www.instagram.com/p/Shared1/?igsh=abc123 | From the Share button",
+            "2026-11-27 | https://instagram.com/reel/Shared2/?utm_source=ig_web_copy_link | No www",
+        )
+        code, _, err = self.run_script()
+        self.assertEqual(code, 0, err)
+        posts = page_posts(self.page.read_text(encoding="utf-8"))
+        self.assertIn('data-instgrm-permalink="https://www.instagram.com/p/Shared1/"', posts)
+        self.assertIn('href="https://www.instagram.com/reel/Shared2/"', posts)
+        self.assertNotIn("igsh", posts)
+        self.assertNotIn("utm_source", posts)
+
     def test_comments_and_blank_lines_are_ignored(self):
         self.write_list("# 2026-11-28 | https://www.instagram.com/p/Hidden/ | Hidden", "",
                         "2026-11-27 | https://www.instagram.com/p/Shown/ | Shown")

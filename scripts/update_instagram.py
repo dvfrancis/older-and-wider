@@ -487,6 +487,11 @@ def read_post_list(path: Path) -> list[ListedPost]:
         except ValueError:
             raise FeedError(f"{where}: {fields[0]!r} is not a real date") from None
         url = fields[1]
+        # A link from the Share button of Instagram has a query, for example
+        # ?igsh=abc. Remove the query and the fragment. Use the www address.
+        url = url.split("#", 1)[0].split("?", 1)[0]
+        if url.startswith("https://instagram.com/"):
+            url = "https://www." + url[len("https://"):]
         if url.startswith("https://www.instagram.com/") and not url.endswith("/"):
             url += "/"
         match = LIST_URL.fullmatch(url)

@@ -12,6 +12,7 @@
 # Rules:
 # - Write the date as year-month-day, for example 2026-11-27.
 # - Copy the address of the post from Instagram. It starts with https://www.instagram.com/p/ or https://www.instagram.com/reel/.
+# - You can paste a link from the Share button. The action removes the part after the ? character.
 # - Write the short text in your own words. Do not use the | character in the text.
 # - Put the text in double quotes to show it as a quote from the post.
 # - The page shows a /p/ post as "Photo" and a /reel/ post as "Video".
