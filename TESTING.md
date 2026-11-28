@@ -561,7 +561,7 @@ The tests used a local server and headless Google Chrome on 27 November 2026. Th
 | TEST | EXPECTED RESULT | RESULT |
 | --- | --- | --- |
 | Open the page | The page shows the title, the date "Last updated 27 November 2026" and the table of third parties. | PASS |
-| Check the navigation | The navigation shows Home, About, Live Shows, Archive and Message Board. No link has `aria-current`. | PASS |
+| Check the navigation | The navigation shows Home, About, Message Board, Shows and Archive, in that order. No link has `aria-current`. | PASS |
 | Check the table at 390px | Each service shows as one block, with a label above each value. | PASS |
 | Check the table at 1440px | The table shows four columns. | PASS |
 | Press "Cookie settings" in the page | The cookie banner opens. | PASS |
@@ -577,7 +577,7 @@ The tests used a local server and headless Google Chrome on 28 November 2026. Th
 | Open the page | The page shows the title, the poster and the eight 2027 shows in Forthcoming shows, earliest first. Recent shows shows the message "No shows from this tour have happened yet". | PASS |
 | Check each show | Each show gives the date with the day of the week and the year, the town or city, the venue, the tour name and a ticket link. | PASS |
 | Check the ticket links | Each link text names the town and the date, for example "Tickets for Leeds, 25 April". Each address gives the status 200. The Lowry blocks automated requests, so a person must open that link in a browser. | PASS |
-| Check the navigation | The navigation shows Home, About, Live Shows, Archive and Message Board. "Live Shows" has `aria-current="page"`. | PASS |
+| Check the navigation | The navigation shows Home, About, Message Board, Shows and Archive, in that order. "Shows" has `aria-current="page"`. | PASS |
 | Check the navigation at 375px | The five links fit on one row. Each link is above the masthead, so a click reaches it. | PASS |
 | Check the navigation at 1440px | The five links fit on one row. | PASS |
 | Check for horizontal scroll at 375px | The page does not scroll sideways. | PASS |

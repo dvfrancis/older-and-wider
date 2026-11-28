@@ -219,7 +219,7 @@ The project keeps them for reference. The build script does not deploy them. The
 - Header:
 
     - The header is a strip at the top of each page. It holds the main navigation.
-    - The navigation has five links: Home, About, Live Shows, Archive and Message Board.
+    - The navigation has five links, in this order: Home, About, Message Board, Shows and Archive. The "Shows" link opens `live-shows.html`.
     - On phones the links are a little smaller, so that the five links fit on one row at 375 pixels wide.
     - The link to the current page has the attribute `aria-current="page"`. This attribute tells screen readers which page is open.
     - The header as it appeared on desktops in the earlier design:
