@@ -604,6 +604,16 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 |---|---|---|---|
 | 40 Years of Fringe dates | Open "40 Years of Fringe". Compare its dates with the British Comedy Guide listing. | The list has Fri 8 Aug 2025 and Sat 9 Aug 2025 at Gilded Balloon at the Museum, Edinburgh. The show is the first item in the list of "Jenny's solo shows". When it opens, the about text shows above the note. | Pass, 28 November 2026. |
 | Sixty! (FFS!) dates | Open the tour "Sixty! (FFS!)". Compare its dates with the copies of jennyeclair.com of 4 December 2021, 14 January 2022 and 7 March 2022. | The tour has 90 dates. The 16 shows of January and February 2022 are in the list. The shows at Dorchester, Hexham, Barnard Castle, Alnwick and Northallerton have their new 2022 dates. | Pass, 28 November 2026. Swansea Grand Theatre is on Friday 4 February 2022. |
+
+### Home page and message board, 28 November 2026
+
+| Test | Action | Expected result | Result |
+|---|---|---|---|
+| Bingo cover line | On the home page, click "Hypochondriac's bingo". | The page goes to "Eyes down for back issues". The bingo ticket shows below the heading. | Pass, 28 November 2026. |
+| Message board photo | Open `message-board.html` at 375 px and at 800 px. | The print shows the mirror selfie of Jenny and Judith, with the halftone screen. | Pass, 28 November 2026. |
+| Message board date | Open `message-board.html`. | The issue line under the title shows "Message board" and the date of today in the UK. | Pass, 28 November 2026. |
+| Message board date without JavaScript | Turn off JavaScript and open `message-board.html`. | The issue line shows "Message board" only. | Pass, 28 November 2026. |
+| Message board console | Read the browser console. | The console shows no errors. | Pass, 28 November 2026. |
 | W3C Markup Validator | Send `archive.html` to the Nu validator. | No errors and no warnings. | Pass. No messages, 28 November 2026. |
 | W3C CSS Validator | Send `assets/css/main.css` to the CSS validator. | No new errors from the archive block. | Pass. The three errors are older. They are on lines 185, 191 and 1030, outside the archive block. |
 | Phone width | Open the page at 375 pixels wide. Open each `details` element. | No horizontal scroll. Each row of a table shows as a block. | Pass. The scroll width is 375 pixels, 28 November 2026, after the change to the show lists. |

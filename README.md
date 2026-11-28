@@ -259,7 +259,7 @@ The project keeps them for reference. The build script does not deploy them. The
 - Home (index):
 
     - The home page looks like the cover of a weekly magazine. It has these sections:
-        - Cover: the masthead, an issue line with the episode number and the date, a halftone photo of the hosts, and cover lines. Each cover line links to a section of the page or to the shop.
+        - Cover: the masthead, an issue line with the episode number and the date, a halftone photo of the hosts, and cover lines. Each cover line links to a section of the page or to the shop. "Hypochondriac's bingo" links to the bingo ticket of back issues.
         - This week: a "Play here" button for the latest episode, and links to Apple Podcasts, Spotify and Acast. The Acast player loads only when the visitor presses the button. A note next to the button tells the visitor that the player stores a language setting and a session item in the browser. The site does not remember this choice, so the button shows on each visit. The script `assets/js/player.js` does this work. Without JavaScript, the button is replaced by a "Listen on Acast" link.
         - Back issues: a bingo ticket. Each number on the ticket links to its own episode on Acast. A "Last called" list shows the four previous episodes.
         - The episode content updates automatically each Friday from the podcast RSS feed. Refer to [Automatic Episode Update](#automatic-episode-update).
@@ -329,6 +329,8 @@ The project keeps them for reference. The build script does not deploy them. The
 - Message Board:
 
     - The hosts call the podcast's Instagram page the "message board". This page links to it, and to the Facebook page.
+    - An issue line under the title shows "Message board" and the date of today. The script `assets/js/board-date.js` adds the date. Without JavaScript, the issue line shows "Message board" only.
+    - A halftone print of a mirror selfie of Jenny and Judith sits next to the title.
     - The page shows up to ten recent Instagram posts as short text quotes or summaries, with their dates and links. No content loads from Instagram when the page opens. The section [Instagram Posts](#instagram-posts) tells how the list updates.
     - The button "Show the posts here" loads the full Instagram posts. The note next to the button tells the visitor that Instagram then sets cookies.
     - The script `assets/js/message-board.js` does this work. Without JavaScript, the text and the links still work.

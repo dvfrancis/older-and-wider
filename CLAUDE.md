@@ -63,12 +63,13 @@ Routine deploys should go through CI — push to `main` and let the workflow run
 
 **CSS** is one stylesheet, `assets/css/main.css` (about 2,000 lines). `styles.css` was deleted. `:root` defines custom properties for the colours, fonts, gutter and shadows. Use these properties for colour. The rules use literal `#000` and `#fff` only in mask and halftone gradients. The main colours are pink `--pink` `#F492BF`, red `--red` `#A60201` and magenta `--magenta` `#E8046C`. The fonts are Anton, Barlow Condensed and Barlow. The breakpoints are `48rem` and `64rem`. The file also has `prefers-reduced-motion` and `prefers-contrast` blocks. The masthead uses a container query unit (`cqi`).
 
-**JavaScript.** Every page works without JavaScript. Do not add inline scripts or inline styles (issue #24). All scripts load with `defer`. The site has five scripts:
+**JavaScript.** Every page works without JavaScript. Do not add inline scripts or inline styles (issue #24). All scripts load with `defer`. The site has six scripts:
 
 - `assets/js/consent.js` runs on every page. It shows the cookie banner on the first visit. The banner asks about analytics cookies only. The script stores the choice in `localStorage` under `oaw-consent`, as `{choice, date}`. It sends the event `oaw:consentchange` and exposes `window.oawConsent`. "Reject" deletes the `_ga` and `_ga_*` cookies.
 - `assets/js/analytics.js` runs on every page, after `consent.js`. It loads Google Analytics only when the choice is "accepted". `GA_MEASUREMENT_ID` is `G-KQEX5744PM`, the same ID as dominicfrancis.co.uk. Filter GA4 reports by hostname to see this site alone.
 - `assets/js/player.js` runs on `index.html` only. It inserts the Acast iframe after the visitor presses "Play here". It does not remember the choice. Without JavaScript, the page shows a "Listen on Acast" link.
 - `assets/js/message-board.js` runs on `message-board.html` only. It adds Instagram's `embed.js` after the visitor presses "Show the posts here", because `embed.js` sets cookies.
+- `assets/js/board-date.js` runs on `message-board.html` only. It puts the date of today in `Europe/London` in the issue line under the title. Without JavaScript, the issue line shows "Message board" only.
 - `archive.html` has no script of its own. Its long lists of dates are in `details` elements, so the page works without JavaScript.
 - `assets/js/live-shows.js` runs on `live-shows.html` only. It gets today's date in `Europe/London` and moves each forthcoming show with an earlier `time[datetime]` to Recent shows (latest first). It removes the ticket link of each moved show, and shows the message of each empty list. Without JavaScript, every show stays where the HTML has it.
 
