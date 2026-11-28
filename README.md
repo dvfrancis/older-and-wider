@@ -189,8 +189,11 @@ The project keeps them for reference. The build script does not deploy them. The
 - Browser Tab Icon:
 
     - A custom favicon helps users to identify the site. It also shows when a user adds the site as a bookmark or favourite.
+    - The favicon shows OLDER, AND and WIDER on three lines, as on the merchandise. AND is smaller and in magenta.
+    - The site has a multi-size `.ico` file (16, 32 and 48 pixels), a 192 pixel PNG and a 180 pixel Apple touch icon.
+    - A copy of the `.ico` file is at the root of the site as `favicon.ico`. Some browsers and crawlers ask for that address directly.
 
-        ![Website custom favicon](assets/images/website-favicon.webp)
+        ![Website custom favicon](assets/images/oaw-icon-192.png)
 
 - Header:
 
@@ -442,7 +445,7 @@ Two details are important before you change any of this:
 
 - The cache headers remove the necessity for a cache invalidation step. The script uploads the assets with a one year `max-age`, and the mark `immutable`. It uploads the pages with `no-cache`. CloudFront obeys these headers. Thus a new deployment becomes visible immediately.
 - The script adds a hash to the name of each CSS and JS file in `deploy/`, for example `main.bea7c67fec.css`. It changes the links in each page to match. A changed file gets a new name. Thus returning visitors do not keep an old copy from the one-year cache. The build stops if a page links to a file without a hash.
-- The deploy workflow also runs when `sitemap.xml` or `robots.txt` changes.
+- The deploy workflow also runs when `sitemap.xml`, `robots.txt` or `favicon.ico` changes.
 - The script uploads the pages last, after the assets. Thus a live page cannot refer to an asset that is not yet in the bucket.
 
 To add a new page, you must do two steps. It is not sufficient to make the file in the repository root. You must also add the name of the file to the `PAGES` list in `build.sh`. If you do not, the site will never include that page.
@@ -456,6 +459,7 @@ The `PAGES` list contains these files:
 - `privacy.html`
 - `sitemap.xml`
 - `robots.txt`
+- `favicon.ico`
 
 The `DIRS` list contains only `assets`. Thus the script does not deploy `design-options/` or `documentation/`. The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html` from the list.
 
@@ -467,8 +471,6 @@ The repository root contains a `sitemap.xml` file and a `robots.txt` file. Both 
 - `robots.txt` lets all crawlers read all pages. It gives the address of the sitemap.
 
 When you add or remove a page, update `sitemap.xml`. Change the `lastmod` date of each page that you change.
-
-The deploy workflow does not start for a change to only `sitemap.xml` or `robots.txt`. After such a change, run the workflow manually from the Actions tab in GitHub.
 
 After the deploy, submit the sitemap in Google Search Console:
 
