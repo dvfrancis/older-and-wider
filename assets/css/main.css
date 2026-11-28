@@ -202,8 +202,10 @@ a {
     color: var(--magenta);
 }
 
-/* Only the masthead makes AND smaller. The About title uses the class in a sentence. */
-.masthead .masthead-and {
+/* AND is smaller than OLDER and WIDER in every logotype: the masthead,
+   the About title and the footer mark. */
+.masthead-and,
+.footer-and {
     font-size: 0.65em;
     vertical-align: 0.23em;
 }
