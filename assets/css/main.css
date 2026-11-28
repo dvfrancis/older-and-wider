@@ -920,11 +920,12 @@ a {
     font-size: 2.5rem;
     line-height: 1;
     text-transform: uppercase;
-    color: var(--pink);
+    /* The big words are darker than AND, as in the masthead */
+    color: var(--magenta);
 }
 
 .footer-and {
-    color: var(--magenta);
+    color: var(--pink);
 }
 
 .footer-links {
