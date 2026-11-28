@@ -615,6 +615,18 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 | Message board date | Open `message-board.html`. | The issue line under the title shows "Message board" and the date of today in the UK. | Pass, 28 November 2026. |
 | Message board date without JavaScript | Turn off JavaScript and open `message-board.html`. | The issue line shows "Message board" only. | Pass, 28 November 2026. |
 | Message board console | Read the browser console. | The console shows no errors. | Pass, 28 November 2026. |
+
+### Archive venue list and venue cards, 28 November 2026
+
+| Test | Action | Expected result | Result |
+|---|---|---|---|
+| Venue list is closed | Open `archive.html`. | The "Venues" section shows a closed "All venues" list with the number of venues and shows. | Pass, 28 November 2026. |
+| Venue list opens | Click "All venues". | The table shows each venue by town or city, with a letter row for each first letter and the number of shows. | Pass, 28 November 2026. |
+| Venue list on a phone | Open the list at 375 px. | Each row shows the town, the venue and the number of shows. The page does not scroll sideways. | Pass, 28 November 2026. |
+| Jump link | Click "Venues" in the list at the top of the archive. | The page goes to the "Venues" heading. | Pass, 28 November 2026. |
+| Venue script tests | Run `python3 -m unittest discover -s scripts -v`. | All tests pass. `update_archive_venues.py --check` reports no change. | Pass, 28 November 2026. |
+| Past dates on venue cards | Open the venues on `live-shows.html`. | Leicester Square Theatre lists 8 past shows. The Lowry lists March 2024 (date uncertain). | Pass, 28 November 2026. |
+| Festival venue cards | Open the venues on `live-shows.html`. | Latitude Festival has a website link and an access link. Hebden Bridge Arts Festival has no links. | Pass, 28 November 2026. |
 | W3C Markup Validator | Send `archive.html` to the Nu validator. | No errors and no warnings. | Pass. No messages, 28 November 2026. |
 | W3C CSS Validator | Send `assets/css/main.css` to the CSS validator. | No new errors from the archive block. | Pass. The three errors are older. They are on lines 185, 191 and 1030, outside the archive block. |
 | Phone width | Open the page at 375 pixels wide. Open each `details` element. | No horizontal scroll. Each row of a table shows as a block. | Pass. The scroll width is 375 pixels, 28 November 2026, after the change to the show lists. |

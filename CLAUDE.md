@@ -19,12 +19,14 @@ python3 -m http.server 8000  # local preview at http://localhost:8000
 python3 scripts/update_episodes.py --check   # diff index.html against the live feed, write nothing
 python3 scripts/update_episodes.py           # update the episode sections of index.html
 python3 scripts/update_instagram.py --check  # diff the message board posts, write nothing
-python3 -m unittest discover -s scripts -v   # tests for both update scripts
+python3 scripts/update_archive_venues.py --check  # diff the archive venue list, write nothing
+python3 scripts/update_archive_venues.py          # rebuild the venue list in archive.html
+python3 -m unittest discover -s scripts -v   # tests for the three update scripts
 ```
 
 `.claude/launch.json` defines the same preview server for the Claude Code preview tool.
 
-There is no linter. The only automated tests cover `scripts/update_episodes.py` and `scripts/update_instagram.py`. Other verification is manual and is recorded in `TESTING.md`: W3C Markup Validator for each page, W3C CSS Validator for the stylesheet, Lighthouse for mobile and desktop, plus a manual pass across Chrome, Edge, Firefox, Opera and Safari. Screenshots of each result go in `documentation/validation/` and are linked from `TESTING.md`.
+There is no linter. The only automated tests cover `scripts/update_episodes.py`, `scripts/update_instagram.py` and `scripts/update_archive_venues.py`. Each scheduled workflow runs only the tests of its own script. Other verification is manual and is recorded in `TESTING.md`: W3C Markup Validator for each page, W3C CSS Validator for the stylesheet, Lighthouse for mobile and desktop, plus a manual pass across Chrome, Edge, Firefox, Opera and Safari. Screenshots of each result go in `documentation/validation/` and are linked from `TESTING.md`.
 
 ## Deployment pipeline
 
@@ -54,6 +56,8 @@ Routine deploys should go through CI — push to `main` and let the workflow run
 **External links open in a new tab.** Each `<a>` with an `http://` or `https://` address has `rel="external noopener" target="_blank" aria-describedby="new-tab"`. Keep any other `rel` values. The target of `aria-describedby` is `<span id="new-tab" hidden>Opens in a new tab</span>`, the last child of each footer. Internal links and `mailto:` links do not get these attributes. The link templates in `scripts/update_episodes.py` and `scripts/update_instagram.py` write the same attributes. If you change a template, keep the attributes, then update the fixtures.
 
 **Episode sections are generated.** `index.html` has marker comments such as `<!-- episodes:masthead:start -->` and `<!-- episodes:masthead:end -->`. `scripts/update_episodes.py` rewrites the text between each pair from the Acast RSS feed. Do not edit the text between the markers by hand. The next run replaces it. To change the markup of a section, change the template in the script, then update `scripts/fixtures/index.html` and run the tests. `.github/workflows/update-episodes.yml` runs the script each Friday, commits a change to `main` and calls `deploy.yml` through `workflow_call`. The tests use `scripts/fixtures/index.html`, a copy of the page at episode 374. `scripts/` does not deploy.
+
+**The archive venue list is generated.** The "Venues" section of `archive.html` has the markers `<!-- venues:list:start -->` and `<!-- venues:list:end -->`. `scripts/update_archive_venues.py` reads every show row of the archive and writes a closed `details` list of venues with show counts between them. Do not edit that text by hand. After a change to any show table, run the script. Merge names of one venue through `VENUE_ALIASES` and `TOWN_ALIASES` in the script. The archive tables keep the names as the sources give them. No workflow runs this script. The test `test_live_list_is_up_to_date` fails when the list is out of date.
 
 **Message board posts are generated.** `message-board.html` has the markers `<!-- instagram:posts:start -->` and `<!-- instagram:posts:end -->` around the posts list. `scripts/update_instagram.py` rewrites the text between them. Do not edit that text by hand. The script has two modes. List mode is active now: without the secrets `IG_ACCESS_TOKEN` and `IG_USER_ID`, it builds the posts from `scripts/instagram-posts.txt` (one line per post: `date | URL | text`, optional `| photo set`) in the embed markup that `message-board.js` loads. API mode starts when both secrets exist: it gets the 10 latest posts from the Instagram API with Instagram Login, saves WebP variants in `assets/images/instagram/` (names carry the post ID and a photo hash) and writes static cards (`.board-post`, CSS block `/* Instagram feed */` at the end of `main.css`). `.github/workflows/update-instagram.yml` runs every 6 hours and on a push to `main` that changes the post list, commits a change and calls `deploy.yml` through `workflow_call`. Its `refresh` job refreshes the token weekly with `GH_SECRETS_PAT`. After the first API run, a person must remove `message-board.js`, the click-to-load button and the Instagram row in `privacy.html`; the README section "Tasks After the First API Run" lists the steps. The tests use `scripts/fixtures/instagram/`.
 

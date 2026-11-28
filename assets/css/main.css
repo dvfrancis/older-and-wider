@@ -3256,6 +3256,11 @@ a {
     display: inline;
 }
 
+/* Archive: venue list. The count shows under the venue on phones. */
+.arc-venues .arc-count {
+    font-size: 1rem;
+}
+
 /* Wider work */
 .arc-work {
     display: grid;
@@ -3390,6 +3395,11 @@ a {
     .arc-dates .arc-year th {
         padding: 0.25rem 1rem;
         border-top: 0;
+    }
+
+    .arc-venues .arc-count {
+        width: 7rem;
+        white-space: nowrap;
     }
 }
 

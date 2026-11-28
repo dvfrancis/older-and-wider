@@ -71,7 +71,7 @@ jobs:
           sudo apt-get install -y webp
 
       - name: Test the update script
-        run: python3 -m unittest discover -s scripts -v
+        run: python3 -m unittest discover -s scripts -p 'test_update_instagram.py' -v
 
       - name: Update message-board.html
         id: update

@@ -47,7 +47,7 @@ jobs:
           ref: main
 
       - name: Test the update script
-        run: python3 -m unittest discover -s scripts -v
+        run: python3 -m unittest discover -s scripts -p 'test_update_episodes.py' -v
 
       - name: Update index.html from the feed
         id: update
