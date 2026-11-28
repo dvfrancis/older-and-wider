@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static marketing site for the Older and Wider podcast (first a Code Institute project). The site has hand-written HTML, one CSS file and one small script. It has no framework, no package manager and no test suite. Font Awesome loads from a CDN. The four font files are in `assets/fonts/`. The pages do not use Bootstrap.
+A static marketing site for the Older and Wider podcast (first a Code Institute project). The site has hand-written HTML, one CSS file and one small script. It has no framework, no package manager and no test suite. The icons are one SVG sprite, `assets/images/icons-v1.svg`, from Font Awesome Free 6.5.2. Each icon is an inline `svg class="icon"` with a `use` element. The four font files are in `assets/fonts/`. No page loads a file from another server before consent. The pages do not use Bootstrap.
 
 Source pages live at the repo root: `index.html`, `about.html`, `live-shows.html`, `archive.html`, `message-board.html`, `404.html`, `privacy.html`. The redesign removed `contact.html`, `contact-completion.html` and `mailing-list-completion.html`.
 

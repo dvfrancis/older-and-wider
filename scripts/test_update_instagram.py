@@ -150,8 +150,8 @@ class NormalUpdateTest(PageTestCase):
         self.assertEqual(len(self.image_files()), 20)
 
     def test_dates_and_kinds(self):
-        self.assertIn('<i class="fa-solid fa-video" aria-hidden="true"></i>Video', self.posts)
-        self.assertIn('<i class="fa-solid fa-images" aria-hidden="true"></i>Photo set', self.posts)
+        self.assertIn('icons-v1.svg#video"></use></svg>Video', self.posts)
+        self.assertIn('icons-v1.svg#images"></use></svg>Photo set', self.posts)
         self.assertIn('<time datetime="2026-11-26">26 Nov 2026</time>', self.posts)
 
     def test_caption_excerpt_and_alt(self):
@@ -422,8 +422,8 @@ class ListModeTest(PageTestCase):
         self.assertIn('<span class="post-text"><q>Tea &amp; &lt;cake&gt;</q></span>', posts)
         # A reel address gets the closing slash and shows as a video.
         self.assertIn('href="https://www.instagram.com/reel/NewReel2/"', posts)
-        self.assertIn('fa-video" aria-hidden="true"></i>Video', posts)
-        self.assertIn('fa-images" aria-hidden="true"></i>Photo set', posts)
+        self.assertIn('#video"></use></svg>Video', posts)
+        self.assertIn('#images"></use></svg>Photo set', posts)
         self.assertIn('<span class="post-text">A reel about the tour</span>', posts)
         self.assertEqual(posts.count('target="_blank" aria-describedby="new-tab"'), 3)
         self.assertEqual(re.findall(r'instagram-media (post-\w+)', posts), ["post-red", "post-white", "post-letter"])

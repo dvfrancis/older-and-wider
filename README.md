@@ -358,7 +358,7 @@ The project keeps them for reference. The build script does not deploy them. The
 - Privacy:
 
     - The privacy page `privacy.html` tells the visitor that the site has no forms and collects no personal data directly.
-    - A table shows each third party, what it stores, and when. The third parties are the Acast player, Instagram, Google Analytics and Font Awesome from cdnjs.
+    - A table shows each third party, what it stores, and when. The third parties are the Acast player, Instagram and Google Analytics. The site keeps its own copy of the icons and the fonts, so no other server sees a visit.
     - The page tells the visitor how to change or withdraw consent, with the "Cookie settings" button.
     - It names the controller, Dominic Francis, with a link to his website. It shows no email address.
     - The page has no link in the navigation. The footer of each page links to it.
@@ -1196,7 +1196,7 @@ Links to the podcast, on various platforms:
 - [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) was used to edit all images.
 - [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.
 - [To WebP](https://towebp.io/) was used to compress images into webp format.
-- [FontAwesome](https://fontawesome.com/) was used for social media icons.
+- [Font Awesome Free](https://fontawesome.com/) 6.5.2 gives the icons. The site keeps them in one SVG sprite, `assets/images/icons-v1.svg`. The icons have the [CC BY 4.0 licence](https://fontawesome.com/license/free).
 - [GitHub](https://github.com/) was used for version control.
 - [Amazon S3](https://aws.amazon.com/s3/) was used to store the website files.
 - [Amazon CloudFront](https://aws.amazon.com/cloudfront/) was used to serve the website.

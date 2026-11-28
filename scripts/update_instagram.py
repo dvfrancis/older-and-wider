@@ -96,9 +96,9 @@ STOCKS = ("post-red", "post-white", "post-letter")
 SPANS = (4, 2, 3, 3, 2, 4, 3, 3, 2, 4)
 
 KINDS = {
-    "IMAGE": ("fa-camera", "Photo"),
-    "CAROUSEL_ALBUM": ("fa-images", "Photo set"),
-    "VIDEO": ("fa-video", "Video"),
+    "IMAGE": ("camera", "Photo"),
+    "CAROUSEL_ALBUM": ("images", "Photo set"),
+    "VIDEO": ("video", "Video"),
 }
 
 EXCERPT = 90
@@ -140,6 +140,18 @@ class Post:
 class Image:
     stem: str
     variants: list[tuple[int, int, str]]  # (width, height, file name)
+
+
+# The view box of each icon in assets/images/icons-v1.svg.
+ICON_BOXES = {"camera": "0 0 512 512", "images": "0 0 576 512", "video": "0 0 576 512"}
+
+
+def icon_svg(name):
+    """Return the inline SVG for one icon of the sprite."""
+    return (
+        f'<svg class="icon" viewBox="{ICON_BOXES[name]}" aria-hidden="true" focusable="false">'
+        f'<use href="assets/images/icons-v1.svg#{name}"></use></svg>'
+    )
 
 
 def redact(value: object) -> str:
@@ -433,7 +445,7 @@ def render_posts(posts: list[Post], images: dict[str, Image]) -> list[str]:
             f'                sizes="{sizes(index)}" width="{width}" height="{height}"',
             f'                loading="lazy" decoding="async" alt="{attr(alt)}">',
             "        </span>",
-            f'        <span class="post-meta"><i class="fa-solid {icon}" aria-hidden="true"></i>{label}',
+            f'        <span class="post-meta">{icon_svg(icon)}{label}',
             f'            <time datetime="{post.date.isoformat()}">{short_date(post.date)}</time></span>',
             f"        {excerpt}",
             '        <span class="post-link">See this post on Instagram</span>',
@@ -538,7 +550,7 @@ def render_list(posts: list[ListedPost]) -> list[str]:
             f'        data-instgrm-permalink="{attr(post.url)}"',
             '        data-instgrm-version="14">',
             f'        <a href="{attr(post.url)}" rel="external noopener" target="_blank" aria-describedby="new-tab">',
-            f'            <span class="post-meta"><i class="fa-solid {icon}" aria-hidden="true"></i>{label}',
+            f'            <span class="post-meta">{icon_svg(icon)}{label}',
             f'                <time datetime="{post.date.isoformat()}">{short_date(post.date)}</time></span>',
             f'            <span class="post-text">{body}</span>',
             '            <span class="post-link">See this post on Instagram</span>',

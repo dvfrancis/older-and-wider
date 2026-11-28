@@ -274,7 +274,7 @@ def render_sections(episodes: list[Episode]) -> dict[str, list[str]]:
             '<a class="slab slab-lead" href="#listen">',
             f'    <span class="lead-title">{text(latest.title)}</span>',
             '    <span class="lead-action">',
-            '        <span class="play-disc" aria-hidden="true"><i class="fa-solid fa-play"></i></span>',
+            '        <span class="play-disc" aria-hidden="true"><svg class="icon" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><use href="assets/images/icons-v1.svg#play"></use></svg></span>',
             "        Play the latest episode",
             f'        <span class="lead-time">{latest.duration}</span>',
             "    </span>",

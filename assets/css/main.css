@@ -104,6 +104,17 @@ body {
     overflow-x: hidden;
 }
 
+/* Icons: one SVG sprite, assets/images/icons-v1.svg, from Font Awesome Free.
+   Each icon is the height of the text and takes the colour of the text. */
+.icon {
+    display: inline-block;
+    width: auto;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
 ::selection {
     background: var(--ink);
     color: var(--yellow);
@@ -381,7 +392,7 @@ a {
     font-size: 1.125rem;
 }
 
-.play-disc i {
+.play-disc .icon {
     margin-left: 0.15em;
 }
 
@@ -897,7 +908,7 @@ a {
     font-weight: 600;
 }
 
-.award i {
+.award .icon {
     margin-top: 0.2em;
     color: var(--red);
 }
@@ -1811,7 +1822,7 @@ a {
     font-variant-numeric: tabular-nums;
 }
 
-.post-meta i {
+.post-meta .icon {
     font-size: 1.25rem;
 }
 
