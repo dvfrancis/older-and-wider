@@ -73,17 +73,23 @@ The live site can be accessed [here].
         2. [Correct a Show](#correct-a-show)
         3. [Remove a Cancelled Show](#remove-a-cancelled-show)
         4. [Move a Finished Tour to the Archive](#move-a-finished-tour-to-the-archive)
-    4. [Instagram Posts](#instagram-posts)
+    4. [Archive Maintenance](#archive-maintenance)
+        1. [Add an Older and Wider Show to the Archive](#add-an-older-and-wider-show-to-the-archive)
+        2. [Move a Tour from the Live Shows Page to the Archive](#move-a-tour-from-the-live-shows-page-to-the-archive)
+        3. [Add a Solo Tour](#add-a-solo-tour)
+        4. [Correct or Remove a Show](#correct-or-remove-a-show)
+        5. [Data Sources and Limits](#data-sources-and-limits)
+    5. [Instagram Posts](#instagram-posts)
         1. [Add a Post to the Message Board](#add-a-post-to-the-message-board)
         2. [How the Update Works](#how-the-update-works)
         3. [Login Type](#login-type)
         4. [Switch On API Mode](#switch-on-api-mode)
         5. [Token Refresh](#token-refresh)
         6. [Tasks After the First API Run](#tasks-after-the-first-api-run)
-    5. [Sitemap and robots.txt](#sitemap-and-robotstxt)
-    6. [Forks](#forks)
-    7. [Local Clones](#local-clones)
-    8. [Gitpod Workspaces](#gitpod-workspaces)
+    6. [Sitemap and robots.txt](#sitemap-and-robotstxt)
+    7. [Forks](#forks)
+    8. [Local Clones](#local-clones)
+    9. [Gitpod Workspaces](#gitpod-workspaces)
 6. [Credits and References](#credits-and-references)
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
@@ -279,6 +285,21 @@ The project keeps them for reference. The build script does not deploy them. The
     - A show stays in Forthcoming shows for all of the day of the show. It moves on the next day.
     - Without JavaScript, each show stays in the section where the HTML has it. A past show can then stay in Forthcoming shows, with its ticket link. No show is lost. To limit this, move the past shows in the HTML each time you edit the page.
     - Refer to [Live Shows Maintenance](#live-shows-maintenance) for the procedures that stay manual.
+
+- Archive:
+
+    The archive page, `archive.html`, has three sections:
+
+    1. Older and Wider live. This table shows each show with both hosts, with the latest show first.
+    2. Jenny's solo shows. This section has these parts:
+       - "Coming up". This part shows a message and a link to `jennyeclair.com` when no solo show is on sale.
+       - "Earlier tours". This table has one row for each tour or Edinburgh show.
+       - "Every date we found". Each tour has its dates in a `details` element. The Grumpy Old Women shows are in a separate group.
+    3. Wider work. This section lists the books, television and radio of each host. Each item has a link to its source.
+
+    Each date is in a `time` element with a `datetime` attribute. If only the month is known, the attribute has the form `YYYY-MM`.
+
+    The page has no script of its own. All the content shows without JavaScript.
 
 - Message Board:
 
@@ -632,6 +653,54 @@ Do these steps after the last show of a tour.
 8. Add the shows of the next tour, if one is announced. Refer to [Add a Show](#add-a-show).
 9. Change the poster and its alt text in `live-shows.html` for the next tour. Make the `_480` and `_800` width variants of the new poster.
 10. Change the `lastmod` dates of `live-shows.html` and `archive.html` in `sitemap.xml`.
+
+### Archive Maintenance
+
+#### Add an Older and Wider Show to the Archive
+
+1. Make sure that a podcast episode or a venue listing confirms the show.
+2. Open `archive.html`.
+3. Find the table with the class `arc-shows` in the section "Older and Wider live".
+4. Add a new `tr` element in the correct position. The latest show is first.
+5. Put the date in a `time` element. Use the form `YYYY-MM-DD`.
+6. If only the month is confirmed, use the form `YYYY-MM`. Write the month and the year only.
+7. Add the source to the paragraph of sources below the table, if the source is new.
+
+#### Move a Tour from the Live Shows Page to the Archive
+
+Follow the procedure [Move a Finished Tour to the Archive](#move-a-finished-tour-to-the-archive).
+
+#### Add a Solo Tour
+
+A solo tour has many more dates than an Older and Wider tour. You must add the dates by hand.
+
+1. Add a row to the "Earlier tours" table. Give the name of the tour, the years and a short note.
+2. Write the note in your own words. Do not copy text from another website.
+3. Add a new `li` element to the list with the class `arc-tour-list`, below "Solo tours".
+4. In the `li` element, add a `details` element with the class `arc-tour` and a unique `id`, for example `dates-new-tour`.
+5. In the `summary` element, give the name of the tour, the years and the number of dates.
+6. Add a table with the class `arc-dates`. Use one `tbody` element for each year, with the latest year first.
+7. Start each `tbody` element with a row of the class `arc-year`.
+8. Give each date in the form "Sat 5 Oct 2024". Put it in a `time` element.
+9. Write the town or city in the second cell. Write the venue in the third cell.
+10. Link the name of the tour in the "Earlier tours" table to the `id` of the `details` element.
+
+#### Correct or Remove a Show
+
+1. Find the show in `archive.html`. Search for its date in the form `YYYY-MM-DD`.
+2. To correct the show, change the date, the town or the venue.
+3. To remove the show, delete its `tr` element.
+4. If you change a tour, change the number of dates in its `summary` element.
+5. Change the total number of dates in the paragraph below "Every date we found".
+
+#### Data Sources and Limits
+
+- The Older and Wider shows come from the episode notes of the podcast feed, and from the listings of the venues.
+- The solo dates come from archived copies of `jennyeclair.com` and `grumpyoldwomenlive.com`. Issue #29 gives the method.
+- A solo date was announced. The data does not show that the show occurred.
+- The page shows the Grumpy Old Women UK tour of autumn 2007. Jenny Eclair wrote the show, but a different cast performed it. A note on the tour tells the visitor this.
+- Two rows in the source data had no place. The page does not show them. The dates are 20 April 2016 and 20 April 2017.
+
 ### Instagram Posts
 
 The message board page shows up to 10 recent Instagram posts. A GitHub Action builds this list. The update has two modes:

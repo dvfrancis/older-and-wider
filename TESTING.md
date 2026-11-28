@@ -30,7 +30,8 @@
     7. [404.html](#404html)
     8. [privacy.html](#privacyhtml)
     9. [live-shows.html](#live-showshtml)
-    10. [Cookie Consent and Click-to-Load](#cookie-consent-and-click-to-load)
+    10. [archive.html](#archivehtml)
+    11. [Cookie Consent and Click-to-Load](#cookie-consent-and-click-to-load)
 5. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
@@ -586,6 +587,20 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 | Give every forthcoming show a date in the past. Each show had its 2027 date in 2026. | All eight shows move to Recent shows, with the latest date first and no ticket links. The Forthcoming shows list is hidden, and the message "There are no forthcoming shows at the moment" shows. | PASS |
 | Turn off JavaScript, and open the copy with all dates in the past | The page shows all eight shows in Forthcoming shows, with their ticket links. No show is lost. | PASS |
 | Read the browser console on each test page | The console shows no errors and no warnings. No request fails. | PASS |
+
+### archive.html
+
+| Test | Action | Expected result | Result |
+|---|---|---|---|
+| W3C Markup Validator | Send `archive.html` to the Nu validator. | No errors and no warnings. | Pass. No messages, 28 November 2026. |
+| W3C CSS Validator | Send `assets/css/main.css` to the CSS validator. | No new errors from the archive block. | Pass. The three errors are older. They are on lines 185, 191 and 1030, outside the archive block. |
+| Phone width | Open the page at 375 pixels wide. Open each `details` element. | No horizontal scroll. Each row of a table shows as a block. | Pass. The scroll width is 375 pixels. |
+| Desktop width | Open the page at 1440 pixels wide. | The tables show as tables. The tours show in two columns. | Pass. |
+| Details elements | Click the summary of each tour. Then press Enter on a summary with the keyboard. | The tour opens and closes. The plus sign changes to a minus sign. | Pass. A click opens a tour. Enter on the focused summary closes it. |
+| No JavaScript | Disable JavaScript. Reload the page. | All content shows. The `details` elements still open and close. | Pass. The page has no script of its own. The HTML has 14 `details` elements, 985 table rows and 1030 `time` elements. |
+| Contrast | Examine each pair of colours. | Each pair meets WCAG 2.1 level AA. Red text on pink is 1.75rem or larger. | Pass, by the contrast pairs in `DESIGN.md`. |
+| Jump links | Click each link below the introduction. | The page moves to the correct section. | Pass. All 14 links in the page go to an `id` that exists. |
+| Lighthouse | Run Lighthouse for mobile and desktop. | Record the four scores. | To do. |
 
 ### Cookie Consent and Click-to-Load
 
