@@ -36,6 +36,9 @@ class PageTestCase(unittest.TestCase):
         self.page = self.tmp / "index.html"
         shutil.copyfile(PAGE, self.page)
         self.before = self.page.read_bytes()
+        self.sitemap = self.tmp / "sitemap.xml"
+        shutil.copyfile(HERE.parent / "sitemap.xml", self.sitemap)
+        self.sitemap_before = self.sitemap.read_bytes()
 
     def tearDown(self):
         shutil.rmtree(self.tmp)
@@ -44,7 +47,8 @@ class PageTestCase(unittest.TestCase):
         out, err = io.StringIO(), io.StringIO()
         with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
             code = update_episodes.main(
-                ["--feed", str(FIXTURES / feed), "--page", str(self.page), *extra]
+                ["--feed", str(FIXTURES / feed), "--page", str(self.page),
+                 "--sitemap", str(self.sitemap), *extra]
             )
         return code, out.getvalue(), err.getvalue()
 
@@ -68,6 +72,7 @@ class CurrentFeedTest(PageTestCase):
         code, _, _ = self.run_script("feed-current.xml")
         self.assertEqual(code, 0)
         self.assertEqual(self.page.read_bytes(), self.before)
+        self.assertEqual(self.sitemap.read_bytes(), self.sitemap_before)
 
 
 class NewEpisodeTest(PageTestCase):
@@ -80,6 +85,14 @@ class NewEpisodeTest(PageTestCase):
     def test_exit_code(self):
         self.assertEqual(self.code, 0, self.err)
         self.assertIn("episode 375", self.out)
+
+    def test_sitemap_lastmod(self):
+        sitemap = self.sitemap.read_text(encoding="utf-8")
+        day = update_episodes.parse_feed((FIXTURES / "feed-new-episode.xml").read_bytes())[0].date
+        self.assertIn(
+            f"<loc>{update_episodes.HOME_URL}</loc>\n    <lastmod>{day.isoformat()}</lastmod>",
+            sitemap,
+        )
 
     def test_check_mode_writes_nothing(self):
         shutil.copyfile(PAGE, self.page)
@@ -153,6 +166,7 @@ class BadFeedTest(PageTestCase):
             self.assertEqual(code, 2, err)
             self.assertIn("not changed", err)
             self.assertEqual(self.page.read_bytes(), self.before)
+            self.assertEqual(self.sitemap.read_bytes(), self.sitemap_before)
 
     def test_broken_feed(self):
         self.assert_refused("feed-broken.xml")
@@ -174,6 +188,26 @@ class BadFeedTest(PageTestCase):
         self.assertNotIn(368, numbers)
         self.assertEqual(len(numbers), update_episodes.NEEDED)
 
+    def test_repost_of_an_old_episode_is_skipped(self):
+        feed = (FIXTURES / "feed-current.xml").read_text(encoding="utf-8")
+        # A repost of episode 200 between 370 and 371 must not stop the update.
+        feed = feed.replace("Ep 370.", "Ep 200.", 1)
+        episodes = update_episodes.parse_feed(feed.encode("utf-8"))
+        numbers = [episode.number for episode in episodes]
+        self.assertNotIn(200, numbers)
+        self.assertNotIn(370, numbers)
+        self.assertEqual(numbers[0], 374)
+        self.assertEqual(numbers, sorted(numbers, reverse=True))
+        self.assertEqual(len(numbers), update_episodes.NEEDED)
+
+    def test_repost_as_the_newest_item(self):
+        feed = (FIXTURES / "feed-new-episode.xml").read_text(encoding="utf-8")
+        # The newest item is a repost of episode 373. Episode 374 stays the latest.
+        feed = feed.replace("<title>Ep 375.", "<title>Ep 373.", 1)
+        episodes = update_episodes.parse_feed(feed.encode("utf-8"))
+        self.assertEqual(episodes[0].number, 374)
+        self.assertEqual(len({episode.number for episode in episodes}), update_episodes.NEEDED)
+
     def test_page_without_markers(self):
         self.page.write_text("<p>No markers</p>\n", encoding="utf-8")
         self.before = self.page.read_bytes()
@@ -194,7 +228,6 @@ class HelperTest(unittest.TestCase):
             ("Ep. 366 The one with CostCo", 366, "The one with CostCo"),
             ("Ep 124.The one with a party", 124, "The one with a party"),
             ("Episode 12: The one", 12, "The one"),
-            ("374. The one", 374, "The one"),
         ]:
             item = update_episodes.ET.fromstring("<item/>")
             self.assertEqual(update_episodes.parse_number(item, raw), number, raw)
@@ -204,6 +237,19 @@ class HelperTest(unittest.TestCase):
         item = update_episodes.ET.fromstring("<item/>")
         self.assertIsNone(update_episodes.parse_number(item, "A sick note from HQ"))
         self.assertIsNone(update_episodes.parse_number(item, "2026 in review"))
+        self.assertIsNone(update_episodes.parse_number(item, "2027: the tour is on sale"))
+
+    def test_sitemap_lastmod(self):
+        sitemap = (HERE.parent / "sitemap.xml").read_text(encoding="utf-8")
+        day = update_episodes.datetime.date(2026, 12, 4)
+        new = update_episodes.update_sitemap(sitemap, day)
+        self.assertIn(
+            f"<loc>{update_episodes.HOME_URL}</loc>\n    <lastmod>2026-12-04</lastmod>", new
+        )
+        # Only the home page changes.
+        self.assertEqual(new.count("2026-12-04"), 1)
+        with self.assertRaises(update_episodes.FeedError):
+            update_episodes.update_sitemap("<urlset/>", day)
 
     def test_episode_field_wins(self):
         item = update_episodes.ET.fromstring(

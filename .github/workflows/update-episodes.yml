@@ -61,8 +61,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add index.html sitemap.xml
           git commit -m "chore: update the home page for episode $EPISODE"
+          # Main can move while this job runs. Put the commit on top of it.
+          git pull --rebase origin main
           git push origin HEAD:main
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 

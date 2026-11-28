@@ -488,7 +488,7 @@ The workflow does these steps:
 
 1. It runs the tests.
 2. It runs the script against the live feed.
-3. If `index.html` changes, it commits the change to `main` as "chore: update the home page for episode N".
+3. If `index.html` changes, it commits `index.html` and `sitemap.xml` to `main` as "chore: update the home page for episode N". It rebases the commit on `main` before the push, because `main` can move while the job runs.
 4. It calls `deploy.yml` to publish the commit.
 
 If `index.html` does not change, the workflow stops after step 2.
@@ -498,6 +498,9 @@ A push from the `GITHUB_TOKEN` of a workflow does not start other workflows. Thu
 The script obeys these rules:
 
 - It takes the episode number from the `itunes:episode` field. If that field is missing, it uses the prefix of the title, for example "Ep 374.".
+- A title prefix must start with "Ep" or "Episode". A title such as "2027: the tour" does not give a number.
+- It puts the episodes in number order. The latest episode is the highest number.
+- It skips a second item with the same number, for example a repost of an old episode.
 - It removes the number prefix from the title on the page.
 - If the newest episode has no number, the script stops. It does not change the page.
 - It skips an older item that has no number, for example a "sick note" week.
@@ -505,6 +508,7 @@ The script obeys these rules:
 - If the feed has fewer than 16 numbered episodes, the script stops. It does not change the page.
 - It links each bingo number to the page of its episode on Acast.
 - It keeps the bingo layout. The 15 numbers go up column by column. Each row has five numbers and four blanks.
+- When `index.html` changes, it sets the `lastmod` date of the home page in `sitemap.xml` to the date of the latest episode.
 
 The start time of 06:17 UTC is after the usual release time of an episode. The feed shows a release at about 02:00 to 04:00 UTC each Friday. The run at 18:17 UTC catches an episode that comes out late.
 

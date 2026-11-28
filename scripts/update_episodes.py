@@ -43,6 +43,8 @@ from pathlib import Path
 FEED_URL = "https://feeds.acast.com/public/shows/63b6b30a19c20a0011527ce4"
 SHOW_URL = "https://shows.acast.com/older-and-wider-podcast"
 PAGE = Path(__file__).resolve().parent.parent / "index.html"
+SITEMAP = Path(__file__).resolve().parent.parent / "sitemap.xml"
+HOME_URL = "https://older-and-wider.dominicfrancis.co.uk/"
 
 ITUNES = "{http://www.itunes.com/dtds/podcast-1.0.dtd}"
 
@@ -74,9 +76,11 @@ MONTHS = [
     "July", "August", "September", "October", "November", "December",
 ]
 
-# "Ep 374. Title", "Ep. 366 Title", "Ep 124.Title", "Episode 12: Title", "374. Title"
+# "Ep 374. Title", "Ep. 366 Title", "Ep 124.Title", "Episode 12: Title".
+# A title must start with "Ep" or "Episode". A bare number such as
+# "2027: the tour" is not an episode number.
 TITLE_NUMBER = re.compile(
-    r"^\s*(?:ep(?:isode)?\.?\s*(?P<a>\d+)|(?P<b>\d+)\s*[.:])\s*[.:\-]?\s*",
+    r"^\s*ep(?:isode)?\.?\s*(?P<number>\d+)\s*[.:\-]?\s*",
     re.IGNORECASE,
 )
 
@@ -125,7 +129,7 @@ def parse_number(item: ET.Element, title: str) -> int | None:
         return int(field)
     match = TITLE_NUMBER.match(title)
     if match:
-        return int(match.group("a") or match.group("b"))
+        return int(match.group("number"))
     return None
 
 
@@ -172,6 +176,8 @@ def parse_feed(data: bytes) -> list[Episode]:
 
     The newest item must have an episode number. Older items without a
     number (for example a "sick note" week) are not episodes and are skipped.
+    The episodes are in number order. A second item with the same number
+    (for example a repost) is skipped, and the newest copy is kept.
     """
     try:
         root = ET.fromstring(data)
@@ -195,13 +201,21 @@ def parse_feed(data: bytes) -> list[Episode]:
         raise FeedError("the feed has no episodes")
     items.sort(key=lambda entry: entry[0], reverse=True)
 
-    episodes: list[Episode] = []
+    # Episodes go by number, not by date. A repost of an old episode keeps
+    # its old number, so it cannot push the real episodes off the ticket.
+    numbered: dict[int, tuple[ET.Element, str]] = {}
     for position, (_, item, raw_title) in enumerate(items):
         number = parse_number(item, raw_title)
         if number is None:
             if position == 0:
                 raise FeedError(f"the newest item has no episode number: {raw_title.strip()!r}")
             continue
+        # The items are newest first, so the first item with a number wins.
+        numbered.setdefault(number, (item, raw_title))
+
+    episodes: list[Episode] = []
+    for number in sorted(numbered, reverse=True)[:NEEDED]:
+        item, raw_title = numbered[number]
         url = (item.findtext("link") or "").strip()
         if not re.match(r"^https://", url):
             url = SHOW_URL
@@ -214,14 +228,9 @@ def parse_feed(data: bytes) -> list[Episode]:
                 url=url,
             )
         )
-        if len(episodes) == NEEDED:
-            break
 
     if len(episodes) < NEEDED:
         raise FeedError(f"the feed has {len(episodes)} numbered episodes, {NEEDED} are needed")
-    numbers = [episode.number for episode in episodes]
-    if any(newer <= older for newer, older in zip(numbers, numbers[1:])):
-        raise FeedError(f"the episode numbers do not go down with the dates: {numbers}")
     return episodes
 
 
@@ -323,6 +332,17 @@ def apply_sections(page: str, sections: dict[str, list[str]]) -> str:
     return page
 
 
+def update_sitemap(sitemap: str, day: datetime.date) -> str:
+    """Set the lastmod date of the home page in the sitemap."""
+    pattern = re.compile(
+        rf"(<loc>{re.escape(HOME_URL)}</loc>\s*<lastmod>)[0-9-]+(</lastmod>)"
+    )
+    new, count = pattern.subn(rf"\g<1>{day.isoformat()}\g<2>", sitemap)
+    if count != 1:
+        raise FeedError("sitemap.xml must have one lastmod for the home page")
+    return new
+
+
 def write_atomic(path: Path, content: str) -> None:
     handle, temp = tempfile.mkstemp(dir=path.parent, prefix=".index-", suffix=".tmp")
     try:
@@ -350,6 +370,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--feed", default=FEED_URL, help="feed URL or local file (default: the Acast feed)")
     parser.add_argument("--page", default=str(PAGE), help="page to update (default: index.html)")
+    parser.add_argument("--sitemap", default=str(SITEMAP), help="sitemap to update (default: sitemap.xml)")
     parser.add_argument("--check", action="store_true", help="print the diff and exit 1 if the page would change")
     args = parser.parse_args(argv)
 
@@ -358,6 +379,9 @@ def main(argv: list[str] | None = None) -> int:
         episodes = parse_feed(load_feed(args.feed))
         old = page_path.read_text(encoding="utf-8")
         new = apply_sections(old, render_sections(episodes))
+        sitemap_path = Path(args.sitemap)
+        old_sitemap = sitemap_path.read_text(encoding="utf-8")
+        new_sitemap = update_sitemap(old_sitemap, episodes[0].date)
     except (FeedError, OSError) as error:
         print(f"error: {error}. index.html is not changed.", file=sys.stderr)
         return 2
@@ -380,6 +404,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if changed:
         write_atomic(page_path, new)
+        # The home page changed, so its lastmod in the sitemap changes too.
+        if new_sitemap != old_sitemap:
+            write_atomic(sitemap_path, new_sitemap)
         print(f"Updated {page_path.name} for episode {latest}.")
     else:
         print(f"{page_path.name} is up to date (episode {latest}). No change.")

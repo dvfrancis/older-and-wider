@@ -289,8 +289,12 @@ The tests examine these conditions:
 | A missing feed file | The script exits with code 2. The page does not change. |
 | A page with no markers | The script exits with code 2. The page does not change. |
 | An older item with no number | The script skips the item and uses the next episode. |
+| A repost of episode 200 in the middle of the feed | The script skips the repost. The episodes stay in number order. |
+| A repost of episode 373 as the newest item | Episode 374 stays the latest episode. |
+| A new episode 375 | The `lastmod` date of the home page in `sitemap.xml` changes to the date of episode 375. |
+| A bad feed | `sitemap.xml` does not change. |
 | The live `index.html` | It contains each pair of episode markers. |
-| Title prefixes, durations and dates | "Ep 374.", "Ep. 366" and "374." give the correct number. Durations show as m:ss or h:mm:ss. Dates show in UK format. |
+| Title prefixes, durations and dates | "Ep 374.", "Ep. 366" and "Episode 12:" give the correct number. "2027: the tour is on sale" gives no number. Durations show as m:ss or h:mm:ss. Dates show in UK format. |
 
 ### Running the Tests
 
@@ -310,7 +314,7 @@ The results on 28 November 2026 were these:
 
 | TEST | RESULT |
 | --- | --- |
-| `python3 -m unittest discover -s scripts -v` | Pass. 24 tests ran with no failures. |
+| `python3 -m unittest discover -s scripts -v` | Pass. 28 tests ran with no failures. |
 | `python3 scripts/update_episodes.py --check` against the live feed | Pass. The page is up to date at episode 374. |
 | W3C Markup Validator on `index.html` with episode 375 from `feed-new-episode.xml` | Pass. No errors and no warnings. |
 | W3C Markup Validator on `index.html` with the live feed | Pass. No errors and no warnings. |
