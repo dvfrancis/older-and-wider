@@ -1,0 +1,99 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  Older and Wider - CloudFront response headers policy with the security
+  headers and the Content Security Policy. Attach it to distribution
+  E1G3DY1FAYHJJJ. A response headers policy has no cost.
+
+# Deploy (a write-capable profile is necessary):
+#   AWS_PROFILE=admin aws cloudformation deploy --region us-east-1 \
+#     --stack-name older-and-wider-security-headers \
+#     --template-file infra/security-headers.yaml \
+#     --parameter-overrides CspMode=report-only
+# Then attach the policy to the default cache behaviour of the distribution.
+# The README section "Security Headers" gives the steps.
+
+Parameters:
+  CspMode:
+    Type: String
+    Default: report-only
+    AllowedValues:
+      - report-only
+      - enforce
+    Description: >-
+      report-only sends Content-Security-Policy-Report-Only, which blocks
+      nothing. enforce sends Content-Security-Policy.
+
+Conditions:
+  Enforce: !Equals [!Ref CspMode, enforce]
+
+Mappings:
+  Csp:
+    Policy:
+      # Each host agrees with a script in assets/js/:
+      # analytics.js loads Google Analytics, player.js loads the Acast player,
+      # and message-board.js loads the Instagram embed script.
+      # style-src-attr allows style attributes only. The Instagram embed
+      # script sets a style attribute on each iframe. Style sheets and
+      # style elements must still come from this site.
+      Value: >-
+        default-src 'self';
+        script-src 'self' https://www.googletagmanager.com https://www.instagram.com;
+        style-src 'self';
+        style-src-attr 'unsafe-inline';
+        img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com;
+        font-src 'self';
+        connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+        frame-src https://embed.acast.com https://www.instagram.com;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'none';
+        frame-ancestors 'none'
+
+Resources:
+  SecurityHeadersPolicy:
+    Type: AWS::CloudFront::ResponseHeadersPolicy
+    Properties:
+      ResponseHeadersPolicyConfig:
+        Name: !Sub "${AWS::StackName}"
+        Comment: Security headers for older-and-wider.dominicfrancis.co.uk
+        SecurityHeadersConfig:
+          StrictTransportSecurity:
+            # No IncludeSubdomains and no Preload. The parent domain holds
+            # other sites, and this site does not control them.
+            AccessControlMaxAgeSec: 31536000
+            IncludeSubdomains: false
+            Preload: false
+            Override: true
+          ContentTypeOptions:
+            Override: true
+          FrameOptions:
+            FrameOption: DENY
+            Override: true
+          ReferrerPolicy:
+            ReferrerPolicy: strict-origin-when-cross-origin
+            Override: true
+          ContentSecurityPolicy: !If
+            - Enforce
+            - ContentSecurityPolicy: !FindInMap [Csp, Policy, Value]
+              Override: true
+            - !Ref AWS::NoValue
+        CustomHeadersConfig:
+          Items:
+            - Header: Permissions-Policy
+              Value: >-
+                accelerometer=(), bluetooth=(), browsing-topics=(), camera=(),
+                display-capture=(), geolocation=(), gyroscope=(), hid=(),
+                magnetometer=(), microphone=(), midi=(), payment=(), serial=(),
+                usb=(), xr-spatial-tracking=()
+              Override: true
+            - !If
+              - Enforce
+              - !Ref AWS::NoValue
+              - Header: Content-Security-Policy-Report-Only
+                Value: !FindInMap [Csp, Policy, Value]
+                Override: true
+
+Outputs:
+  PolicyId:
+    Description: The ID to attach to the default cache behaviour.
+    Value: !GetAtt SecurityHeadersPolicy.Id
