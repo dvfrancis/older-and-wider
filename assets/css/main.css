@@ -3444,3 +3444,52 @@ a {
         transform: none;
     }
 }
+
+/* Archive: work links and covers */
+/* A book item puts the cover to the left of the text. The cover has
+   no halftone screen, so that the reader can see the real jacket. */
+.arc-work-book {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.arc-cover {
+    width: 5rem;
+    height: auto;
+    border: 1px solid rgba(26, 26, 26, 0.3);
+    box-shadow: var(--rest-shadow);
+}
+
+.arc-work-text {
+    min-width: 0;
+}
+
+.arc-work-link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--red);
+    overflow-wrap: anywhere;
+}
+
+.arc-cover-credit {
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 48rem) {
+    .arc-work-book {
+        grid-template-columns: 6rem minmax(0, 1fr);
+    }
+
+    .arc-cover {
+        width: 6rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .arc-work-book {
+        gap: 1.25rem;
+    }
+}

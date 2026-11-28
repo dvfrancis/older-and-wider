@@ -78,7 +78,8 @@ The live site can be accessed [here].
         2. [Move a Tour from the Live Shows Page to the Archive](#move-a-tour-from-the-live-shows-page-to-the-archive)
         3. [Add a Solo Tour](#add-a-solo-tour)
         4. [Correct or Remove a Show](#correct-or-remove-a-show)
-        5. [Data Sources and Limits](#data-sources-and-limits)
+        5. [Add a Book to Wider Work](#add-a-book-to-wider-work)
+        6. [Data Sources and Limits](#data-sources-and-limits)
     5. [Instagram Posts](#instagram-posts)
         1. [Add a Post to the Message Board](#add-a-post-to-the-message-board)
         2. [How the Update Works](#how-the-update-works)
@@ -295,7 +296,7 @@ The project keeps them for reference. The build script does not deploy them. The
        - "Coming up". This part shows a message and a link to `jennyeclair.com` when no solo show is on sale.
        - "Earlier tours". This table has one row for each tour or Edinburgh show.
        - "Every date we found". Each tour has its dates in a `details` element. The Grumpy Old Women shows are in a separate group.
-    3. Wider work. This section lists the books, television and radio of each host. Each item has a link to its source.
+    3. Wider work. This section lists the books, television and radio of each host. Each item has a link to its source. Where possible, an item also links to the work itself. A book links to its page on Amazon UK, and a television or radio series links to its page on BBC Programmes or Channel 4. Most books show a cover from Open Library. The site keeps a copy of each cover in `assets/images/covers/`.
 
     Each date is in a `time` element with a `datetime` attribute. If only the month is known, the attribute has the form `YYYY-MM`.
 
@@ -695,6 +696,31 @@ A solo tour has many more dates than an Older and Wider tour. You must add the d
 3. To remove the show, delete its `tr` element.
 4. If you change a tour, change the number of dates in its `summary` element.
 5. Change the total number of dates in the paragraph below "Every date we found".
+
+#### Add a Book to Wider Work
+
+The "Wider work" section of `archive.html` links each book to its page on Amazon UK. A book can also show a cover from Open Library.
+
+1. Find the ISBN of a print edition on the page of the publisher or on Open Library.
+2. Search Open Library with `https://openlibrary.org/search.json?q=TITLE+AUTHOR`.
+3. Make sure that the title and the author of the ISBN are correct.
+4. Use the ISBN-10 of that edition. Make sure that its check digit is correct.
+5. Add a `li` element to the list of the correct host.
+6. Add a paragraph with the class `arc-work-link` above the paragraph with the class `arc-source`.
+7. In the paragraph, link to `https://www.amazon.co.uk/dp/ISBN-10`. Do not add affiliate or tracking parameters.
+8. Write the link text in the form "Title on Amazon". Add `rel="external"` to the link.
+9. Download the cover from `https://covers.openlibrary.org/b/isbn/ISBN-L.jpg?default=false`.
+10. If the address gives a 404 error, Open Library has no cover. Do not add a cover.
+11. Do not use a cover that is small or blank. Use `sips -g pixelWidth -g pixelHeight` to get its size.
+12. Do not use cover images from Amazon.
+13. Make the two WebP sizes with `cwebp -q 80 -resize 120 0` and `cwebp -q 80 -resize 240 0`.
+14. Save them as `assets/images/covers/SLUG_120.webp` and `assets/images/covers/SLUG_240.webp`.
+15. Give the `li` element the class `arc-work-book`.
+16. Put an `img` element with the class `arc-cover` first in the `li` element. Copy the attributes of an existing cover.
+17. Set `width="240"` and set `height` to the height of the 240 pixel file.
+18. Set `alt` to "Cover of Title".
+19. Put the text paragraphs of the book in a `div` element with the class `arc-work-text`.
+20. If you replace a cover, give the new files a new name. The browser keeps the old files for one year.
 
 #### Data Sources and Limits
 

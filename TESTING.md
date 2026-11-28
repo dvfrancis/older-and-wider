@@ -600,6 +600,12 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 | No JavaScript | Disable JavaScript. Reload the page. | All content shows. The `details` elements still open and close. | Pass. The page has no script of its own. The HTML has 14 `details` elements, 985 table rows and 1030 `time` elements. |
 | Contrast | Examine each pair of colours. | Each pair meets WCAG 2.1 level AA. Red text on pink is 1.75rem or larger. | Pass, by the contrast pairs in `DESIGN.md`. |
 | Jump links | Click each link below the introduction. | The page moves to the correct section. | Pass. All 14 links in the page go to an `id` that exists. |
+| Work links | Examine each `arc-work-link` paragraph in "Wider work". | Each link names the work and where it goes. Each link has `rel="external"`. | Pass. The section has 13 work links: 8 to Amazon UK, 4 to BBC Programmes and 1 to Channel 4. |
+| Status of the work links | Send a request to each link that does not go to Amazon. | Each link gives the status 200. | Pass. The 4 BBC Programmes pages, the Channel 4 page and `openlibrary.org` give 200, 28 November 2026. |
+| Amazon links | Examine the ISBN-10 in each Amazon link. | The check digit is correct. Open Library gives the same title and author for the ISBN. | Pass. Amazon blocks automated requests, so the test examines the ISBN only. No link has an affiliate or tracking parameter. |
+| Book covers | Scroll to "Wider work" at 375 and 1440 pixels wide. | Each cover loads from `assets/images/covers/`. No image loads from another site. Each cover has no halftone screen. | Pass. 7 covers load. A cover is 80 pixels wide on a phone and 96 pixels wide from 48rem. |
+| Cover alt text | Examine each `img` element with the class `arc-cover`. | The `alt` text is "Cover of" and the title. The element has `width`, `height`, `srcset`, `sizes` and `loading="lazy"`. | Pass. |
+| Cover credit | Examine the end of "Wider work". | The text "Book covers from Open Library." links to `https://openlibrary.org`. | Pass. |
 | Lighthouse | Run Lighthouse for mobile and desktop. | Record the four scores. | To do. |
 
 ### Cookie Consent and Click-to-Load
