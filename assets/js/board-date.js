@@ -4,9 +4,8 @@
     "use strict";
 
     var wrap = document.getElementById("board-date");
-    var time = wrap ? wrap.querySelector("time") : null;
 
-    if (!time) {
+    if (!wrap) {
         return;
     }
 
@@ -29,7 +28,11 @@
         year: "numeric"
     }).format(now);
 
+    // The script makes the time element. An empty time element in the HTML
+    // is not valid, so the HTML does not contain one.
+    var time = document.createElement("time");
     time.setAttribute("datetime", iso);
     time.textContent = shown;
+    wrap.appendChild(time);
     wrap.hidden = false;
 }());
