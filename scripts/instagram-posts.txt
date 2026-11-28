@@ -1,0 +1,30 @@
+# The posts on the message board page.
+#
+# Write one post on each line. Put the newest post at the top.
+# Use this format:
+#
+#   date | address of the post | short text
+#
+# For example:
+#
+#   2026-11-27 | https://www.instagram.com/p/POSTID/ | A short summary in your own words
+#
+# Rules:
+# - Write the date as year-month-day, for example 2026-11-27.
+# - Copy the address of the post from Instagram. It starts with https://www.instagram.com/p/ or https://www.instagram.com/reel/.
+# - Write the short text in your own words. Do not use the | character in the text.
+# - Put the text in double quotes to show it as a quote from the post.
+# - The page shows a /p/ post as "Photo" and a /reel/ post as "Video".
+# - To show a post as a set of photos, add a fourth part: | photo set
+# - The page shows the 10 newest posts.
+# - A line that starts with # is a note. The page does not show it.
+#
+# When you commit a change to this file on main, the update action builds the page.
+# If a line is not correct, the action stops and names the line. The page does not change.
+
+2026-11-26 | https://www.instagram.com/reel/DgNGi6Zonxq/ | The new live show is announced, with tickets on sale from 27 November
+2026-11-23 | https://www.instagram.com/p/DgGHKIeofuD/ | "An Everyman cinema one Monday morning"
+2026-11-22 | https://www.instagram.com/p/DgCqFkliJ9N/ | "Me and Geof outside 19 Rossall Road" | photo set
+2026-11-21 | https://www.instagram.com/p/DgA4E4uoQ2x/ | "Best £10 I've ever spent on marketplace."
+2026-11-19 | https://www.instagram.com/p/Df8-fcmoS88/ | "Same Podcast. New Pic."
+2026-11-19 | https://www.instagram.com/p/Df6wKXGolIF/ | "Posh College dinner"
