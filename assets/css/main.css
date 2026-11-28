@@ -2521,3 +2521,119 @@ a {
         gap: 4rem;
     }
 }
+
+/* Instagram feed
+   scripts/update_instagram.py writes these posts into message-board.html
+   as static HTML. Each post is a pinned link card in one of the three paper
+   stocks, with a halftone photo. The wall holds ten posts. Posts 7 to 10
+   continue the pattern of tilts and spans that posts 1 to 6 start. */
+.board-list > li:nth-child(7) { --tilt: -0.8deg; width: 90%; justify-self: end; }
+.board-list > li:nth-child(8) { --tilt: 1.1deg; width: 94%; }
+.board-list > li:nth-child(9) { --tilt: -1.2deg; width: 86%; justify-self: center; }
+.board-list > li:nth-child(10) { --tilt: 0.8deg; width: 98%; }
+
+.board-post {
+    position: relative;
+    display: grid;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    padding: 1.5rem 1.25rem 1.25rem;
+    background: var(--pink-soft);
+    color: var(--red);
+    text-decoration: none;
+    box-shadow: 0 0.625rem 1.25rem -0.375rem rgba(26, 26, 26, 0.3);
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+
+/* A yellow pin at the top of each post */
+.board-post::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -0.5rem;
+    left: 50%;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-left: -0.5625rem;
+    border-radius: 50%;
+    background: var(--yellow);
+    box-shadow: 0 0.1875rem 0.25rem rgba(26, 26, 26, 0.35);
+}
+
+.board-post:hover,
+.board-post:focus-visible {
+    transform: translateY(-0.375rem) rotate(-0.6deg);
+    box-shadow: var(--lift-shadow);
+}
+
+.board-post.post-red {
+    background: var(--red);
+    color: var(--white);
+}
+
+.board-post.post-white {
+    background: var(--white);
+    border: 1px solid rgba(26, 26, 26, 0.18);
+}
+
+.board-post:hover .post-link {
+    text-decoration-thickness: 0.15em;
+}
+
+/* The photo is a print with a white border. Instagram photos have many
+   shapes, so each photo is cut to the same 4:3 frame. */
+.post-photo {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border: 0.375rem solid var(--white);
+}
+
+.post-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* The halftone: a fine ink dot screen on the photo. The tonal screen of the
+   other photos needs the photo URL in the CSS. These photos change each day,
+   so they use a flat screen. */
+.post-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(26, 26, 26, 0.55) 30%, transparent 32%) 0 0 / 5px 5px;
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+}
+
+@media (min-width: 48rem) {
+    .board-list > li:nth-child(n) {
+        width: 100%;
+    }
+
+    .board-list > li:nth-child(7) { grid-column: span 3; }
+    .board-list > li:nth-child(8) { grid-column: span 3; margin-top: 1.5rem; }
+    .board-list > li:nth-child(9) { grid-column: span 2; }
+    .board-list > li:nth-child(10) { grid-column: span 4; margin-top: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .board-post {
+        transition: none;
+    }
+
+    .board-post:hover,
+    .board-post:focus-visible {
+        transform: none;
+    }
+}
+
+@media (prefers-contrast: more) {
+    .post-photo::after {
+        display: none;
+    }
+}

@@ -18,12 +18,13 @@ Source pages live at the repo root: `index.html`, `about.html`, `message-board.h
 python3 -m http.server 8000  # local preview at http://localhost:8000
 python3 scripts/update_episodes.py --check   # diff index.html against the live feed, write nothing
 python3 scripts/update_episodes.py           # update the episode sections of index.html
-python3 -m unittest discover -s scripts -v   # tests for the update script
+python3 scripts/update_instagram.py --check  # diff the message board posts, write nothing
+python3 -m unittest discover -s scripts -v   # tests for both update scripts
 ```
 
 `.claude/launch.json` defines the same preview server for the Claude Code preview tool.
 
-There is no linter. The only automated tests cover `scripts/update_episodes.py`. Other verification is manual and is recorded in `TESTING.md`: W3C Markup Validator for each page, W3C CSS Validator for the stylesheet, Lighthouse for mobile and desktop, plus a manual pass across Chrome, Edge, Firefox, Opera and Safari. Screenshots of each result go in `documentation/validation/` and are linked from `TESTING.md`.
+There is no linter. The only automated tests cover `scripts/update_episodes.py` and `scripts/update_instagram.py`. Other verification is manual and is recorded in `TESTING.md`: W3C Markup Validator for each page, W3C CSS Validator for the stylesheet, Lighthouse for mobile and desktop, plus a manual pass across Chrome, Edge, Firefox, Opera and Safari. Screenshots of each result go in `documentation/validation/` and are linked from `TESTING.md`.
 
 ## Deployment pipeline
 
@@ -51,6 +52,8 @@ Routine deploys should go through CI — push to `main` and let the workflow run
 **No templating.** Each of the five pages has its own copy of the header, nav and footer. The footer is byte-identical in `index.html`, `about.html`, `message-board.html` and `privacy.html`. The footer in `404.html` differs only in its root-relative paths. The footer has a "Privacy" link and a "Cookie settings" button (`data-consent-open`, `hidden` until `consent.js` runs). The nav has three links: Home, About and Message Board. The privacy page has no nav item. The link to the current page carries `aria-current="page"`. `404.html` uses root-relative paths (`/index.html`, `/assets/...`), so it works at any missing address. A nav or footer change means you must edit all five files by hand.
 
 **Episode sections are generated.** `index.html` has marker comments such as `<!-- episodes:masthead:start -->` and `<!-- episodes:masthead:end -->`. `scripts/update_episodes.py` rewrites the text between each pair from the Acast RSS feed. Do not edit the text between the markers by hand. The next run replaces it. To change the markup of a section, change the template in the script, then update `scripts/fixtures/index.html` and run the tests. `.github/workflows/update-episodes.yml` runs the script each Friday, commits a change to `main` and calls `deploy.yml` through `workflow_call`. The tests use `scripts/fixtures/index.html`, a copy of the page at episode 374. `scripts/` does not deploy.
+
+**Message board posts are generated.** `message-board.html` has the markers `<!-- instagram:posts:start -->` and `<!-- instagram:posts:end -->` around the posts list. `scripts/update_instagram.py` rewrites the text between them. Do not edit that text by hand. The script has two modes. List mode is active now: without the secrets `IG_ACCESS_TOKEN` and `IG_USER_ID`, it builds the posts from `scripts/instagram-posts.txt` (one line per post: `date | URL | text`, optional `| photo set`) in the embed markup that `message-board.js` loads. API mode starts when both secrets exist: it gets the 10 latest posts from the Instagram API with Instagram Login, saves WebP variants in `assets/images/instagram/` (names carry the post ID and a photo hash) and writes static cards (`.board-post`, CSS block `/* Instagram feed */` at the end of `main.css`). `.github/workflows/update-instagram.yml` runs every 6 hours and on a push to `main` that changes the post list, commits a change and calls `deploy.yml` through `workflow_call`. Its `refresh` job refreshes the token weekly with `GH_SECRETS_PAT`. After the first API run, a person must remove `message-board.js`, the click-to-load button and the Instagram row in `privacy.html`; the README section "Tasks After the First API Run" lists the steps. The tests use `scripts/fixtures/instagram/`.
 
 **No page redirects.** No page has a `<meta http-equiv="refresh">`. The earlier `404.html` and the two completion pages redirected after 30 seconds. The redesign removed this behaviour.
 

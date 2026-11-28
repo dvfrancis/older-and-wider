@@ -18,6 +18,8 @@
     1. [Episode Update Script](#episode-update-script)
     2. [Running the Tests](#running-the-tests)
     3. [Episode Update Results](#episode-update-results)
+    4. [Instagram Update Script](#instagram-update-script)
+    5. [Instagram Update Results](#instagram-update-results)
 4. [Manual Validation](#manual-validation)
     1. [index.html](#indexhtml)
     2. [mailing-list-completion.html (page removed)](#mailing-list-completionhtml-page-removed-1)
@@ -97,6 +99,7 @@ The status of each test is:
 | Responsiveness | Earlier design only. To be re-run on the new design. |
 | Performance (Lighthouse) | Done on the new design, 27 November 2026 |
 | Automated tests (episode update) | Done, 28 November 2026. All 24 tests pass. |
+| Automated tests (Instagram update) | Done, 28 November 2026. All 44 tests pass. |
 
 **Browser tests: done on the new design.** The results are in the Browser Compatibility section. The Lighthouse scores for the new design are in the Performance section. The screenshots in the sections after Code Validation show the earlier design.
 
@@ -318,6 +321,70 @@ The results on 28 November 2026 were these:
 | `python3 scripts/update_episodes.py --check` against the live feed | Pass. The page is up to date at episode 374. |
 | W3C Markup Validator on `index.html` with episode 375 from `feed-new-episode.xml` | Pass. No errors and no warnings. |
 | W3C Markup Validator on `index.html` with the live feed | Pass. No errors and no warnings. |
+| `./build.sh` | Pass. |
+
+### Instagram Update Script
+
+The script `scripts/update_instagram.py` updates the posts on the message board page. The README describes the script in the section "Instagram Posts".
+
+The file `scripts/test_update_instagram.py` contains the tests for the script. The tests use the Python `unittest` module. They do not use the network. They do not need a token. They do not change `message-board.html`, `sitemap.xml` or `scripts/instagram-posts.txt`. The tests that make WebP files need the `cwebp` command. The workflow installs `cwebp` before the tests.
+
+The tests use these fixture files in `scripts/fixtures/instagram/`:
+
+| FILE | CONTENT |
+| --- | --- |
+| `message-board.html` | A copy of the message board page with the Instagram markers. The tests change only a temporary copy of this file. |
+| `media.json` | A saved API response with 12 posts. It has photos, videos, photo sets, a video with no thumbnail, a post with no caption and a caption with `<script>` and `&`. |
+| `media-next.json` | The same response with one newer post at the top. |
+| `media-error.json` | An API error for an expired token. |
+| `media-unusable.json` | One video with no thumbnail. The script cannot show it. |
+| `media-bad-host.json` | One photo on a host that is not an Instagram host. |
+| `images/photo-1.jpg` to `images/photo-4.jpg` | Small JPEG photos. The script reads them in place of the Instagram photos. |
+
+The tests examine these conditions:
+
+| TEST | EXPECTED RESULT |
+| --- | --- |
+| A normal update in API mode | The page shows 10 posts, newest first. The video with no thumbnail and the eleventh post are not on the page. |
+| A normal update in API mode | Each `img` has a `srcset`, `sizes`, `width`, `height`, `loading="lazy"` and alt text. The WebP files in the folder agree with the page. |
+| A normal update in API mode | The text outside the markers does not change. The embed markup is not between the markers. |
+| A normal update in API mode | The card text is the first line of the caption, without hashtags. A long caption ends with an ellipsis. |
+| A normal update in API mode | `alt_text` is the alt text. Without a caption, the alt text gives the date. |
+| A normal update in API mode | The `lastmod` date of the message board in `sitemap.xml` changes to the date of the run. |
+| A second run with the same data | The page, the sitemap and the image files do not change. `--check` exits with code 0. |
+| A caption with `<script>`, `&` and quotes | The text is escaped in the card and in the alt text. |
+| A video and a photo set | A video uses `thumbnail_url`. A photo set uses its first item. A video item in a set uses its thumbnail. |
+| A newer post | The script deletes the files of the post that leaves the page. It keeps other files in the folder. |
+| `--check` in API mode | The script shows a diff and the new image files. It exits with code 1. Nothing changes. |
+| An API error | The script exits with code 2. Nothing changes. |
+| No usable posts, a photo on another host, or a missing fixture | The script exits with code 2. Nothing changes. |
+| A page with no end marker | The script exits with code 2. Nothing changes. |
+| No `cwebp` command in API mode | The script exits with code 2 and names `cwebp`. Nothing changes. |
+| A network error and an HTTP error that contain the token | The token is not in the output. The output shows `access_token=[hidden]`. |
+| A good run in API mode | The token is not in the output or the page. The request goes to `graph.instagram.com/v27.0`. |
+| A token refresh | The new token goes into a file with mode 600. The output shows the new token only in the `::add-mask::` command. |
+| A refresh error or a bad refresh response | The script exits with code 2. The old token is not in the output. The script writes no file. |
+| The seeded post list | It gives the page of today with no diff, on the fixture page and on the live page. |
+| A normal update in list mode | The page shows the posts in the embed markup, with escaped text, the correct type and no image files. |
+| A second run in list mode | The page and the sitemap do not change. |
+| A list with 12 posts | The page shows the 10 newest posts. |
+| Notes and blank lines in the list | The page does not show them. |
+| A bad line in the list | The script exits with code 2 and names the line number. Nothing changes. The tests use a bad date, an impossible date, three bad addresses, empty text, too few parts and a bad fourth part. |
+| A missing post list | The script exits with code 2. Nothing changes. |
+| Both secrets exist | The script uses the API and ignores the list. |
+| The live `message-board.html` | It contains one pair of Instagram markers. |
+
+### Instagram Update Results
+
+The results on 28 November 2026 were these:
+
+| TEST | RESULT |
+| --- | --- |
+| `python3 -m unittest discover -s scripts -v` | Pass. 72 tests ran with no failures. |
+| `python3 scripts/update_instagram.py --check` in list mode | Pass. The page is up to date. |
+| `python3 scripts/update_instagram.py --check --fixture scripts/fixtures/instagram/media.json` on a copy of the page | Pass. The diff shows 10 cards and 20 new image files. |
+| W3C Markup Validator on `message-board.html` | Pass. No errors and no warnings. |
+| W3C Markup Validator on `message-board.html` with the 10 posts from `media.json` | Pass. No errors and no warnings. |
 | `./build.sh` | Pass. |
 
 ## Manual Validation
