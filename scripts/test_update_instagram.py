@@ -34,6 +34,9 @@ FIXTURES = HERE / "fixtures" / "instagram"
 PAGE = FIXTURES / "message-board.html"
 LIVE_PAGE = HERE.parent / "message-board.html"
 POST_LIST = HERE / "instagram-posts.txt"
+# A fixed copy of the post list as it was seeded. The live post list changes
+# each time a person adds a post, so the tests do not compare against it.
+SEED_LIST = HERE / "fixtures" / "instagram" / "posts-seed.txt"
 TOKEN = "IGAAFixtureSecretToken0123456789abcdef"
 NEW_TOKEN = "IGAAFixtureNewToken9876543210fedcba"
 HAS_CWEBP = shutil.which("cwebp") is not None
@@ -63,7 +66,7 @@ class PageTestCase(unittest.TestCase):
         self.sitemap_before = self.sitemap.read_bytes()
         self.images = self.tmp / "images"
         self.posts_file = self.tmp / "instagram-posts.txt"
-        shutil.copyfile(POST_LIST, self.posts_file)
+        shutil.copyfile(SEED_LIST, self.posts_file)
         update_instagram.SECRETS.clear()
         # The tests do not depend on the secrets or the date of the computer.
         patches = [
@@ -390,11 +393,14 @@ class ListModeTest(PageTestCase):
         self.assertEqual(code, 0, out + err)
         self.assertIn("list mode", out)
 
-    def test_seeded_list_matches_the_live_page(self):
+    def test_live_list_is_valid(self):
+        # The workflow runs the tests before the update, so the live page can
+        # be one post behind the live list. Only check that the list builds.
+        shutil.copyfile(POST_LIST, self.posts_file)
         shutil.copyfile(LIVE_PAGE, self.page)
-        self.before = self.page.read_bytes()
-        code, out, err = self.run_script("--check")
+        code, out, err = self.run_script()
         self.assertEqual(code, 0, out + err)
+        self.assertIn("list mode", out)
 
     def test_normal_build(self):
         self.write_list(
