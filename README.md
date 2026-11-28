@@ -101,9 +101,10 @@ The live site can be accessed [here].
         5. [Token Refresh](#token-refresh)
         6. [Tasks After the First API Run](#tasks-after-the-first-api-run)
     6. [Sitemap and robots.txt](#sitemap-and-robotstxt)
-    7. [Forks](#forks)
-    8. [Local Clones](#local-clones)
-    9. [Gitpod Workspaces](#gitpod-workspaces)
+    7. [Search and Share Tags](#search-and-share-tags)
+    8. [Forks](#forks)
+    9. [Local Clones](#local-clones)
+    10. [Gitpod Workspaces](#gitpod-workspaces)
 6. [Credits and References](#credits-and-references)
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
@@ -1083,6 +1084,29 @@ After the deploy, submit the sitemap in Google Search Console:
 2. Open the Sitemaps page.
 3. Enter `sitemap.xml` and select Submit.
 4. Make sure that the status shows no errors.
+
+### Search and Share Tags
+
+The six pages in `sitemap.xml` have these tags in the `head`:
+
+- A `link rel="canonical"` with the full address of the page. This address agrees with the `loc` in `sitemap.xml`.
+- Open Graph tags (`og:title`, `og:description`, `og:url`, `og:image` and others). Social sites use them to make the link preview.
+- `twitter:card` with the value `summary_large_image`. X reads the other values from the Open Graph tags.
+
+The `og:title` and `og:description` agree with the `title` and the meta description of the page. If you change one, change the other.
+
+The share image is `assets/images/share-card-v1.jpg`, 1200 x 630 pixels. It is a JPEG, because some social sites do not read WebP. If you change the image, give it a new file name, for example `share-card-v2.jpg`. Then change the `og:image` tag in the six pages.
+
+The home page also has a `script type="application/ld+json"` block. It describes the podcast as a schema.org `PodcastSeries`. The browser does not run this block as code. It is data for search engines. Thus it does not break the rule against inline scripts.
+
+`404.html` has no canonical tag and no share tags, because it has a `noindex` tag.
+
+To test the tags after the deploy:
+
+1. Open the [Rich Results Test](https://search.google.com/test/rich-results) and enter the address of the home page.
+2. Make sure that the test finds the `PodcastSeries` data with no errors.
+3. Open the [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and enter the address of each page.
+4. Make sure that the preview shows the share image and the correct title.
 
 ### Forks
 
