@@ -1106,10 +1106,12 @@ The home page also has a `script type="application/ld+json"` block. It describes
 
 To test the tags after the deploy:
 
-1. Open the [Rich Results Test](https://search.google.com/test/rich-results) and enter the address of the home page.
-2. Make sure that the test finds the `PodcastSeries` data with no errors.
-3. Open the [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and enter the address of each page.
+1. Open the [Schema Markup Validator](https://validator.schema.org/) and enter the address of the home page.
+2. Make sure that the test finds the `PodcastSeries` data with 0 errors and 0 warnings.
+3. Open [opengraph.xyz](https://www.opengraph.xyz/) and enter the address of each page.
 4. Make sure that the preview shows the share image and the correct title.
+
+Do not use the Google Rich Results Test for this check. Google has no rich result for podcasts, so the test finds no items.
 
 ### Security Headers
 

@@ -289,8 +289,8 @@ A Python script checked the `head` of the six pages in `sitemap.xml` on 28 Novem
 | `share-card-v1.jpg` is 1200 x 630 pixels | Pass. The file is 147 KB. |
 | The `ld+json` block of `index.html` is valid JSON with `@type` `PodcastSeries` | Pass |
 | `404.html` has no canonical tag and no share tags | Pass |
-| The Rich Results Test finds the `PodcastSeries` data | To be tested after the deploy |
-| A social preview shows the share image | To be tested after the deploy |
+| The Schema Markup Validator finds the `PodcastSeries` data | Pass, tested by the site owner on 28 November 2026. 0 errors and 0 warnings. |
+| A social preview shows the share image | Pass, tested by the site owner on 28 November 2026 with opengraph.xyz. |
 
 ## Automated Tests
 
