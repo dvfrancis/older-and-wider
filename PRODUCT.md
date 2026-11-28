@@ -23,7 +23,7 @@ The visitor actions, in order of priority:
 
 1. Listen to an episode.
 2. Book a ticket for a live show.
-3. Visit the shop and the social pages. A mailing list may return later (issue #30).
+3. Visit the shop and the social pages.
 
 Success means that a visitor plays an episode or books a ticket with little effort.
 
@@ -47,7 +47,7 @@ Two well-known women talk honestly, and with humour, about life after 50. The si
 - Deploy: `build.sh` copies an allowlist of pages to a shared S3 bucket. A push to `main` deploys to production.
 - Keep `README.md`. Update it to show the new design. Do not delete it.
 - Undecided: the future of `TESTING.md` and of the assessment screenshots in `documentation/`.
-- Undecided: the backend for a future mailing list (issue #30).
+- Deferred: a mailing list. The hosts use Gmail, and no person is available to send emails. Ask the hosts again after the site has run for some time. Issue #30 holds the plan.
 - To do: a sitemap (issue #19) and a robots.txt (issue #20).
 - Analytics and cookie consent (issues #21 and #22): done, except the real Google Analytics ID. Google Analytics loads only after the visitor accepts.
 
