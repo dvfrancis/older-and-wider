@@ -102,9 +102,10 @@ The live site can be accessed [here].
         6. [Tasks After the First API Run](#tasks-after-the-first-api-run)
     6. [Sitemap and robots.txt](#sitemap-and-robotstxt)
     7. [Search and Share Tags](#search-and-share-tags)
-    8. [Forks](#forks)
-    9. [Local Clones](#local-clones)
-    10. [Gitpod Workspaces](#gitpod-workspaces)
+    8. [Security Headers](#security-headers)
+    9. [Forks](#forks)
+    10. [Local Clones](#local-clones)
+    11. [Gitpod Workspaces](#gitpod-workspaces)
 6. [Credits and References](#credits-and-references)
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
@@ -537,6 +538,7 @@ Three files do this work, and are easier to understand together:
 
 - `build.sh` assembles the site into a `deploy/` directory, and then copies it to the site folder in the bucket. It copies only the pages and directories in its list. Thus an unwanted file in the repository root cannot go live by accident. Git does not track `deploy/`, and the script makes it again on each run.
 - `.github/workflows/deploy.yml` runs the command `./build.sh --deploy --yes` on each push to the `main` branch that changes `*.html`, `assets/**`, `build.sh`, or the workflow file. GitHub Actions runs the same script that you run on your own computer. Thus the two cannot become different. Another workflow can also call this workflow (`workflow_call`). The episode update workflow uses this trigger.
+- `infra/security-headers.yaml` is the CloudFormation template for the security headers of the site. The section "Security Headers" gives the details.
 - `infra/deploy-role.yaml` is the CloudFormation template for the role that the workflow uses. The role trusts only the `main` branch of this repository. Its permissions apply only to this site's folder, and to the one distribution. The role cannot read or delete the folder of another site. No Amazon Web Services keys are kept in the repository, or in GitHub.
 
 To assemble the site on your own computer, but not deploy it, run the command `./build.sh` in the repository root.
@@ -1108,6 +1110,53 @@ To test the tags after the deploy:
 2. Make sure that the test finds the `PodcastSeries` data with no errors.
 3. Open the [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and enter the address of each page.
 4. Make sure that the preview shows the share image and the correct title.
+
+### Security Headers
+
+CloudFront adds security headers to each response. The headers come from a response headers policy. The policy is in the CloudFormation stack `older-and-wider-security-headers`, in `us-east-1`. The template is `infra/security-headers.yaml`. A response headers policy has no cost.
+
+The policy sends these headers:
+
+- `Strict-Transport-Security` with `max-age=31536000`. It has no `includeSubDomains`, because the parent domain holds other sites.
+- `X-Content-Type-Options: nosniff`.
+- `X-Frame-Options: DENY`. No other site can show these pages in a frame.
+- `Referrer-Policy: strict-origin-when-cross-origin`.
+- `Permissions-Policy`. It turns off the camera, the microphone, location, payment and other browser features that the site does not use.
+- A Content Security Policy (CSP). The CSP gives the hosts from which a page can load files.
+
+The CSP allows these hosts, and no others:
+
+- `www.googletagmanager.com` and the Google Analytics hosts, for `analytics.js`.
+- `embed.acast.com`, for the player that `player.js` loads.
+- `www.instagram.com`, for the embed script that `message-board.js` loads.
+
+The CSP has `style-src-attr 'unsafe-inline'`, because the Instagram embed script sets a `style` attribute on each iframe. The site itself has no inline styles.
+
+The parameter `CspMode` has two values:
+
+- `report-only` sends `Content-Security-Policy-Report-Only`. The browser shows each violation in the console, but it does not block anything.
+- `enforce` sends `Content-Security-Policy`. The browser blocks each violation.
+
+On 28 November 2026 the live stack uses `report-only`. Issue #98 gives the last test before the change to `enforce`.
+
+If you add a script that loads a file from a new host, add the host to the CSP before you deploy the page. Otherwise the browser blocks the file.
+
+The GitHub Actions workflow does not deploy this stack. To change the headers, use a profile that can write:
+
+1. Edit `infra/security-headers.yaml`.
+2. Run `cfn-lint infra/security-headers.yaml`.
+3. Run this command:
+
+```bash
+AWS_PROFILE=admin aws cloudformation deploy --region us-east-1 --stack-name older-and-wider-security-headers --template-file infra/security-headers.yaml --parameter-overrides CspMode=enforce
+```
+
+4. Wait for the message "Successfully created/updated stack".
+5. Run `curl -sI https://older-and-wider.dominicfrancis.co.uk/` and examine the headers.
+
+The policy is attached to the default cache behaviour of distribution `E1G3DY1FAYHJJJ`. The distribution is not in a CloudFormation stack, so the attachment was made one time with `aws cloudfront update-distribution`. A change to the stack does not change the attachment.
+
+To remove the headers in an emergency, remove `ResponseHeadersPolicyId` from the default cache behaviour of the distribution. Then the stack can stay as it is.
 
 ### Forks
 

@@ -30,10 +30,11 @@ There is no linter. The only automated tests cover `scripts/update_episodes.py`,
 
 ## Deployment pipeline
 
-Three files work together and should be understood as one unit:
+Four files work together and should be understood as one unit:
 
 - **`build.sh`** copies an explicit allowlist of pages (`PAGES`) and directories (`DIRS`) into `deploy/`, wiping it first. `deploy/` is gitignored and always regenerated.
 - **`.github/workflows/deploy.yml`** runs `./build.sh --deploy --yes` on every push to `main` that touches `*.html`, `assets/**`, `build.sh`, `sitemap.xml`, `robots.txt`, `favicon.ico`, `scripts/minify_css.py`, or the workflow itself. CI runs the identical script a human runs locally, so the two cannot drift.
+- **`infra/security-headers.yaml`** is the CloudFormation stack (`older-and-wider-security-headers`, us-east-1) for the CloudFront response headers policy: HSTS, nosniff, frame options, referrer, permissions and the CSP. CI does not deploy it. It is attached to the default cache behaviour of `E1G3DY1FAYHJJJ`. **A script that loads a file from a new host needs a CSP change first**, or the browser blocks the file. The README section "Security Headers" gives the steps.
 - **`infra/deploy-role.yaml`** is the CloudFormation stack (`older-and-wider-deploy-role`, eu-west-2) for the OIDC role CI assumes. Trust is locked to this repo's `main` branch. Permissions are scoped to this site's folder in the bucket, and to the one distribution. The role cannot read or delete the folder of another site. No stored AWS keys.
 
 **The bucket is shared.** The site is in the folder `older-and-wider` of the bucket `portfolio-dominicfrancis`. The bucket holds the other dominicfrancis.co.uk sites, one folder for each site. The CloudFront distribution (`E1G3DY1FAYHJJJ`) reads the folder through the origin path `/older-and-wider`. Thus the public addresses do not contain the folder name. The live site is https://older-and-wider.dominicfrancis.co.uk.
@@ -83,7 +84,7 @@ Routine deploys should go through CI — push to `main` and let the workflow run
 
 `README.md` (~27k) and `TESTING.md` (~47k) are assessment documents with maintained indexes of anchor links, not incidental notes. Most recent commits are `docs:` changes to them. If you change a feature, the corresponding section — and often a screenshot in `documentation/` — needs updating too. `documentation/` is assessment material and is deliberately excluded from `deploy/`.
 
-The Deployment section of the README describes this pipeline. If you change `build.sh`, the workflow, or `infra/deploy-role.yaml`, update that section too.
+The Deployment section of the README describes this pipeline. If you change `build.sh`, the workflow, `infra/deploy-role.yaml` or `infra/security-headers.yaml`, update that section too.
 
 ## Not project code
 

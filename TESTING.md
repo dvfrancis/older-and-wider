@@ -37,6 +37,7 @@
     12. [External Links](#external-links)
     13. [Self-Hosted Icons](#self-hosted-icons)
     14. [Page Weight](#page-weight)
+    15. [Security Headers](#security-headers)
 5. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
@@ -764,6 +765,19 @@ These tests follow the website audit of 28 November 2026.
 | About gallery photos | Examine the `srcset` of the eight small photos on `about.html`. | Each has a 480 px file between the 256 px and the largest file. Each 480 px file is 480 x 480 pixels. | PASS |
 | Home cover halftone | Examine `--screen-photo` in `.cover-body`. | It uses `home-cover-merch_480.webp`, not the 960 px file. | PASS. The second file is 19 KB, not 80 KB. On a 1x phone the `img` uses the same file. |
 | Halftone looks the same | Compare the cover with the 960 px file, the 256 px file and no file, at 1280 pixels. | No visible difference. | PASS. The halftone adds only a faint dot texture. |
+
+### Security Headers
+
+The tests used the live site on 28 November 2026, after the deploy of the stack `older-and-wider-security-headers`.
+
+| TEST | ACTION | EXPECTED RESULT | RESULT |
+| --- | --- | --- | --- |
+| Template | Run `cfn-lint infra/security-headers.yaml`. | No errors. | PASS |
+| Headers | Run `curl -sI` on the home page. | The response has `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` and `Content-Security-Policy-Report-Only`. | PASS |
+| Page loads | Open each of the seven pages. Read the console. | No CSP violation. | PASS |
+| Acast player | Press "Play here" on the home page. Listen for `securitypolicyviolation` events. | The player loads. No violation. | PASS |
+| Instagram posts | Press "Show the posts here" on the message board. Listen for `securitypolicyviolation` events. | The posts load. No violation. | FAIL, then PASS. The first test gave 9 `style-src-attr` violations from `embed.js`. The CSP now has `style-src-attr 'unsafe-inline'`. The second test gave no violations. |
+| Google Analytics | Accept analytics cookies. Read the console. | Google Analytics loads. No violation. | To be tested by the site owner. Issue #98. |
 
 ## User Story Validation
 
