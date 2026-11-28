@@ -91,7 +91,8 @@ The live site can be accessed [here].
         3. [Add a Solo Tour](#add-a-solo-tour)
         4. [Correct or Remove a Show](#correct-or-remove-a-show)
         5. [Add a Book to Wider Work](#add-a-book-to-wider-work)
-        6. [Data Sources and Limits](#data-sources-and-limits)
+        6. [Update the Venue List](#update-the-venue-list)
+        7. [Data Sources and Limits](#data-sources-and-limits)
     5. [Instagram Posts](#instagram-posts)
         1. [Add a Post to the Message Board](#add-a-post-to-the-message-board)
         2. [How the Update Works](#how-the-update-works)
@@ -297,7 +298,8 @@ The project keeps them for reference. The build script does not deploy them. The
             - A link to the access information of the venue, if the venue publishes it.
             - The dates of the Older and Wider shows at the venue, each in a `time` element.
     - The venue text of each show is a link to the venue item, for example `<a href="#venue-city-varieties">`. The link stays in the show when the script moves the show to Recent shows.
-    - The Theatre at the Tabard has no show in the 2027 tour. Its item lists the four earlier shows under the label "Past shows". Earlier shows at the other venues are in the archive.
+    - Each venue item also lists the earlier Older and Wider shows at the venue, under the label "Past shows". The Theatre at the Tabard has no show in the 2027 tour, so it lists past shows only.
+    - Latitude Festival (2021) and Hebden Bridge Arts Festival (2019) also have items. Both dates are uncertain. The Hebden Bridge Arts Festival has no website now, so its item has no links.
     - Each address and access link comes from the website of the venue. The Lowry and the Theatre at the Tabard block automated requests. The address of The Lowry comes from a technical specification on its website. The address of the Tabard comes from search results on its domain. A person checked the access links of The Lowry and the Tabard in a browser.
     - Each date is in a `time` element with a `datetime` attribute, for example `datetime="2027-04-25"`.
     - Each ticket link names the show, for example "Tickets for Leeds, 25 April". The link opens the ticket page of the venue. The Bristol show is not on sale yet, so its link opens [jennyeclair.com/olderandwider](https://jennyeclair.com/olderandwider).
@@ -314,7 +316,7 @@ The project keeps them for reference. The build script does not deploy them. The
 
 - Archive:
 
-    The archive page, `archive.html`, has three sections:
+    The archive page, `archive.html`, has four sections:
 
     1. Jenny and Judith's shows. This section has these parts:
        - "Older and Wider live". This table shows each show with both hosts, with the latest show first.
@@ -323,6 +325,7 @@ The project keeps them for reference. The build script does not deploy them. The
        - "Coming up". This part shows a message and a link to `jennyeclair.com` when no solo show is on sale.
        - "Earlier tours". This part has a list of the tours and the Edinburgh shows, with the latest show first.
     3. Wider work. This section lists the books, television and radio of each host. Each item has a link to its source. Where possible, an item also links to the work itself. A book links to its page on Amazon UK, and a television or radio series links to its page on BBC Programmes or Channel 4. Most books show a cover from Open Library. The covers of The Book of Nanas and Jokes, Jokes, Jokes come from Hachette UK, the publisher. The site keeps a copy of each cover in `assets/images/covers/`.
+    4. Venues. A closed `details` element lists every venue in the archive, by town or city, with the number of shows at each venue. The visitor opens the list to see it. The script `scripts/update_archive_venues.py` builds the list. Refer to [Update the Venue List](#update-the-venue-list).
 
     Each show in a list is a white card. A show with dates is a `details` element. When it opens, it shows a short text about the show, an optional note and the table of dates. A show with no single dates, for example an Edinburgh show, is a plain card that does not open. The paragraph above each list gives the total number of dates in the list. The seasons in Australia are not in the total.
 
@@ -703,6 +706,8 @@ Each venue is one `li` element with the class `venue` in the list `venues`. Get 
 
 ### Archive Maintenance
 
+After each change to a show table in `archive.html`, update the venue list. Refer to [Update the Venue List](#update-the-venue-list).
+
 #### Add an Older and Wider Show to the Archive
 
 1. Make sure that a podcast episode or a venue listing confirms the show.
@@ -769,6 +774,21 @@ The "Wider work" section of `archive.html` links each book to its page on Amazon
 18. Set `alt` to an empty value. The book name is next to the cover.
 19. Put the text paragraphs of the book in a `div` element with the class `arc-work-text`.
 20. If you replace a cover, give the new files a new name. The browser keeps the old files for one year.
+
+#### Update the Venue List
+
+The script `scripts/update_archive_venues.py` builds the list of venues in the "Venues" section of `archive.html`. It reads each show row and writes the list between the markers `<!-- venues:list:start -->` and `<!-- venues:list:end -->`. Do not edit the text between the markers by hand.
+
+1. Open a terminal in the root folder of the repository.
+2. Run `python3 scripts/update_archive_venues.py --check` to see the changes.
+3. Run `python3 scripts/update_archive_venues.py` to update `archive.html`.
+4. Read the new list. Look for a venue that shows two times with different names.
+5. If you find one, add the name to `VENUE_ALIASES` in the script. Use the form `("Other name", "Town"): "Name to show"`.
+6. If one town has two names, add the name to `TOWN_ALIASES`.
+7. Run the script again.
+8. Run `python3 -m unittest discover -s scripts -v`. The test `test_live_list_is_up_to_date` fails when the list is out of date.
+
+The script removes a note in brackets at the end of a venue name, for example "(warm-up)" or "(matinee)". It does not count rows with the venue "Venue uncertain". The archive tables keep the names as the sources give them.
 
 #### Data Sources and Limits
 
