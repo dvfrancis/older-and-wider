@@ -16,11 +16,14 @@ Source pages live at the repo root: `index.html`, `about.html`, `message-board.h
 ./build.sh                 # assemble deploy/ from source (safe, no AWS calls)
 ./build.sh --deploy        # build, then sync to S3 (prompts before touching the bucket)
 python3 -m http.server 8000  # local preview at http://localhost:8000
+python3 scripts/update_episodes.py --check   # diff index.html against the live feed, write nothing
+python3 scripts/update_episodes.py           # update the episode sections of index.html
+python3 -m unittest discover -s scripts -v   # tests for the update script
 ```
 
 `.claude/launch.json` defines the same preview server for the Claude Code preview tool.
 
-There is no linter and no automated tests. Verification is manual and is recorded in `TESTING.md`: W3C Markup Validator for each page, W3C CSS Validator for the stylesheet, Lighthouse for mobile and desktop, plus a manual pass across Chrome, Edge, Firefox, Opera and Safari. Screenshots of each result go in `documentation/validation/` and are linked from `TESTING.md`.
+There is no linter. The only automated tests cover `scripts/update_episodes.py`. Other verification is manual and is recorded in `TESTING.md`: W3C Markup Validator for each page, W3C CSS Validator for the stylesheet, Lighthouse for mobile and desktop, plus a manual pass across Chrome, Edge, Firefox, Opera and Safari. Screenshots of each result go in `documentation/validation/` and are linked from `TESTING.md`.
 
 ## Deployment pipeline
 
@@ -46,6 +49,8 @@ Routine deploys should go through CI — push to `main` and let the workflow run
 ## Structure and conventions
 
 **No templating.** Each of the five pages has its own copy of the header, nav and footer. The footer is byte-identical in `index.html`, `about.html`, `message-board.html` and `privacy.html`. The footer in `404.html` differs only in its root-relative paths. The footer has a "Privacy" link and a "Cookie settings" button (`data-consent-open`, `hidden` until `consent.js` runs). The nav has three links: Home, About and Message Board. The privacy page has no nav item. The link to the current page carries `aria-current="page"`. `404.html` uses root-relative paths (`/index.html`, `/assets/...`), so it works at any missing address. A nav or footer change means you must edit all five files by hand.
+
+**Episode sections are generated.** `index.html` has marker comments such as `<!-- episodes:masthead:start -->` and `<!-- episodes:masthead:end -->`. `scripts/update_episodes.py` rewrites the text between each pair from the Acast RSS feed. Do not edit the text between the markers by hand. The next run replaces it. To change the markup of a section, change the template in the script, then update `scripts/fixtures/index.html` and run the tests. `.github/workflows/update-episodes.yml` runs the script each Friday, commits a change to `main` and calls `deploy.yml` through `workflow_call`. The tests use `scripts/fixtures/index.html`, a copy of the page at episode 374. `scripts/` does not deploy.
 
 **No page redirects.** No page has a `<meta http-equiv="refresh">`. The earlier `404.html` and the two completion pages redirected after 30 seconds. The redesign removed this behaviour.
 
