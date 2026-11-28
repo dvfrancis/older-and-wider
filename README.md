@@ -68,10 +68,17 @@ The live site can be accessed [here].
 5. [Deployment](#deployment)
     1. [Amazon S3 and CloudFront](#amazon-s3-and-cloudfront)
     2. [Automatic Episode Update](#automatic-episode-update)
-    3. [Sitemap and robots.txt](#sitemap-and-robotstxt)
-    4. [Forks](#forks)
-    5. [Local Clones](#local-clones)
-    6. [Gitpod Workspaces](#gitpod-workspaces)
+    3. [Instagram Posts](#instagram-posts)
+        1. [Add a Post to the Message Board](#add-a-post-to-the-message-board)
+        2. [How the Update Works](#how-the-update-works)
+        3. [Login Type](#login-type)
+        4. [Switch On API Mode](#switch-on-api-mode)
+        5. [Token Refresh](#token-refresh)
+        6. [Tasks After the First API Run](#tasks-after-the-first-api-run)
+    4. [Sitemap and robots.txt](#sitemap-and-robotstxt)
+    5. [Forks](#forks)
+    6. [Local Clones](#local-clones)
+    7. [Gitpod Workspaces](#gitpod-workspaces)
 6. [Credits and References](#credits-and-references)
 7. [Technologies Used](#technologies-used)
 8. [Acknowledgements](#acknowledgements)
@@ -251,7 +258,7 @@ The project keeps them for reference. The build script does not deploy them. The
 - Message Board:
 
     - The hosts call the podcast's Instagram page the "message board". This page links to it, and to the Facebook page.
-    - The page shows six recent Instagram posts as short text quotes or summaries, with their dates and links. No content loads from Instagram when the page opens.
+    - The page shows up to ten recent Instagram posts as short text quotes or summaries, with their dates and links. No content loads from Instagram when the page opens. The section [Instagram Posts](#instagram-posts) tells how the list updates.
     - The button "Show the posts here" loads the full Instagram posts. The note next to the button tells the visitor that Instagram then sets cookies.
     - The script `assets/js/message-board.js` does this work. Without JavaScript, the text and the links still work.
     - The message board page as it appeared in the earlier design:
@@ -529,6 +536,248 @@ python3 scripts/update_episodes.py
 ```
 
 To use a local feed file, add `--feed` and the path of the file.
+
+### Instagram Posts
+
+The message board page shows up to 10 recent Instagram posts. A GitHub Action builds this list. The update has two modes:
+
+- **List mode.** The script reads the posts from the file `scripts/instagram-posts.txt`. A person writes each post in this file. The page shows the posts in the Instagram embed markup. The button "Show the posts here" loads the full posts from Instagram.
+- **API mode.** The script gets the 10 latest posts from the Instagram API. It saves a copy of each photo on this site. The page shows each post as a card with the photo. The page loads nothing from Instagram.
+
+**List mode is active now.** The secrets `IG_ACCESS_TOKEN` and `IG_USER_ID` do not exist yet. API mode starts by itself when both secrets exist. Then the script ignores `scripts/instagram-posts.txt`.
+
+These files do the work:
+
+- `scripts/update_instagram.py` builds the posts. It changes only the text between the markers `<!-- instagram:posts:start -->` and `<!-- instagram:posts:end -->` in `message-board.html`. It uses the Python standard library and the `cwebp` command only.
+- `scripts/instagram-posts.txt` is the post list for list mode.
+- `.github/workflows/update-instagram.yml` runs the script every 6 hours, at 23 minutes past the hour. It also runs when a commit to `main` changes `scripts/instagram-posts.txt`. You can also start it manually from the Actions tab in GitHub.
+- `scripts/test_update_instagram.py` contains the tests. The workflow runs the tests before the script.
+
+Do not edit the text between the Instagram markers by hand. The next run replaces it.
+
+#### Add a Post to the Message Board
+
+Do these steps to add a post in list mode:
+
+1. Open the post on Instagram.
+2. Copy the address of the post. The address starts with `https://www.instagram.com/p/` or `https://www.instagram.com/reel/`.
+3. Open `scripts/instagram-posts.txt` in the repository on github.com.
+4. Click the pencil icon to edit the file.
+5. Find the first line that does not start with `#`.
+6. Add a new line above that line.
+7. Type the date of the post, a space, `|` and a space.
+8. Paste the address of the post, then type a space, `|` and a space.
+9. Type a short summary of the post in your own words.
+10. Click **Commit changes**.
+11. Select **Commit directly to the `main` branch**.
+12. Click **Commit changes** again.
+13. Open the Actions tab and find the run of "Update Instagram posts".
+14. Make sure that the run has a green tick. The page is live about two minutes later.
+
+A line looks like this:
+
+```text
+2026-11-27 | https://www.instagram.com/p/POSTID/ | A short summary in your own words
+```
+
+Obey these rules for each line:
+
+- Write the date as year-month-day, for example `2026-11-27`.
+- Do not use the `|` character in the summary.
+- Put the summary in double quotes to show it as a quote from the post.
+- The page shows a `/p/` post as "Photo" and a `/reel/` post as "Video".
+- To show a post as "Photo set", add a fourth part: `| photo set`.
+- A line that starts with `#` is a note. The page does not show it.
+
+The page shows the 10 newest posts in the file. The order of the lines does not change the order on the page. The script puts the posts in date order.
+
+If a line is not correct, the run stops and shows a red cross. The page does not change. The message in the run names the line, for example "instagram-posts.txt line 27". Correct that line and commit the file again.
+
+#### How the Update Works
+
+The workflow does these steps:
+
+1. It installs `cwebp`.
+2. It runs the tests.
+3. It runs the script. The script selects the mode from the secrets.
+4. If the page changes, it commits `message-board.html`, `sitemap.xml` and `assets/images/instagram/` to `main` as "chore: update the Instagram posts on the message board". It rebases the commit on `main` before the push.
+5. It calls `deploy.yml` to publish the commit.
+6. It refreshes the access token when a refresh is due. The section [Token Refresh](#token-refresh) gives the rules.
+
+If the page does not change, the workflow stops after step 3. The step summary of each run shows the mode.
+
+A push from the `GITHUB_TOKEN` of a workflow does not start other workflows. Thus step 5 calls `deploy.yml` directly. The called workflow runs on `refs/heads/main`, so the deploy role trusts it.
+
+The script obeys these rules in both modes:
+
+- If an error occurs, the script stops with exit code 2. It does not change the page, `sitemap.xml` or the image folder.
+- If the page does not have exactly one pair of markers, the script stops.
+- It escapes the text of each post for HTML.
+- It uses the three paper stocks of the wall in turn: red, white and pink.
+- When the page changes, it sets the `lastmod` date of the message board in `sitemap.xml` to the date of the run.
+
+The script obeys these rules in API mode:
+
+- It gets 20 posts and shows the 10 newest posts that have a photo.
+- It uses `media_url` for a photo. For a video, it uses `thumbnail_url`. For a photo set, it uses the first item of the set. A video with no thumbnail is skipped.
+- It downloads photos only from `*.cdninstagram.com` and `*.fbcdn.net` over HTTPS.
+- It makes WebP files 256, 480, 800 and 1080 pixels wide. It does not make a file that is wider than the original photo.
+- Each file name contains the post ID and a hash of the photo, for example `18000000000000001-a54b247070_800.webp`. A changed photo gets a new name, because the site caches images for one year.
+- It deletes the WebP files of posts that the page no longer shows.
+- It uses `alt_text` from Instagram as the alt text. If that is empty, it uses the first line of the caption. If the caption is empty, it uses the date of the post.
+- The text on the card is the first line of the caption, without hashtags, up to 90 characters.
+- It never prints the token. It removes the token from each error message.
+
+To see the change that the script would make, run this command in the repository root:
+
+```bash
+python3 scripts/update_instagram.py --check
+```
+
+The command shows a diff. It does not change the page. It exits with code 1 if the page would change.
+
+To try API mode with the saved test data, run this command:
+
+```bash
+python3 scripts/update_instagram.py --check --fixture scripts/fixtures/instagram/media.json
+```
+
+#### Login Type
+
+Meta has two versions of the Instagram API:
+
+- The Instagram API with Instagram Login. It uses the host `graph.instagram.com` and the permission `instagram_business_basic`.
+- The Instagram API with Facebook Login. It uses the host `graph.facebook.com`. It needs a Facebook Page that is linked to the Instagram account, and Page permissions.
+
+The script uses the Instagram API with Instagram Login. These are the reasons:
+
+- It does not need a Facebook Page.
+- The account owner logs in with the Instagram login only.
+- It has a simple endpoint to refresh a long-lived token.
+- It needs one permission only.
+
+Meta closed the Instagram Basic Display API in December 2024. Thus that API is not an option.
+
+The script uses API version `v27.0`. Meta removes each version about two years after its release. Change `API_VERSION` in the script before that date.
+
+The script requests these fields from `GET /v27.0/<IG_USER_ID>/media`: `id`, `caption`, `media_type`, `media_url`, `thumbnail_url`, `permalink`, `timestamp`, `alt_text` and `children{media_type,media_url,thumbnail_url}`.
+
+**Caution:** on 28 November 2026, the field table in the Meta documentation marked `caption` as "Available for Instagram API with Facebook Login only". Other Meta pages show `caption` with Instagram Login. Examine the page after the first API run. If the cards show "A new post on Instagram" in place of captions, the API did not send captions.
+
+These details come from the Meta developer documentation on 28 November 2026:
+
+- [Instagram API with Instagram Login: get started](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/get-started)
+- [Business Login for Instagram](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/business-login)
+- [IG Media reference](https://developers.facebook.com/docs/instagram-platform/reference/instagram-media)
+- [Refresh access token reference](https://developers.facebook.com/docs/instagram-platform/reference/refresh_access_token)
+
+#### Switch On API Mode
+
+The account owners must agree before you do these steps. Meta charges nothing for this API. GitHub Actions minutes are free for a public repository.
+
+Make sure that the account is a professional account:
+
+1. Open the Instagram app and log in to @olderandwiderpodcast.
+2. Open the profile, then open **Settings and activity**.
+3. Make sure that the account type is **Business** or **Creator**.
+4. If the account is a personal account, change it to a Creator account.
+
+Make the Meta app:
+
+1. Go to [developers.facebook.com](https://developers.facebook.com/) and log in.
+2. Click **My Apps**, then click **Create App**.
+3. Select the **Business** app type.
+4. Give the app a name, for example "Older and Wider website".
+5. Add the **Instagram** product to the app.
+6. Open **Instagram > API setup with Instagram business login**.
+7. Add the Instagram account as an **Instagram Tester** under **App roles**, if the dashboard asks for it.
+8. Log in to Instagram as the account owner and accept the tester invitation, if Instagram shows one.
+
+Get the long-lived access token:
+
+1. Open **Instagram > API setup with Instagram business login** in the app dashboard.
+2. Click **Generate token** next to the Instagram account.
+3. Log in to Instagram as the account owner.
+4. Approve the permission `instagram_business_basic`. The app needs no other permission.
+5. Copy the token. A token from the dashboard is a long-lived token. It is valid for 60 days.
+
+Do not put the token in a file in the repository, in an issue or in a chat message.
+
+Get the Instagram user ID:
+
+1. Open a terminal.
+2. Run the command `read -rs IG_TOKEN`.
+3. Paste the token and press Enter. The terminal does not show the token.
+4. Run this command:
+
+```bash
+curl -s -G "https://graph.instagram.com/v27.0/me" --data-urlencode "fields=user_id,username" --data-urlencode "access_token=$IG_TOKEN"
+```
+
+5. Make sure that `username` is `olderandwiderpodcast`.
+6. Copy the value of `user_id`.
+7. Run the command `unset IG_TOKEN`.
+
+Add the GitHub secrets:
+
+1. Open the repository on github.com.
+2. Open **Settings > Secrets and variables > Actions**.
+3. Click **New repository secret**.
+4. Type `IG_USER_ID` as the name and paste the user ID as the secret.
+5. Click **Add secret**.
+6. Click **New repository secret** again.
+7. Type `IG_ACCESS_TOKEN` as the name and paste the token as the secret.
+8. Click **Add secret**.
+9. Add the secret `GH_SECRETS_PAT`. The section [Token Refresh](#token-refresh) tells you how.
+10. Open the Actions tab and start "Update Instagram posts" manually.
+11. Make sure that the step summary shows "api mode".
+12. Do the steps in [Tasks After the First API Run](#tasks-after-the-first-api-run).
+
+#### Token Refresh
+
+A long-lived token expires 60 days after it was made or refreshed. Meta refreshes a token only if these conditions are true:
+
+- The token is at least 24 hours old.
+- The token has not expired. An expired token cannot be refreshed.
+- The account owner approved `instagram_business_basic`.
+
+The `refresh` job of the workflow calls `GET https://graph.instagram.com/refresh_access_token` with `grant_type=ig_refresh_token`. The job runs after the `update` job. It refreshes the token one time each week, in the first scheduled run on Monday. You can also start a refresh manually. Start "Update Instagram posts" from the Actions tab and select **Refresh the Instagram access token in this run**.
+
+The `GITHUB_TOKEN` of a workflow cannot change repository secrets. Thus the job stores the new token with `gh secret set IG_ACCESS_TOKEN` and the secret `GH_SECRETS_PAT`. The job masks the new token in the log before it does anything else. The new token goes into a temporary file, and the job deletes the file at the end of the step.
+
+If `GH_SECRETS_PAT` does not exist, the job does not refresh the token. It shows a warning in the step summary.
+
+Make the personal access token:
+
+1. Open **GitHub > Settings > Developer settings > Personal access tokens > Fine-grained tokens**.
+2. Click **Generate new token**.
+3. Type a name, for example "older-and-wider Instagram secret".
+4. Set the expiry date. Write the date in your calendar, because the refresh stops on that date.
+5. Select **Only select repositories** and select `older-and-wider`.
+6. Under **Repository permissions**, set **Secrets** to **Read and write**. Do not give other permissions.
+7. Click **Generate token** and copy the token.
+8. Add the token as the repository secret `GH_SECRETS_PAT`.
+
+If the Instagram token expires, the update job fails. The page does not change. Get a new token from the app dashboard and replace the secret `IG_ACCESS_TOKEN`.
+
+#### Tasks After the First API Run
+
+The first run in API mode replaces the posts with cards that have photos. The page then needs no Instagram script. A person must then do these steps by hand:
+
+1. Make a branch from `main`.
+2. Delete the file `assets/js/message-board.js`.
+3. In `message-board.html`, remove the line `<script src="assets/js/message-board.js" defer></script>`.
+4. In `message-board.html`, remove the `div` with the ID `board-consent`. It holds the button "Show the posts here" and its note.
+5. In `privacy.html`, remove the Instagram row from the table of third parties.
+6. In `privacy.html`, add a sentence that tells the reader the message board photos are copies on this site.
+7. Change the `lastmod` date of `privacy.html` in `sitemap.xml` to the date of the change.
+8. In `README.md`, change the sentence "List mode is active now" to "API mode is active now".
+9. In `README.md`, update the "Message Board" and "Privacy" features and the list of scripts.
+10. In `CLAUDE.md`, remove `message-board.js` from the list of scripts.
+11. Validate `message-board.html` and `privacy.html` with the W3C Markup Validator.
+12. Open a pull request and merge it to `main`.
+
+Keep the CSS for the embed markup in `assets/css/main.css`. List mode uses it if the secrets are removed.
 
 ### Sitemap and robots.txt
 
