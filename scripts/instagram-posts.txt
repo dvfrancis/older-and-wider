@@ -23,6 +23,7 @@
 # When you commit a change to this file on main, the update action builds the page.
 # If a line is not correct, the action stops and names the line. The page does not change.
 
+2026-11-27 | https://www.instagram.com/p/DgR-Yh7CKEX/ | This week's Culture Corner
 2026-11-26 | https://www.instagram.com/reel/DgNGi6Zonxq/ | The new live show is announced, with tickets on sale from 27 November
 2026-11-23 | https://www.instagram.com/p/DgGHKIeofuD/ | "An Everyman cinema one Monday morning"
 2026-11-22 | https://www.instagram.com/p/DgCqFkliJ9N/ | "Me and Geof outside 19 Rossall Road" | photo set
