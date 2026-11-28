@@ -3109,14 +3109,6 @@ a {
     color: var(--red);
 }
 
-.arc-band-pink .arc-shows tbody th {
-    color: var(--ink);
-}
-
-.arc-tours tbody th a {
-    text-decoration-thickness: 0.06em;
-}
-
 .arc-shows td + td {
     margin-top: 0.125rem;
 }
@@ -3376,15 +3368,6 @@ a {
         width: 15rem;
     }
 
-    .arc-tours tbody th {
-        width: 34%;
-    }
-
-    .arc-tours td:nth-child(2) {
-        width: 9rem;
-        white-space: nowrap;
-    }
-
     .arc-dates thead th {
         padding: 0.5rem 1rem;
     }
@@ -3597,4 +3580,27 @@ a {
     .arc-work-book {
         gap: 1.25rem;
     }
+}
+
+/* Archive: show list */
+/* Each show is a white card in the list. A show with dates is a details
+   element. Its about text, its note and its dates show when it is open.
+   A show with no single dates is a plain card. It has no plus sign. */
+.arc-tour-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.125rem 0.75rem;
+    padding: 0.75rem 1rem;
+}
+
+.arc-tour-about {
+    max-width: 36rem;
+    padding: 0 1rem 0.75rem;
+    font-size: 1rem;
+}
+
+/* On the white band, a thin ink border shows the edge of each card */
+.arc-band-white .arc-tour {
+    border: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
 }
