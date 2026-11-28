@@ -6,7 +6,7 @@
 Aberdeen | His Majesty's Theatre | https://www.aberdeenperformingarts.com/his-majestys-theatre/
 Aberdeen | Music Hall | https://www.aberdeenperformingarts.com/music-hall/
 Aberdeen | Tivoli Theatre | https://www.thetivolitheatre.com/
-Aberystwyth | Arts Centre | https://www.aberystwythartscentre.co.uk/
+Aberystwyth | Arts Centre | https://aberystwythartscentre.co.uk/
 Aldershot | Princes Hall | https://www.princeshall.com/
 Alnwick | Alnwick Playhouse | https://www.alnwickplayhouse.co.uk/
 Andover | The Lights | https://www.thelights.org.uk/
@@ -284,7 +284,6 @@ Sunderland | Sunderland Empire | https://www.atgtickets.com/venues/sunderland-em
 Swansea | Grand Theatre | https://www.swanseagrand.co.uk/
 Swindon | Wyvern Theatre | https://trafalgartickets.com/swindon-theatres/en-GB
 Sydney, Australia | Capitol Theatre | https://www.capitoltheatre.com.au/
-Taunton | Brewhouse Theatre | https://www.tauntonbrewhouse.co.uk/
 Taunton | Tacchi Morris Arts Centre | https://www.tacchi-morris.com/
 Teddington | Landmark Arts Centre | https://www.landmarkartscentre.org/
 Telford | Oakengates Theatre | https://www.telfordtheatre.com/

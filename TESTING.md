@@ -741,6 +741,7 @@ A Python script checked the markup of the seven pages on 28 November 2026. A per
 | TEST | EXPECTED RESULT | RESULT |
 | --- | --- | --- |
 | External links open in a new tab and screen readers announce it | Each link to another website has `target="_blank"`, `rel="external noopener"` and `aria-describedby="new-tab"`. A click opens the site in a new tab. A screen reader reads "Opens in a new tab" with the link. | Markup PASS. Screen reader check to be done with VoiceOver. |
+| External links that the audit probe could not reach: request each of the 53 links again with a browser user agent and HTTP/1.1. Open each link that does not give 200 in a browser | Each link opens the correct page. | 28 November 2026. 37 links gave 200. 14 more opened in the browser: the probe was blocked by bot protection. `ashcroft.org.uk` and `civicartscentre.co.uk` show a Cloudflare check to automated browsers. Both are the official addresses, so they stay. `tauntonbrewhouse.co.uk` does not respond, so the venue list shows the Brewhouse Theatre with no link. The Aberystwyth link now uses the address without `www`. |
 
 ### Self-Hosted Icons
 
