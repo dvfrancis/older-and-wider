@@ -3124,7 +3124,7 @@ a {
     box-shadow: var(--rest-shadow);
 }
 
-.arc-tour summary {
+.arc-tour > summary {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -3136,12 +3136,12 @@ a {
     list-style: none;
 }
 
-.arc-tour summary::-webkit-details-marker {
+.arc-tour > summary::-webkit-details-marker {
     display: none;
 }
 
 /* The plus sign turns into a minus sign when the tour is open */
-.arc-tour summary::after {
+.arc-tour > summary::after {
     content: "+";
     position: absolute;
     top: 50%;
@@ -3159,15 +3159,15 @@ a {
     text-align: center;
 }
 
-.arc-tour[open] summary::after {
+.arc-tour[open] > summary::after {
     content: "\2212";
 }
 
-.arc-tour summary:hover .arc-tour-name {
+.arc-tour > summary:hover .arc-tour-name {
     text-decoration: underline;
 }
 
-.arc-tour summary:focus-visible {
+.arc-tour > summary:focus-visible {
     outline-offset: -3px;
 }
 
@@ -3256,9 +3256,189 @@ a {
     display: inline;
 }
 
-/* Archive: venue list. The count shows under the venue on phones. */
-.arc-venues .arc-count {
+/* Archive: venue list. Search box, map and one details element for each letter.
+   The search box is hidden until archive-venues.js runs.
+   Studio grey on white has a contrast of 6.6:1. */
+.arc-venue-search {
+    padding: 0 1rem 1rem;
+}
+
+.arc-venue-search-label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+}
+
+.arc-venue-search-input {
+    width: 100%;
+    max-width: 28rem;
+    min-height: 2.75rem;
+    padding: 0.375rem 0.75rem;
+    border: 2px solid var(--ink);
+    border-radius: 0;
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+}
+
+.arc-venue-search-status {
+    min-height: 1.5rem;
+    margin: 0.25rem 0 0;
     font-size: 1rem;
+}
+
+.arc-venue-browser {
+    display: grid;
+    gap: 1.5rem;
+    padding: 0 1rem 1rem;
+}
+
+/* On phones the map comes after the letters, so the list shows first. */
+.arc-venue-map {
+    order: 1;
+    width: 100%;
+    max-width: 18rem;
+    margin: 0 auto;
+}
+
+.arc-venue-map-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.arc-venue-map-land {
+    fill: var(--pink-soft);
+    stroke: var(--pink);
+    stroke-width: 1;
+    stroke-linejoin: round;
+}
+
+.arc-venue-map-dots circle {
+    fill: var(--magenta);
+    fill-opacity: 0.7;
+    stroke: var(--white);
+    stroke-width: 0.75;
+    transition: fill-opacity 0.2s var(--ease-out);
+}
+
+.arc-venue-map-dots circle.is-match {
+    fill: var(--red);
+    fill-opacity: 1;
+}
+
+.arc-venue-map-dots circle.is-dim {
+    fill-opacity: 0.12;
+}
+
+.arc-venue-map-caption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--studio);
+}
+
+.arc-venue-map-caption a {
+    color: inherit;
+}
+
+.arc-venue-letter {
+    border-top: 1px solid var(--pink);
+}
+
+.arc-venue-letter summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.75rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 3rem 0.5rem 0;
+    position: relative;
+    cursor: pointer;
+    list-style: none;
+}
+
+.arc-venue-letter summary::-webkit-details-marker {
+    display: none;
+}
+
+/* The plus sign turns into a minus sign when the letter is open */
+.arc-venue-letter summary::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 0.25rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-top: -0.875rem;
+    border-radius: 50%;
+    background: var(--pink-soft);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: center;
+}
+
+.arc-venue-letter[open] summary::after {
+    content: "\2212";
+}
+
+.arc-venue-letter summary:hover .arc-venue-letter-name {
+    text-decoration: underline;
+}
+
+.arc-venue-letter-name {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    line-height: 1.1;
+    color: var(--red);
+}
+
+.arc-venue-letter-meta {
+    font-size: 1rem;
+}
+
+.arc-venue-towns,
+.arc-venue-names {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.arc-venue-towns {
+    display: grid;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.arc-venue-town-name {
+    margin: 0;
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.arc-venue-county {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: none;
+    color: var(--studio);
+}
+
+.arc-venue-names li {
+    font-size: 1rem;
+}
+
+.arc-venue-count {
+    white-space: nowrap;
+    color: var(--studio);
 }
 
 /* Wider work */
@@ -3267,8 +3447,13 @@ a {
     gap: 1rem;
 }
 
+/* The Wider work subheads use the display font, so they read as headings. */
 .arc-work-block .arc-subhead {
     margin-top: 1rem;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 2.25rem;
+    line-height: 1;
 }
 
 .arc-work-list li {
@@ -3397,9 +3582,9 @@ a {
         border-top: 0;
     }
 
-    .arc-venues .arc-count {
-        width: 7rem;
-        white-space: nowrap;
+    .arc-venue-towns {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.5rem;
     }
 }
 
@@ -3421,10 +3606,32 @@ a {
         grid-template-columns: 1fr 1fr;
         align-items: start;
     }
+
+    /* The venue list uses the full width, with the map beside the letters. */
+    .arc-venue-list {
+        grid-template-columns: 1fr;
+    }
+
+    .arc-venue-browser {
+        grid-template-columns: 18rem minmax(0, 1fr);
+        align-items: start;
+        gap: 2rem;
+    }
+
+    .arc-venue-map {
+        order: 0;
+        position: sticky;
+        top: 1rem;
+    }
+
+    .arc-venue-towns {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .arc-jump a {
+    .arc-jump a,
+    .arc-venue-map-dots circle {
         transition: none;
     }
 

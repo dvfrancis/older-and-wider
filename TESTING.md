@@ -621,8 +621,19 @@ These are the five manual tests of the script `assets/js/live-shows.js`. For eac
 | Test | Action | Expected result | Result |
 |---|---|---|---|
 | Venue list is closed | Open `archive.html`. | The "Venues" section shows a closed "All venues" list with the number of venues and shows. | Pass, 28 November 2026. |
-| Venue list opens | Click "All venues". | The table shows each venue by town or city, with a letter row for each first letter and the number of shows. | Pass, 28 November 2026. |
-| Venue list on a phone | Open the list at 375 px. | Each row shows the town, the venue and the number of shows. The page does not scroll sideways. | Pass, 28 November 2026. |
+| Venue list opens | Click "All venues". | The list shows a search box, a map and a closed item for each first letter. The summary gives 344 venues in 238 towns and cities, 952 shows. | Pass, 28 November 2026. |
+| Letter opens | Click the letter "A". | The letter opens. Each town shows its county and its venues, with the number of shows. The sign changes from plus to minus. The other letters stay closed and show a plus. | Pass, 28 November 2026. |
+| One entry for each town | Open the letter "A". | Aberdeen shows one time, with His Majesty's Theatre, Music Hall and Tivoli Theatre under it. | Pass, 28 November 2026. |
+| 2027 venues | Search for "City Varieties". | Leeds shows, with City Varieties. The count includes the 2027 show from `live-shows.html`. | Pass, 28 November 2026. |
+| Venue links | Click a venue name. | The website of the venue opens in a new tab. | Pass, 28 November 2026. |
+| Search by venue | Type "Lowry" in the search box. | The status text says "1 town matches the search." Only Salford shows. One map dot is red. | Pass, 28 November 2026. |
+| Search by county | Type "Somerset". | Five towns show: Bath, Bridgwater, Taunton, Weston-super-Mare and Yeovil. Their letters open. Five map dots are red, and the other dots are dim. | Pass, 28 November 2026. |
+| Search with no match | Type "zzz". | The status text says "No town or venue matches the search." No letter shows. All map dots are dim. | Pass, 28 November 2026. |
+| Clear the search | Delete the search text. | All towns and letters show again. No map dot is dim. | Pass, 28 November 2026. |
+| Map | Open the list at 1024 px. | The map is to the left of the letters. Each dot shows a town name and the number of shows when the pointer is on it. The note under the map names the four towns in Australia and gives the credits. | Pass, 28 November 2026. |
+| Venue list on a phone | Open the list at 375 px. | The search box and the letters fill the width. The map is below the letters. The page does not scroll sideways. | Pass, 28 November 2026. |
+| Venue list without JavaScript | Turn off JavaScript and open the list. | The search box does not show. The map and all letters show. | Pass, 28 November 2026. |
+| Console | Open the developer tools on `archive.html`. | The console shows no errors. | Pass, 28 November 2026. |
 | Jump link | Click "Venues" in the list at the top of the archive. | The page goes to the "Venues" heading. | Pass, 28 November 2026. |
 | Venue script tests | Run `python3 -m unittest discover -s scripts -v`. | All tests pass. `update_archive_venues.py --check` reports no change. | Pass, 28 November 2026. |
 | Past dates on venue cards | Open the venues on `live-shows.html`. | Leicester Square Theatre lists 8 past shows. The Lowry lists March 2024 (date uncertain). | Pass, 28 November 2026. |

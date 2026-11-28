@@ -1,0 +1,322 @@
+# Venue websites for the venue list on archive.html.
+# One line per venue: Town | Venue | https://address
+# Use the town and venue names that the list shows.
+# Check each address in a browser before you add it.
+
+Aberdeen | His Majesty's Theatre | https://www.aberdeenperformingarts.com/his-majestys-theatre/
+Aberdeen | Music Hall | https://www.aberdeenperformingarts.com/music-hall/
+Aberdeen | Tivoli Theatre | https://www.thetivolitheatre.com/
+Aberystwyth | Arts Centre | https://www.aberystwythartscentre.co.uk/
+Aldershot | Princes Hall | https://www.princeshall.com/
+Alnwick | Alnwick Playhouse | https://www.alnwickplayhouse.co.uk/
+Andover | The Lights | https://www.thelights.org.uk/
+Arbroath | Webster Memorial Theatre | https://angusalive.scot/theatres-venues/our-venues/webster-memorial-theatre/
+Banbury | Mill Arts Centre | https://www.themillartscentre.co.uk/
+Barnard Castle | The Witham | https://thewitham.org.uk/
+Barnsley | Civic Theatre | https://barnsleycivic.co.uk/
+Barnstaple | Queen's Theatre | https://queenstheatre-barnstaple.com/
+Barrow-in-Furness | The Forum | https://theforumbarrow.co.uk/
+Basildon | Towngate Theatre | https://towngatetheatre.co.uk/
+Basingstoke | The Anvil | https://www.anvilarts.org.uk/
+Basingstoke | The Haymarket | https://www.anvilarts.org.uk/
+Bath | Komedia | https://komediabath.co.uk/
+Bedford | Corn Exchange | https://www.bedfordcornexchange.co.uk/
+Bedworth | Civic Hall | https://www.bedworthcivichall.co.uk/
+Belfast | The MAC | https://themaclive.com/
+Belfast | Opera House | https://www.goh.co.uk/
+Berwick | Maltings Theatre and Cinema | https://www.maltingsberwick.co.uk/
+Bexhill-on-Sea | De La Warr Pavilion | https://www.dlwp.com/
+Billingham | Forum Theatre | https://www.forumtheatrebillingham.co.uk/
+Birmingham | Alexandra Theatre | https://www.atgtickets.com/venues/the-alexandra-theatre-birmingham/whats-on/
+Birmingham | Mac Arts Centre | https://macbirmingham.co.uk/
+Birmingham | Old Rep Theatre | https://www.oldrep.co.uk/
+Birmingham | Town Hall | https://bmusic.co.uk/your-visit/town-hall
+Bishop's Stortford | Rhodes Arts Complex | https://southmillarts.co.uk/
+Blackburn | King George's Hall | https://bwdvenues.com/
+Blackpool | Grand Opera House | https://www.wintergardensblackpool.co.uk/
+Bolton | The Albert Halls | https://www.alberthalls-bolton.co.uk/
+Bournemouth | Pavilion | https://www.bournemouthpavilion.co.uk/
+Bradford | St George's Hall | https://www.bradford-theatres.co.uk/st-georges-hall
+Bradford on Avon | Wiltshire Music Centre | https://www.wiltshiremusic.org.uk/
+Braintree | Braintree Arts Theatre | https://braintreeartstheatre.co.uk/
+Bridgwater | Bridgwater Arts Centre | https://www.bridgwaterartscentre.co.uk/
+Bridgwater | McMillan Theatre | https://www.mcmillantheatre.com/
+Bridlington | Spa Theatre | https://www.bridspa.com/
+Bridport | Arts Centre | https://www.bridport-arts.com/
+Bridport | Electric Palace | https://www.electricpalace.org.uk/
+Brighton | Brighton Dome | https://brightondome.org/
+Brighton | Komedia | https://www.komedia.co.uk/
+Brighton | Theatre Royal | https://www.atgtickets.com/venues/theatre-royal-brighton/whats-on/
+Brisbane, Australia | Lyric Theatre, Queensland Performing Arts Centre | https://www.qpac.com.au/
+Bristol | Bristol Hippodrome | https://www.atgtickets.com/venues/bristol-hippodrome/whats-on/
+Bristol | Bristol Old Vic | https://bristololdvic.org.uk/
+Bristol | Redgrave Theatre | https://redgravetheatre.com/
+Bristol | Tobacco Factory | https://tobaccofactorytheatres.com/
+Bromley | Churchill Theatre | https://trafalgartickets.com/churchill-theatre-bromley/en-GB
+Bury St Edmunds | Theatre Royal | https://theatreroyal.org/
+Buxton | Opera House | https://buxtonoperahouse.org.uk/
+Buxton | Pavilion Arts Centre | https://paviliongardens.co.uk/
+Calstock | Arts Centre | https://calstockarts.org/
+Camberley | Camberley Theatre | https://www.camberleytheatre.co.uk/
+Cambridge | Cambridge Junction | https://www.junction.co.uk/
+Cambridge | Corn Exchange | https://www.cornex.co.uk/
+Canterbury | The Gulbenkian | https://thegulbenkian.co.uk/
+Cardiff | Sherman Theatre | https://www.shermantheatre.co.uk/
+Cardiff | Wales Millennium Centre | https://www.wmc.org.uk/
+Cardigan | Mwldan Theatre | https://www.mwldan.co.uk/
+Carlisle | Old Fire Station | https://www.ofscarlisle.co.uk/
+Chatham | Central Theatre | https://www.medway.gov.uk/info/200182/culture_and_heritage/305/medway_theatres/2
+Chelmsford | Civic Theatre | https://www.chelmsfordtheatre.co.uk/
+Chelmsford | Cramphorn Theatre | https://www.chelmsfordtheatre.co.uk/
+Cheltenham | Cheltenham Literature Festival | https://www.cheltenhamfestivals.org/literature/
+Cheltenham | Everyman Theatre | https://www.everymantheatre.org.uk/
+Cheltenham | Parabola Arts Centre | https://venues.cheltladiescollege.org/
+Cheltenham | Town Hall | https://cheltenhamtownhall.org.uk/
+Chester | Storyhouse | https://www.storyhouse.com/
+Chipping Norton | The Theatre | https://www.chippingnortontheatre.com/
+Chorley | Chorley Theatre | https://www.chorleytheatre.com/
+Chorley | Little Theatre | https://www.chorleytheatre.com/
+Christchurch | Regent Centre | https://www.theregent.co.uk/
+Cirencester | Sundial Theatre | https://www.sundial-theatre.co.uk/
+Colchester | Colchester Arts Centre | https://colchesterartscentre.com/
+Corby | Core Theatre | https://www.thecorecorby.com/
+Corsham | Pound Arts Centre | https://poundarts.org.uk/
+Coventry | Warwick Arts Centre | https://www.warwickartscentre.co.uk/
+Crawley | The Hawth | https://www.parkwoodtheatres.co.uk/the-hawth/
+Crewe | Crewe Lyceum | https://trafalgartickets.com/lyceum-theatre-crewe/en-GB
+Croydon | Fairfield Halls | https://www.fairfield.co.uk/
+Dartford | Orchard Theatre | https://trafalgartickets.com/orchard-theatre-dartford/en-GB
+Didcot | Cornerstone | https://cornerstone-arts.org/
+Doncaster | Doncaster Dome | https://www.dclt.co.uk/the-dome/
+Dorchester | Arts Centre | https://www.dorchesterarts.org.uk/
+Dorchester | Corn Exchange | https://www.dorchesterarts.org.uk/cornexchange/
+Dorking | Dorking Halls | https://www.dorkinghalls.co.uk/
+Dublin | Helix Theatre | https://www.thehelix.ie/
+Dublin | Liberty Hall | https://libertyhalltheatre.ie/
+Dudley | Town Hall | https://www.dudley.gov.uk/things-to-do/entertainment/halls-for-hire/dudley-town-hall/
+Dundee | Gardyne Theatre | https://dundeeandangus.ac.uk/about-us/gardyne-theatre/
+Dunstable | Grove Theatre | https://everyonetheatres.com/theatres/grove-theatre/
+Durham | Gala Theatre | https://galadurham.co.uk/
+Ealing | Drayton Court | https://www.draytoncourtlondon.co.uk/
+Eastbourne | Congress Theatre | https://trafalgartickets.com/eastbourne-theatres-eastbourne/en-GB
+Eastbourne | Devonshire Park Theatre | https://trafalgartickets.com/eastbourne-theatres-eastbourne/en-GB
+Eastbourne | Eastbourne Theatres | https://trafalgartickets.com/eastbourne-theatres-eastbourne/en-GB
+Eastbourne | Royal Hippodrome | https://royalhippodrome.com/
+Eastleigh | Thornden Hall | https://www.thorndenhall.co.uk/
+Edinburgh | Festival Theatre | https://www.capitaltheatres.com/our-venues/festival-theatre/
+Edinburgh | Gilded Balloon at the Museum | https://gildedballoon.co.uk/
+Edinburgh | King's Theatre | https://www.capitaltheatres.com/our-venues/kings-theatre/
+Edinburgh | Queens Hall | https://www.thequeenshall.net/
+Edinburgh | The Roxy | https://assemblyroxy.com/
+Edinburgh | The Stand | https://www.thestand.co.uk/
+Ely | The Maltings | https://www.themaltingsely.org.uk/
+Epsom | Epsom Playhouse | https://www.epsomplayhouse.co.uk/
+Exeter | Exeter Phoenix | https://exeterphoenix.org.uk/
+Exeter | Northcott Theatre | https://exeternorthcott.co.uk/
+Falmouth | The Poly | https://thepoly.org/
+Fareham | Ashcroft Arts | https://www.ashcroft.org.uk/
+Farnham | Farnham Maltings, Great Hall | https://farnhammaltings.com/
+Faversham | Alexander Centre | https://thealex.org.uk/
+Fleet | Harlington Theatre | https://www.theharlington.co.uk/
+Folkestone | Leas Cliff Hall | https://www.leascliffhall.co.uk/
+Folkestone | Quarterhouse | https://www.creativefolkestone.org.uk/folkestone-quarterhouse/
+Glasgow | Citizens Theatre | https://citz.co.uk/
+Glasgow | King's Theatre | https://www.atgtickets.com/venues/kings-theatre-glasgow/whats-on/
+Glasgow | Oran Mor | https://oran-mor.co.uk/
+Glasgow | Theatre Royal | https://www.atgtickets.com/venues/theatre-royal-glasgow/whats-on/
+Gloucester | Gloucester Guildhall | https://www.gloucesterguildhall.co.uk/
+Great Torrington | Plough Arts Centre | https://www.theploughartscentre.org.uk/
+Greenwich | Blackheath Halls | https://www.blackheathhalls.com/
+Grimsby | Grimsby Auditorium | https://grimsbyauditorium.org.uk/
+Guildford | Yvonne Arnaud Theatre | https://www.yvonne-arnaud.co.uk/
+Halifax | Victoria Theatre | https://www.victoriatheatre.co.uk/
+Harrogate | Harrogate Theatre | https://www.harrogatetheatre.co.uk/
+Harrogate | The Royal Hall | https://www.harrogateconventioncentre.co.uk/organisers/our-venues/royal-hall
+Harrow | Harrow Arts Centre | https://harrowarts.com/
+Hastings | White Rock Theatre | https://whiterocktheatre.org.uk/
+Havant | Spring Arts and Heritage Centre | https://www.thespring.co.uk/
+Hayes | Beck Theatre | https://www.parkwoodtheatres.co.uk/beck-theatre
+Helmsley | Helmsley Arts Centre | https://www.helmsleyarts.co.uk/
+Henley | Kenton Theatre | https://thekenton.org.uk/
+Hereford | The Courtyard | https://courtyard.org.uk/
+Hertford | Hertford Theatre | https://beamhertford.co.uk/
+Hexham | Queen's Hall | https://www.queenshall.co.uk/
+High Wycombe | Swan Theatre | https://trafalgartickets.com/wycombe-swan-theatre/en-GB
+Holmfirth | Holmfirth Arts Festival | https://www.holmfirthartsfestival.co.uk/
+Holt | Holt Festival | https://holtfestival.org/
+Horsham | The Capitol | https://www.thecapitolhorsham.com/
+Hull | City Hall | https://www.hulltheatres.co.uk/hull-city-hall
+Hull | Hull Truck Theatre | https://www.hulltruck.co.uk/
+Ipswich | Corn Exchange | https://ipswichtheatres.co.uk/
+Ipswich | New Wolsey Theatre | https://www.wolseytheatre.co.uk/
+Ipswich | Regent Theatre | https://ipswichtheatres.co.uk/
+Isle of Wight | Shanklin Theatre | https://shanklintheatre.com/
+Jersey | Opera House | https://www.jerseyoperahouse.co.uk/
+Kendal | Brewery Arts Centre | https://www.breweryarts.co.uk/
+Keswick | Theatre by the Lake | https://www.theatrebythelake.com/
+Kettering | Lighthouse Theatre | https://www.lighthousetheatre.co.uk/
+King's Lynn | Arts Centre | https://www.west-norfolk.gov.uk/guildhall
+King's Lynn | Corn Exchange | https://www.kingslynncornexchange.co.uk/
+Kingston | Rose Theatre | https://www.rosetheatre.org/
+Lancaster | The Dukes | https://dukeslancaster.org/
+Lancaster | Grand Theatre | https://lancastergrand.co.uk/
+Leamington Spa | Royal Spa Centre | https://www.warwickdc.gov.uk/royalspacentre/site/index.php
+Leeds | Carriageworks | https://www.carriageworkstheatre.co.uk/
+Leeds | City Varieties | https://leedsheritagetheatres.com/your-visit/city-varieties-music-hall/
+Leicester | Curve Theatre | https://www.curveonline.co.uk/
+Leicester | De Montfort Hall | https://www.demontforthall.co.uk/
+Leicester | Little Theatre | https://www.thelittletheatre.co.uk/
+Leicester | Y Theatre | https://ytheatre.co.uk/
+Lichfield | Garrick Theatre | https://www.lichfieldgarrick.com/
+Lincoln | Performing Arts Centre | https://lincolnartscentre.co.uk/
+Lincoln | Theatre Royal | https://www.newtheatreroyallincoln.co.uk/
+Liverpool | Liverpool Empire | https://www.atgtickets.com/venues/liverpool-empire/
+Liverpool | Liverpool Playhouse | https://everymanplayhouse.com/
+Liverpool | Royal Court Theatre | https://liverpoolsroyalcourt.com/
+Liverpool | St George's Hall | https://liverpoolcityhalls.co.uk/st-georges-hall/
+Llandudno | North Wales Theatre | https://www.venuecymru.co.uk/
+Llandudno | Venue Cymru | https://www.venuecymru.co.uk/
+London | Battersea Arts Centre | https://bac.org.uk/
+London | Bloomsbury Theatre | https://www.bloomsburytheatre.com/
+London | Duchess Theatre | https://nimaxtheatres.com/venue/duchess-theatre/
+London | Hen and Chickens | https://www.henandchickens.co.uk/
+London | Holland Park Theatre | https://operahollandpark.com/
+London | Kennington ABC | https://www.alwaysbecomedy.com/
+London | Leicester Square Theatre | https://www.leicestersquaretheatre.com/
+London | Millfield Theatre | https://millfieldtheatre.co.uk/
+London | Novello Theatre | https://www.delfontmackintosh.co.uk/theatres/novello-theatre
+London | Park Theatre | https://parktheatre.co.uk/
+London | Royal Festival Hall | https://www.southbankcentre.co.uk/venues/royal-festival-hall/
+London | Southbank Centre | https://www.southbankcentre.co.uk/
+London | Theatre at the Tabard | https://www.tabard.org.uk/
+Loughborough | Town Hall | https://www.loughboroughtownhall.co.uk/
+Lowestoft | Marina Theatre | https://www.marinatheatre.co.uk/
+Lytham St Annes | Lowther Pavilion | https://lowtherpavilion.co.uk/
+Maidenhead | Norden Farm Arts Centre | https://norden.farm/
+Maidstone | Hazlitt Theatre | https://www.parkwoodtheatres.co.uk/hazlitt-theatre
+Manchester | Opera House | https://www.atgtickets.com/venues/opera-house-manchester/
+Manchester | Palace Theatre | https://www.atgtickets.com/venues/palace-theatre-manchester/
+Manchester | Stoller Hall | https://stollerhall.com/
+Mansfield | Palace Theatre | https://www.mansfield.gov.uk/palacetheatre/
+Masham | Town Hall | https://www.mashamtownhall.com/
+Melbourne, Australia | Fairfax Studio | https://www.artscentremelbourne.com.au/visit/theatres-and-spaces/fairfax-studio
+Melbourne, Australia | Princess Theatre | https://marrinergroup.com.au/princess-theatre
+Middlesbrough | Town Hall | https://boxoffice.middlesbrough.gov.uk/
+Middleton | Middleton Arena | https://www.yourtrustrochdale.co.uk/venues/middleton-arena/
+Milford Haven | Torch Theatre | https://www.torchtheatre.co.uk/
+Millom | Beggar's Theatre | https://beggarstheatre.com/
+Milton Keynes | Milton Keynes Theatre | https://www.atgtickets.com/venues/milton-keynes-theatre/
+Milton Keynes | The Stables | https://stables.org/
+Monmouth | Savoy Theatre | https://monmouth-savoy.co.uk/
+Musselburgh | Brunton Theatre | https://www.thebrunton.co.uk/
+New Milton | Forest Arts Centre | https://www.forest-arts.co.uk/
+Newbury | Corn Exchange | https://cornexchangenew.com/
+Newcastle upon Tyne | Northern Stage | https://northernstage.co.uk/
+Newcastle upon Tyne | Theatre Royal | https://www.theatreroyal.co.uk/
+North Devon | North Devon Theatre | https://queenstheatre-barnstaple.com/
+Northallerton | The Forum | https://forumnorthallerton.org.uk/ForumNorthallerton.dll/Home
+Northampton | The Deco | https://www.theoldsavoy.co.uk/
+Northampton | Royal and Derngate | https://royalandderngate.co.uk/
+Norwich | Norwich Playhouse | https://norwichtheatre.org/your-visit/norwich-theatre-playhouse/
+Nottingham | Nottingham Playhouse | https://nottinghamplayhouse.co.uk/
+Nottingham | Royal Concert Hall | https://www.trch.co.uk/
+Oldham | Oldham Coliseum | https://coliseum.org.uk/
+Oswaldtwistle | Civic Arts Theatre | https://www.civicartscentre.co.uk/
+Otley | Otley Courthouse | https://otleycourthouse.org.uk/
+Oxford | New Theatre | https://www.atgtickets.com/venues/new-theatre-oxford/
+Oxford | North Wall | https://www.thenorthwall.com/
+Oxford | The Old Firestation | https://oldfirestation.org.uk/
+Oxford | Oxford Playhouse | https://www.oxfordplayhouse.com/
+Paignton | Palace Theatre | https://www.palacetheatrepaignton.co.uk/
+Perth, Australia | Burswood Theatre | https://www.crownperth.com.au/entertainment/crown-theatre
+Perth | Perth Concert Hall | https://www.horsecross.co.uk/
+Peterborough | The Cresset | https://www.cresset.co.uk/
+Peterborough | Key Theatre | https://keytheatre-peterborough.com/
+Plymouth | Plymouth Pavilions | https://www.plymouthpavilions.com/
+Pocklington | Arts Centre | https://pocklingtonartscentre.co.uk/
+Pontardawe | Pontardawe Arts Centre | https://pontardaweartscentre.com/
+Poole | Lighthouse Theatre | https://www.lighthousepoole.co.uk/
+Porthcawl | Grand Pavilion | https://awenboxoffice.com/venues/grand-pavilion-porthcawl/
+Portsmouth | Portsmouth Guildhall | https://www.portsmouthguildhall.org.uk/
+Potters Bar | Wyllyotts Theatre | https://wyllyottstheatre.co.uk/
+Preston | Charter Theatre | https://www.prestonguildhall.co.uk/
+Preston | Preston Guildhall | https://www.prestonguildhall.co.uk/
+Radlett | Radlett Centre | https://www.radlettcentre.co.uk/
+Reading | Concert Hall | https://whatsonreading.com/venues/town-hall
+Reading | The Hexagon | https://whatsonreading.com/hexagon
+Reading | South Street | https://whatsonreading.com/venues/south-street
+Redditch | Palace Theatre | https://www.redditchpalacetheatre.co.uk/
+Richmond | Richmond Theatre | https://www.atgtickets.com/venues/richmond-theatre/whats-on/
+Richmond, North Yorkshire | Georgian Theatre Royal | https://www.georgiantheatreroyal.co.uk/
+Runcorn | The Brindley | https://thebrindley.org.uk/
+Salford | The Lowry | https://www.thelowry.com/
+Salisbury | Arts Centre | https://www.wiltshirecreative.co.uk/visit/salisbury-arts-centre
+Salisbury | City Hall | https://www.salisburycityhall.co.uk/
+Salisbury | Salisbury Playhouse | https://www.wiltshirecreative.co.uk/
+Scunthorpe | The Baths Hall | https://www.scunthorpetheatres.co.uk/
+Selby | Town Hall | https://www.selbytownhall.co.uk/
+Sheffield | Memorial Hall | https://www.sheffieldcityhall.co.uk/
+Shoreham by Sea | Ropetackle Arts Centre | https://ropetacklecentre.co.uk/
+Shrewsbury | Theatre Severn | https://www.theatresevern.co.uk/
+Shropshire | The Festival Drayton Centre | https://festivaldraytoncentre.com/
+Skegness | Embassy Theatre | https://embassytheatre.co.uk/
+Southampton | Hanger Farm Arts | https://www.hangerfarm.co.uk/
+Southampton | Southampton Guildhall | https://www.academymusicgroup.com/o2guildhallsouthampton
+Southend | Cliffs Pavilion | https://trafalgartickets.com/southend-theatres/en-GB
+Southend | Dixon Studio | https://trafalgartickets.com/southend-theatres/en-GB
+Southend | Palace Theatre | https://trafalgartickets.com/southend-theatres/en-GB
+Southport | The Atkinson | https://theatkinson.co.uk/
+Spalding | South Holland Centre | https://www.southhollandcentre.co.uk/
+St Albans | Alban Arena | https://everyonetheatres.com/theatres/the-alban-arena/
+Stafford | Gatehouse Theatre | https://www.gatehousetheatre.co.uk/
+Stamford | Corn Exchange | https://www.stamfordcornexchange.co.uk/
+Stevenage | Gordon Craig Theatre | https://everyonetheatres.com/theatres/gordon-craig-theatre/
+Stockport | Plaza | https://stockportplaza.co.uk/
+Stockton-on-Tees | The Arc | https://arconline.co.uk/
+Stockton-on-Tees | Arts Centre | https://arconline.co.uk/
+Stoke-on-Trent | Regent Theatre | https://www.atgtickets.com/venues/regent-theatre/whats-on/
+Stoke-on-Trent | Victoria Hall | https://www.atgtickets.com/venues/victoria-hall/whats-on/
+Stourbridge | Town Hall | https://dudley.gov.uk/things-to-do/entertainment/halls-for-hire/stourbridge-town-hall
+Stratford-upon-Avon | Royal Shakespeare Theatre | https://www.rsc.org.uk/your-visit/royal-shakespeare-theatre
+Sturminster Newton | The Exchange | https://stur-exchange.co.uk/
+Suffolk | Latitude Festival | https://www.latitudefestival.com/
+Sunderland | Sunderland Empire | https://www.atgtickets.com/venues/sunderland-empire/whats-on/
+Swansea | Grand Theatre | https://www.swanseagrand.co.uk/
+Swindon | Wyvern Theatre | https://trafalgartickets.com/swindon-theatres/en-GB
+Sydney, Australia | Capitol Theatre | https://www.capitoltheatre.com.au/
+Taunton | Brewhouse Theatre | https://www.tauntonbrewhouse.co.uk/
+Taunton | Tacchi Morris Arts Centre | https://www.tacchi-morris.com/
+Teddington | Landmark Arts Centre | https://www.landmarkartscentre.org/
+Telford | Oakengates Theatre | https://www.telfordtheatre.com/
+Telford | The Place | https://www.telfordtheatre.com/
+Tewkesbury | Roses Theatre | https://www.rosestheatre.org/
+Torquay | Princess Theatre | https://www.atgtickets.com/venues/princess-theatre-torquay/whats-on/
+Tring | Court Theatre | https://dembetheatre.org/
+Truro | Hall for Cornwall | https://www.hallforcornwall.co.uk/
+Tunbridge Wells | Assembly Hall Theatre | https://www.assemblyhalltheatre.co.uk/
+Tunbridge Wells | Trinity Theatre | https://www.trinitytheatre.net/
+Ulverston | Coronation Hall | https://corohall.co.uk/
+Walsall | Forest Arts Centre | https://link.walsall.gov.uk/Local-Authority/Organisation-Support/Walsall-Arena-and-Arts-Centre
+Walton-on-Thames | Riverhouse Barn Arts Centre | https://www.riverhousebarn.co.uk/
+Warrington | Parr Hall | https://parrhall.culturewarrington.org/
+Watford | Watford Colosseum | https://www.watfordcolosseum.co.uk/
+Wellingborough | The Castle | https://www.parkwoodtheatres.co.uk/castle-theatre
+West Lothian | Howden Park Arts Centre | https://www.reconnecttheatres.com/howden-park/
+Weston-super-Mare | The Playhouse | https://www.parkwoodtheatres.co.uk/playhouse-theatre
+Weymouth | Weymouth Pavilion | https://weymouthpavilion.com/
+Whitby | Whitby Pavilion | https://www.whitbypavilion.co.uk/
+Whitstable | Horsebridge Arts Centre | https://www.thehorsebridge.org.uk/
+Wimbledon | New Wimbledon Theatre | https://www.atgtickets.com/venues/new-wimbledon-theatre/whats-on/
+Wimborne | Tivoli Theatre | https://www.tivoliwimborne.co.uk/
+Winchester | Theatre Royal | https://www.theatreroyalwinchester.co.uk/
+Winchester | Winchester Discovery Centre | https://www.arcwinchester.org.uk/
+Windsor | Theatre Royal | https://theatreroyalwindsor.co.uk/
+Woking | New Victoria Theatre | https://www.atgtickets.com/venues/woking-theatre/whats-on/
+Woking | Rhoda McGaw Theatre | https://www.atgtickets.com/venues/rhoda-mcgaw-theatre-woking/whats-on/
+Worcester | Huntingdon Hall | https://worcestertheatres.co.uk/visitor-information/about-huntingdon-hall
+Workington | Carnegie Theatre | https://www.carnegietheatre.co.uk/
+Worthing | Connaught Theatre | https://wtm.uk/
+Worthing | Pavilion Theatre | https://wtm.uk/
+Yeovil | Octagon Theatre | https://www.octagon-theatre.co.uk/
+York | Grand Opera House | https://www.atgtickets.com/venues/grand-opera-house-york/whats-on/
+Birmingham | Birmingham Rep | https://www.birmingham-rep.co.uk/
