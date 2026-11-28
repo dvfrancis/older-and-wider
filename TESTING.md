@@ -92,8 +92,8 @@ The status of each test is:
 
 | TEST | STATUS |
 | --- | --- |
-| HTML validation | Done on the new design, 27 November 2026 |
-| CSS validation | Done on the new design, 27 November 2026 |
+| HTML validation | Done on the new design, 27 November 2026. Live Shows and Archive checked again, 28 November 2026 |
+| CSS validation | Done on the new design, 27 November 2026. Checked again, 28 November 2026 |
 | Manual validation | Earlier design only. To be re-run on the new design. |
 | User story validation | Earlier design only. To be re-run on the new design. |
 | Browser compatibility | Done on the new design, 27 November 2026 |
@@ -123,8 +123,11 @@ The [W3C Nu HTML Checker](https://validator.w3.org/nu/) checked the source file 
 | 404.html | 0 | 0 | PASS |
 | privacy.html | 0 | 0 | PASS |
 | live-shows.html | 0 | 0 | PASS |
+| archive.html | 0 | 0 | PASS |
 
 On 28 November 2026 the checker checked each page again, after the change to the navigation. The checker found no errors and no warnings on `live-shows.html`, `index.html`, `about.html`, `message-board.html`, `privacy.html` and `404.html`.
+
+Later on 28 November 2026 the checker (version 26.11.28) checked the live `live-shows.html` and `archive.html`. This check came after the venues, the work links and the book covers were added. The checker found no errors and no warnings on the two pages.
 
 To repeat the test, run this command in the repository root for each page:
 
@@ -170,18 +173,19 @@ These results are for the earlier design. The [W3C Markup Validation Service](ht
 
 #### main.css
 
-The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator) checked `assets/css/main.css` on 27 November 2026. The profile was "CSS level 3 + SVG", with all warnings shown.
+The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator) checked `assets/css/main.css` again on 28 November 2026, after the venues and covers blocks were added. The validator checked the live file `main.c471768e88.css`. The profile was "CSS level 3 + SVG", with all warnings shown.
 
 | FILE | ERRORS | WARNINGS |
 | --- | --- | --- |
-| main.css | 3 | 63 |
+| main.css | 3 | 91 |
 
 The 3 errors are limits of the validator. They are not errors in the CSS. The section [Validator Limits](#validator-limits) gives the reason for each error.
 
-The 63 warnings are:
+The 91 warnings are:
 
-- 60 warnings that the validator does not check CSS custom properties (variables). This is a limit of the validator.
+- 87 warnings that the validator does not check CSS custom properties (variables). This is a limit of the validator.
 - 3 warnings that `-webkit-mask` (two times) and `-webkit-mask-composite` are vendor extensions. The stylesheet uses them as a fallback for older WebKit browsers. The standard `mask` properties follow them.
+- 1 warning that `::-webkit-details-marker` is a vendor extension. The archive uses it to hide the default marker of each `summary` element in Safari.
 
 To repeat the test, run this command in the repository root:
 
@@ -197,9 +201,9 @@ The validator does not know three CSS features that `main.css` uses. Current ver
 
 | LINE | SELECTOR | VALIDATOR MESSAGE | REASON |
 | --- | --- | --- | --- |
-| 147 | `.cover-inner` | Property "container-type" does not exist | `container-type` comes from the CSS container queries specification. The validator does not know this property. |
-| 153 | `.masthead` | Value Error: font-size. Parse Error | The value is `calc(100cqi / 6.45)`. `cqi` is a container query unit. The validator does not know this unit, so it cannot read the `calc()`. |
-| 986 | `.cover-photo` | Too many values or values are not recognized | The `mask` property has two `linear-gradient()` layers. The CSS Masking specification permits a comma-separated list of mask layers. The validator does not accept the list. |
+| 185 | `.cover-inner` | Property "container-type" does not exist | `container-type` comes from the CSS container queries specification. The validator does not know this property. |
+| 191 | `.masthead` | Value Error: font-size. Parse Error | The value is `calc(100cqi / 6.05)`. `cqi` is a container query unit. The validator does not know this unit, so it cannot read the `calc()`. |
+| 1033 | `.cover-photo` | Too many values or values are not recognized | The `mask` property has two `linear-gradient()` layers. The CSS Masking specification permits a comma-separated list of mask layers. The validator does not accept the list. |
 
 #### Earlier CSS Results
 
