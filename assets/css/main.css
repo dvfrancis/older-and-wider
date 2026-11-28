@@ -2518,3 +2518,290 @@ a {
         gap: 4rem;
     }
 }
+
+/* ==========================================================================
+   Page: live-shows.html
+   ========================================================================== */
+
+/* Live shows page */
+/* The intro is on Cover Pink, with the poster as a laid print.
+   Forthcoming shows use the red of the poster dates panel, with white text.
+   Recent shows are on Paper White. */
+
+.shows-intro {
+    background: var(--pink);
+}
+
+.shows-band {
+    background: var(--red);
+    color: var(--white);
+}
+
+.shows-band-recent {
+    background: var(--white);
+    color: var(--ink);
+}
+
+.shows-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 3rem var(--gutter) 3.5rem;
+}
+
+.shows-intro-grid {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.shows-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: var(--red);
+}
+
+.shows-intro .issue-line {
+    margin-top: 1rem;
+}
+
+.shows-lead {
+    max-width: 36rem;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.shows-note {
+    max-width: 36rem;
+    margin-top: 1.25rem;
+    font-weight: 600;
+}
+
+/* The poster: a print laid on the page, as the Laid Print Rule asks */
+.shows-poster {
+    justify-self: center;
+    max-width: 26rem;
+    padding: 0.625rem 0.625rem 0.75rem;
+    background: var(--white);
+    box-shadow: 0 0.625rem 1.25rem -0.375rem rgba(26, 26, 26, 0.35);
+    transform: rotate(1.5deg);
+}
+
+.shows-poster img {
+    width: 100%;
+    height: auto;
+}
+
+.shows-heading {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid currentColor;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.shows-band-recent .shows-heading {
+    color: var(--red);
+    border-bottom-color: var(--ink);
+}
+
+.shows-band :focus-visible {
+    outline-color: var(--yellow);
+}
+
+.shows-band-recent :focus-visible {
+    outline-color: var(--ink);
+}
+
+/* One show for each list item. The parts stack on phones. */
+.shows {
+    display: grid;
+    font-variant-numeric: tabular-nums;
+}
+
+.shows[hidden],
+.shows-empty[hidden] {
+    display: none;
+}
+
+.show {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.shows-band-recent .show {
+    border-bottom-color: rgba(26, 26, 26, 0.3);
+}
+
+.show-date {
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.show-place {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 1.08;
+    text-transform: uppercase;
+}
+
+.shows-band-recent .show-place {
+    color: var(--red);
+}
+
+.show-tour {
+    font-family: var(--font-label);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.show-tickets {
+    margin-top: 0.5rem;
+}
+
+.show-tickets a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.5rem 1.25rem;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: var(--font-label);
+    font-weight: 600;
+    font-size: 1.125rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 0.5rem 1rem -0.25rem rgba(26, 26, 26, 0.4);
+}
+
+.show-tickets a:hover {
+    text-decoration: underline;
+}
+
+.shows-empty {
+    max-width: 36rem;
+    font-size: 1.25rem;
+}
+
+.shows-empty a {
+    font-weight: 600;
+}
+
+/* The nav strip has five links. On phones, tighter links keep it on one row at 375px. */
+.strip-list {
+    gap: 0;
+    padding: 0 0.5rem;
+}
+
+.strip-list a {
+    padding: 0 0.375rem;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+/* The home page link to this page */
+.tour-all {
+    margin-top: 1.25rem;
+}
+
+.tour-all a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    font-weight: 600;
+}
+
+@media (min-width: 48rem) {
+    .strip-list {
+        gap: 0 0.25rem;
+        padding: 0 var(--gutter);
+    }
+
+    .strip-list a {
+        padding: 0 0.625rem;
+        font-size: 1.0625rem;
+        letter-spacing: 0.04em;
+    }
+
+    .shows-title {
+        font-size: 5rem;
+    }
+
+    .shows-heading {
+        font-size: 4.5rem;
+    }
+
+    .shows-poster {
+        max-width: 30rem;
+    }
+
+    /* Date at the left, the place and venue in the middle, tickets at the right */
+    .show {
+        grid-template-columns: 11.5rem 1fr auto;
+        grid-template-areas:
+            "date place tickets"
+            "date venue tickets"
+            "date tour tickets";
+        column-gap: 1.5rem;
+        align-items: start;
+    }
+
+    .show-date {
+        grid-area: date;
+        padding-top: 0.375rem;
+    }
+
+    .show-place {
+        grid-area: place;
+    }
+
+    .show-venue {
+        grid-area: venue;
+    }
+
+    .show-tour {
+        grid-area: tour;
+    }
+
+    .show-tickets {
+        grid-area: tickets;
+        align-self: center;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 64rem) {
+    .shows-title {
+        font-size: 6rem;
+    }
+
+    .shows-intro-grid {
+        grid-template-columns: 1fr 26rem;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .shows-poster {
+        max-width: 26rem;
+    }
+
+    .show {
+        grid-template-columns: 15rem 1fr auto;
+    }
+}
