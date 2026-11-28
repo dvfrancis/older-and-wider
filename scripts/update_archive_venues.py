@@ -138,21 +138,37 @@ def text(cell):
     return " ".join(html.unescape(re.sub(r"<[^>]+>", "", cell)).split())
 
 
+def when(cell):
+    """Return the datetime value of the time element in a cell, or ""."""
+    match = re.search(r'<time datetime="([^"]*)"', cell)
+    return match.group(1) if match else ""
+
+
 def show_rows(page):
-    """Return (venue, town) for each show row outside the venue list."""
+    """Return (venue, town, date, datetime, show) for each show row outside the venue list."""
     if page.count(START) != 1 or page.count(END) != 1:
         raise VenueError("archive.html must have one pair of venue markers")
     before, rest = page.split(START)
     after = rest.split(END)[1]
     rows = []
-    for row in re.findall(r"<tr\b[^>]*>(.*?)</tr>", before + after, re.S):
-        cells = [text(cell) for cell in re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)]
+    tour = ""
+    # Read the tour names and the rows in page order, so each row knows its tour.
+    pattern = r'<summary><span class="arc-tour-name">(.*?)</span>|(</details>)|<tr\b[^>]*>(.*?)</tr>'
+    for name, close, row in re.findall(pattern, before + after, re.S):
+        if name:
+            tour = text(name)
+            continue
+        if close:
+            tour = ""
+            continue
+        raw = re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)
+        cells = [text(cell) for cell in raw]
         if len(cells) == 4:
             # Older and Wider live: date, show, venue, town.
-            rows.append((cells[2], cells[3]))
+            rows.append((cells[2], cells[3], cells[0], when(raw[0]), cells[1]))
         elif len(cells) == 3:
-            # Tour dates: date, town, venue.
-            rows.append((cells[2], cells[1]))
+            # Tour dates: date, town, venue. The tour name is the show.
+            rows.append((cells[2], cells[1], cells[0], when(raw[0]), tour))
         elif cells:
             raise VenueError(f"a show row has {len(cells)} cells: {cells}")
     if not rows:
@@ -161,14 +177,24 @@ def show_rows(page):
 
 
 def live_show_rows(page):
-    """Return (venue, town) for each show on live-shows.html."""
+    """Return (venue, town, date, datetime, show) for each show on live-shows.html."""
     rows = []
     for item in re.findall(r'<li class="show">(.*?)</li>', page, re.S):
         town = re.search(r'<h3 class="show-place">(.*?)</h3>', item, re.S)
         venue = re.search(r'<p class="show-venue">(.*?)</p>', item, re.S)
         if not town or not venue:
             raise VenueError("a show on live-shows.html has no town or no venue")
-        rows.append((text(venue.group(1)), text(town.group(1))))
+        date = re.search(r'<p class="show-date">(.*?)</p>', item, re.S)
+        tour = re.search(r'<p class="show-tour">(.*?)</p>', item, re.S)
+        rows.append(
+            (
+                text(venue.group(1)),
+                text(town.group(1)),
+                text(date.group(1)) if date else "",
+                when(date.group(1)) if date else "",
+                text(tour.group(1)) if tour else "",
+            )
+        )
     return rows
 
 
@@ -308,18 +334,52 @@ def sort_key(item):
 
 def count_venues(rows):
     """Return a sorted list of ((venue, town), number of shows)."""
-    counts = Counter(normalise(venue, town) for venue, town in rows if venue not in SKIP)
+    counts = Counter(normalise(row[0], row[1]) for row in rows if row[0] not in SKIP)
     return sorted(counts.items(), key=sort_key)
+
+
+def venue_shows(rows):
+    """Return {(venue, town): [(datetime, date, show)]}, with the latest show first."""
+    shows = {}
+    for venue, town, date, stamp, show in rows:
+        if venue not in SKIP:
+            shows.setdefault(normalise(venue, town), []).append((stamp, date, show))
+    for items in shows.values():
+        # Sort by datetime. A show with no datetime goes last.
+        items.sort(key=lambda item: item[0], reverse=True)
+        items.sort(key=lambda item: item[0] == "")
+    return shows
+
+
+def render_count(number, items, pad):
+    """Return the lines for the show count of one venue, with its list of shows."""
+    count = plural(number, "show")
+    if not items:
+        return [f'{pad}<span class="arc-venue-count">{count}</span>']
+    out = [
+        f'{pad}<details class="arc-venue-shows">',
+        f'{pad}    <summary class="arc-venue-count">{count}</summary>',
+        f'{pad}    <ul class="arc-venue-show-list">',
+    ]
+    for stamp, date, show in items:
+        label = html.escape(date, quote=False)
+        if stamp:
+            label = f'<time datetime="{html.escape(stamp)}">{label}</time>'
+        name = f' <span class="arc-venue-show-name">{html.escape(show, quote=False)}</span>' if show else ""
+        out.append(f"{pad}        <li>{label}{name}</li>")
+    out += [f"{pad}    </ul>", f"{pad}</details>"]
+    return out
 
 
 def plural(number, word):
     return f"{number} {word}" if number == 1 else f"{number} {word}s"
 
 
-def render(venues, links=None, places=None, outline=None):
+def render(venues, links=None, places=None, outline=None, show_lists=None):
     """Return the markup that goes between the markers."""
     links = links or {}
     places = places or {}
+    show_lists = show_lists or {}
     shows = sum(number for _, number in venues)
     towns = {}
     for (venue, town), number in venues:
@@ -341,9 +401,13 @@ def render(venues, links=None, places=None, outline=None):
         f'{pad}    <summary><span class="arc-tour-name">All venues</span> <span class="arc-tour-meta">'
         f"{len(venues)} venues in {len(towns)} towns and cities, {shows} shows</span></summary>",
         f'{pad}    <div class="arc-venue-search" id="arc-venue-search" hidden>',
-        f'{pad}        <label class="arc-venue-search-label" for="arc-venue-search-input">Search for a town, a county or a venue</label>',
+        f'{pad}        <label class="arc-venue-search-label" for="arc-venue-search-input">Search for a town, county, venue, show or year</label>',
         f'{pad}        <input class="arc-venue-search-input" id="arc-venue-search-input" type="search" autocomplete="off">',
         f'{pad}        <p class="arc-venue-search-status" id="arc-venue-search-status" aria-live="polite"></p>',
+        f'{pad}        <p class="arc-venue-toggle">',
+        f'{pad}            <button class="arc-venue-button" type="button" data-letters="open">Open all letters</button>',
+        f'{pad}            <button class="arc-venue-button" type="button" data-letters="close">Close all letters</button>',
+        f"{pad}        </p>",
         f"{pad}    </div>",
         f'{pad}    <div class="arc-venue-browser">',
     ]
@@ -369,9 +433,10 @@ def render(venues, links=None, places=None, outline=None):
                 url = links.get((venue, name))
                 if url:
                     label = f'<a href="{html.escape(url)}" {NEW_TAB}>{label}</a>'
-                out.append(
-                    f'{inner}                        <li>{label} <span class="arc-venue-count">{plural(number, "show")}</span></li>'
-                )
+                out.append(f"{inner}                        <li>")
+                out.append(f'{inner}                            <span class="arc-venue-name">{label}</span>')
+                out += render_count(number, show_lists.get((venue, name)), inner + " " * 28)
+                out.append(f"{inner}                        </li>")
             out.append(f"{inner}                    </ul>")
             out.append(f"{inner}                </li>")
         out.append(f"{inner}            </ul>")
@@ -407,7 +472,7 @@ def main(argv=None):
         links = read_links(args.links.read_text(encoding="utf-8")) if args.links.exists() else {}
         places = read_places(args.places.read_text(encoding="utf-8")) if args.places.exists() else {}
         outline = read_outline(args.outline.read_text(encoding="utf-8")) if args.outline.exists() else []
-        new = apply(old, render(count_venues(rows), links, places, outline))
+        new = apply(old, render(count_venues(rows), links, places, outline, venue_shows(rows)))
     except (OSError, VenueError) as error:
         print(f"Error: {error}. archive.html is not changed.", file=sys.stderr)
         return 2
